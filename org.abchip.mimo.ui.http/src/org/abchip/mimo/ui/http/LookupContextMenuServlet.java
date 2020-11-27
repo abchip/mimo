@@ -17,11 +17,11 @@ import java.util.function.Consumer;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -55,7 +55,8 @@ public class LookupContextMenuServlet extends BaseServlet {
 		ContextMenu contextMenu = null;
 
 		try {
-			ResourceReader<ContextMenu> contextMenuReader = context.getResourceManager().getResourceReader(ContextMenu.class, Resource.TENANT_MASTER);
+			Application application = context.get(Application.class);
+			ResourceReader<ContextMenu> contextMenuReader = application.getContext().getResourceManager().getResourceReader(ContextMenu.class);
 			contextMenu = contextMenuReader.lookup(frameName);
 			if (contextMenu == null) {
 				contextMenu = MenuFactory.eINSTANCE.createContextMenu();
@@ -63,7 +64,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 			}
 
 			if (contextMenu.getIcon() == null)
-				contextMenu.setIcon(getIcon(context, frameName));
+				contextMenu.setIcon(getIcon(application.getContext(), frameName));
 
 			for (Frame<?> ako : frame.getSuperFrames()) {
 				ContextMenu contextMenuAko = contextMenuReader.lookup(ako.getName());
@@ -130,7 +131,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 			return null;
 
 		String icon = null;
-		ResourceReader<UiFrameSetup> frameSetupReader = context.getResourceManager().getResourceReader(UiFrameSetup.class, Resource.TENANT_MASTER);
+		ResourceReader<UiFrameSetup> frameSetupReader = context.getResourceManager().getResourceReader(UiFrameSetup.class);
 
 		List<String> frameNames = new ArrayList<String>(frame.getSuperNames());
 		Lists.addFirst(frameNames, frameName);

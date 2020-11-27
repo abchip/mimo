@@ -19,7 +19,6 @@ import org.abchip.mimo.context.Context;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.service.ServiceRequest#getContext <em>Context</em>}</li>
- *   <li>{@link org.abchip.mimo.service.ServiceRequest#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.service.ServicePackage#getServiceRequest()
@@ -27,28 +26,6 @@ import org.abchip.mimo.context.Context;
  * @generated
  */
 public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessage {
-
-	/**
-	 * Returns the value of the '<em><b>Tenant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tenant</em>' attribute.
-	 * @see #setTenant(String)
-	 * @see org.abchip.mimo.service.ServicePackage#getServiceRequest_Tenant()
-	 * @model
-	 * @generated
-	 */
-	String getTenant();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceRequest#getTenant <em>Tenant</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tenant</em>' attribute.
-	 * @see #getTenant()
-	 * @generated
-	 */
-	void setTenant(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Context</b></em>' reference.
@@ -84,14 +61,6 @@ public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessag
 	 * @generated
 	 */
 	V buildResponse() throws ServiceException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" tenantRequired="true"
-	 * @generated
-	 */
-	void init(Context context, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->

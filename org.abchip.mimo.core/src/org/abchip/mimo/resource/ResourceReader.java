@@ -158,12 +158,4 @@ public interface ResourceReader<E extends EntityIdentifiable> {
 	 * @generated
 	 */
 	Resource<E> getResource();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	String getTenant();
 } // Resource

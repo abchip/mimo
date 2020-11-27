@@ -28,12 +28,11 @@ public class DeleteServlet extends BaseServlet {
 
 	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		String tenant = request.getParameter("tenant");
 		String frame = request.getParameter("frame");
 		String id = request.getParameter("id");
 
 		try {
-			ResourceWriter<E> entityWriter = context.getResourceManager().getResourceWriter(frame, tenant);
+			ResourceWriter<E> entityWriter = context.getResourceManager().getResourceWriter(frame);
 			E entity = entityWriter.lookup(id, true);
 			entityWriter.delete(entity);
 

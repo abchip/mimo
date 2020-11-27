@@ -19,7 +19,6 @@ package org.abchip.mimo.authentication;
  * <ul>
  *   <li>{@link org.abchip.mimo.authentication.AuthenticationUserPassword#getUser <em>User</em>}</li>
  *   <li>{@link org.abchip.mimo.authentication.AuthenticationUserPassword#getPassword <em>Password</em>}</li>
- *   <li>{@link org.abchip.mimo.authentication.AuthenticationUserPassword#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationUserPassword()
@@ -78,31 +77,5 @@ public interface AuthenticationUserPassword extends Authentication {
 	 * @generated
 	 */
 	void setPassword(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Tenant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tenant</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tenant</em>' attribute.
-	 * @see #setTenant(String)
-	 * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationUserPassword_Tenant()
-	 * @model
-	 * @generated
-	 */
-	String getTenant();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.authentication.AuthenticationUserPassword#getTenant <em>Tenant</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tenant</em>' attribute.
-	 * @see #getTenant()
-	 * @generated
-	 */
-	void setTenant(String value);
 
 } // AuthenticationUserPassword

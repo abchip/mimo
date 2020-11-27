@@ -489,15 +489,6 @@ public interface ApplicationPackage extends EPackage {
 	int RESET_LOG__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
 
 	/**
-	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESET_LOG__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
-
-	/**
 	 * The number of structural features of the '<em>Reset Log</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -524,15 +515,6 @@ public interface ApplicationPackage extends EPackage {
 	 * @ordered
 	 */
 	int SET_LOG__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
-
-	/**
-	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SET_LOG__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
 
 	/**
 	 * The feature id for the '<em><b>Log Pattern</b></em>' attribute.

@@ -56,7 +56,7 @@ public abstract class ResourceSetImpl extends EntityImpl implements ResourceSet 
 	 */
 	@Override
 	public final <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass) throws ResourceException {
-		return getResource(klass, null);
+		return getResource(klass.getSimpleName());
 	}
 
 	/**
@@ -66,37 +66,7 @@ public abstract class ResourceSetImpl extends EntityImpl implements ResourceSet 
 	 */
 	@Override
 	public final <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame) throws ResourceException {
-		return getResource(frame, null);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final <E extends EntityIdentifiable> Resource<E> getResource(String frame) throws ResourceException {
-		return getResource(frame, null);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass, String tenant) throws ResourceException {
-		return getResource(klass.getSimpleName(), tenant);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame, String tenant) throws ResourceException {
-		return getResource(frame.getName(), tenant);
+		return getResource(frame.getName());
 	}
 	
 	/**
@@ -105,6 +75,6 @@ public abstract class ResourceSetImpl extends EntityImpl implements ResourceSet 
 	 * @generated NOT
 	 */
 	@Override
-	public abstract <E extends EntityIdentifiable> Resource<E> getResource(String frame, String tenant) throws ResourceException;
+	public abstract <E extends EntityIdentifiable> Resource<E> getResource(String frame) throws ResourceException;
 
 } // ResourceSetImpl

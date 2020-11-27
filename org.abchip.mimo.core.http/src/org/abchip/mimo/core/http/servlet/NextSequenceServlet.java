@@ -30,12 +30,11 @@ public class NextSequenceServlet extends BaseServlet {
 	@SuppressWarnings("resource")
 	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		String tenant = request.getParameter("tenant");
 		String frame = request.getParameter("frame");
 
 		try {
 			response.setStatus(HttpServletResponse.SC_OK);
-			ResourceWriter<E> resourceWriter = context.getResourceManager().getResourceWriter(frame, tenant);
+			ResourceWriter<E> resourceWriter = context.getResourceManager().getResourceWriter(frame);
 			String nextSequence = resourceWriter.getResource().nextSequence();
 			if (nextSequence == null)
 				response.setStatus(HttpServletResponse.SC_NOT_FOUND);

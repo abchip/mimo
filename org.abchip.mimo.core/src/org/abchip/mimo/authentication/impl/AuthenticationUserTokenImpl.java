@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationUserTokenImpl#getTenant <em>Tenant</em>}</li>
  *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationUserTokenImpl#getProvider <em>Provider</em>}</li>
  *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationUserTokenImpl#getAccessToken <em>Access Token</em>}</li>
  *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationUserTokenImpl#getIdToken <em>Id Token</em>}</li>
@@ -32,6 +33,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class AuthenticationUserTokenImpl extends EntityImpl implements AuthenticationUserToken {
+	/**
+	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTenant()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TENANT_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTenant()
+	 * @generated
+	 * @ordered
+	 */
+	protected String tenant = TENANT_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getProvider() <em>Provider</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -140,6 +159,29 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	@Override
 	protected EClass eStaticClass() {
 		return AuthenticationPackage.Literals.AUTHENTICATION_USER_TOKEN;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getTenant() {
+		return tenant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTenant(String newTenant) {
+		String oldTenant = tenant;
+		tenant = newTenant;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AuthenticationPackage.AUTHENTICATION_USER_TOKEN__TENANT, oldTenant, tenant));
 	}
 
 	/**
@@ -265,6 +307,8 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__TENANT:
+				return getTenant();
 			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
 				return getProvider();
 			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
@@ -287,6 +331,9 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__TENANT:
+				setTenant((String)newValue);
+				return;
 			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
 				setProvider((String)newValue);
 				return;
@@ -314,6 +361,9 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__TENANT:
+				setTenant(TENANT_EDEFAULT);
+				return;
 			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
 				setProvider(PROVIDER_EDEFAULT);
 				return;
@@ -341,6 +391,8 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__TENANT:
+				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
 				return PROVIDER_EDEFAULT == null ? provider != null : !PROVIDER_EDEFAULT.equals(provider);
 			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
@@ -365,7 +417,9 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (provider: ");
+		result.append(" (tenant: ");
+		result.append(tenant);
+		result.append(", provider: ");
 		result.append(provider);
 		result.append(", accessToken: ");
 		result.append(accessToken);

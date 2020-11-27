@@ -14,7 +14,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
@@ -64,50 +63,30 @@ public class BaseServiceManagerImpl implements ServiceManager {
 
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Class<R> klass) throws ServiceException {
-		return prepare(klass, (String) null);
+		return prepare(klass.getSimpleName());
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Class<R> klass, String tenant) throws ServiceException {
-		return (R) prepare(context.createProxy(Frame.class, klass.getSimpleName(), tenant), tenant);
-	}
-
-	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Frame<R> frame) throws ServiceException {
-		return prepare(frame, null);
-	}
-
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(String frame) throws ServiceException {
-		return prepare(frame, null);
-	}
 
-	@SuppressWarnings("unchecked")
-	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(String frame, String tenant) throws ServiceException {
-
-		Frame<?> request = (Frame<?>) context.getResourceManager().getFrame(frame, tenant);
+		Frame<?> request = (Frame<?>) context.getResourceManager().getFrame(frame);
 		if (request == null)
 			throw new ServiceException("Service not found " + frame);
 
 		if (!request.getSuperNames().contains(ServiceRequest.class.getSimpleName()))
 			throw new ServiceException("Invalid service " + frame);
 
-		return prepare((Frame<R>) request, tenant);
+		return prepare((Frame<R>) request);
 	}
 
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Frame<R> frame, String tenant) throws ServiceException {
-
-		this.checkAuthorization(tenant);
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Frame<R> frame) throws ServiceException {
 
 		try {
-			Resource<R> resource = (Resource<R>) context.getResourceSet().getResource(frame, tenant);
+			Resource<R> resource = (Resource<R>) context.getResourceSet().getResource(frame);
 			R request = resource.make();
-
 			context.inject(request);
-			request.init(context, tenant);
 			return request;
 		} catch (ResourceException e) {
 			throw new ServiceException(e);
@@ -158,18 +137,5 @@ public class BaseServiceManagerImpl implements ServiceManager {
 			throw new ServiceException("Service provider not found for request: " + request.getServiceName());
 
 		return serviceProvider.submit(request);
-	}
-
-	protected final void checkAuthorization(String tenant) throws ServiceException {
-		ContextDescription contextDescription = context.getContextDescription();
-
-		// check authorization
-		if (contextDescription.isTenant()) {
-			// if (!contextDescription.getTenant().equals(tenant))
-			// throw new SecurityException("Permission denied for tenant: " +
-			// contextDescription.getTenant());
-		}
-
-		// check frame authorization
 	}
 }

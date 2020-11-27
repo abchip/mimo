@@ -25,7 +25,6 @@ import java.util.List;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
@@ -35,13 +34,15 @@ import org.osgi.service.log.Logger;
 
 public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
+	private static final String TENANT_MASTER = "*MASTER";
+
 	private final Logger LOGGER = Logs.getLogger(NIOResourcempl.class);
 
 	private NIOPathManager pathManager = null;
 	private ResourceSerializer<E> resourceSerializer = null;
 
-	public NIOResourcempl(Context context, String tenant, Frame<E> frame, NIOPathManager pathManager) {
-		super(context, tenant);
+	public NIOResourcempl(Context context, Frame<E> frame, NIOPathManager pathManager) {
+		super(context);
 		this.pathManager = pathManager;
 
 		this.resourceSerializer = this.getContext().getResourceManager().createResourceSerializer(frame, SerializationType.XMI);
@@ -230,9 +231,9 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 
 	private Path getClassFolder(Frame<E> frame, boolean create) {
 
-		String tenant = this.tenant;
+		String tenant = this.getContext().getTenant();
 		if (tenant == null)
-			tenant = Resource.TENANT_MASTER.replaceFirst("\\*", "").toLowerCase();
+			tenant = TENANT_MASTER.replaceFirst("\\*", "").toLowerCase();
 
 		Path folder = pathManager.getPath().resolve(tenant).resolve(frame.getName());
 		if (Files.exists(folder))

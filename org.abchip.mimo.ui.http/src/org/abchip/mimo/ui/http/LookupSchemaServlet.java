@@ -15,12 +15,12 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -53,7 +53,9 @@ public class LookupSchemaServlet extends BaseServlet {
 		}
 
 		try {
-			Schema schema = context.getResourceManager().getResourceReader(Schema.class, Resource.TENANT_MASTER).lookup(name);
+			Application application = context.get(Application.class);
+
+			Schema schema = application.getContext().getResourceManager().getResourceReader(Schema.class).lookup(name);
 
 			if (schema == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 				schema = SchemaFactory.eINSTANCE.createSchema();
@@ -97,7 +99,7 @@ public class LookupSchemaServlet extends BaseServlet {
 			response.setStatus(HttpServletResponse.SC_OK);
 			ResourceSerializer<Schema> entitySerializer = context.getResourceManager().createResourceSerializer(Schema.class, SerializationType.MIMO);
 			if (schema != null) {
-				completeSchema(context, schema);
+				completeSchema(application.getContext(), schema);
 				entitySerializer.add(schema);
 			}
 			entitySerializer.save(response.getOutputStream());
@@ -169,7 +171,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		if (domain == null)
 			return;
 
-		ResourceReader<UiFrameSetup> frameSetupReader = context.getResourceManager().getResourceReader(UiFrameSetup.class, Resource.TENANT_MASTER);
+		ResourceReader<UiFrameSetup> frameSetupReader = context.getResourceManager().getResourceReader(UiFrameSetup.class);
 
 		Frame<?> frame = context.getResourceManager().getFrame(domain.getFrame());
 		if (frame == null)

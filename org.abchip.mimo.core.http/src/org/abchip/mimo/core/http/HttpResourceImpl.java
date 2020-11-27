@@ -33,14 +33,13 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	private ResourceSerializer<E> resourceSerializer = null;
 
 	private HttpResourceConfig config;
-	private String tenant = null;
 	
 	public static class HttpResourceConfig {
 		public String find = "find";
 	}
 
-	public HttpResourceImpl(HttpResourceConfig config, HttpConnector connector, String tenant, Frame<E> frame) {
-		super(connector.getContext(), tenant);
+	public HttpResourceImpl(HttpResourceConfig config, HttpConnector connector, Frame<E> frame) {
+		super(connector.getContext());
 
 		this.connector = connector;
 		this.config = config;
@@ -62,8 +61,8 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		String nextSequence = null;
 
 		String query = "frame=" + getFrame().getName();
-		if (tenant != null)
-			query += "&tenant=" + this.tenant;
+		if (getContext().getTenant() != null)
+			query += "&tenant=" + this.getContext().getTenant();
 
 		try {
 			nextSequence = connector.execute("nextSequence", query, new HttpNextSequenceHandler());
@@ -89,14 +88,15 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		}
 
 		String query = "frame=" + getFrame().getName() + "&replace=" + update + "&raw=" + raw;
+		if (getContext().getTenant() != null)
+			query += "&tenant=" + this.getContext().getTenant();
+		
 		try {
 			query += "&json=" + URLEncoder.encode(baos.toString(), "UTF-8");
 		} catch (Exception e) {
 			throw new ResourceException(e);
 		}
-		if (tenant != null)
-			query += "&tenant=" + this.tenant;
-
+		
 		try {
 			@SuppressWarnings({ "unchecked", "rawtypes" })
 			ResponseHandler<E> handler = new HttpSaveHandler(this.resourceSerializer);
@@ -116,8 +116,8 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		E entity = null;
 
 		String query = "frame=" + getFrame().getName() + "&id=" + id.trim();
-		if (tenant != null)
-			query += "&tenant=" + this.tenant;
+		if (getContext().getTenant() != null)
+			query += "&tenant=" + this.getContext().getTenant();
 		if (proxy)
 			query += "&proxy=" + proxy;
 
@@ -142,8 +142,8 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		List<E> entities = null;
 
 		String query = "frame=" + getFrame().getName();
-		if (tenant != null)
-			query += "&tenant=" + this.tenant;
+		if (getContext().getTenant() != null)
+			query += "&tenant=" + this.getContext().getTenant();
 		if (proxy)
 			query += "&proxy=" + proxy;
 		if (limit != 0)
@@ -197,8 +197,8 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		}
 
 		String query = "frame=" + getFrame().getName() + "&id=" + entity.getID();
-		if (tenant != null)
-			query += "&tenant=" + this.tenant;
+		if (getContext().getTenant() != null)
+			query += "&tenant=" + this.getContext().getTenant();
 
 		try {
 			connector.execute("delete", query, new HttpDeleteHandler());

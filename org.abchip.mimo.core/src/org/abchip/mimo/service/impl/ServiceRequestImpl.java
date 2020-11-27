@@ -30,7 +30,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getContext <em>Context</em>}</li>
- *   <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,23 +43,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	 * @ordered
 	 */
 	protected Context context;
-	/**
-	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getTenant()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TENANT_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getTenant()
-	 * @generated
-	 * @ordered
-	 */
-	protected String tenant = TENANT_EDEFAULT;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -76,27 +58,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	@Override
 	protected EClass eStaticClass() {
 		return ServicePackage.Literals.SERVICE_REQUEST;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getTenant() {
-		return tenant;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTenant(String newTenant) {
-		String oldTenant = tenant;
-		tenant = newTenant;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REQUEST__TENANT, oldTenant, tenant));
 	}
 
 	/**
@@ -167,7 +128,7 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 
 		V response = null;
 		try {
-			Resource<V> resource = (Resource<V>) context.getResourceSet().getResource(this.getResponse(), tenant);
+			Resource<V> resource = (Resource<V>) context.getResourceSet().getResource(this.getResponse());
 			response = resource.make();
 		} catch (ResourceException e) {
 			throw new ServiceException(e);
@@ -182,12 +143,13 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	 * @generated NOT
 	 */
 	@Override
-	public void init(Context context, String tenant) {
+	public void init(Context context) {
+		super.init(context);
+		
 		if (isPrepared())
 			throw new UnsupportedOperationException("Request already prepared");
 
 		this.context = context;
-		this.tenant = tenant;
 	}
 
 	/**
@@ -210,38 +172,8 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 			case ServicePackage.SERVICE_REQUEST__CONTEXT:
 				if (resolve) return getContext();
 				return basicGetContext();
-			case ServicePackage.SERVICE_REQUEST__TENANT:
-				return getTenant();
 		}
 		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ServicePackage.SERVICE_REQUEST__TENANT:
-				setTenant((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ServicePackage.SERVICE_REQUEST__TENANT:
-				setTenant(TENANT_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
 	}
 
 	/**
@@ -253,25 +185,8 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 		switch (featureID) {
 			case ServicePackage.SERVICE_REQUEST__CONTEXT:
 				return context != null;
-			case ServicePackage.SERVICE_REQUEST__TENANT:
-				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (tenant: ");
-		result.append(tenant);
-		result.append(')');
-		return result.toString();
 	}
 
 } // ServiceRequestImpl

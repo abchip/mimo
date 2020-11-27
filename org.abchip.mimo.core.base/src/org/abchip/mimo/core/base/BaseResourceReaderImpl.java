@@ -40,11 +40,6 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 	}
 
 	@Override
-	public String getTenant() {
-		return this.resource.getTenant();
-	}
-
-	@Override
 	public Context getContext() {
 		return this.resource.getContext();
 	}

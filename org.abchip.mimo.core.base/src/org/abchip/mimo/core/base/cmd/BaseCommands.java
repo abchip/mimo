@@ -99,8 +99,10 @@ public abstract class BaseCommands implements CommandProvider {
 		authAdminKey.setAdminKey(adminKey);
 
 		Context context = authenticationManager.login(null, authAdminKey).getContext();
-		this.getCommandSession(interpreter).put(MIMO_CONTEXT, context);
-
+		Context oldContext = (Context) this.getCommandSession(interpreter).put(MIMO_CONTEXT, context);
+		if(oldContext != null)
+			oldContext.dispose();
+		
 		return context;
 	}
 
@@ -117,7 +119,9 @@ public abstract class BaseCommands implements CommandProvider {
 		authUserPassword.setPassword(password);
 
 		Context context = authenticationManager.login(null, authUserPassword).getContext();
-		this.getCommandSession(interpreter).put(MIMO_CONTEXT, context);
+		Context oldContext = (Context) this.getCommandSession(interpreter).put(MIMO_CONTEXT, context);
+		if(oldContext != null)
+			oldContext.dispose();
 
 		return context;
 	}

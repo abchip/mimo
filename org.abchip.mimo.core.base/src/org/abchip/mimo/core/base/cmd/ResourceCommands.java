@@ -25,23 +25,21 @@ public class ResourceCommands extends BaseCommands {
 		super(application);
 	}
 
-
 	public <E extends EntityIdentifiable> void _find(CommandInterpreter interpreter) throws Exception {
 
 		Context context = this.getContext(interpreter);
 
 		String frameName = nextArgument(interpreter);
 		String order = nextArgument(interpreter);
-		String tenant = nextArgument(interpreter);
 
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) context.getResourceManager().getFrame(frameName, tenant);
+		Frame<E> frame = (Frame<E>) context.getResourceManager().getFrame(frameName);
 		if (frame == null) {
-			interpreter.println("Frame not found: " + frameName + " on tenant " + tenant);
+			interpreter.println("Frame not found: " + frameName);
 			return;
 		}
 
-		try (EntityIterator<E> entities = context.getResourceManager().getResourceReader(frame, tenant).find(null, null, order)) {
+		try (EntityIterator<E> entities = context.getResourceManager().getResourceReader(frame).find(null, null, order)) {
 			for (E entity : entities) {
 				interpreter.println(entity.getID());
 			}
@@ -56,14 +54,12 @@ public class ResourceCommands extends BaseCommands {
 
 		String entityName = nextArgument(interpreter);
 
-		String tenant = nextArgument(interpreter);
-
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) context.getResourceManager().getFrame(frameName, tenant);
+		Frame<E> frame = (Frame<E>) context.getResourceManager().getFrame(frameName);
 		if (frame == null)
-			interpreter.print("Frame not found: " + frameName + " on tenant " + tenant);
+			interpreter.print("Frame not found: " + frameName);
 
-		E entity = context.getResourceManager().getResourceReader(frame, tenant).lookup(entityName);
+		E entity = context.getResourceManager().getResourceReader(frame).lookup(entityName);
 		interpreter.println(entity);
 	}
 

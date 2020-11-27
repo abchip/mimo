@@ -30,14 +30,14 @@ public class HttpResourceProviderImpl extends ResourceProviderImpl {
 
 	@SuppressWarnings("resource")
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> createResource(Context context, Frame<E> frame, String tenantId) throws ResourceException {
+	public <E extends EntityIdentifiable> Resource<E> createResource(Context context, Frame<E> frame) throws ResourceException {
 
 		HttpConnector connector = context.get(HttpConnector.class);
 		if (connector == null)
 			throw new ResourceException("Unconnected resource " + frame.getURI());
 		
 		HttpResourceConfig config = new HttpResourceConfig();
-		Resource<E> resource = new HttpResourceImpl<E>(config, connector, tenantId, frame);
+		Resource<E> resource = new HttpResourceImpl<E>(config, connector, frame);
 		resource.setResourceConfig(this.resourceConfig);
 
 		return resource;

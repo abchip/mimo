@@ -31,7 +31,6 @@ public class SaveServlet extends BaseServlet {
 	@SuppressWarnings("resource")
 	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		String tenant = request.getParameter("tenant");
 		String frame = request.getParameter("frame");
 
 		try {
@@ -52,7 +51,7 @@ public class SaveServlet extends BaseServlet {
 			if (raw == null || raw.trim().isEmpty())
 				raw = "false";
 
-			ResourceWriter<E> entityWriter = context.getResourceManager().getResourceWriter(frame, tenant);
+			ResourceWriter<E> entityWriter = context.getResourceManager().getResourceWriter(frame);
 			entityWriter.create(entity, Boolean.parseBoolean(replace), Boolean.parseBoolean(raw));
 
 			response.setStatus(HttpServletResponse.SC_OK);

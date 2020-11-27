@@ -15,10 +15,10 @@ import java.util.function.Consumer;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -42,7 +42,9 @@ public class LookupMenuServlet extends BaseServlet {
 		Menu menu = null;
 
 		try {
-			ResourceReader<Menu> menuReader = context.getResourceManager().getResourceReader(Menu.class, Resource.TENANT_MASTER);
+			Application application = context.get(Application.class);
+
+			ResourceReader<Menu> menuReader = application.getContext().getResourceManager().getResourceReader(Menu.class);
 			if (name == null || name.isEmpty()) {
 				menu = MenuFactory.eINSTANCE.createMenu();
 				menu.setName("List Menu");

@@ -33,7 +33,6 @@ import org.osgi.service.log.Logger;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceConfig <em>Resource Config</em>}</li>
- *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,24 +53,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	protected ResourceConfig resourceConfig;
 
 	/**
-	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getTenant()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TENANT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getTenant()
-	 * @generated
-	 * @ordered
-	 */
-	protected String tenant = TENANT_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -84,11 +65,10 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * 
 	 * @generated NOT
 	 */
-	protected ResourceImpl(Context context, String tenant) {
+	protected ResourceImpl(Context context) {
 		super();
 
 		this.context = context;
-		this.tenant = tenant;
 	}
 
 	/**
@@ -149,16 +129,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final String getTenant() {
-		return tenant;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -167,8 +137,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
 				if (resolve) return getResourceConfig();
 				return basicGetResourceConfig();
-			case ResourcePackage.RESOURCE__TENANT:
-				return getTenant();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,25 +178,8 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 		switch (featureID) {
 			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
 				return resourceConfig != null;
-			case ResourcePackage.RESOURCE__TENANT:
-				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (tenant: ");
-		result.append(tenant);
-		result.append(')');
-		return result.toString();
 	}
 
 	/**
@@ -261,7 +212,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	@Override
 	public E createProxy(String id) {
 
-		E entity = this.getContext().createProxy(this.getFrame(), id, this.getTenant());
+		E entity = this.getContext().createProxy(this.getFrame(), id);
 		if (entity == null)
 			return null;
 

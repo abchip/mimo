@@ -24,8 +24,8 @@ public class E4FrameClassResourceImpl<E extends Frame<?>> extends ResourceImpl<E
 	private Frame<E> frame = null;
 	private Map<String, E> entities = null;
 
-	protected E4FrameClassResourceImpl(Context context, String tenant, Frame<E> frame, Map<String, E> frames) {
-		super(context, tenant);
+	protected E4FrameClassResourceImpl(Context context, Frame<E> frame, Map<String, E> frames) {
+		super(context);
 
 		this.frame = frame;
 		this.entities = frames;

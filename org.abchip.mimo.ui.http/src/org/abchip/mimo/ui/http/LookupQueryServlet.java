@@ -13,11 +13,11 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
@@ -45,7 +45,9 @@ public class LookupQueryServlet extends BaseServlet {
 		}
 
 		try {
-			Query query = context.getResourceManager().getResourceReader(Query.class, Resource.TENANT_MASTER).lookup(name);
+			Application application = context.get(Application.class);
+
+			Query query = application.getContext().getResourceManager().getResourceReader(Query.class).lookup(name);
 
 			if (query == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 				query = QueryFactory.eINSTANCE.createQuery();

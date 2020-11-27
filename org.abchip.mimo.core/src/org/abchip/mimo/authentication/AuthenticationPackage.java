@@ -73,13 +73,22 @@ public interface AuthenticationPackage extends EPackage {
 	int AUTHENTICATION = 0;
 
 	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION__TENANT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Authentication</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+	int AUTHENTICATION_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.authentication.impl.AuthenticationAdminKeyImpl <em>Admin Key</em>}' class.
@@ -92,6 +101,15 @@ public interface AuthenticationPackage extends EPackage {
 	int AUTHENTICATION_ADMIN_KEY = 1;
 
 	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION_ADMIN_KEY__TENANT = AUTHENTICATION__TENANT;
+
+	/**
 	 * The feature id for the '<em><b>Admin Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,22 +119,13 @@ public interface AuthenticationPackage extends EPackage {
 	int AUTHENTICATION_ADMIN_KEY__ADMIN_KEY = AUTHENTICATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHENTICATION_ADMIN_KEY__TENANT = AUTHENTICATION_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Admin Key</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_ADMIN_KEY_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 2;
+	int AUTHENTICATION_ADMIN_KEY_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.authentication.impl.AuthenticationAnonymousImpl <em>Anonymous</em>}' class.
@@ -127,6 +136,15 @@ public interface AuthenticationPackage extends EPackage {
 	 * @generated
 	 */
 	int AUTHENTICATION_ANONYMOUS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION_ANONYMOUS__TENANT = AUTHENTICATION__TENANT;
 
 	/**
 	 * The number of structural features of the '<em>Anonymous</em>' class.
@@ -167,6 +185,15 @@ public interface AuthenticationPackage extends EPackage {
 	int AUTHENTICATION_USER_PASSWORD = 4;
 
 	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION_USER_PASSWORD__TENANT = AUTHENTICATION__TENANT;
+
+	/**
 	 * The feature id for the '<em><b>User</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -185,22 +212,13 @@ public interface AuthenticationPackage extends EPackage {
 	int AUTHENTICATION_USER_PASSWORD__PASSWORD = AUTHENTICATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHENTICATION_USER_PASSWORD__TENANT = AUTHENTICATION_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>User Password</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_USER_PASSWORD_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 3;
+	int AUTHENTICATION_USER_PASSWORD_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.authentication.impl.AuthenticationUserTokenImpl <em>User Token</em>}' class.
@@ -211,6 +229,15 @@ public interface AuthenticationPackage extends EPackage {
 	 * @generated
 	 */
 	int AUTHENTICATION_USER_TOKEN = 5;
+
+	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION_USER_TOKEN__TENANT = AUTHENTICATION__TENANT;
 
 	/**
 	 * The feature id for the '<em><b>Provider</b></em>' attribute.
@@ -325,6 +352,17 @@ public interface AuthenticationPackage extends EPackage {
 	EClass getAuthentication();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.authentication.Authentication#getTenant <em>Tenant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tenant</em>'.
+	 * @see org.abchip.mimo.authentication.Authentication#getTenant()
+	 * @see #getAuthentication()
+	 * @generated
+	 */
+	EAttribute getAuthentication_Tenant();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.authentication.AuthenticationAdminKey <em>Admin Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -344,17 +382,6 @@ public interface AuthenticationPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAuthenticationAdminKey_AdminKey();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.authentication.AuthenticationAdminKey#getTenant <em>Tenant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tenant</em>'.
-	 * @see org.abchip.mimo.authentication.AuthenticationAdminKey#getTenant()
-	 * @see #getAuthenticationAdminKey()
-	 * @generated
-	 */
-	EAttribute getAuthenticationAdminKey_Tenant();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.authentication.AuthenticationAnonymous <em>Anonymous</em>}'.
@@ -407,17 +434,6 @@ public interface AuthenticationPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAuthenticationUserPassword_Password();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.authentication.AuthenticationUserPassword#getTenant <em>Tenant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tenant</em>'.
-	 * @see org.abchip.mimo.authentication.AuthenticationUserPassword#getTenant()
-	 * @see #getAuthenticationUserPassword()
-	 * @generated
-	 */
-	EAttribute getAuthenticationUserPassword_Tenant();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.authentication.AuthenticationUserToken <em>User Token</em>}'.
@@ -547,6 +563,13 @@ public interface AuthenticationPackage extends EPackage {
 		 */
 		EClass AUTHENTICATION = eINSTANCE.getAuthentication();
 		/**
+		 * The meta object literal for the '<em><b>Tenant</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHENTICATION__TENANT = eINSTANCE.getAuthentication_Tenant();
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.authentication.impl.AuthenticationAdminKeyImpl <em>Admin Key</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -562,13 +585,6 @@ public interface AuthenticationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute AUTHENTICATION_ADMIN_KEY__ADMIN_KEY = eINSTANCE.getAuthenticationAdminKey_AdminKey();
-		/**
-		 * The meta object literal for the '<em><b>Tenant</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute AUTHENTICATION_ADMIN_KEY__TENANT = eINSTANCE.getAuthenticationAdminKey_Tenant();
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.authentication.impl.AuthenticationAnonymousImpl <em>Anonymous</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -610,13 +626,6 @@ public interface AuthenticationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute AUTHENTICATION_USER_PASSWORD__PASSWORD = eINSTANCE.getAuthenticationUserPassword_Password();
-		/**
-		 * The meta object literal for the '<em><b>Tenant</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute AUTHENTICATION_USER_PASSWORD__TENANT = eINSTANCE.getAuthenticationUserPassword_Tenant();
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.authentication.impl.AuthenticationUserTokenImpl <em>User Token</em>}' class.
 		 * <!-- begin-user-doc -->

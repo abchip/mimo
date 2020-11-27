@@ -103,7 +103,7 @@ public class BaseResourceProviderRegistryImpl implements ResourceProviderRegistr
 	}
 
 	private <E extends EntityIdentifiable> Frame<E> getFrame(Context context, String frameId) throws ResourceException {
-		Resource<Frame<E>> frameResource = context.getResourceSet().getResource(Frame.class.getSimpleName(), null);
+		Resource<Frame<E>> frameResource = context.getResourceSet().getResource(Frame.class.getSimpleName());
 		try {
 			return frameResource.lookup(frameId, null, false);
 		} catch (ResourceException e) {

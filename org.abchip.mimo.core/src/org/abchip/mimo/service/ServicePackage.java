@@ -320,22 +320,13 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_REQUEST__CONTEXT = SERVICE_MESSAGE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_REQUEST__TENANT = SERVICE_MESSAGE_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Request</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_REQUEST_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 2;
+	int SERVICE_REQUEST_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceMethodRequestImpl <em>Method Request</em>}' class.
@@ -355,15 +346,6 @@ public interface ServicePackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_METHOD_REQUEST__CONTEXT = SERVICE_REQUEST__CONTEXT;
-
-	/**
-	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_METHOD_REQUEST__TENANT = SERVICE_REQUEST__TENANT;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' containment reference.
@@ -704,17 +686,6 @@ public interface ServicePackage extends EPackage {
 	EClass getServiceRequest();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.service.ServiceRequest#getTenant <em>Tenant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tenant</em>'.
-	 * @see org.abchip.mimo.service.ServiceRequest#getTenant()
-	 * @see #getServiceRequest()
-	 * @generated
-	 */
-	EAttribute getServiceRequest_Tenant();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.service.ServiceRequest#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -993,14 +964,6 @@ public interface ServicePackage extends EPackage {
 		 * @generated
 		 */
 		EClass SERVICE_REQUEST = eINSTANCE.getServiceRequest();
-
-		/**
-		 * The meta object literal for the '<em><b>Tenant</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_REQUEST__TENANT = eINSTANCE.getServiceRequest_Tenant();
 
 		/**
 		 * The meta object literal for the '<em><b>Context</b></em>' reference feature.

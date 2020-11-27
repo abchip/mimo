@@ -69,6 +69,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			return null;
 
 		AuthenticationUserPassword authenticationUserPassword = AuthenticationFactory.eINSTANCE.createAuthenticationUserPassword();
+		authenticationUserPassword.setTenant(authentication.getTenant());
 		authenticationUserPassword.setUser(user.getUser());
 		authenticationUserPassword.setPassword(user.getPassword());
 

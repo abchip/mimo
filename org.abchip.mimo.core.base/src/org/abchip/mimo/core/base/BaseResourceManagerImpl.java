@@ -71,24 +71,14 @@ public class BaseResourceManagerImpl implements ResourceManager {
 
 	@Override
 	public <E extends EntityIdentifiable> Frame<E> getFrame(Class<E> klass) {
-		return getFrame(klass, null);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> Frame<E> getFrame(Class<E> klass, String tenant) {
-		return getFrame(klass.getSimpleName(), tenant);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> Frame<E> getFrame(String frame) {
-		return getFrame(frame, null);
+		return getFrame(klass.getSimpleName());
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public <E extends EntityIdentifiable> Frame<E> getFrame(String frame, String tenant) {
+	public <E extends EntityIdentifiable> Frame<E> getFrame(String frame) {
 		try {
-			return (Frame<E>) getContext().getResourceSet().getResource(frame, tenant).getFrame();
+			return (Frame<E>) getContext().getResourceSet().getResource(frame).getFrame();
 		} catch (ResourceException e) {
 			return null;
 		}
@@ -100,29 +90,14 @@ public class BaseResourceManagerImpl implements ResourceManager {
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(String frameName) throws ResourceException {
-		return getResourceReader(frameName, null);
-	}
-
-	@Override
 	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Frame<E> frame) throws ResourceException {
-		return getResourceReader(frame, null);
+		return getResourceReader(frame.getName());
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Class<E> klass, String tenant) throws ResourceException {
-		return getResourceReader(klass.getSimpleName(), tenant);
-	}
+	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(String frameId) throws ResourceException {
 
-	@Override
-	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Frame<E> frame, String tenant) throws ResourceException {
-		return getResourceReader(frame.getName(), tenant);
-	}
-
-	@Override
-	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(String frameId, String tenant) throws ResourceException {
-
-		Resource<E> resource = getContext().getResourceSet().getResource(frameId, tenant);
+		Resource<E> resource = getContext().getResourceSet().getResource(frameId);
 
 		ResourceReader<E> resourceReader = new BaseResourceReaderImpl<E>(resource);
 		prepareListener(resourceReader);
@@ -136,29 +111,14 @@ public class BaseResourceManagerImpl implements ResourceManager {
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(String frameName) throws ResourceException {
-		return getResourceWriter(frameName, null);
-	}
-
-	@Override
 	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Frame<E> frame) throws ResourceException {
-		return getResourceWriter(frame, null);
+		return getResourceWriter(frame.getName());
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Class<E> klass, String tenant) throws ResourceException {
-		return getResourceWriter(klass.getSimpleName(), tenant);
-	}
+	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(String frameId) throws ResourceException {
 
-	@Override
-	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Frame<E> frame, String tenant) throws ResourceException {
-		return getResourceWriter(frame.getName(), tenant);
-	}
-
-	@Override
-	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(String frameId, String tenant) throws ResourceException {
-
-		Resource<E> resource = getContext().getResourceSet().getResource(frameId, tenant);
+		Resource<E> resource = getContext().getResourceSet().getResource(frameId);
 		ResourceConfig resourceConfig = resource.getResourceConfig();
 
 		LockManager lockManager = null;

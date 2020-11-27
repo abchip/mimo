@@ -46,34 +46,10 @@ public interface Context extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" klassRequired="true" idRequired="true" tenantRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> E createProxy(Class<E> klass, String id, String tenant);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" frameRequired="true" idRequired="true" tenantRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id, String tenant);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" frameRequired="true" idRequired="true"
 	 * @generated
 	 */
 	<E extends EntityIdentifiable> E createProxy(String frame, String id);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" frameRequired="true" idRequired="true" tenantRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> E createProxy(String frame, String id, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->

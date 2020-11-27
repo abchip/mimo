@@ -39,7 +39,7 @@ public class ExecServlet extends BaseServlet {
 
 			requestSerializer.load(json, false);
 			ServiceRequest<?> request = requestSerializer.get();
-			request.init(context, null);
+			request.init(context);
 
 			ServiceResponse response = context.getServiceManager().execute(request);
 			responseSerializer.add(response);

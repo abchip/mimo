@@ -41,12 +41,12 @@ public class NIOResourceProviderImpl extends ResourceProviderImpl {
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> createResource(Context context, Frame<E> frame, String tenantId) {
+	public <E extends EntityIdentifiable> Resource<E> createResource(Context context, Frame<E> frame) {
 
 		if (pathManager == null)
 			return null;
 
-		Resource<E> resource = new NIOResourcempl<E>(context, tenantId, frame, pathManager);
+		Resource<E> resource = new NIOResourcempl<E>(context, frame, pathManager);
 		resource.setResourceConfig(this.resourceConfig);
 
 		return resource;

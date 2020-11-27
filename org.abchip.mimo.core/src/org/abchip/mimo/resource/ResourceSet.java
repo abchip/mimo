@@ -53,25 +53,4 @@ public interface ResourceSet extends Entity {
 	 * @generated
 	 */
 	<E extends EntityIdentifiable> Resource<E> getResource(String frame) throws ResourceException;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" klassRequired="true" tenantRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass, String tenant) throws ResourceException;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" frameRequired="true" tenantRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame, String tenant) throws ResourceException;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" frameRequired="true" tenantRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> Resource<E> getResource(String frame, String tenant) throws ResourceException;
 } // ResourceSet

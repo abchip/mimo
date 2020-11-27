@@ -98,7 +98,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 	 */
 	@Override
 	public final <E extends EntityIdentifiable> E createProxy(Class<E> klass, String id) {
-		return createProxy(klass, id, null);
+		return createProxy(klass.getSimpleName(), id);
 	}
 
 	/**
@@ -108,7 +108,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 	 */
 	@Override
 	public final <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id) {
-		return createProxy(frame, id, null);
+		return createProxy(frame.getName(), id);
 	}
 
 	/**
@@ -118,47 +118,14 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 	 */
 	@Override
 	public final <E extends EntityIdentifiable> E createProxy(String frame, String id) {
-		return createProxy(frame, id, null);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final <E extends EntityIdentifiable> E createProxy(Class<E> klass, String id, String tenant) {
-		return createProxy(klass.getSimpleName(), id, tenant);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id, String tenant) {
-		return createProxy(frame.getName(), id, tenant);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final <E extends EntityIdentifiable> E createProxy(String frame, String id, String tenant) {
 
 		if (id == null)
 			return null;
 
 		E entity = make(frame, id);
 
-		if (tenant == null)
-			tenant = this.getTenant();
-
 		InternalEObject internalEObject = (InternalEObject) entity;
-		URI uri = URI.createHierarchicalURI("mimo", tenant, null, new String[] { frame }, null, id);
+		URI uri = URI.createHierarchicalURI("mimo", this.getTenant(), null, new String[] { frame }, null, id);
 		internalEObject.eSetProxyURI(uri);
 
 		return entity;
@@ -225,7 +192,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 		}
 
 		entity.init(this);
-		
+
 		return entity;
 	}
 

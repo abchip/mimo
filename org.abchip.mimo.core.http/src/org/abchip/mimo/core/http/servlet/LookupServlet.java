@@ -31,7 +31,6 @@ public class LookupServlet extends BaseServlet {
 	@SuppressWarnings("resource")
 	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		String tenant = request.getParameter("tenant");
 		String frame = request.getParameter("frame");
 		String id = request.getParameter("id");
 		String proxy = request.getParameter("proxy");
@@ -39,7 +38,7 @@ public class LookupServlet extends BaseServlet {
 			proxy = "false";
 
 		try {
-			ResourceReader<E> entityReader = context.getResourceManager().getResourceReader(frame, tenant);
+			ResourceReader<E> entityReader = context.getResourceManager().getResourceReader(frame);
 			E entity = entityReader.lookup(id, Boolean.parseBoolean(proxy));
 			if (entity == null)
 				response.setStatus(HttpServletResponse.SC_NOT_FOUND);

@@ -15,13 +15,13 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.data.NumericDef;
 import org.abchip.mimo.data.StringDef;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -59,7 +59,9 @@ public class LookupFormServlet extends BaseServlet {
 		}
 
 		try {
-			Form form = context.getResourceManager().getResourceReader(Form.class, Resource.TENANT_MASTER).lookup(name);
+			Application application = context.get(Application.class);
+
+			Form form = application.getContext().getResourceManager().getResourceReader(Form.class).lookup(name);
 
 			if (form == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 				form = FormFactory.eINSTANCE.createForm();

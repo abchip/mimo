@@ -88,7 +88,6 @@ public class ServiceCommands extends BaseCommands {
 		serviceId = Strings.firstToUpper(serviceId);
 
 		boolean submit = false;
-		String tenant = null;
 
 		Map<String, String> parameters = new HashMap<String, String>();
 
@@ -111,13 +110,7 @@ public class ServiceCommands extends BaseCommands {
 			argument = interpreter.nextArgument();
 		}
 
-		// tenant
-		if (parameters.containsKey("tenant")) {
-			tenant = parameters.get("tenant");
-			parameters.remove("tenant");
-		}
-
-		R request = serviceManager.prepare(serviceId, tenant);
+		R request = serviceManager.prepare(serviceId);
 		Frame<R> frame = request.isa();
 		for (Entry<String, String> parameter : parameters.entrySet()) {
 			frame.setValue(request, parameter.getKey(), parameter.getValue());

@@ -23,7 +23,6 @@ import org.abchip.mimo.entity.Frame;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.resource.Resource#getResourceConfig <em>Resource Config</em>}</li>
- *   <li>{@link org.abchip.mimo.resource.Resource#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.resource.ResourcePackage#getResource()
@@ -31,8 +30,6 @@ import org.abchip.mimo.entity.Frame;
  * @generated
  */
 public interface Resource<E extends EntityIdentifiable> extends Entity, ContextProvider {
-
-	public static String TENANT_MASTER = "*MASTER";
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,18 +86,6 @@ public interface Resource<E extends EntityIdentifiable> extends Entity, ContextP
 	 * @generated
 	 */
 	E make();
-
-	/**
-	 * Returns the value of the '<em><b>Tenant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tenant</em>' attribute.
-	 * @see org.abchip.mimo.resource.ResourcePackage#getResource_Tenant()
-	 * @model required="true" changeable="false"
-	 * @generated
-	 */
-	String getTenant();
-
 
 	/**
 	 * <!-- begin-user-doc -->

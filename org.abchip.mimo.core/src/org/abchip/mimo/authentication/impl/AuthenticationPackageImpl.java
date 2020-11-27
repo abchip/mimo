@@ -239,6 +239,16 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 	 * @generated
 	 */
 	@Override
+	public EAttribute getAuthentication_Tenant() {
+		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAuthenticationAdminKey() {
 		return authenticationAdminKeyEClass;
 	}
@@ -251,16 +261,6 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 	@Override
 	public EAttribute getAuthenticationAdminKey_AdminKey() {
 		return (EAttribute)authenticationAdminKeyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getAuthenticationAdminKey_Tenant() {
-		return (EAttribute)authenticationAdminKeyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -311,16 +311,6 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 	@Override
 	public EAttribute getAuthenticationUserPassword_Password() {
 		return (EAttribute)authenticationUserPasswordEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getAuthenticationUserPassword_Tenant() {
-		return (EAttribute)authenticationUserPasswordEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -443,10 +433,10 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 
 		// Create classes and their features
 		authenticationEClass = createEClass(AUTHENTICATION);
+		createEAttribute(authenticationEClass, AUTHENTICATION__TENANT);
 
 		authenticationAdminKeyEClass = createEClass(AUTHENTICATION_ADMIN_KEY);
 		createEAttribute(authenticationAdminKeyEClass, AUTHENTICATION_ADMIN_KEY__ADMIN_KEY);
-		createEAttribute(authenticationAdminKeyEClass, AUTHENTICATION_ADMIN_KEY__TENANT);
 
 		authenticationAnonymousEClass = createEClass(AUTHENTICATION_ANONYMOUS);
 
@@ -455,7 +445,6 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 		authenticationUserPasswordEClass = createEClass(AUTHENTICATION_USER_PASSWORD);
 		createEAttribute(authenticationUserPasswordEClass, AUTHENTICATION_USER_PASSWORD__USER);
 		createEAttribute(authenticationUserPasswordEClass, AUTHENTICATION_USER_PASSWORD__PASSWORD);
-		createEAttribute(authenticationUserPasswordEClass, AUTHENTICATION_USER_PASSWORD__TENANT);
 
 		authenticationUserTokenEClass = createEClass(AUTHENTICATION_USER_TOKEN);
 		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__PROVIDER);
@@ -516,10 +505,10 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(authenticationEClass, Authentication.class, "Authentication", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAuthentication_Tenant(), ecorePackage.getEString(), "tenant", null, 0, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationAdminKeyEClass, AuthenticationAdminKey.class, "AuthenticationAdminKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuthenticationAdminKey_AdminKey(), ecorePackage.getEString(), "adminKey", null, 1, 1, AuthenticationAdminKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAuthenticationAdminKey_Tenant(), ecorePackage.getEString(), "tenant", null, 0, 1, AuthenticationAdminKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationAnonymousEClass, AuthenticationAnonymous.class, "AuthenticationAnonymous", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -552,7 +541,6 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 		initEClass(authenticationUserPasswordEClass, AuthenticationUserPassword.class, "AuthenticationUserPassword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuthenticationUserPassword_User(), ecorePackage.getEString(), "user", null, 1, 1, AuthenticationUserPassword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthenticationUserPassword_Password(), ecorePackage.getEString(), "password", null, 1, 1, AuthenticationUserPassword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAuthenticationUserPassword_Tenant(), ecorePackage.getEString(), "tenant", null, 0, 1, AuthenticationUserPassword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationUserTokenEClass, AuthenticationUserToken.class, "AuthenticationUserToken", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuthenticationUserToken_Provider(), ecorePackage.getEString(), "provider", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

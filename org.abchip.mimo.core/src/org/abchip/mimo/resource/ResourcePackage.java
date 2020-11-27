@@ -86,15 +86,6 @@ public interface ResourcePackage extends EPackage {
 	int LOAD_SEED__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
 
 	/**
-	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOAD_SEED__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
-
-	/**
 	 * The feature id for the '<em><b>Seed Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,15 +130,6 @@ public interface ResourcePackage extends EPackage {
 	 * @ordered
 	 */
 	int LOAD_SEEDS__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
-
-	/**
-	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOAD_SEEDS__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' attribute.
@@ -196,22 +178,13 @@ public interface ResourcePackage extends EPackage {
 	int RESOURCE__RESOURCE_CONFIG = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE__TENANT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int RESOURCE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceConfigImpl <em>Config</em>}' class.
@@ -734,17 +707,6 @@ public interface ResourcePackage extends EPackage {
 	EReference getResource_ResourceConfig();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.Resource#getTenant <em>Tenant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tenant</em>'.
-	 * @see org.abchip.mimo.resource.Resource#getTenant()
-	 * @see #getResource()
-	 * @generated
-	 */
-	EAttribute getResource_Tenant();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceConfig <em>Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1125,14 +1087,6 @@ public interface ResourcePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RESOURCE__RESOURCE_CONFIG = eINSTANCE.getResource_ResourceConfig();
-
-		/**
-		 * The meta object literal for the '<em><b>Tenant</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RESOURCE__TENANT = eINSTANCE.getResource_Tenant();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.ResourceConfigImpl <em>Config</em>}' class.

@@ -34,7 +34,6 @@ public class FindServlet extends BaseServlet {
 	@SuppressWarnings("resource")
 	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		String tenant = request.getParameter("tenant");
 		String frameName = request.getParameter("frame");
 		String proxy = request.getParameter("proxy");
 		if (proxy == null || proxy.trim().isEmpty())
@@ -49,7 +48,7 @@ public class FindServlet extends BaseServlet {
 		String[] keys = request.getParameterValues("keys");
 
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) context.getResourceManager().getFrame(frameName, tenant);
+		Frame<E> frame = (Frame<E>) context.getResourceManager().getFrame(frameName);
 		if (frame == null) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			return;
@@ -90,7 +89,7 @@ public class FindServlet extends BaseServlet {
 		}
 
 		try {
-			ResourceReader<E> entityReader = context.getResourceManager().getResourceReader(frame, tenant);
+			ResourceReader<E> entityReader = context.getResourceManager().getResourceReader(frame);
 			ResourceSerializer<E> entitySerializer = context.getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
 			try (EntityIterator<E> entities = entityReader.find(filter, fields, order, Integer.parseInt(limit), Boolean.parseBoolean(proxy))) {
 				response.setStatus(HttpServletResponse.SC_OK);

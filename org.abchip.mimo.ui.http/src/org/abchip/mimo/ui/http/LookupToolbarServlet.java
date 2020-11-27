@@ -13,10 +13,10 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
@@ -40,9 +40,10 @@ public class LookupToolbarServlet extends BaseServlet {
 		}
 
 		try {
-			Toolbar toolbar = context.getResourceManager().getResourceReader(Toolbar.class, Resource.TENANT_MASTER).lookup(frameName);
+			Application application = context.get(Application.class);
+			Toolbar toolbar = application.getContext().getResourceManager().getResourceReader(Toolbar.class).lookup(frameName);
 			for (Frame<?> ako : frame.getSuperFrames()) {
-				Toolbar toolbarAko = context.getResourceManager().getResourceReader(Toolbar.class, Resource.TENANT_MASTER).lookup(ako.getName());
+				Toolbar toolbarAko = application.getContext().getResourceManager().getResourceReader(Toolbar.class).lookup(ako.getName());
 				if (toolbarAko == null)
 					continue;
 

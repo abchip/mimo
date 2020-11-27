@@ -225,14 +225,6 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 	 * @generated NOT
 	 */
 	@Override
-	public abstract String getTenant();
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
 	public abstract Context getContext();
 
 	/**

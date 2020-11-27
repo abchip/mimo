@@ -25,8 +25,8 @@ public class E4FrameEnumResourceImpl<E extends EntityEnum> extends ResourceImpl<
 	private Frame<E> frame = null;
 	private Map<String, E> enums = null;
 
-	protected E4FrameEnumResourceImpl(Context context, String tenant, Frame<E> frame, Map<String, E> enums) {
-		super(context, tenant);
+	protected E4FrameEnumResourceImpl(Context context, Frame<E> frame, Map<String, E> enums) {
+		super(context);
 
 		this.frame = frame;
 		this.enums = enums;

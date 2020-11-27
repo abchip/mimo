@@ -25,33 +25,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationAdminKeyImpl#getAdminKey <em>Admin Key</em>}</li>
  *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationAdminKeyImpl#getTenant <em>Tenant</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationAdminKeyImpl#getAdminKey <em>Admin Key</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AuthenticationAdminKeyImpl extends EntityImpl implements AuthenticationAdminKey {
-
-	/**
-	 * The default value of the '{@link #getAdminKey() <em>Admin Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAdminKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ADMIN_KEY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAdminKey() <em>Admin Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAdminKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected String adminKey = ADMIN_KEY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
@@ -72,6 +52,26 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 	 * @ordered
 	 */
 	protected String tenant = TENANT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAdminKey() <em>Admin Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAdminKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ADMIN_KEY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAdminKey() <em>Admin Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAdminKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected String adminKey = ADMIN_KEY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -146,10 +146,10 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
-				return getAdminKey();
 			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
 				return getTenant();
+			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
+				return getAdminKey();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,11 +162,11 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
-				setAdminKey((String)newValue);
-				return;
 			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
 				setTenant((String)newValue);
+				return;
+			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
+				setAdminKey((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -180,11 +180,11 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
-				setAdminKey(ADMIN_KEY_EDEFAULT);
-				return;
 			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
 				setTenant(TENANT_EDEFAULT);
+				return;
+			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
+				setAdminKey(ADMIN_KEY_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -198,10 +198,10 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
-				return ADMIN_KEY_EDEFAULT == null ? adminKey != null : !ADMIN_KEY_EDEFAULT.equals(adminKey);
 			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
 				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
+			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
+				return ADMIN_KEY_EDEFAULT == null ? adminKey != null : !ADMIN_KEY_EDEFAULT.equals(adminKey);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,10 +216,10 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (adminKey: ");
-		result.append(adminKey);
-		result.append(", tenant: ");
+		result.append(" (tenant: ");
 		result.append(tenant);
+		result.append(", adminKey: ");
+		result.append(adminKey);
 		result.append(')');
 		return result.toString();
 	}

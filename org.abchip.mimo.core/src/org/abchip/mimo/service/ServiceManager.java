@@ -58,14 +58,6 @@ public interface ServiceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" klassRequired="true"
-	 * @generated
-	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Class<R> klass, String tenant) throws ServiceException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" frameRequired="true"
 	 * @generated
 	 */
@@ -74,24 +66,8 @@ public interface ServiceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" frameRequired="true" tenantRequired="true"
-	 * @generated
-	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Frame<R> frame, String tenant) throws ServiceException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" frameRequired="true"
 	 * @generated
 	 */
 	<V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(String frame) throws ServiceException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" frameRequired="true"
-	 * @generated
-	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(String frame, String tenant) throws ServiceException;
 } // ServiceManager

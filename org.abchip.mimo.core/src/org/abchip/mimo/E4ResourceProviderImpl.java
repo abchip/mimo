@@ -20,7 +20,7 @@ public class E4ResourceProviderImpl extends ResourceProviderImpl {
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> createResource(Context context, Frame<E> frame, String tenantId) {
+	public <E extends EntityIdentifiable> Resource<E> createResource(Context context, Frame<E> frame) {
 		throw new UnsupportedOperationException();
 	}
 }
