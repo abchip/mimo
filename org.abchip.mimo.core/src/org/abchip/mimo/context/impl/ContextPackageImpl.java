@@ -1564,8 +1564,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEAttribute(getContextDescription_TimeZone(), ecorePackage.getEString(), "timeZone", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_User(), ecorePackage.getEString(), "user", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(contextDescriptionEClass, ecorePackage.getEBoolean(), "isTenant", 1, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(contextEventEClass, ContextEvent.class, "ContextEvent", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(contextEventEClass, this.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);

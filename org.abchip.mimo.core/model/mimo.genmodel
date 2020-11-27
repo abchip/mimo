@@ -286,7 +286,6 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/tenant"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/timeZone"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/user"/>
-        <genOperations ecoreOperation="mimo.ecore#//context/ContextDescription/isTenant"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/ContextEvent">
         <genOperations ecoreOperation="mimo.ecore#//context/ContextEvent/getContext"/>

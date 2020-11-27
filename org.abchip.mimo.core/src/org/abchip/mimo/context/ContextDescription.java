@@ -268,12 +268,4 @@ public interface ContextDescription extends EntityIdentifiable {
 	 */
 	void setUser(String value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	boolean isTenant();
-
 } // ContextDescription

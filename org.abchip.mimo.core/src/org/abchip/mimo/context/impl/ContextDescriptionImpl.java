@@ -417,19 +417,6 @@ public class ContextDescriptionImpl extends EntityIdentifiableImpl implements Co
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public boolean isTenant() {
-		if (this.getTenant() != null && !this.getTenant().isEmpty())
-			return true;
-		else
-			return false;
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
