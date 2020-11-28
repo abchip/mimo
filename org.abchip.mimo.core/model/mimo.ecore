@@ -1006,9 +1006,6 @@
           <eTypeArguments/>
         </eBounds>
       </eTypeParameters>
-      <eOperations name="getTypeId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="hasTable" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="getText" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="slots" upperBound="-1"
           eType="#//entity/Slot" containment="true"/>
     </eClassifiers>

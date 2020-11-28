@@ -12,7 +12,6 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Map.Entry;
 
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.context.Context;
@@ -26,7 +25,6 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -46,6 +44,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EntityIdentifiableImpl() {
@@ -54,6 +53,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -68,19 +68,6 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 	 */
 	@Override
 	public void init(Context context) {
-
-		EAnnotation eFrameAnnotation = this.eClass().getEAnnotation(Frame.NS_PREFIX_FRAME_CONSTRAINTS);
-		if (eFrameAnnotation == null)
-			return;
-
-		for (Entry<String, String> constraint : eFrameAnnotation.getDetails().entrySet()) {
-			try {
-				EStructuralFeature eFeature = this.eClass().getEStructuralFeature(constraint.getKey());
-				eSet(context, eFeature, constraint.getValue());
-			} catch (Exception e) {
-				e.toString();
-			}
-		}
 	}
 
 	/**
@@ -271,7 +258,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 		this.eSet(context, eFeature, newValue);
 	}
 
-	private void eSet(Context context, EStructuralFeature eFeature, Object newValue) {
+	protected void eSet(Context context, EStructuralFeature eFeature, Object newValue) {
 		if (eFeature.isMany()) {
 			List<Object> values = new ArrayList<Object>();
 			for (Object object : (Collection<?>) newValue)
@@ -286,9 +273,9 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 					super.eSet(eFeature, EcoreUtil.createFromString((EDataType) eFeature.getEType(), newValue.toString()));
 				}
 			}
-		}		
+		}
 	}
-	
+
 	private Object buildValue(Context context, EStructuralFeature eFeature, Object value) {
 
 		Object object = null;

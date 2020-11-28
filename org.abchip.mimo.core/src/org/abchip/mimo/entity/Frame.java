@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.EClassifier;
 public interface Frame<E extends Entity> extends EntityIdentifiable {
 
 	public final static String NS_PREFIX_FRAME = EntityPackage.eNS_PREFIX + "-frame";
-	public final static String NS_PREFIX_FRAME_CONSTRAINTS = NS_PREFIX_FRAME + "-constraints";
+	public final static String NS_PREFIX_FRAME_TYPE = NS_PREFIX_FRAME + "-type";
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute. <!--
