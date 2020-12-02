@@ -24,6 +24,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.ResourceException;
+import org.abchip.mimo.util.Logs;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -31,15 +32,20 @@ import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.osgi.service.log.Logger;
 
-public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResource, ContextProvider {
+public class MimoJSONResourceImpl extends ResourceImpl implements ReusableResource, ContextProvider {
+
+	private static final Logger LOGGER = Logs.getLogger(MimoJSONResourceImpl.class);
 
 	private Context context = null;
+	private Frame<?> frame = null;
 
-	public MIMOProxyResourceImpl(Context context, URI uri) {
+	public MimoJSONResourceImpl(Context context, Frame<?> frame, URI uri) {
 		super(uri);
 
 		this.context = context;
+		this.frame = frame;
 	}
 
 	public Context getContext() {
@@ -80,29 +86,27 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 				JSONArray array = new JSONArray(responseStrBuilder.toString());
 				for (int i = 0; i < array.length(); i++) {
 					JSONObject object = array.getJSONObject(i);
-					jsonObject2Entity(this.getContents(), object);
+					jsonObject2Entity(this.getContents(), this.frame, object);
 
 				}
 			} else {
 				JSONObject object = new JSONObject(responseStrBuilder.toString());
-				jsonObject2Entity(this.getContents(), object);
+				jsonObject2Entity(this.getContents(), this.frame, object);
 			}
 		} catch (ResourceException e) {
 			throw new IOException(e);
 		}
 	}
 
-	private <E extends EntityIdentifiable> E jsonObject2Entity(List<EObject> container, JSONObject jsonObject) throws ResourceException {
+	private Entity jsonObject2Entity(List<EObject> container, Frame<?> frame, JSONObject jsonObject) throws ResourceException {
+		
+		if (jsonObject.has("isa")) {
+			String isa = jsonObject.getString("isa");
+			frame = context.getResourceManager().getFrame(isa);
+			jsonObject.remove("isa");
+		}
 
-		// @SuppressWarnings("unchecked")
-		// Resource<E> resource = (Resource<E>)
-		// context.getResourceSet().getResource(jsonObject.getString("isa"));
-		// E entity = resource.make();
-
-		Frame<E> frame = context.getResourceManager().getFrame(jsonObject.getString("isa"));
-		jsonObject.remove("isa");
-
-		E entity = context.make(frame);
+		Entity entity = context.make(frame);
 
 		if (container != null)
 			container.add((EObject) entity);
@@ -115,9 +119,15 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 
 			Object slotValue = jsonObject.get(slotName);
 			if (slotValue instanceof JSONObject) {
-				slotValue = jsonObject2Entity(null, (JSONObject) slotValue);
+				if (slot.getDomain() != null) {
+					Frame<?> slotDomain = context.getResourceManager().getFrame(slot.getDomain().getFrame());
+					slotValue = jsonObject2Entity(null, slotDomain, (JSONObject) slotValue);
+				} else {
+					LOGGER.warn("Invalid domain for slot {}.{}", frame.getName(), slot.getName());
+					continue;
+				}
 			}
-			frame.setValue(entity, slot, slotValue);
+			entity.eSet(slot, slotValue);
 		}
 
 		return entity;
@@ -143,15 +153,6 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 				pw.write(",");
 
 			Entity entity = (Entity) eObject;
-
-			/*
-			 * if (entity instanceof EntityIdentifiable) { EntityIdentifiable
-			 * entityIdentifiable = (EntityIdentifiable) entity; switch
-			 * (entityIdentifiable.getState()) { case DIRTY: case PROXY: pw.write("\"" +
-			 * Strings..escape(entityIdentifiable.getID()) + "\""); first = false; continue;
-			 * case TRANSIENT: case RESOLVED: break; } }
-			 */
-
 			JSONObject object = entity2JSON(entity);
 
 			pw.write(object.toString());

@@ -18,6 +18,7 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
@@ -75,7 +76,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			for (Slot slot : isa.getSlots()) {
 				if (slot.isDerived())
 					continue;
-				if("info".equals(slot.getGroup()))
+				if ("info".equals(slot.getGroup()))
 					continue;
 				if (!isa.isSet((E) this, slot))
 					continue;
@@ -125,5 +126,20 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 				return (Frame<E>) adapter;
 		}
 		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public void eSet(Slot slot, Object value) {
+
+		EStructuralFeature eFeature = slot.getEStructuralFeature();
+		if (eFeature == null)
+			return;
+
+		this.eSet(eFeature, value);
 	}
 } // EntityImpl

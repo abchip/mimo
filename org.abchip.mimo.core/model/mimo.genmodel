@@ -614,6 +614,10 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/Entity/isa">
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/Entity/isa/E"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Entity/eSet">
+          <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eSet/slot"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eSet/value"/>
+        </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/EntityContainer">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//entity/EntityContainer/contents"/>
@@ -655,9 +659,6 @@
       <genClasses ecoreClass="mimo.ecore#//entity/EntityType">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityType/E"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//entity/EntityType/slots"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityType/getTypeId"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityType/hasTable"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityType/getText"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/Find">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/Find/E"/>

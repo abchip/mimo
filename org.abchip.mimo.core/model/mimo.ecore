@@ -329,7 +329,7 @@
       <eOperations name="make" lowerBound="1">
         <eGenericType eTypeParameter="#//context/Context/make.1/E"/>
         <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+          <eBounds eClassifier="#//entity/Entity"/>
         </eTypeParameters>
         <eParameters name="frame" lowerBound="1">
           <eGenericType eClassifier="#//entity/Frame">
@@ -340,14 +340,14 @@
       <eOperations name="make" lowerBound="1">
         <eGenericType eTypeParameter="#//context/Context/make.2/E"/>
         <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+          <eBounds eClassifier="#//entity/Entity"/>
         </eTypeParameters>
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="make" lowerBound="1">
         <eGenericType eTypeParameter="#//context/Context/make.3/E"/>
         <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+          <eBounds eClassifier="#//entity/Entity"/>
         </eTypeParameters>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
@@ -359,7 +359,7 @@
       <eOperations name="make" lowerBound="1">
         <eGenericType eTypeParameter="#//context/Context/make.4/E"/>
         <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+          <eBounds eClassifier="#//entity/Entity"/>
         </eTypeParameters>
         <eParameters name="frame" lowerBound="1">
           <eGenericType eClassifier="#//entity/Frame">
@@ -371,7 +371,7 @@
       <eOperations name="make" lowerBound="1">
         <eGenericType eTypeParameter="#//context/Context/make.5/E"/>
         <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+          <eBounds eClassifier="#//entity/Entity"/>
         </eTypeParameters>
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -909,6 +909,10 @@
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/Entity"/>
         </eTypeParameters>
+      </eOperations>
+      <eOperations name="eSet">
+        <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
+        <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityContainer" eSuperTypes="#//entity/EntityIdentifiable">

@@ -155,19 +155,7 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 
 	@Override
 	public void setValue(E entity, Slot slot, Object value) {
-
-		EStructuralFeature eFeature = slot.getEStructuralFeature();
-		if (eFeature == null)
-			return;
-
-		EObject eObject = (EObject) entity;
-
-		if (value == null) {
-			eObject.eUnset(eFeature);
-			return;
-		}
-
-		eObject.eSet(eFeature, value);
+		entity.eSet(slot, value);
 	}
 
 	private Object getValue(EObject eObject, Slot slot, boolean default_, boolean resolve) {

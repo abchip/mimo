@@ -24,4 +24,12 @@ public interface Entity {
 	 */
 	<E extends Entity> Frame<E> isa();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model slotRequired="true"
+	 * @generated
+	 */
+	void eSet(Slot slot, Object value);
+
 } // Entity

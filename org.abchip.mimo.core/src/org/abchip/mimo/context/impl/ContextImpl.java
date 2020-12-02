@@ -14,6 +14,7 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextPackage;
+import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.impl.EntityImpl;
@@ -137,7 +138,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 	 * @generated NOT
 	 */
 	@Override
-	public final <E extends EntityIdentifiable> E make(String frame) {
+	public final <E extends Entity> E make(String frame) {
 		return make(this.getFrame(frame));
 	}
 
@@ -147,7 +148,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 	 * @generated NOT
 	 */
 	@Override
-	public final <E extends EntityIdentifiable> E make(Frame<E> frame) {
+	public final <E extends Entity> E make(Frame<E> frame) {
 		return make(frame, null);
 	}
 
@@ -157,7 +158,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 	 * @generated NOT
 	 */
 	@Override
-	public final <E extends EntityIdentifiable> E make(Class<E> klass, String id) {
+	public final <E extends Entity> E make(Class<E> klass, String id) {
 		return make(this.getFrame(klass.getSimpleName()), id);
 	}
 
@@ -167,7 +168,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 	 * @generated NOT
 	 */
 	@Override
-	public final <E extends EntityIdentifiable> E make(String frame, String id) {
+	public final <E extends Entity> E make(String frame, String id) {
 		return make(this.getFrame(frame), id);
 	}
 
@@ -177,7 +178,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 	 * @generated NOT
 	 */
 	@Override
-	public final <E extends EntityIdentifiable> E make(Frame<E> frame, String id) {
+	public final <E extends Entity> E make(Frame<E> frame, String id) {
 
 		@SuppressWarnings("unchecked")
 		E entity = (E) EcoreUtil.create((EClass) frame.getEClassifier());
@@ -191,7 +192,8 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 			}
 		}
 
-		entity.init(this);
+		if (EntityIdentifiable.class.isInstance(entity))
+			((EntityIdentifiable) entity).init(this);
 
 		return entity;
 	}

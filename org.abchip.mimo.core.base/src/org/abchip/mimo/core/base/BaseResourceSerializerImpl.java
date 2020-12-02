@@ -16,9 +16,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.abchip.mimo.MIMOProxyResourceImpl;
+import org.abchip.mimo.MimoJSONResourceImpl;
 import org.abchip.mimo.ReusableResource;
-import org.abchip.mimo.XMIProxyResourceImpl;
+import org.abchip.mimo.MimoXMIResourceImpl;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
@@ -36,10 +36,10 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 
 		switch (serializationType) {
 		case XMI:
-			this.resource = new XMIProxyResourceImpl(URI.createURI("mimo:/" + getFrame().getName() + "s"));
+			this.resource = new MimoXMIResourceImpl(URI.createURI("mimo:/" + getFrame().getName() + "s"));
 			break;
 		case MIMO:
-			this.resource = new MIMOProxyResourceImpl(context, URI.createURI("mimo:/" + getFrame().getName() + "s"));
+			this.resource = new MimoJSONResourceImpl(context, frame, URI.createURI("mimo:/" + getFrame().getName() + "s"));
 			break;
 		}
 	}

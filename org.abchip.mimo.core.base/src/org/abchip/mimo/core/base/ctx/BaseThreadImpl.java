@@ -13,6 +13,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.abchip.mimo.context.ThreadStatus;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.entity.Slot;
 
 public class BaseThreadImpl extends Thread implements org.abchip.mimo.context.Thread {
 
@@ -100,5 +101,11 @@ public class BaseThreadImpl extends Thread implements org.abchip.mimo.context.Th
 	public <E extends Entity> Frame<E> isa() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void eSet(Slot slot, Object value) {
+		// TODO Auto-generated method stub
+		
 	}
 }

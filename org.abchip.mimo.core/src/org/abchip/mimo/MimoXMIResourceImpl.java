@@ -18,11 +18,10 @@ import java.util.HashMap;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
-public class XMIProxyResourceImpl extends XMIResourceImpl implements ReusableResource {
+public class MimoXMIResourceImpl extends org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl implements ReusableResource {
 
-	public XMIProxyResourceImpl(URI uri) {
+	public MimoXMIResourceImpl(URI uri) {
 		super(uri);
 	}
 

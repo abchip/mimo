@@ -1477,7 +1477,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		op = addEOperation(contextEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		g1 = createEGenericType(theEntityPackage.getEntity());
 		t1.getEBounds().add(g1);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		g2 = createEGenericType(t1);
@@ -1488,7 +1488,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		op = addEOperation(contextEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		g1 = createEGenericType(theEntityPackage.getEntity());
 		t1.getEBounds().add(g1);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(t1);
@@ -1496,7 +1496,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		op = addEOperation(contextEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		g1 = createEGenericType(theEntityPackage.getEntity());
 		t1.getEBounds().add(g1);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
@@ -1508,7 +1508,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		op = addEOperation(contextEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		g1 = createEGenericType(theEntityPackage.getEntity());
 		t1.getEBounds().add(g1);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		g2 = createEGenericType(t1);
@@ -1520,7 +1520,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		op = addEOperation(contextEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		g1 = createEGenericType(theEntityPackage.getEntity());
 		t1.getEBounds().add(g1);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);

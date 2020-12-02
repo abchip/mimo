@@ -169,7 +169,7 @@ public interface Context extends Entity {
 	 * @model required="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> E make(Frame<E> frame);
+	<E extends Entity> E make(Frame<E> frame);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,7 +177,7 @@ public interface Context extends Entity {
 	 * @model required="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> E make(String frame);
+	<E extends Entity> E make(String frame);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface Context extends Entity {
 	 * @model required="true" klassRequired="true" idRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> E make(Class<E> klass, String id);
+	<E extends Entity> E make(Class<E> klass, String id);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,7 +193,7 @@ public interface Context extends Entity {
 	 * @model required="true" frameRequired="true" idRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> E make(Frame<E> frame, String id);
+	<E extends Entity> E make(Frame<E> frame, String id);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,7 +201,7 @@ public interface Context extends Entity {
 	 * @model required="true" frameRequired="true" idRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> E make(String frame, String id);
+	<E extends Entity> E make(String frame, String id);
 
 	/**
 	 * <!-- begin-user-doc -->

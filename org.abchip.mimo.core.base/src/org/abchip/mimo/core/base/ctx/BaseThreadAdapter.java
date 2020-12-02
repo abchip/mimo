@@ -13,6 +13,7 @@ import java.lang.management.ThreadInfo;
 import org.abchip.mimo.context.ThreadStatus;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.util.Threads;
 
 public class BaseThreadAdapter implements org.abchip.mimo.context.Thread {
@@ -93,5 +94,11 @@ public class BaseThreadAdapter implements org.abchip.mimo.context.Thread {
 	public <E extends Entity> Frame<E> isa() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void eSet(Slot slot, Object value) {
+		// TODO Auto-generated method stub
+		
 	}
 }
