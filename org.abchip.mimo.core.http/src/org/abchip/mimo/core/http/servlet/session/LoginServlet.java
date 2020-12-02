@@ -24,11 +24,11 @@ import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.authentication.AuthenticationProvider;
 import org.abchip.mimo.authentication.AuthenticationProviderRegistry;
 import org.abchip.mimo.authentication.AuthenticationUserPassword;
+import org.abchip.mimo.biz.model.passport.OAuth2;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.core.http.ContextUtils;
-import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -183,7 +183,7 @@ public class LoginServlet extends HttpServlet {
 		if (provider.equals("Google") || provider.equals("GitHub")) {
 			AuthenticationProvider authenticationProvider = authenticationProviderRegistry.lookup(provider);
 			String redirectLocation = authenticationProvider.getRedirectLocation(context, session.getId());
-//			redirectLocation = response.encodeURL(redirectLocation);
+			// redirectLocation = response.encodeURL(redirectLocation);
 			response.setHeader("Location", redirectLocation);
 			response.setStatus(HttpServletResponse.SC_OK);
 
@@ -200,15 +200,14 @@ public class LoginServlet extends HttpServlet {
 
 		String entityName = "OAuth2" + provider;
 
-		ResourceReader<?> oauth2Reader = context.getResourceManager().getResourceReader(entityName);
-		EntityIdentifiable oauth2Entity = oauth2Reader.first();
+		ResourceReader<OAuth2> oauth2Reader = context.getResourceManager().getResourceReader(entityName);
+		OAuth2 oauth2Entity = oauth2Reader.first();
 
 		if (oauth2Entity == null) {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			return;
 		}
-		String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-				+ oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri", false, false).toString();
+		String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + oauth2Entity.getLocalRedirectUri();
 
 		location = response.encodeURL(location);
 		// System.err.println(("Login location: " + location));

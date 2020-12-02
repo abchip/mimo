@@ -210,54 +210,6 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	List<Frame<? super E>> getSuperFrames();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" entityRequired="true" slotNameRequired="true" defaultRequired="true" resolveRequired="true"
-	 * @generated
-	 */
-	Object getValue(E entity, String slotName, boolean default_, boolean resolve);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" entityRequired="true" slotRequired="true" defaultRequired="true" resolveRequired="true"
-	 * @generated
-	 */
-	Object getValue(E entity, Slot slot, boolean default_, boolean resolve);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model entityRequired="true" slotNameRequired="true" valueRequired="true"
-	 * @generated
-	 */
-	void setValue(E entity, String slotName, Object value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model entityRequired="true" slotRequired="true" valueRequired="true"
-	 * @generated
-	 */
-	void setValue(E entity, Slot slot, Object value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model entityRequired="true" slotNameRequired="true"
-	 * @generated
-	 */
-	boolean isSet(E entity, String slotName);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model entityRequired="true" slotRequired="true"
-	 * @generated
-	 */
-	boolean isSet(E entity, Slot slot);
-
-	/**
 	 * Returns the value of the '<em><b>Abstract</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 

@@ -51,7 +51,6 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 		return stringValue();
 	}
 
-	@SuppressWarnings("unchecked")
 	private <E extends Entity> String stringValue() {
 
 		Frame<E> isa = this.isa();
@@ -78,10 +77,10 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 					continue;
 				if ("info".equals(slot.getGroup()))
 					continue;
-				if (!isa.isSet((E) this, slot))
+				if (!this.eIsSet(slot))
 					continue;
 
-				Object value = isa.getValue((E) this, slot, false, false);
+				Object value = this.eGet(slot, false, false);
 				if (value == null)
 					continue;
 
@@ -141,5 +140,40 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			return;
 
 		this.eSet(eFeature, value);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public Object eGet(Slot slot, boolean default_, boolean resolve) {
+		Object value = null;
+
+		EStructuralFeature eStructuralFeature = slot.getEStructuralFeature();
+		if (eStructuralFeature == null)
+			return null;
+
+		value = this.eGet(eStructuralFeature, resolve);
+
+		if (value == null && default_)
+			value = eStructuralFeature.getDefaultValue();
+
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public boolean eIsSet(Slot slot) {
+		EStructuralFeature eStructuralFeature = slot.getEStructuralFeature();
+		if (eStructuralFeature == null)
+			return false;
+		
+		return this.eIsSet(eStructuralFeature);
 	}
 } // EntityImpl

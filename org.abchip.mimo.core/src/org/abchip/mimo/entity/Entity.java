@@ -32,4 +32,20 @@ public interface Entity {
 	 */
 	void eSet(Slot slot, Object value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" slotRequired="true" defaultRequired="true" resolveRequired="true"
+	 * @generated
+	 */
+	Object eGet(Slot slot, boolean default_, boolean resolve);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model slotRequired="true"
+	 * @generated
+	 */
+	boolean eIsSet(Slot slot);
+
 } // Entity

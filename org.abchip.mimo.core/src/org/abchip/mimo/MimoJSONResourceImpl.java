@@ -153,7 +153,7 @@ public class MimoJSONResourceImpl extends ResourceImpl implements ReusableResour
 				pw.write(",");
 
 			Entity entity = (Entity) eObject;
-			JSONObject object = entity2JSON(entity);
+			JSONObject object = entity2JSON(entity, true);
 
 			pw.write(object.toString());
 			first = false;
@@ -165,7 +165,7 @@ public class MimoJSONResourceImpl extends ResourceImpl implements ReusableResour
 		pw.flush();
 	}
 
-	private JSONObject entity2JSON(Entity entity) {
+	private JSONObject entity2JSON(Entity entity, boolean default_) {
 
 		JSONObject object = new JSONObject();
 
@@ -177,7 +177,7 @@ public class MimoJSONResourceImpl extends ResourceImpl implements ReusableResour
 			if (slot.isTransient())
 				continue;
 
-			Object value = frame.getValue(entity, slot.getName(), true, false);
+			Object value = entity.eGet(slot, default_, false);
 			if (isEmpty(value))
 				continue;
 
@@ -219,7 +219,7 @@ public class MimoJSONResourceImpl extends ResourceImpl implements ReusableResour
 
 			if (object == null) {
 				if (slot.isContainment()) {
-					object = entity2JSON(entity);
+					object = entity2JSON(entity, false);
 				} else
 					object = value2Raw(slot, value);
 			}

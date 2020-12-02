@@ -8,7 +8,6 @@
  */
 package org.abchip.mimo;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,7 +26,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.osgi.service.log.Logger;
@@ -134,67 +132,6 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 				return slot;
 
 		return null;
-	}
-
-	@Override
-	public boolean isSet(E entity, Slot slot) {
-		EStructuralFeature eStructuralFeature = slot.getEStructuralFeature();
-		EObject eObject = (EObject) entity;
-
-		return eObject.eIsSet(eStructuralFeature);
-	}
-
-	@Override
-	public Object getValue(E entity, Slot slot, boolean default_, boolean resolve) {
-
-		if (entity instanceof EObject)
-			return getValue((EObject) entity, slot, default_, resolve);
-		else
-			return getValue((Object) entity, slot, default_, resolve);
-	}
-
-	@Override
-	public void setValue(E entity, Slot slot, Object value) {
-		entity.eSet(slot, value);
-	}
-
-	private Object getValue(EObject eObject, Slot slot, boolean default_, boolean resolve) {
-		Object value = null;
-
-		EStructuralFeature eStructuralFeature = slot.getEStructuralFeature();
-		if (eStructuralFeature != null)
-			value = eObject.eGet(eStructuralFeature, resolve);
-		else {
-			value = getValue((Object) eObject, slot, default_, resolve);
-		}
-
-		if (value == null && default_)
-			value = eStructuralFeature.getDefaultValue();
-
-		return value;
-	}
-
-	private Object getValue(Object object, Slot slot, boolean default_, boolean resolve) {
-		Object value = null;
-
-		try {
-			String methodName = null;
-			if (slot.getName().startsWith("is"))
-				methodName = slot.getName();
-			else if (slot.getName().startsWith("get"))
-				methodName = slot.getName();
-			else
-				methodName = "get" + Strings.firstToUpper(slot.getName());
-			Method method = object.getClass().getMethod(methodName, new Class[] {});
-			if (method != null)
-				value = method.invoke(object, new Object[] {});
-		} catch (NoSuchMethodException e) {
-			e.toString();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return value;
 	}
 
 	@Override

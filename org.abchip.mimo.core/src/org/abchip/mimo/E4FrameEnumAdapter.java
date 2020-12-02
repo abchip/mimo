@@ -53,24 +53,9 @@ public class E4FrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public Object getValue(E entity, Slot slot, boolean default_, boolean resolve) {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
-	public boolean isSet(E entity, Slot slot) {
-		throw new UnsupportedOperationException();
-	}
-	
-	@Override
 	public URI getURI() {
 		return super.getURI();
 		// return URI.create(EcoreUtil.getURI(eEnum).toString());
-	}
-
-	@Override
-	public void setValue(E entity, Slot slot, Object value) {
-		throw new UnsupportedOperationException();		
 	}
 
 	private void setFrameText() {

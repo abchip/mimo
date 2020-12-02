@@ -383,24 +383,6 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 		return frames;
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final Object getValue(E entity, String slotName, boolean default_, boolean resolve) {
-		return this.getValue(entity, this.getSlot(slotName), default_, resolve);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public abstract Object getValue(E entity, Slot slot, boolean default_, boolean resolve);
-
 	private void addFrames(Frame<? super E> frame, List<Frame<? super E>> frames) {
 		Frame<? super E> ako = frame.getAko();
 		if (ako != null) {
@@ -408,42 +390,6 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 			addFrames(ako, frames);
 		}
 	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final void setValue(E entity, String slotName, Object value) {
-		this.setValue(entity, this.getSlot(slotName), value);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public abstract void setValue(E entity, Slot slot, Object value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public final boolean isSet(E entity, String slotName) {
-		return this.isSet(entity, this.getSlot(slotName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public abstract boolean isSet(E entity, Slot slot);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

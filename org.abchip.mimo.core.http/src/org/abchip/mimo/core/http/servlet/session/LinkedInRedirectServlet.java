@@ -54,8 +54,8 @@ public class LinkedInRedirectServlet extends HttpServlet {
 				return;
 			}
 
-			String clientId = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "apiKey", false, false).toString();
-			String returnURI = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "liveReturnUrl", false, false).toString();
+			String clientId = oauth2LinkedIn.getApiKey();
+			String returnURI = oauth2LinkedIn.getLiveReturnUrl();
 
 			// Get user authorization code
 			String location = TokenEndpoint + AuthorizeUri + "?client_id=" + clientId + "&response_type=code" + "&scope=" + DEFAULT_SCOPE + "&nonce=" + UUID.randomUUID() + "&redirect_uri="

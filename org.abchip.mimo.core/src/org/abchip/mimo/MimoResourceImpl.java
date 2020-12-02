@@ -95,7 +95,7 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			for (String key : frame.getKeys()) {
 				if (!name.toString().isEmpty())
 					name.append("/");
-				Object value = frame.getValue(entityIdentifiable, key, false, false);
+				Object value = entityIdentifiable.eGet(frame.getSlot(key), false, false);
 				if (value == null)
 					break;
 

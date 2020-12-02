@@ -74,7 +74,7 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 							order = order.substring(1);
 						}
 
-						Object v1 = o1.isa().getValue(o1, order, false, false);
+						Object v1 = o1.eGet(o1.isa().getSlot(order), true, false);
 						if (v1 == null)
 							if (desc)
 								return -1;
@@ -85,7 +85,7 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 							v1 = stringComplement(v1.toString());
 						k1.append(v1);
 
-						Object v2 = o2.isa().getValue(o2, order, false, false);
+						Object v2 = o2.eGet(o2.isa().getSlot(order), true, false);
 						if (v2 == null)
 							if (desc)
 								return 1;

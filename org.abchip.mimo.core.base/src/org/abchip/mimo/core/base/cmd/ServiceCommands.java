@@ -113,7 +113,7 @@ public class ServiceCommands extends BaseCommands {
 		R request = serviceManager.prepare(serviceId);
 		Frame<R> frame = request.isa();
 		for (Entry<String, String> parameter : parameters.entrySet()) {
-			frame.setValue(request, parameter.getKey(), parameter.getValue());
+			request.eSet(frame.getSlot(parameter.getKey()), parameter.getValue());
 		}
 
 		V response = null;

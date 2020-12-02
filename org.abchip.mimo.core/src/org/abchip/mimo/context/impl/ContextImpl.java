@@ -188,7 +188,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 			Frame<E> domainFrame = entity.isa();
 			for (int i = 0; i < ids.length; i++) {
 				String key = domainFrame.getKeys().get(i);
-				domainFrame.setValue(entity, key, ids[i]);
+				entity.eSet(domainFrame.getSlot(key), ids[i]);
 			}
 		}
 

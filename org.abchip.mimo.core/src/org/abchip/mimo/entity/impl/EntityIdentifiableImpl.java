@@ -214,9 +214,13 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 				List<EntityIdentifiable> values = new EDataTypeUniqueEList<EntityIdentifiable>(EntityIdentifiable.class, this, featureID);
 				try (EntityIterator<EntityIdentifiable> entities = this.getContext().getResourceManager().getResourceReader(slot.getDomain().getFrame()).find(filter)) {
+					
+					
+					// set first ket
 					for (EntityIdentifiable entityIdentifiable : entities) {
-						String domainKey = entityIdentifiable.isa().getKeys().get(0);
-						entityIdentifiable.isa().setValue(entityIdentifiable, domainKey, this);
+						Frame<?> isa = entityIdentifiable.isa();
+						String domainKey = isa.getKeys().get(0);
+						entityIdentifiable.eSet(isa.getSlot(domainKey), this);
 						values.add(entityIdentifiable);
 					}
 				} catch (ResourceException e) {

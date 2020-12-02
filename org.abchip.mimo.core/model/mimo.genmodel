@@ -618,6 +618,14 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eSet/slot"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eSet/value"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Entity/eGet">
+          <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eGet/slot"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eGet/default"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eGet/resolve"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Entity/eIsSet">
+          <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eIsSet/slot"/>
+        </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/EntityContainer">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//entity/EntityContainer/contents"/>
@@ -694,36 +702,6 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getSlot/name"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSuperFrames"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getValue">
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/entity"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/slotName"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/default"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/resolve"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getValue.1">
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue.1/entity"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue.1/slot"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue.1/default"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue.1/resolve"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/isSet">
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/isSet/entity"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/isSet/slotName"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/isSet.1">
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/isSet.1/entity"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/isSet.1/slot"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/setValue">
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue/entity"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue/slotName"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue/value"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/setValue.1">
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue.1/entity"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue.1/slot"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue.1/value"/>
-        </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Slot">
         <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//entity/Slot/cardinality"/>
