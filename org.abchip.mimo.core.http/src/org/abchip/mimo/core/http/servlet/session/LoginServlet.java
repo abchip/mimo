@@ -24,7 +24,7 @@ import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.authentication.AuthenticationProvider;
 import org.abchip.mimo.authentication.AuthenticationProviderRegistry;
 import org.abchip.mimo.authentication.AuthenticationUserPassword;
-import org.abchip.mimo.biz.model.passport.OAuth2;
+import org.abchip.mimo.authentication.OAuth2;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;

@@ -23,6 +23,7 @@ import org.abchip.mimo.authentication.AuthenticationException;
 import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.authentication.AuthenticationUserToken;
+import org.abchip.mimo.authentication.OAuth2;
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.context.impl.ContextPackageImpl;
@@ -114,6 +115,12 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 	 * @generated
 	 */
 	private EClass authenticationProviderRegistryEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass oAuth2EClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -399,6 +406,36 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 	 * @generated
 	 */
 	@Override
+	public EClass getOAuth2() {
+		return oAuth2EClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getOAuth2_IconUrl() {
+		return (EAttribute)oAuth2EClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getOAuth2_LocalRedirectUri() {
+		return (EAttribute)oAuth2EClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EDataType getAuthenticationException() {
 		return authenticationExceptionEDataType;
 	}
@@ -457,6 +494,10 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 
 		authenticationProviderRegistryEClass = createEClass(AUTHENTICATION_PROVIDER_REGISTRY);
 
+		oAuth2EClass = createEClass(OAUTH2);
+		createEAttribute(oAuth2EClass, OAUTH2__ICON_URL);
+		createEAttribute(oAuth2EClass, OAUTH2__LOCAL_REDIRECT_URI);
+
 		// Create data types
 		authenticationExceptionEDataType = createEDataType(AUTHENTICATION_EXCEPTION);
 	}
@@ -502,6 +543,8 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 		EGenericType g2 = createEGenericType(this.getAuthenticationProvider());
 		g1.getETypeArguments().add(g2);
 		authenticationProviderRegistryEClass.getEGenericSuperTypes().add(g1);
+		oAuth2EClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		oAuth2EClass.getESuperTypes().add(theEntityPackage.getEntityInfo());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(authenticationEClass, Authentication.class, "Authentication", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -563,8 +606,38 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 
 		initEClass(authenticationProviderRegistryEClass, AuthenticationProviderRegistry.class, "AuthenticationProviderRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(oAuth2EClass, OAuth2.class, "OAuth2", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOAuth2_IconUrl(), ecorePackage.getEString(), "iconUrl", null, 0, 1, OAuth2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOAuth2_LocalRedirectUri(), ecorePackage.getEString(), "localRedirectUri", null, 0, 1, OAuth2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize data types
 		initEDataType(authenticationExceptionEDataType, AuthenticationException.class, "AuthenticationException", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+
+		// Create annotations
+		// mimo-ent-format
+		createMimoentformatAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (getOAuth2_IconUrl(),
+		   source,
+		   new String[] {
+			   "type", "url"
+		   });
+		addAnnotation
+		  (getOAuth2_LocalRedirectUri(),
+		   source,
+		   new String[] {
+			   "length", "60"
+		   });
 	}
 
 } //AuthenticationPackageImpl

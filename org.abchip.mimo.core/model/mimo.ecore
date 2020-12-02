@@ -191,6 +191,18 @@
         <eTypeArguments eClassifier="#//authentication/AuthenticationProvider"/>
       </eGenericSuperTypes>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OAuth2" abstract="true" eSuperTypes="#//entity/EntityIdentifiable #//entity/EntityInfo">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="iconUrl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="mimo-ent-format">
+          <details key="type" value="url"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="localRedirectUri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="mimo-ent-format">
+          <details key="length" value="60"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="context" nsURI="http://www.abchip.org/mimo/context" nsPrefix="mimo-ctx">
     <eClassifiers xsi:type="ecore:EClass" name="AdapterFactory" abstract="true" interface="true">

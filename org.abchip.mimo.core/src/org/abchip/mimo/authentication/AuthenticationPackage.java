@@ -332,6 +332,79 @@ public interface AuthenticationPackage extends EPackage {
 	int AUTHENTICATION_PROVIDER_REGISTRY_FEATURE_COUNT = ContextPackage.REGISTRY_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.authentication.impl.OAuth2Impl <em>OAuth2</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.authentication.impl.OAuth2Impl
+	 * @see org.abchip.mimo.authentication.impl.AuthenticationPackageImpl#getOAuth2()
+	 * @generated
+	 */
+	int OAUTH2 = 8;
+
+	/**
+	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OAUTH2__CREATED_STAMP = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OAUTH2__CREATED_TX_STAMP = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OAUTH2__LAST_UPDATED_STAMP = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OAUTH2__LAST_UPDATED_TX_STAMP = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Icon Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OAUTH2__ICON_URL = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Local Redirect Uri</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OAUTH2__LOCAL_REDIRECT_URI = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>OAuth2</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OAUTH2_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
+
+	/**
 	 * The meta object id for the '<em>Exception</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -339,7 +412,7 @@ public interface AuthenticationPackage extends EPackage {
 	 * @see org.abchip.mimo.authentication.impl.AuthenticationPackageImpl#getAuthenticationException()
 	 * @generated
 	 */
-	int AUTHENTICATION_EXCEPTION = 8;
+	int AUTHENTICATION_EXCEPTION = 9;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.authentication.Authentication <em>Authentication</em>}'.
@@ -521,6 +594,38 @@ public interface AuthenticationPackage extends EPackage {
 	EClass getAuthenticationProviderRegistry();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.authentication.OAuth2 <em>OAuth2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>OAuth2</em>'.
+	 * @see org.abchip.mimo.authentication.OAuth2
+	 * @generated
+	 */
+	EClass getOAuth2();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.authentication.OAuth2#getIconUrl <em>Icon Url</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Icon Url</em>'.
+	 * @see org.abchip.mimo.authentication.OAuth2#getIconUrl()
+	 * @see #getOAuth2()
+	 * @generated
+	 */
+	EAttribute getOAuth2_IconUrl();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.authentication.OAuth2#getLocalRedirectUri <em>Local Redirect Uri</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Local Redirect Uri</em>'.
+	 * @see org.abchip.mimo.authentication.OAuth2#getLocalRedirectUri()
+	 * @see #getOAuth2()
+	 * @generated
+	 */
+	EAttribute getOAuth2_LocalRedirectUri();
+
+	/**
 	 * Returns the meta object for data type '{@link org.abchip.mimo.authentication.AuthenticationException <em>Exception</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -688,6 +793,29 @@ public interface AuthenticationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass AUTHENTICATION_PROVIDER_REGISTRY = eINSTANCE.getAuthenticationProviderRegistry();
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.authentication.impl.OAuth2Impl <em>OAuth2</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.authentication.impl.OAuth2Impl
+		 * @see org.abchip.mimo.authentication.impl.AuthenticationPackageImpl#getOAuth2()
+		 * @generated
+		 */
+		EClass OAUTH2 = eINSTANCE.getOAuth2();
+		/**
+		 * The meta object literal for the '<em><b>Icon Url</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OAUTH2__ICON_URL = eINSTANCE.getOAuth2_IconUrl();
+		/**
+		 * The meta object literal for the '<em><b>Local Redirect Uri</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OAUTH2__LOCAL_REDIRECT_URI = eINSTANCE.getOAuth2_LocalRedirectUri();
 		/**
 		 * The meta object literal for the '<em>Exception</em>' data type.
 		 * <!-- begin-user-doc -->
