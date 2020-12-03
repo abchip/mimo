@@ -8,6 +8,7 @@
 package org.abchip.mimo.context.impl;
 
 import java.lang.annotation.Annotation;
+import java.util.List;
 
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
@@ -36,6 +37,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ContextImpl() {
@@ -44,6 +46,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -184,12 +187,16 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 		E entity = (E) EcoreUtil.create((EClass) frame.getEClassifier());
 
 		if (id != null) {
-			String[] ids = id.split("/");
 			Frame<E> domainFrame = entity.isa();
-			for (int i = 0; i < ids.length; i++) {
-				String key = domainFrame.getKeys().get(i);
-				entity.eSet(domainFrame.getSlot(key), ids[i]);
-			}
+			List<String> keys = domainFrame.getKeys();
+			if (keys.size() != 1) {
+				String[] ids = id.split("/");
+				for (int i = 0; i < ids.length; i++) {
+					String key = keys.get(i);
+					entity.eSet(domainFrame.getSlot(key), ids[i]);
+				}
+			} else
+				entity.eSet(domainFrame.getSlot(keys.get(0)), id);
 		}
 
 		if (EntityIdentifiable.class.isInstance(entity))

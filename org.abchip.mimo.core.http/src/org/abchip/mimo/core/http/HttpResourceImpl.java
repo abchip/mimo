@@ -36,6 +36,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	
 	public static class HttpResourceConfig {
 		public String find = "find";
+		public String lookup = "lookup";
 	}
 
 	public HttpResourceImpl(HttpResourceConfig config, HttpConnector connector, Frame<E> frame) {
@@ -125,7 +126,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			@SuppressWarnings({ "unchecked", "rawtypes" })
 			ResponseHandler<E> handler = new HttpLookupHandler(this.resourceSerializer);
 			synchronized (this.resourceSerializer) {
-				entity = connector.execute("lookup", query, handler);
+				entity = connector.execute(this.config.lookup, query, handler);
 			}
 			if (entity != null)
 				this.attach(entity);

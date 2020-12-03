@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
@@ -44,6 +45,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EntityIdentifiableImpl() {
@@ -52,6 +54,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -214,8 +217,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 				List<EntityIdentifiable> values = new EDataTypeUniqueEList<EntityIdentifiable>(EntityIdentifiable.class, this, featureID);
 				try (EntityIterator<EntityIdentifiable> entities = this.getContext().getResourceManager().getResourceReader(slot.getDomain().getFrame()).find(filter)) {
-					
-					
+
 					// set first ket
 					for (EntityIdentifiable entityIdentifiable : entities) {
 						Frame<?> isa = entityIdentifiable.isa();
@@ -298,8 +300,21 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 				} else
 					System.err.println("Unexpected condition gkvjsfct4rttycgfad908");
 			}
-		} else
-			object = value;
+		} else {
+			switch (eFeature.getEType().getClassifierID()) {
+				case EcorePackage.EBOOLEAN: {
+					if (String.class.isInstance(value)) {
+						if (value.equals("0"))
+							object = Boolean.FALSE;
+						else if (value.equals("1"))
+							object = Boolean.TRUE;
+						break;
+					}					
+				}
+				default:
+					object = value;
+			}
+		}
 
 		return object;
 	}
