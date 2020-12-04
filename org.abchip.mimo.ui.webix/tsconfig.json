@@ -8,11 +8,12 @@
         "lib": ["es2016", "dom"],
         "baseUrl":".",
         "paths": {
-			"core/*":["mimo/core/*"],
+			"actions/*":["mimo/actions/*"],
 			"config/*":["mimo/config/*"],
-            "widgets/*":["mimo/widgets/*"],
-            "services/*":["mimo/services/*"],	
-			"views/*":["mimo/views/*"]
+			"core/*":["mimo/core/*"],
+			"locales/*":["mimo/locales/*"],		
+			"views/*":["mimo/views/*"],				
+            "widgets/*":["mimo/widgets/*"]	
         },
         "sourceMap": true
     },

@@ -78,7 +78,7 @@ public class BaseResourceManagerImpl implements ResourceManager {
 	@Override
 	public <E extends EntityIdentifiable> Frame<E> getFrame(String frame) {
 		try {
-			return (Frame<E>) getContext().getResourceSet().getResource(frame).getFrame();
+			return (Frame<E>) getContext().getResourceSet().getResource(Frame.class).lookup(frame, null, false);
 		} catch (ResourceException e) {
 			return null;
 		}

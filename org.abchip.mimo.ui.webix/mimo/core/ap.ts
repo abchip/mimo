@@ -48,193 +48,193 @@ import { WidgetToolbar } from 'widgets/mm-toolbar';
 import { WidgetUploader } from 'widgets/mm-uploader';
 import { WidgetView } from 'widgets/mm-view';
 
-declare var APPNAME;
-declare var VERSION;
-declare var PRODUCTION;
-declare var BUILD_AS_MODULE;
+declare var APPNAME: string;
+declare var VERSION: string;
+declare var PRODUCTION: boolean;
+declare var BUILD_AS_MODULE: boolean;
 
 class AppCache {
-    public viewTypes: webix.DataCollection = null;
-    public frames: webix.DataCollection = null;
+	public viewTypes: webix.DataCollection = null;
+	public frames: webix.DataCollection = null;
 }
 
 export default class App extends JetApp {
 
 
-    public cache: AppCache;
+	public cache: AppCache;
 
-    constructor() {
+	constructor() {
 
-        const defaults = {
-            id: APPNAME,
-            version: VERSION,
-            start: "/home",
-            //            router: BUILD_AS_MODULE ? EmptyRouter : UrlRouter,
-            //            routerPrefix: "mimo",
-            router: HashRouter,
-            debug: !PRODUCTION,
-            views: ( name ) => {
-                return name;
-            },
-            theme: webix.storage.local.get( "theme_color" ) || ""
-        };
+		const defaults = {
+			id: APPNAME,
+			version: VERSION,
+			start: "/home",
+			//            router: BUILD_AS_MODULE ? EmptyRouter : UrlRouter,
+			//            routerPrefix: "mimo",
+			router: HashRouter,
+			debug: !PRODUCTION,
+			views: (name: boolean) => {
+				return name;
+			},
+			theme: webix.storage.local.get("theme_color") || ""
+		};
 
-        super( defaults );
+		super(defaults);
 
-        this.cache = new AppCache();
+		this.cache = new AppCache();
 
-        this.use( plugins.Locale, null );
+		this.use(plugins.Locale, null);
 
-        this.use(( app: JetApp ) => {
-            app.setService( "BizEntityNoteActions", new BizEntityNoteActions() );
-            app.setService( "EntityActions", new EntityActions() );
-            app.setService( "FrameActions", new FrameActions() );
-            app.setService( "PartyActions", new PartyActions() );
-            app.setService( "ProductCategoryActions", new ProductCategoryActions() );
-        }, null );
+		this.use((app: JetApp) => {
+			app.setService("BizEntityNoteActions", new BizEntityNoteActions());
+			app.setService("EntityActions", new EntityActions());
+			app.setService("FrameActions", new FrameActions());
+			app.setService("PartyActions", new PartyActions());
+			app.setService("ProductCategoryActions", new ProductCategoryActions());
+		}, null);
 
-        this.attachEvent( "app:error", function( err ) {
-            alert( "Error" );
-        } );
+		this.attachEvent("app:error", function(err) {
+			alert("Error");
+		});
 
-        this.attachEvent( "app:error:resolve", function( err, url ) {
-            alert( "Delay" ); // webix.delay(() => app.show("/some"));
-        } );
+		this.attachEvent("app:error:resolve", function(err, url) {
+			alert("Delay"); // webix.delay(() => app.show("/some"));
+		});
 
 
-        this.use( plugins.User, {
-            model: session,
-            ping: 60000,
-            public: path => {
-                return ( path.indexOf( "out-of-service" ) > -1 || path.indexOf( "loginTenant" ) > -1 );
-            }
-        } );
-    }
+		this.use(plugins.User, {
+			model: session,
+			ping: 60000,
+			public: path => {
+				return (path.indexOf("out-of-service") > -1 || path.indexOf("loginTenant") > -1);
+			}
+		});
+	}
 
-    createFromURL( chunk ) {
+	createFromURL(chunk) {
 
-        if ( this.cache.viewTypes.getIndexById( "mm-" + chunk.page ) < 0 )
-            return super.createFromURL( chunk );
+		if (this.cache.viewTypes.getIndexById("mm-" + chunk.page) < 0)
+			return super.createFromURL(chunk);
 
-        if ( !chunk.isNew ) {
-            if ( chunk.view instanceof View ) {
-                var view: View = chunk.view;
-                //                alert( KBEntities.stringify( chunk.view.constructor.name ) );
-                chunk.isNew = true;
-                chunk.view = null;
-            }
-        }
+		if (!chunk.isNew) {
+			if (chunk.view instanceof View) {
+				var view: View = chunk.view;
+				//                alert( KBEntities.stringify( chunk.view.constructor.name ) );
+				chunk.isNew = true;
+				chunk.view = null;
+			}
+		}
 
-        return super.createFromURL( chunk );
-    }
+		return super.createFromURL(chunk);
+	}
 
-    _loadViewDynamic( url ) {
-        url = url.replace( /\./g, "/" );
+	_loadViewDynamic(url) {
+		url = url.replace(/\./g, "/");
 
-        if ( this.cache.viewTypes.getIndexById( "mm-" + url ) < 0 )
-            return require( "jet-views/" + url );
+		if (this.cache.viewTypes.getIndexById("mm-" + url) < 0)
+			return require("jet-views/" + url);
 
-        for ( var chunk of this.getUrl() ) {
-            if ( chunk.page == url ) {
-                break;
-            }
-        }
+		for (var chunk of this.getUrl()) {
+			if (chunk.page == url) {
+				break;
+			}
+		}
 
-        if ( !chunk ) {
-            alert( "Unexpected condition: szn476t686q3ads" );
-            return {
-            };
-        }
+		if (!chunk) {
+			alert("Unexpected condition: szn476t686q3ads");
+			return {
+			};
+		}
 
-        if ( !chunk.params.frame ) {
-            alert( "Frame is required parameter" );
-            return {
-            };
-        }
+		if (!chunk.params.frame) {
+			alert("Frame is required parameter");
+			return {
+			};
+		}
 
-        // frame in role
-        try {
-            return require( "jet-views/" + chunk.page + "/" + chunk.params.frame );
-        }
-        catch ( e ) {
-        }
+		// frame in role
+		try {
+			return require("jet-views/" + chunk.page + "/" + chunk.params.frame);
+		}
+		catch (e) {
+		}
 
-        // search frame
-        var id = this.cache.frames.getFirstId();
-        var frame = this.cache.frames.getItem( id );
-        while ( frame != null ) {
+		// search frame
+		var id = this.cache.frames.getFirstId();
+		var frame = this.cache.frames.getItem(id);
+		while (frame != null) {
 
-            // found
-            if ( frame.name == chunk.params.frame )
-                break;
+			// found
+			if (frame.name == chunk.params.frame)
+				break;
 
-            id = this.cache.frames.getNextId( id, 1 );
-            frame = this.cache.frames.getItem( id );
-        }
+			id = this.cache.frames.getNextId(id, 1);
+			frame = this.cache.frames.getItem(id);
+		}
 
-        if ( frame == null ) {
-            alert( "Frame not found: " + chunk.params.frame );
-            return;
-        }
+		if (frame == null) {
+			alert("Frame not found: " + chunk.params.frame);
+			return;
+		}
 
-        // super frames
-        for ( let superName of frame.superNames ) {
+		// super frames
+		for (let superName of frame.superNames) {
 
-            try {
-                return require( "jet-views/" + chunk.page + "/" + superName );
-            }
-            catch ( e ) {
-                //                    alert( e );
-            }
-        }
+			try {
+				return require("jet-views/" + chunk.page + "/" + superName);
+			}
+			catch (e) {
+				//                    alert( e );
+			}
+		}
 
-        alert( "Unexpected condition: ve968ye9rtr8etya8d9" );
-    }
+		alert("Unexpected condition: ve968ye9rtr8etya8d9");
+	}
 }
 
 webix.ready(() => {
 
-    const jetApp: App = new App();
+	const jetApp: App = new App();
 
-    //webix.EditAbility
-    //webix.Movable
+	//webix.EditAbility
+	//webix.Movable
 
-    WidgetBrowser.import( jetApp );
-    WidgetCheckBox.import( jetApp );
-    WidgetCombo.import( jetApp );
-    WidgetCounter.import( jetApp );
-    WidgetDashboard.import( jetApp );
-    WidgetDatePicker.import( jetApp );
-    WidgetForm.import( jetApp );
-    WidgetImage.import( jetApp );
-    WidgetLayout.import( jetApp );
-    WidgetMenu.import( jetApp );
-    WidgetNumber.import( jetApp );
-    WidgetProperty.import( jetApp );
-    WidgetQuery.import( jetApp );
-    WidgetReview.import( jetApp );
-    WidgetSwitch.import( jetApp );
-    WidgetTab.import( jetApp );
-    WidgetTable.import( jetApp );
-    WidgetText.import( jetApp );
-    WidgetTextArea.import( jetApp );
-    WidgetToolbar.import( jetApp );
-    WidgetUploader.import( jetApp );
-    WidgetView.import( jetApp );
+	WidgetBrowser.import(jetApp);
+	WidgetCheckBox.import(jetApp);
+	WidgetCombo.import(jetApp);
+	WidgetCounter.import(jetApp);
+	WidgetDashboard.import(jetApp);
+	WidgetDatePicker.import(jetApp);
+	WidgetForm.import(jetApp);
+	WidgetImage.import(jetApp);
+	WidgetLayout.import(jetApp);
+	WidgetMenu.import(jetApp);
+	WidgetNumber.import(jetApp);
+	WidgetProperty.import(jetApp);
+	WidgetQuery.import(jetApp);
+	WidgetReview.import(jetApp);
+	WidgetSwitch.import(jetApp);
+	WidgetTab.import(jetApp);
+	WidgetTable.import(jetApp);
+	WidgetText.import(jetApp);
+	WidgetTextArea.import(jetApp);
+	WidgetToolbar.import(jetApp);
+	WidgetUploader.import(jetApp);
+	WidgetView.import(jetApp);
 
-    session.status().then( function( value ) {
+	session.status().then(function(value) {
 
-        // frames
-        const frames: webix.DataCollection = KBEntities.findFrames(() => {
-            jetApp.cache.frames = frames;
+		// frames
+		const frames: webix.DataCollection = KBEntities.findFrames(() => {
+			jetApp.cache.frames = frames;
 
-            // views
-            const names: webix.DataCollection = KBEntities.findNames( "ViewType", null, () => {
-                jetApp.cache.viewTypes = names;
+			// views
+			const names: webix.DataCollection = KBEntities.findNames("ViewType", null, () => {
+				jetApp.cache.viewTypes = names;
 
-                // rendering
-                jetApp.render();
-            } );
-        } );
-    } );
-} );
+				// rendering
+				jetApp.render();
+			});
+		});
+	});
+});
