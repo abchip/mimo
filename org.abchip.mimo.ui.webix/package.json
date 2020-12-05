@@ -37,6 +37,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@types/mini-css-extract-plugin": "^1.2.1",
     "@types/node": "^11.15.39",
     "@xbs/webix-pro": "^7.4.6",
     "acorn": "^6.4.2",

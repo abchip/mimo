@@ -58,7 +58,7 @@ public class HttpClientFactoryImpl implements Factory<HttpClient> {
 	private PoolingHttpClientConnectionManager connectionManager = null;
 
 	private CloseableHttpClient HTTP = null;
-
+	
 	@PostConstruct
 	private void init() {
 

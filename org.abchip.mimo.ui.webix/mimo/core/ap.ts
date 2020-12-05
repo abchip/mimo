@@ -23,7 +23,6 @@ import { FrameActions } from "actions/Frame";
 import { PartyActions } from "actions/Party";
 import { ProductCategoryActions } from "actions/ProductCategory";
 
-
 // widgets
 import { WidgetBrowser } from 'widgets/mm-browser';
 import { WidgetCheckBox } from 'widgets/mm-checkbox';
@@ -69,9 +68,9 @@ export default class App extends JetApp {
 			id: APPNAME,
 			version: VERSION,
 			start: "/home",
-			//            router: BUILD_AS_MODULE ? EmptyRouter : UrlRouter,
+			router: BUILD_AS_MODULE ? EmptyRouter : HashRouter,
 			//            routerPrefix: "mimo",
-			router: HashRouter,
+			// router: HashRouter,
 			debug: !PRODUCTION,
 			views: (name: boolean) => {
 				return name;
@@ -93,12 +92,12 @@ export default class App extends JetApp {
 			app.setService("ProductCategoryActions", new ProductCategoryActions());
 		}, null);
 
-		this.attachEvent("app:error", function(err) {
-			alert("Error");
+		this.attachEvent("app:error", function(err: any) {
+			alert(err);
 		});
 
-		this.attachEvent("app:error:resolve", function(err, url) {
-			alert("Delay"); // webix.delay(() => app.show("/some"));
+		this.attachEvent("app:error:resolve", function(err: any, url: any) {
+			alert(err + url); // webix.delay(() => app.show("/some"));
 		});
 
 
@@ -128,7 +127,7 @@ export default class App extends JetApp {
 		return super.createFromURL(chunk);
 	}
 
-	_loadViewDynamic(url) {
+	_loadViewDynamic(url: any) {
 		url = url.replace(/\./g, "/");
 
 		if (this.cache.viewTypes.getIndexById("mm-" + url) < 0)
