@@ -8,183 +8,188 @@
  */
 import { JetApp } from "webix-jet";
 import { KBEntities } from "core/kb";
-import { Widget , WidgetSetup, WidgetContainerConfig, WidgetContainer, Subscribe, EventType, Event } from "core/ui";
+import { Widget, WidgetSetup, WidgetContainerConfig, WidgetContainer, Subscribe, EventType, Event, EntryNamed } from "core/ui";
 
-export interface FormConfig extends WidgetContainerConfig, webix.ui.layoutConfig {
+export interface FormEntry extends EntryNamed {
 }
 
-export class WidgetForm extends WidgetContainer<FormConfig, webix.ui.layout> {
+export interface FormConfig extends WidgetContainerConfig<FormEntry>, webix.ui.layoutConfig {
+}
 
-    private static LOCAL_ID: string = "entity_form";
+export class WidgetForm extends WidgetContainer<FormEntry, FormConfig, webix.ui.layout> {
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-form";
-        setup.$cssName = "form";
-        setup.defaults = {
-            elements: [],
-            scroll: true
-        };
-    }
+	private static LOCAL_ID: string = "entity_form";
 
-    public notify( event: Event ): void {
-        WidgetContainer.notifyEvent( event, this.getView(), false );
-    }
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-form";
+		setup.$cssName = "form";
+		setup.defaults = {
+			elements: [],
+			scroll: true
+		};
+	}
 
-    public getForm(): webix.ui.form {
-        return this.getView().queryView( WidgetForm.LOCAL_ID ) as webix.ui.form;
-    }
+	public notify(event: Event): void {
+		WidgetContainer.notifyEvent(event, this.getView(), false);
+	}
 
-    public config( config: FormConfig ): void {
+	public getForm(): webix.ui.form {
+		return this.getView().queryView(WidgetForm.LOCAL_ID) as webix.ui.form;
+	}
 
-        config.rows = [
-            {
-                view: "toolbar",
-                elements: [
-                    {
-                        view: "icon", icon: "mdi mdi-wan"
-                    },
-                    {
-                        view: "icon", icon: "mdi mdi-eraser"
-//                        click: () => this.clearForm()
-                    },
-                    {
-                        view: "icon", icon: "mdi mdi-refresh"
-//                        click: () => this.urlChange()
-                    },
-                    {
-                        view: "icon", icon: "mdi mdi-content-save",
-                        click: () => {
-//                            KBEntities.saveEntity( this.getFrame(), this.getForm().getValues() );
-                        }
-                    }
-                ]
-            },
-            {
-                view: "form",
-                localId: WidgetForm.LOCAL_ID,
-                scroll: "auto",
-                mode: "edit",
-                elements: []
-            }
-        ];
-    }
+	public config(config: FormConfig): void {
 
-    @Subscribe( EventType.INIT )
-    public init_( event: Event ): void {
+		config.rows = [
+			{
+				view: "toolbar",
+				elements: [
+					{
+						view: "icon", icon: "mdi mdi-wan"
+					},
+					{
+						view: "icon", icon: "mdi mdi-eraser"
+						//                        click: () => this.clearForm()
+					},
+					{
+						view: "icon", icon: "mdi mdi-refresh"
+						//                        click: () => this.urlChange()
+					},
+					{
+						view: "icon", icon: "mdi mdi-content-save",
+						click: () => {
+							//                            KBEntities.saveEntity( this.getFrame(), this.getForm().getValues() );
+						}
+					}
+				]
+			},
+			{
+				view: "form",
+				localId: WidgetForm.LOCAL_ID,
+				scroll: "auto",
+				mode: "edit",
+				elements: []
+			}
+		];
+	}
 
-        // mode
-/*        switch ( this.getConfig().mode ) {
-            case WidgetMode.EDIT:
-                this.getView().enable();
-                break;
-            case WidgetMode.DISPLAY:
-            case WidgetMode.SELECT:
-                this.getView().disable();
-                break;
-            case WidgetMode.DELETE:
-                this.getView().disable();
-                break;
-            default:
-                this.getView().disable();
-                break;
-        }*/
+	public init(entry: FormEntry): void {
 
-        const formConfig: webix.DataRecord = this.lookupForm( event.entry.frame, true, () => {
+		// mode
+		/*        switch ( this.getConfig().mode ) {
+					case WidgetMode.EDIT:
+						this.getView().enable();
+						break;
+					case WidgetMode.DISPLAY:
+					case WidgetMode.SELECT:
+						this.getView().disable();
+						break;
+					case WidgetMode.DELETE:
+						this.getView().disable();
+						break;
+					default:
+						this.getView().disable();
+						break;
+				}*/
 
-            this.getView().reconstruct();
+		const formConfig: webix.DataRecord = this.lookupForm(entry.frame, true, () => {
 
-            // check empty
-            if ( formConfig.getValues().fields == null ) {
-                this.getForm().refresh();
-                return;
-            }
+			this.getView().reconstruct();
 
-            this.completeForm( formConfig, event.entry.frame, event.entry.name );
+			// check empty
+			if (formConfig.getValues().fields == null) {
+				this.getForm().refresh();
+				return;
+			}
 
-            this.getForm().refresh();
+			this.completeForm(formConfig, entry.frame, entry.name);
 
-            // notify children
-            WidgetContainer.notifyEvents( event, this.getView().getChildViews() );
-        } );
-    }
+			this.getForm().refresh();
 
-    private completeForm( formConfig: webix.DataRecord, frame: string, name: string ) {
+			WidgetContainer.notifyInit(entry, this.getView());
+		});
+	}
 
+	public ready(entry: FormEntry): void {
+		WidgetContainer.notifyReady(entry, this.getView());
+	}
 
-        // keys
-        var keysToken = null;
-
-        if ( name )
-            keysToken = name.split( "/" );
-
-        var keysValue = new Object();
-        var keysSplitted: number = 0;
-
-        for ( let fieldConfig of formConfig.getValues().fields ) {
-
-            if ( !fieldConfig.widget.view.startsWith( "mm-" ) )
-                continue;
-
-            switch ( fieldConfig.widget.view ) {
-                case "mm-combo":
-                case "mm-checkbox":
-                case "mm-counter":
-                case "mm-datepicker":
-                case "mm-image":
-                case "mm-number":
-                case "mm-switch":
-                case "mm-text":
-                case "mm-form":
-                    this.getView().addView( fieldConfig.widget );
+	private completeForm(formConfig: webix.DataRecord, frame: string, name: string) {
 
 
-                    // key management
-                    if ( fieldConfig.key ) {
+		// keys
+		var keysToken = null;
 
-                        if ( keysToken && keysToken.length > keysSplitted ) {
-                            keysValue[fieldConfig.name] = keysToken[keysSplitted];
-                            fieldConfig.widget = webix.extend( { view: "mm-text", disabled: true }, fieldConfig.widget, false );
-                        }
-                        keysSplitted++;
-                    }
+		if (name)
+			keysToken = name.split("/");
 
-                    break;
-                default:
-                    alert( KBEntities.stringify( fieldConfig.widget ) );
-            }
-        }
+		var keysValue = new Object();
+		var keysSplitted: number = 0;
 
-        this.getForm().setValues( keysValue );
+		for (let fieldConfig of formConfig.getValues().fields) {
 
-        // get entity
-        if ( name != null ) {
-            if ( keysToken.length < keysSplitted ) {
-                // TODO prototype
-                //                alert( "prototype" );
-            }
-            else {
-                const entity = KBEntities.lookupEntity( frame, name, () => {
-                    this.getForm().setValues( entity.getValues(), true );
-                } );
-            }
-        }
-    }
+			if (!fieldConfig.widget.view.startsWith("mm-"))
+				continue;
 
-    private clearForm() {
-        this.getForm().clear();
-    }
+			switch (fieldConfig.widget.view) {
+				case "mm-combo":
+				case "mm-checkbox":
+				case "mm-counter":
+				case "mm-datepicker":
+				case "mm-image":
+				case "mm-number":
+				case "mm-switch":
+				case "mm-text":
+				case "mm-form":
+					this.getView().addView(fieldConfig.widget);
 
-    private lookupForm( frame: string, prototype: boolean, callback ): webix.DataRecord {
 
-        var data = new webix.DataRecord( {} );
-        if ( callback != null )
-            data.attachEvent( "onAfterLoad", callback );
+					// key management
+					if (fieldConfig.key) {
 
-        data.parse( KBEntities.sendBizRequest( "lookupForm", { frame: frame, name: frame, prototype: prototype } ), null );
-        return data;
-    }
+						if (keysToken && keysToken.length > keysSplitted) {
+							keysValue[fieldConfig.name] = keysToken[keysSplitted];
+							fieldConfig.widget = webix.extend({ view: "mm-text", disabled: true }, fieldConfig.widget, false);
+						}
+						keysSplitted++;
+					}
 
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetForm.prototype ), webix.ui.layout );
-    }
+					break;
+				default:
+					alert(KBEntities.stringify(fieldConfig.widget));
+			}
+		}
+
+		this.getForm().setValues(keysValue);
+
+		// get entity
+		if (name != null) {
+			if (keysToken.length < keysSplitted) {
+				// TODO prototype
+				//                alert( "prototype" );
+			}
+			else {
+				const entity = KBEntities.lookupEntity(frame, name, () => {
+					this.getForm().setValues(entity.getValues(), true);
+				});
+			}
+		}
+	}
+
+	private clearForm() {
+		this.getForm().clear();
+	}
+
+	private lookupForm(frame: string, prototype: boolean, callback): webix.DataRecord {
+
+		var data = new webix.DataRecord({});
+		if (callback != null)
+			data.attachEvent("onAfterLoad", callback);
+
+		data.parse(KBEntities.sendBizRequest("lookupForm", { frame: frame, name: frame, prototype: prototype }), null);
+		return data;
+	}
+
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetForm.prototype), webix.ui.layout);
+	}
 }

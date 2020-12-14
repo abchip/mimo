@@ -7,34 +7,43 @@
  *
  */
 import { JetApp } from "webix-jet";
-import { Widget, WidgetSetup, WidgetConfig } from "core/ui";
+import { Widget, WidgetSetup, WidgetConfig, Entry } from "core/ui";
 
-export interface BrowserConfig extends WidgetConfig, webix.ui.layoutConfig {
+export interface BrowserEntry extends Entry {
 }
 
-export class WidgetBrowser extends Widget<BrowserConfig, webix.ui.layout> {
+export interface BrowserConfig extends WidgetConfig<BrowserEntry>, webix.ui.layoutConfig {
+}
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-browser";
-        setup.$cssName = "layout";
-    }
+export class WidgetBrowser extends Widget<BrowserEntry, BrowserConfig, webix.ui.layout> {
 
-    public config( config: BrowserConfig ): void {
-        config.rows = [
-            {
-                view: "toolbar",
-                elements: [
-                    {
-                        view: "icon", icon: "mdi mdi-refresh"
-                    }
-                ]
-            },
-            {
-                view: "iframe",
-                src: ""
-            }
-        ];
-    }
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-browser";
+		setup.$cssName = "layout";
+	}
+
+	public config(config: BrowserConfig): void {
+		config.rows = [
+			{
+				view: "toolbar",
+				elements: [
+					{
+						view: "icon", icon: "mdi mdi-refresh"
+					}
+				]
+			},
+			{
+				view: "iframe",
+				src: ""
+			}
+		];
+	}
+
+	public init(entry: BrowserEntry): void {
+	}
+
+	public ready(entry: BrowserEntry): void {
+	}
 
     /*    protected urlChange() {
             super.urlChange();
@@ -51,7 +60,7 @@ export class WidgetBrowser extends Widget<BrowserConfig, webix.ui.layout> {
             ( this.$$( "toolbar_frame" ) as webix.ui.iframe ).define( "src", src );
         }*/
 
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetBrowser.prototype ), webix.ui.layout );
-    }
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetBrowser.prototype), webix.ui.layout);
+	}
 }

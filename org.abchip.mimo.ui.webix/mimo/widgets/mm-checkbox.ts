@@ -7,26 +7,34 @@
  *
  */
 import { JetApp } from "webix-jet";
-import { Widget, WidgetSetup, WidgetConfig } from "core/ui";
+import { Widget, WidgetSetup, WidgetConfig, Entry } from "core/ui";
 
-export interface CheckBoxConfig extends WidgetConfig, webix.ui.checkboxConfig {
+export interface CheckBoxEntry extends Entry {
 }
 
-export class WidgetCheckBox extends Widget<CheckBoxConfig, webix.ui.checkbox> {
+export interface CheckBoxConfig extends WidgetConfig<CheckBoxEntry>, webix.ui.checkboxConfig {
+}
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-checkbox";
-        setup.$cssName = "checkbox";
-        setup.defaults = {
-            labelWidth: 250
-        };
-    }
+export class WidgetCheckBox extends Widget<CheckBoxEntry, CheckBoxConfig, webix.ui.checkbox> {
 
-    public config( config: CheckBoxConfig ): void {
-        
-    }
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-checkbox";
+		setup.$cssName = "checkbox";
+		setup.defaults = {
+			labelWidth: 250
+		};
+	}
 
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetCheckBox.prototype ), webix.ui.checkbox );
-    }
+	public config(config: CheckBoxConfig): void {
+	}
+
+	public init(entry: CheckBoxEntry): void {
+	}
+
+	public ready(entry: CheckBoxEntry): void {
+	}
+
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetCheckBox.prototype), webix.ui.checkbox);
+	}
 }

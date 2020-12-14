@@ -7,28 +7,38 @@
  *
  */
 import { JetApp } from "webix-jet";
-import { WidgetSetup, WidgetContainerConfig, Widget, WidgetContainer, Subscribe, EventType, Event } from "core/ui";
+import { WidgetSetup, WidgetContainerConfig, Widget, WidgetContainer, Subscribe, EventType, Event, EntryFramed } from "core/ui";
 
-export interface DashboardConfig extends WidgetContainerConfig, webix.ui.layoutConfig {
-    connectedFilter?: boolean
+export interface DashboardEntry extends EntryFramed {
 }
 
-export class WidgetDashboard extends WidgetContainer<DashboardConfig, webix.ui.layout> {
+export interface DashboardConfig extends WidgetContainerConfig<DashboardEntry>, webix.ui.layoutConfig {
+	connectedFilter?: boolean
+}
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-dashboard";
-        setup.$cssName = "layout";
-    }
+export class WidgetDashboard extends WidgetContainer<DashboardEntry, DashboardConfig, webix.ui.layout> {
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-dashboard";
+		setup.$cssName = "layout";
+	}
 
-    public notify( event: Event ): void {
-        WidgetContainer.notifyEvent( event, this.getView(), true );
-    }
+	public notify(event: Event): void {
+		WidgetContainer.notifyEvent(event, this.getView(), true);
+	}
 
-    public config( config: DashboardConfig ): void {
-        
-    }
-    
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetDashboard.prototype ), webix.ui.layout );
-    }
+	public config(config: DashboardConfig): void {
+	}
+
+	public init(entry: DashboardEntry): void {
+		WidgetContainer.notifyInit(entry, this.getView());
+	}
+
+	public ready(entry: DashboardEntry): void {
+		WidgetContainer.notifyReady(entry, this.getView());
+	}
+
+
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetDashboard.prototype), webix.ui.layout);
+	}
 }

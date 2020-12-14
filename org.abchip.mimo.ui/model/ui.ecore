@@ -141,6 +141,7 @@
       <eLiterals name="Dashbard" literal="mm-dashboard"/>
       <eLiterals name="Editor" literal="mm-editor"/>
       <eLiterals name="Import" literal="mm-import"/>
+      <eLiterals name="Report" literal="mm-report"/>
       <eLiterals name="Search" literal="mm-search"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="View" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">

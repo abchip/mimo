@@ -8,54 +8,63 @@
  */
 import { JetApp } from "webix-jet";
 import { KBEntities } from "core/kb";
-import { Widget, WidgetSetup, WidgetConfig } from "core/ui";
+import { Widget, WidgetSetup, WidgetConfig, Entry } from "core/ui";
 
-export interface TextAreaConfig extends WidgetConfig, webix.ui.layoutConfig {
+export interface TextAreaEntry extends Entry {
 }
 
-export class WidgetTextArea extends Widget<TextAreaConfig, webix.ui.layout> {
+export interface TextAreaConfig extends WidgetConfig<TextAreaEntry>, webix.ui.layoutConfig {
+}
 
-    private static LOCAL_ID: string = "textarea";
+export class WidgetTextArea extends Widget<TextAreaEntry, TextAreaConfig, webix.ui.layout> {
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-textarea";
-        setup.$cssName = "layout";
-        setup.defaults = {
-            labelWidth: 250
-        };
-    }
+	private static LOCAL_ID: string = "textarea";
+
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-textarea";
+		setup.$cssName = "layout";
+		setup.defaults = {
+			labelWidth: 250
+		};
+	}
 
 
-    public config( config: TextAreaConfig ): void {
+	public config(config: TextAreaConfig): void {
 
-        config.rows = [
-            {
-                view: "toolbar",
-                elements: [
-                    {
-                        view: "icon", icon: "mdi mdi-eraser"
-//                        click: () => this.clearTextArea()
-                    },
-                    {
-                        view: "icon", icon: "mdi mdi-refresh"
-                    },
-                    {
-                        view: "icon", icon: "mdi mdi-content-save",
-                        click: () => {
-                            alert( KBEntities.stringify( this.getView().queryView( WidgetTextArea.LOCAL_ID ).getValue() ) );
-                            //                        KBEntities.saveEntity( this.getFrame(), this.getForm().getValues() );
-                        }
-                    }
-                ]
-            },
-            {
-                view: "textarea",
-                localId: WidgetTextArea.LOCAL_ID
-            }
-        ];
-    }
+		config.rows = [
+			{
+				view: "toolbar",
+				elements: [
+					{
+						view: "icon", icon: "mdi mdi-eraser"
+						//                        click: () => this.clearTextArea()
+					},
+					{
+						view: "icon", icon: "mdi mdi-refresh"
+					},
+					{
+						view: "icon", icon: "mdi mdi-content-save",
+						click: () => {
+							alert(KBEntities.stringify(this.getView().queryView(WidgetTextArea.LOCAL_ID).getValue()));
+							//                        KBEntities.saveEntity( this.getFrame(), this.getForm().getValues() );
+						}
+					}
+				]
+			},
+			{
+				view: "textarea",
+				localId: WidgetTextArea.LOCAL_ID
+			}
+		];
+	}
 
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetTextArea.prototype ), webix.ui.layout );
-    }
+	public init(entry: TextAreaEntry): void {
+	}
+
+	public ready(entry: TextAreaEntry): void {
+	}
+
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetTextArea.prototype), webix.ui.layout);
+	}
 }

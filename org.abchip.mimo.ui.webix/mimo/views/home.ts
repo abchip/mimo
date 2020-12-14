@@ -51,7 +51,7 @@ class CustomMenu extends JetView {
 							gravity: 0.05,
 							click: () => {
 								var sidebar = this.$$("sidebar") as webix.ui.sidebar;
-								var resizer = this.$$("resizer") as webix.ui.resizer;
+								//								var resizer = this.$$("resizer") as webix.ui.resizer;
 								var label = this.$$("toolbar_title") as webix.ui.label;
 								var refresh = this.$$("toolbar_refresh") as webix.ui.icon;
 								if (sidebar.getState().collapsed) {
@@ -136,11 +136,13 @@ class CustomMenu extends JetView {
 		};
 	}
 
-	public ready(view: any, urls: any[]) {
+	//	public ready(view: any, urls: any[]) {
+	public ready() {
 		var sidebar = this.$$("sidebar") as webix.ui.sidebar;
 
 		if (this.eventSelect != null)
 			sidebar.detachEvent(this.eventSelect);
+			
 		this.eventSelect = sidebar.attachEvent("onAfterSelect", (id) => {
 			var item = sidebar.getItem(id);
 			if (item.filter != null) {

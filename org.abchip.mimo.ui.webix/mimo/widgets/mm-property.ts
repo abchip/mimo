@@ -8,71 +8,75 @@
  */
 import { JetApp } from "webix-jet";
 import { KBEntities } from "core/kb";
-import { Widget, WidgetSetup, WidgetConfig, Subscribe, Event, EventType } from "core/ui";
+import { Widget, WidgetSetup, WidgetConfig, Subscribe, Event, EventType, EntryNamed } from "core/ui";
 
-
-export interface PropertyConfig extends WidgetConfig, webix.ui.layoutConfig {
+export interface PropertyEntry extends EntryNamed {
 }
 
-export class WidgetProperty extends Widget<PropertyConfig, webix.ui.layout> {
+export interface PropertyConfig extends WidgetConfig<PropertyEntry>, webix.ui.layoutConfig {
+}
 
-    private static LOCAL_ID: string = "entity_properties";
+export class WidgetProperty extends Widget<PropertyEntry, PropertyConfig, webix.ui.layout> {
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-property";
-        setup.$cssName = "layout";
-    }
+	private static LOCAL_ID: string = "entity_properties";
 
-    private getProperty(): webix.ui.property {
-        return this.getView().queryView( WidgetProperty.LOCAL_ID ) as webix.ui.property;
-    }
-    
-    public config( config: PropertyConfig ): void {
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-property";
+		setup.$cssName = "layout";
+	}
 
-        config.rows = [
-            {
-                view: "toolbar",
-                elements: [
-                    {
-                        view: "icon", icon: "mdi mdi-refresh"
-                    }
-                ]
-            },
-            {
-                view: "property",
-                elements: []
-            }
-        ];
-    }
+	private getProperty(): webix.ui.property {
+		return this.getView().queryView(WidgetProperty.LOCAL_ID) as webix.ui.property;
+	}
 
-    @Subscribe( EventType.INIT )
-    protected init_( event: Event ) {
+	public config(config: PropertyConfig): void {
 
-        const entity = KBEntities.lookupEntity( event.entry.frame, event.entry.name, () => {
-            const frame = KBEntities.lookupFrame( event.entry.frame, () => {
-                var index: number = 0;
-                for ( const slot of frame.getValues().slots ) {
-                    if ( slot.group != "info" )
-                        continue;
+		config.rows = [
+			{
+				view: "toolbar",
+				elements: [
+					{
+						view: "icon", icon: "mdi mdi-refresh"
+					}
+				]
+			},
+			{
+				view: "property",
+				elements: []
+			}
+		];
+	}
 
-                    //                    alert( KBEntities.stringify( slot ) );
-                    this.getProperty().config.elements[index] = {
-                        id: slot.name,
-                        label: slot.text,
-                        type: "text",
-                        value: entity.getValues()[slot.name]
-                    }
-                    index = index + 1;
-                }
+	public init(entry: PropertyEntry): void {
 
-                this.getProperty().config["labelWidth"] = 500;
-                this.getProperty().refresh();
-                //  properties.setValues( entity.getValues() );
-            } );
-        } );
-    }
+		const entity = KBEntities.lookupEntity(entry.frame, entry.name, () => {
+			const frame = KBEntities.lookupFrame(entry.frame, () => {
+				var index: number = 0;
+				for (const slot of frame.getValues().slots) {
+					if (slot.group != "info")
+						continue;
 
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetProperty.prototype ), webix.ui.layout );
-    }
+					//                    alert( KBEntities.stringify( slot ) );
+					this.getProperty().config.elements[index] = {
+						id: slot.name,
+						label: slot.text,
+						type: "text",
+						value: entity.getValues()[slot.name]
+					}
+					index = index + 1;
+				}
+
+				this.getProperty().config["labelWidth"] = 500;
+				this.getProperty().refresh();
+				//  properties.setValues( entity.getValues() );
+			});
+		});
+	}
+
+	public ready(entry: PropertyEntry): void {
+	}
+
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetProperty.prototype), webix.ui.layout);
+	}
 }

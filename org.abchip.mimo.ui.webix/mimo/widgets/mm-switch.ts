@@ -7,30 +7,38 @@
  *
  */
 import { JetApp } from "webix-jet";
-import { Widget, WidgetSetup, WidgetConfig } from "core/ui";
+import { Widget, WidgetSetup, WidgetConfig, Entry } from "core/ui";
 
-export interface SwitchConfig extends WidgetConfig, webix.ui.switchButtonConfig {
+export interface SwitchEntry extends Entry {
 }
 
-export class WidgetSwitch extends Widget<SwitchConfig, webix.ui.switchButton> {
+export interface SwitchConfig extends WidgetConfig<SwitchEntry>, webix.ui.switchButtonConfig {
+}
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-switch";
-        setup.$cssName = "switch";
-        setup.defaults = {
-            labelWidth: 250,
-            uncheckValue: "0",
-            checkValue: "1",
-            value: "1",
-            customCheckbox: true
-        };
-    }
+export class WidgetSwitch extends Widget<SwitchEntry, SwitchConfig, webix.ui.switchButton> {
 
-    public config( config: SwitchConfig ): void {
-        
-    }
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-switch";
+		setup.$cssName = "switch";
+		setup.defaults = {
+			labelWidth: 250,
+			uncheckValue: "0",
+			checkValue: "1",
+			value: "1",
+			customCheckbox: true
+		};
+	}
 
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetSwitch.prototype ), webix.ui.switchButton );
-    }
+	public config(config: SwitchConfig): void {
+	}
+
+	public init(entry: SwitchEntry): void {
+	}
+
+	public ready(entry: SwitchEntry): void {
+	}
+
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetSwitch.prototype), webix.ui.switchButton);
+	}
 }

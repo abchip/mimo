@@ -8,287 +8,286 @@
  */
 import { JetApp } from "webix-jet";
 import { KBEntities } from "core/kb";
-import { Widget, WidgetSetup, WidgetConfig, Subscribe, Event, EventType } from "core/ui";
+import { Widget, WidgetSetup, WidgetConfig, Subscribe, Event, EventType, EntryFramed } from "core/ui";
 import { ActionProvider, ActionUtils } from "core/ui";
 import { MenuUtils } from "widgets/mm-menu";
 
-export interface TableConfig extends WidgetConfig, webix.ui.layoutConfig {
-    limit?: number;
+export interface TableEntry extends EntryFramed {
+	filter?: string;
+	keys?: string;
 }
 
-export interface TableEntry {
-    frame?: string;
-    filter?: string;
-    keys?: string;
+export interface TableConfig extends WidgetConfig<TableEntry>, webix.ui.layoutConfig {
+	limit?: number;
 }
 
-export class WidgetTable extends Widget<TableConfig, webix.ui.layout> {
+export class WidgetTable extends Widget<TableEntry, TableConfig, webix.ui.layout> {
 
-    private static LOCAL_ID: string = "entities_datatable";
-    private static LIMIT: number = 2000;
+	private static LOCAL_ID: string = "entities_datatable";
+	private static LIMIT: number = 2000;
 
-    private contextMenu: webix.ui.contextmenu = null;
+	private contextMenu: webix.ui.contextmenu = null;
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-table";
-        setup.$cssName = "layout";
-    }
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-table";
+		setup.$cssName = "layout";
+	}
+
+	public config(config: TableConfig): void {
+
+		config.rows = [
+			{
+				view: "toolbar",
+				elements: [
+					{},
+					{
+						view: "icon", icon: "mdi mdi-wan"
+					},
+					{
+						view: "icon", icon: "mdi mdi-download",
+						click: () => this.download()
+					},
+					{
+						view: "icon", icon: "mdi mdi-filter-outline",
+						click: () => this.showFilter()
+					},
+					{
+						view: "icon", icon: "mdi mdi-format-columns"
+					},
+					{
+						view: "icon", icon: "mdi mdi-refresh",
+						click: () => this.reloadData(null)
+					}
+				]
+			},
+			{
+				view: "datatable",
+				localId: WidgetTable.LOCAL_ID,
+				autoConfig: false,
+				dragColumn: true,
+				resizeColumn: true,
+				select: true,
+				onClick: {
+					"mdi-information-outline": (event, item) => {
+						var entity = this.getDatatable().getItem(item);
+						if (entity == null)
+							return;
+
+						ActionUtils.lookupAction(this.getApplication(), this.getConfig().entry.frame, "info", (service: ActionProvider) => {
+							try {
+								service.exec("info", [this, this.getConfig().entry.frame, this.getEntityName(entity)]);
+							}
+							catch (exc) {
+								alert(exc);
+							}
+						});
+					}
+				}
+			}
+		];
+	}
+
+	private getDatatable(): webix.ui.datatable {
+		return this.getView().queryView({ localId: WidgetTable.LOCAL_ID }) as webix.ui.datatable;
+	}
+
+	private getEntityName(entity: any) {
+
+		var entityName = null;
+
+		for (var i = 0; i < this.getDatatable().config.leftSplit; i++) {
+			if (entityName == null)
+				entityName = entity[this.getDatatable().columnId(i)];
+			else
+				entityName = entityName + "/" + entity[this.getDatatable().columnId(i)];
+		}
+
+		return entityName;
+	}
+
+	public init(entry: TableEntry): void {
+		this.reloadTableColumns(entry);
+	}
+
+	public ready(entry: TableEntry): void {
+		this.reloadData(entry);
+	}
+
+	private reload(entry: TableEntry) {
+
+		this.reloadTableColumns(entry);
+		this.reloadData(entry);
+
+		// contextMenu
+		//		MenuUtils.reloadContextMenu(this.contextMenu, this.getConfig().entry.frame);
+
+	}
+
+	private reloadData(entry: TableEntry) {
+
+		var keys = entry.keys;
+		var filter = entry.filter;
+
+		const datatable = this.getDatatable();
+		datatable.clearAll();
+
+		datatable.parse(KBEntities.findEntities(entry.frame, keys, filter, WidgetTable.LIMIT), null);
+	}
+
+	private reloadTableColumns(entry: TableEntry) {
+
+		const schema = this.lookupSchema(entry.frame, true, () => {
+
+			this.getDatatable().config.columns = [];
+
+			if (schema.getValues().columns != null) {
+
+				var keysLength: number = 0;
+				var indexColumn: number = 0;
+				for (const columnConfig of schema.getValues().columns) {
+
+					if (columnConfig.leftSplit == true) {
+						keysLength++;
+					}
+					if (columnConfig.icon != null) {
+						columnConfig.header = columnConfig.header + " <span class='webix_icon " + columnConfig.icon + "'></span> ";
+					}
+
+					switch (columnConfig.view) {
+						case "checkbox":
+							columnConfig.template = "{common.checkbox()}";
+							break;
+						default:
+							break;
+					}
+
+					// TODO Verify me 
+					switch (columnConfig.sort) {
+						case "raw":
+							if (columnConfig.view != "checkbox") {
+								columnConfig.format = webix.Date.dateToStr(webix.i18n.fullDateFormat, false);
+								//                              columnConfig.format = webix.i18n.dateFormatStr;
+							}
+							break;
+						case "int":
+							var numberFormat =
+								function(value) {
+									return webix.i18n.numberFormat(value)
+								}
+								;
+							columnConfig.format = numberFormat;
+							break;
+						default:
+							break;
+					}
+
+					if (columnConfig.group == "info") {
+						columnConfig.hidden = true;
+					}
+
+					this.getDatatable().config.columns[indexColumn] = columnConfig;
+					indexColumn = indexColumn + 1;
+				}
+
+				this.getDatatable().config.leftSplit = keysLength;
+
+				// append info icon
+				this.getDatatable().config.columns[indexColumn] = {
+					id: "info",
+					header: "Info",
+					template: data => {
+						return "<span class='webix_icon mdi mdi-information-outline'></span>";
+					}
+				};
+			}
+
+			this.getDatatable().refreshColumns(null, true);
+		});
+	}
+
+	private attachContextMenu(): webix.ui.contextmenu {
+
+		const contextMenu: webix.ui.contextmenu = webix.ui({
+			view: "contextmenu"
+			//          autowidth: true,
+			//            autoheight: true,
+			//            autofocus: true,
+			//            height: 200,
+			//            modal: true,
+			//            openAction:"click"  
+			//            master: datatable.$view.id
+		}) as webix.ui.contextmenu;
 
 
-    public config( config: TableConfig ): void {
+		contextMenu.attachEvent('onShow', () => {
+			//            contextMenu.resize();
+			//            contextMenu.disable();
+			//            contextMenu.enable();
 
-        config.rows = [
-            {
-                view: "toolbar",
-                elements: [
-                    {
-                        view: "icon", icon: "mdi mdi-wan"
-                    },
-                    {
-                        view: "icon", icon: "mdi mdi-download",
-                        click: () => this.download()
-                    },
-                    {
-                        view: "icon", icon: "mdi mdi-filter-outline",
-                        click: () => this.showFilter()
-                    },
-                    {
-                        view: "icon", icon: "mdi mdi-format-columns"
-                    },
-                    {
-                        view: "icon", icon: "mdi mdi-refresh",
-                        click: () => this.reloadData()
-                    }
-                ]
-            },
-            {
-                view: "datatable",
-                localId: WidgetTable.LOCAL_ID,
-                autoConfig: false,
-                dragColumn: true,
-                resizeColumn: true,
-                select: true,
-                onClick: {
-                    "mdi-information-outline": ( event, item ) => {
-                        var entity = this.getDatatable().getItem( item );
-                        if ( entity == null )
-                            return;
+			//            contextMenu.callEvent( "onFocus", null );
+		});
 
-                        ActionUtils.lookupAction( this.getApplication(), this.getConfig().entry.frame, "info", ( service: ActionProvider ) => {
-                            try {
-                                service.exec( "info", [this, this.getConfig().entry.frame, this.getEntityName( entity )] );
-                            }
-                            catch ( exc ) {
-                                alert( exc );
-                            }
-                        } );
-                    }
-                }
-            }
-        ];
-    }
+		this.getDatatable().attachEvent('onFocus', () => {
+			contextMenu.hide();
+		});
 
-    @Subscribe( EventType.INIT )
-    public load_( event: Event ): void {
+		contextMenu.attachEvent('onBlur', () => {
+			//            contextMenu.hide();
+		});
 
-    }
+		contextMenu.attachEvent('onMenuItemClick', (id) => {
 
-    private getDatatable(): webix.ui.datatable {
-        return this.getView().queryView( WidgetTable.LOCAL_ID ) as webix.ui.datatable;
-    }
+			var frameName = null;
+			var entityName = null;
 
-    private getEntityName( entity: any ) {
+			var context = contextMenu.getContext();
+			var itemMenu = contextMenu.getMenuItem(id);
 
-        var entityName = null;
+			var entity = this.getDatatable().getItem(context.id);
 
-        for ( var i = 0; i < this.getDatatable().config.leftSplit; i++ ) {
-            if ( entityName == null )
-                entityName = entity[this.getDatatable().columnId( i )];
-            else
-                entityName = entityName + "/" + entity[this.getDatatable().columnId( i )];
-        }
+			frameName = entity["isa"];
+			var index = frameName.lastIndexOf("/");
+			frameName = frameName.substring(index + 1);
 
-        return entityName;
-    }
+			entityName = this.getEntityName(entity);
 
-    private reload() {
+			var action = itemMenu.action;
+			ActionUtils.lookupAction(this.getApplication(), frameName, action, (service: ActionProvider) => {
+				try {
+					service.exec(action, [this, frameName, entityName]);
+				}
+				catch (exc) {
+					alert(exc);
+				}
+			});
+		});
 
-        this.reloadTableColumns( true );
-        this.reloadData();
+		contextMenu.attachTo(this.getDatatable());
 
-        // contextMenu
-        MenuUtils.reloadContextMenu( this.contextMenu, this.getConfig().entry.frame );
+		return contextMenu;
+	}
 
-    }
+	private showFilter() {
+		//        var win = webix.ui( QueryBuilderWindow ) as QueryBuilderWindow;
+		//        win.showWindow();
+	}
 
-    private reloadData() {
+	private download() {
+		webix.toExcel(this.getDatatable());
+	}
 
-        var keys = this.getConfig().entry.keys;
-        var filter = this.getConfig().entry.filter;
+	private lookupSchema(name, prototype, callback): webix.DataRecord {
 
-        const datatable = this.getDatatable();
-        datatable.clearAll();
+		var data = new webix.DataRecord({});
+		if (callback != null)
+			data.attachEvent("onAfterLoad", callback);
 
-        datatable.parse( KBEntities.findEntities( this.getConfig().entry.frame, keys, filter, WidgetTable.LIMIT ), null );
-    }
+		data.parse(KBEntities.sendBizRequest("lookupSchema", { frame: name, name: name, prototype: prototype }), null);
 
-    private reloadTableColumns( clear: boolean ) {
+		return data;
+	}
 
-        if ( clear )
-            this.getDatatable().clearAll();
-
-        const schema = this.lookupSchema( this.getConfig().entry.frame, true, () => {
-
-            this.getDatatable().config.columns = [];
-
-            if ( schema.getValues().columns != null ) {
-
-                var keysLength: number = 0;
-                var indexColumn: number = 0;
-                for ( const columnConfig of schema.getValues().columns ) {
-
-                    if ( columnConfig.leftSplit == true ) {
-                        keysLength++;
-                    }
-                    if ( columnConfig.icon != null ) {
-                        columnConfig.header = columnConfig.header + " <span class='webix_icon " + columnConfig.icon + "'></span> ";
-                    }
-
-                    switch ( columnConfig.view ) {
-                        case "checkbox":
-                            columnConfig.template = "{common.checkbox()}";
-                            break;
-                        default:
-                            break;
-                    }
-
-                    // TODO Verify me 
-                    switch ( columnConfig.sort ) {
-                        case "raw":
-                            if ( columnConfig.view != "checkbox" ) {
-                                columnConfig.format = webix.Date.dateToStr( webix.i18n.fullDateFormat, false );
-                                //                              columnConfig.format = webix.i18n.dateFormatStr;
-                            }
-                            break;
-                        case "int":
-                            var numberFormat =
-                                function( value ) {
-                                    return webix.i18n.numberFormat( value )
-                                }
-                                ;
-                            columnConfig.format = numberFormat;
-                            break;
-                        default:
-                            break;
-                    }
-
-                    if ( columnConfig.group == "info" ) {
-                        columnConfig.hidden = true;
-                    }
-
-                    this.getDatatable().config.columns[indexColumn] = columnConfig;
-                    indexColumn = indexColumn + 1;
-                }
-
-                this.getDatatable().config.leftSplit = keysLength;
-
-                // append info icon
-                this.getDatatable().config.columns[indexColumn] = {
-                    id: "info",
-                    header: "Info",
-                    template: data => {
-                        return "<span class='webix_icon mdi mdi-information-outline'></span>";
-                    }
-                };
-            }
-
-            this.getDatatable().refreshColumns( null, true );
-        } );
-    }
-
-    private attachContextMenu(): webix.ui.contextmenu {
-
-        const contextMenu: webix.ui.contextmenu = webix.ui( {
-            view: "contextmenu"
-            //          autowidth: true,
-            //            autoheight: true,
-            //            autofocus: true,
-            //            height: 200,
-            //            modal: true,
-            //            openAction:"click"  
-            //            master: datatable.$view.id
-        } ) as webix.ui.contextmenu;
-
-
-        contextMenu.attachEvent( 'onShow', () => {
-            //            contextMenu.resize();
-            //            contextMenu.disable();
-            //            contextMenu.enable();
-
-            //            contextMenu.callEvent( "onFocus", null );
-        } );
-
-        this.getDatatable().attachEvent( 'onFocus', () => {
-            contextMenu.hide();
-        } );
-
-        contextMenu.attachEvent( 'onBlur', () => {
-            //            contextMenu.hide();
-        } );
-
-        contextMenu.attachEvent( 'onMenuItemClick', ( id ) => {
-
-            var frameName = null;
-            var entityName = null;
-
-            var context = contextMenu.getContext();
-            var itemMenu = contextMenu.getMenuItem( id );
-
-            var entity = this.getDatatable().getItem( context.id );
-
-            frameName = entity["isa"];
-            var index = frameName.lastIndexOf( "/" );
-            frameName = frameName.substring( index + 1 );
-
-            entityName = this.getEntityName( entity );
-
-            var action = itemMenu.action;
-            ActionUtils.lookupAction( this.getApplication(), frameName, action, ( service: ActionProvider ) => {
-                try {
-                    service.exec( action, [this, frameName, entityName] );
-                }
-                catch ( exc ) {
-                    alert( exc );
-                }
-            } );
-        } );
-
-        contextMenu.attachTo( this.getDatatable() );
-
-        return contextMenu;
-    }
-
-    private showFilter() {
-        //        var win = webix.ui( QueryBuilderWindow ) as QueryBuilderWindow;
-        //        win.showWindow();
-    }
-
-    private download() {
-        webix.toExcel( this.getDatatable() );
-    }
-
-    private lookupSchema( name, prototype, callback ): webix.DataRecord {
-
-        var data = new webix.DataRecord( {} );
-        if ( callback != null )
-            data.attachEvent( "onAfterLoad", callback );
-
-        data.parse( KBEntities.sendBizRequest( "lookupSchema", { frame: name, name: name, prototype: prototype } ), null );
-
-        return data;
-    }
-
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetTable.prototype ), webix.ui.layout );
-    }
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetTable.prototype), webix.ui.layout);
+	}
 }

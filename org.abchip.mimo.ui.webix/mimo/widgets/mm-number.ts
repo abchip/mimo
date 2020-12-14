@@ -7,26 +7,34 @@
  *
  */
 import { JetApp } from "webix-jet";
-import { Widget, WidgetSetup, WidgetConfig } from "core/ui";
+import { Widget, WidgetSetup, WidgetConfig, Entry } from "core/ui";
 
-export interface NumberConfig extends WidgetConfig, webix.ui.textConfig {
+export interface NumberEntry extends Entry {
 }
 
-export class WidgetNumber extends Widget<NumberConfig, webix.ui.text> {
+export interface NumberConfig extends WidgetConfig<NumberEntry>, webix.ui.textConfig {
+}
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-number";
-        setup.$cssName = "text";
-        setup.defaults = {
-            labelWidth: 250
-        };
-    }
+export class WidgetNumber extends Widget<NumberEntry, NumberConfig, webix.ui.text> {
 
-    public config( config: NumberConfig ): void {
-        
-    }
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-number";
+		setup.$cssName = "text";
+		setup.defaults = {
+			labelWidth: 250
+		};
+	}
 
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetNumber.prototype ), webix.ui.text );
-    }
+	public config(config: NumberConfig): void {
+	}
+
+	public init(entry: NumberEntry): void {
+	}
+
+	public ready(entry: NumberEntry): void {
+	}
+
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetNumber.prototype), webix.ui.text);
+	}
 }

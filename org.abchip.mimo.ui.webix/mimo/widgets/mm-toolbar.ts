@@ -9,142 +9,147 @@
 import * as webix from "@xbs/webix-pro";
 import { JetApp } from "webix-jet";
 import { KBEntities } from "core/kb";
-import { Widget, WidgetSetup, WidgetConfig, Subscribe, Event, EventType, } from "core/ui";
+import { Widget, WidgetSetup, WidgetConfig, Subscribe, Event, EventType, EntryFramed } from "core/ui";
 import { ActionProvider, ActionUtils } from "core/ui";
 import { MenuUtils } from "widgets/mm-menu";
 
-export interface ToolbarConfig extends WidgetConfig, webix.ui.toolbarConfig {
-    showFrame?: boolean;
-    showEntity?: boolean;
+export interface ToolbarEntry extends EntryFramed {
 }
 
-export class WidgetToolbar extends Widget<ToolbarConfig, webix.ui.toolbar> {
+export interface ToolbarConfig extends WidgetConfig<ToolbarEntry>, webix.ui.toolbarConfig {
+	showFrame?: boolean;
+	showEntity?: boolean;
+}
 
-    private LABEL_IDX: number;
-    private ENTITY_IDX: number;
-    private FRAME_IDX: number;
+export class WidgetToolbar extends Widget<ToolbarEntry, ToolbarConfig, webix.ui.toolbar> {
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-toolbar";
-        setup.$cssName = "toolbar";
-        setup.defaults = {
-            elements: []
-        };
-    }
+	private LABEL_IDX: number;
+	private ENTITY_IDX: number;
+	private FRAME_IDX: number;
 
-    public config( config: ToolbarConfig ): void {
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-toolbar";
+		setup.$cssName = "toolbar";
+		setup.defaults = {
+			elements: []
+		};
+	}
 
-        this.LABEL_IDX = 0;
-        this.FRAME_IDX = 0;
-        this.ENTITY_IDX = 0;
+	public config(config: ToolbarConfig): void {
 
-        var elements: any[] = [];
+		this.LABEL_IDX = 0;
+		this.FRAME_IDX = 0;
+		this.ENTITY_IDX = 0;
 
-        // label
-        var toolbarLabelConfig: webix.ui.labelConfig = {
-            view: "label",
-            align: "left",
-            label: "xxx"
-        };
-        elements.push( toolbarLabelConfig );
+		var elements: any[] = [];
 
-        // spacer
-        elements.push( {} );
+		// label
+		var toolbarLabelConfig: webix.ui.labelConfig = {
+			view: "label",
+			align: "left",
+			label: "xxx"
+		};
+		elements.push(toolbarLabelConfig);
 
-        // entity
-        if ( config.showEntity ) {
-            var toolbarEntityConfig: webix.ui.toolbarConfig = {
-                view: "toolbar",
-                elements: []
-            };
-            this.ENTITY_IDX = elements.length;
-            elements.push( toolbarEntityConfig );
-        }
+		// spacer
+		elements.push({});
 
-        // frame
-        if ( config.showFrame ) {
-            var toolbarFrameConfig: webix.ui.toolbarConfig = {
-                view: "toolbar",
-                elements: []
-            };
-            this.FRAME_IDX = elements.length;
-            elements.push( toolbarFrameConfig );
-        }
+		// entity
+		if (config.showEntity) {
+			var toolbarEntityConfig: webix.ui.toolbarConfig = {
+				view: "toolbar",
+				elements: []
+			};
+			this.ENTITY_IDX = elements.length;
+			elements.push(toolbarEntityConfig);
+		}
 
-        config.elements = elements;
-    }
+		// frame
+		if (config.showFrame) {
+			var toolbarFrameConfig: webix.ui.toolbarConfig = {
+				view: "toolbar",
+				elements: []
+			};
+			this.FRAME_IDX = elements.length;
+			elements.push(toolbarFrameConfig);
+		}
 
-    @Subscribe( EventType.INIT )
-    public init_( event: Event ): void {
+		config.elements = elements;
+	}
 
-        // label
-        if ( this.getToolbarLabel() ) {
-            this.getToolbarLabel().setValue( "pippo" );
-        }
+	public init(entry: ToolbarEntry): void {
 
-        // frame
-        if ( this.getConfig().showFrame ) {
-            this.reloadFrameToolbar();
-        }
+		// label
+		if (this.getToolbarLabel()) {
+			this.getToolbarLabel().setValue("pippo");
+		}
 
-        // entity
-        if ( this.getConfig().showEntity ) {
-            this.reloadEntityToolbar();
-        }
-    }
+		// frame
+		if (this.getConfig().showFrame) {
+			this.reloadFrameToolbar();
+		}
 
-    public getToolbarLabel(): webix.ui.label {
-        var toolbar = this.getView();
-        if ( toolbar == null )
-            return null;
+		// entity
+		if (this.getConfig().showEntity) {
+			this.reloadEntityToolbar();
+		}
+	}
 
-        return toolbar.getChildViews()[this.LABEL_IDX];
-    }
+	public ready(entry: ToolbarEntry): void {
+	}
 
-    public getToolbarFrame(): webix.ui.toolbar {
-        var toolbar = this.getView();
-        if ( toolbar == null )
-            return null;
-        try {
-            return toolbar.getChildViews()[this.FRAME_IDX];
-        }
-        catch ( exc ) {
-            return null;
-        }
-    }
+	public getToolbarLabel(): webix.ui.label {
+		var toolbar = this.getView();
+		if (toolbar == null)
+			return null;
 
-    public getToolbarEntity(): webix.ui.toolbar {
-        var toolbar = this.getView();
-        if ( toolbar == null )
-            return null;
+		return toolbar.getChildViews()[this.LABEL_IDX];
+	}
 
-        try {
-            return toolbar.getChildViews()[this.ENTITY_IDX];
-        }
-        catch ( exc ) {
-            return null;
-        }
-    }
+	public getToolbarFrame(): webix.ui.toolbar {
+		var toolbar = this.getView();
+		if (toolbar == null)
+			return null;
+		try {
+			return toolbar.getChildViews()[this.FRAME_IDX];
+		}
+		catch (exc) {
+			return null;
+		}
+	}
 
-    private reloadFrameToolbar() {
+	public getToolbarEntity(): webix.ui.toolbar {
+		var toolbar = this.getView();
+		if (toolbar == null)
+			return null;
 
-        const toolbar = this.getToolbarFrame();
-        toolbar.reconstruct();
+		try {
+			return toolbar.getChildViews()[this.ENTITY_IDX];
+		}
+		catch (exc) {
+			return null;
+		}
+	}
 
-        const toolbarConfig: webix.DataRecord = this.lookupToolbar( this.getConfig().entry.frame, () => {
+	private reloadFrameToolbar() {
 
-            toolbar.disable();
+		const toolbar = this.getToolbarFrame();
+		toolbar.reconstruct();
 
-            if ( toolbarConfig.getValues().elements == null )
-                return;
+		const toolbarConfig: webix.DataRecord = this.lookupToolbar(this.getConfig().entry.frame, () => {
+
+			toolbar.disable();
+
+			if (toolbarConfig.getValues().elements == null)
+				return;
 
 
-            for ( let viewConfig of toolbarConfig.getValues().elements ) {
+			for (let viewConfig of toolbarConfig.getValues().elements) {
 
-                var viewId = toolbar.addView( viewConfig );
-                var view = toolbar.queryView( { "id": viewId } );
+				var viewId = toolbar.addView(viewConfig);
+				var view = toolbar.queryView({ "id": viewId });
 
-                // onClick
+				// onClick
                 /*                view.attachEvent( 'onItemClick', ( id ) => {
                 
                                     var selectedView = toolbar.queryView( { "id": id } );
@@ -159,44 +164,44 @@ export class WidgetToolbar extends Widget<ToolbarConfig, webix.ui.toolbar> {
                                         }
                                     } );
                                 } );*/
-            }
+			}
 
-            toolbar.enable();
-            toolbar.refresh();
-        } );
-    }
+			toolbar.enable();
+			toolbar.refresh();
+		});
+	}
 
-    private reloadEntityToolbar() {
+	private reloadEntityToolbar() {
 
-        var toolbar = this.getToolbarEntity();
-        toolbar.reconstruct();
+		var toolbar = this.getToolbarEntity();
+		toolbar.reconstruct();
 
-        const contextMenuConfig: webix.DataRecord = MenuUtils.lookupContextMenu( this.getConfig().entry.frame, () => {
+		const contextMenuConfig: webix.DataRecord = MenuUtils.lookupContextMenu(this.getConfig().entry.frame, () => {
 
-            toolbar.disable();
+			toolbar.disable();
 
-            if ( contextMenuConfig.getValues().elements == null ) {
-                toolbar.refresh();
-                return;
-            }
+			if (contextMenuConfig.getValues().elements == null) {
+				toolbar.refresh();
+				return;
+			}
 
-            for ( let actionConfig of contextMenuConfig.getValues().elements ) {
+			for (let actionConfig of contextMenuConfig.getValues().elements) {
 
-                if ( actionConfig.eClass == "http://www.abchip.org/mimo/ui#//menu/MenuAction" )
-                    actionConfig["view"] = "icon";
-                else if ( actionConfig.eClass == "http://www.abchip.org/mimo/ui#//menu/MenuGroup" )
-                    continue;
+				if (actionConfig.eClass == "http://www.abchip.org/mimo/ui#//menu/MenuAction")
+					actionConfig["view"] = "icon";
+				else if (actionConfig.eClass == "http://www.abchip.org/mimo/ui#//menu/MenuGroup")
+					continue;
 
-                var viewId = toolbar.addView( actionConfig );
-                var view = toolbar.queryView( { "id": viewId } );
+				var viewId = toolbar.addView(actionConfig);
+				var view = toolbar.queryView({ "id": viewId });
 
-                // onClick
-                view.attachEvent( 'onItemClick', ( id ) => {
+				// onClick
+				view.attachEvent('onItemClick', (id) => {
 
-                    var selectedView = toolbar.queryView( { "id": id } );
-                    var action = selectedView.config.action;
+					var selectedView = toolbar.queryView({ "id": id });
+					var action = selectedView.config.action;
 
-                    ActionUtils.lookupAction( this.getApplication(), this.getConfig().entry.frame, action, ( service: ActionProvider ) => {
+					ActionUtils.lookupAction(this.getApplication(), this.getConfig().entry.frame, action, (service: ActionProvider) => {
                         /*                        try {
                                                     var entityName = this.getContainer().getSelectedName();
                                                     service.exec( action, [this.getView(), this.getConfig().entry.frame, entityName] );
@@ -204,24 +209,24 @@ export class WidgetToolbar extends Widget<ToolbarConfig, webix.ui.toolbar> {
                                                 catch ( exc ) {
                                                     alert( exc );
                                                 }*/
-                    } );
-                } );
-            }
-        } );
-    }
+					});
+				});
+			}
+		});
+	}
 
-    private lookupToolbar( frame: string, callback ): webix.DataRecord {
+	private lookupToolbar(frame: string, callback): webix.DataRecord {
 
-        var data = new webix.DataRecord( {} );
-        if ( callback != null )
-            data.attachEvent( "onAfterLoad", callback );
+		var data = new webix.DataRecord({});
+		if (callback != null)
+			data.attachEvent("onAfterLoad", callback);
 
-        data.parse( KBEntities.sendBizRequest( "lookupToolbar", { frame: frame } ), null );
+		data.parse(KBEntities.sendBizRequest("lookupToolbar", { frame: frame }), null);
 
-        return data;
-    }
+		return data;
+	}
 
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetToolbar.prototype ), webix.ui.toolbar );
-    }
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetToolbar.prototype), webix.ui.toolbar);
+	}
 }

@@ -7,28 +7,36 @@
  *
  */
 import { JetApp } from "webix-jet";
-import { Widget, WidgetSetup, WidgetConfig } from "core/ui";
+import { Widget, WidgetSetup, WidgetConfig, EntryFramed } from "core/ui";
 
-export interface DatePickerConfig extends WidgetConfig, webix.ui.datepickerConfig {
+export interface DatePickerEntry extends EntryFramed {
 }
 
-export class WidgetDatePicker extends Widget<DatePickerConfig, webix.ui.datepicker> {
+export interface DatePickerConfig extends WidgetConfig<DatePickerEntry>, webix.ui.datepickerConfig {
+}
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-datepicker";
-        setup.$cssName = "datepicker";
-        setup.defaults = {
-            labelWidth: 250,
-            timepicker: true,
-            format: webix.i18n.fullDateFormat
-        };
-    }
+export class WidgetDatePicker extends Widget<DatePickerEntry, DatePickerConfig, webix.ui.datepicker> {
 
-    public config( config: DatePickerConfig ): void {
-        
-    }
-    
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetDatePicker.prototype ), webix.ui.datepicker );
-    }
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-datepicker";
+		setup.$cssName = "datepicker";
+		setup.defaults = {
+			labelWidth: 250,
+			timepicker: true,
+			format: webix.i18n.fullDateFormat
+		};
+	}
+
+	public config(config: DatePickerConfig): void {
+	}
+
+	public init(entry: DatePickerEntry): void {
+	}
+
+	public ready(entry: DatePickerEntry): void {
+	}
+
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetDatePicker.prototype), webix.ui.datepicker);
+	}
 }

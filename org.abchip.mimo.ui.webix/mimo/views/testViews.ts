@@ -23,11 +23,12 @@ export default class TestView extends View {
                     changeable: true
                 }
             },
+// frmae=Product&name=Modeling || /Product#Modeling
             widgets: {
                 products: {
                     view: "combo",
                     label: "Select Product",
-                    selected: "$name"
+                    selected: "${name}"
                 },
                 product: {
                     view: "form",

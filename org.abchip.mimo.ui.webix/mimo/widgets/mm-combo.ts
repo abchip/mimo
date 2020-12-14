@@ -8,113 +8,110 @@
  */
 import { JetApp } from "webix-jet";
 import { KBEntities } from "core/kb";
-import { Widget, WidgetSetup, WidgetConfig, Event, EventType, Subscribe } from "core/ui";
+import { Widget, WidgetSetup, WidgetConfig, Event, EventType, Subscribe, EntryNamed } from "core/ui";
 import { ActionProvider, ActionUtils } from "core/ui";
 import { MenuUtils } from "widgets/mm-menu";
 
-export interface ComboConfig extends WidgetConfig, webix.ui.comboConfig {
+
+export interface ComboEntry extends EntryNamed {
+	filter?: string;
 }
 
-export interface ComboEntry {
-    frame?: string;
-    filter?: string;
-    name?: string;
+export interface ComboConfig extends WidgetConfig<ComboEntry>, webix.ui.comboConfig {
 }
 
-export class WidgetCombo extends Widget<ComboConfig, webix.ui.combo> {
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-combo";
-        setup.$cssName = "combo";
-        setup.defaults = {
-            labelWidth: 250,
-            //            maxWidth: 500,
-            icon: "mdi mdi-menu-down",
-            options: []
-        };
-    }
+export class WidgetCombo extends Widget<ComboEntry, ComboConfig, webix.ui.combo> {
 
-    public config( config: ComboConfig ): void {
-        
-    }
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-combo";
+		setup.$cssName = "combo";
+		setup.defaults = {
+			labelWidth: 250,
+			//            maxWidth: 500,
+			icon: "mdi mdi-menu-down",
+			options: []
+		};
+	}
 
-    @Subscribe( EventType.INIT )
-    public init_( event: Event ): void {
+	public config(config: ComboConfig): void {
 
-        var list = this.getView().getList() as webix.ui.list;
-        list.parse( KBEntities.findNames( event.entry.frame, null ), null );
+	}
 
-        //        const contextMenu = UIFormUtils.attachContextMenu( this.jetApp, this.config.domain.frame, view );
-        //        MenuUtils.reloadContextMenu( contextMenu, this.config.domain.frame );
-    }
-    
-    @Subscribe( EventType.READY )
-    public ready_( event_p: Event ): void {
+	public init(entry: ComboEntry): void {
 
-        const event = event_p;
+		var list = this.getView().getList() as webix.ui.list;
+		list.parse(KBEntities.findNames(entry.frame, null), null);
 
-        this.getView().attachEvent( "onChange", ( name ) => {
+		//        const contextMenu = UIFormUtils.attachContextMenu( this.jetApp, this.config.domain.frame, view );
+		//        MenuUtils.reloadContextMenu( contextMenu, this.config.domain.frame );
+	}
 
-            var ev = new Event( EventType.SELECT, this.getView(), {
-                frame: event.entry.frame,
-                name: name
-            } );
+	public ready(entry_p: ComboEntry): void {
 
-            this.getView().callEvent( ev.type, [ev] );
-        } );
-    }
+		const entry = entry_p;
 
+		this.getView().attachEvent("onChange", (name) => {
 
-    private attachContextMenu( frame: string ): webix.ui.contextmenu {
+			var ev = new Event(EventType.SELECT, this.getView(), {
+				frame: entry_p.frame,
+				name: name
+			});
 
-        const contextMenu: webix.ui.contextmenu = webix.ui( {
-            view: "contextmenu",
-            autofocus: true,
-            master: this.getView().getInputNode().id
-        } ) as webix.ui.contextmenu;
+			this.getView().callEvent(ev.type, [ev]);
+		});
+	}
+
+	private attachContextMenu(frame: string): webix.ui.contextmenu {
+
+		const contextMenu: webix.ui.contextmenu = webix.ui({
+			view: "contextmenu",
+			autofocus: true,
+			master: this.getView().getInputNode().id
+		}) as webix.ui.contextmenu;
 
 
-        contextMenu.attachEvent( 'onShow', () => {
+		contextMenu.attachEvent('onShow', () => {
 
-            //            contextMenu.adjust();
-            //            contextMenu.enable();
-            //            contextMenu.callEvent( "onFocus", null );
+			//            contextMenu.adjust();
+			//            contextMenu.enable();
+			//            contextMenu.callEvent( "onFocus", null );
 
-            if ( this.getView().getValue() == "" )
-                contextMenu.hide();
-        } );
+			if (this.getView().getValue() == "")
+				contextMenu.hide();
+		});
 
-        this.getView().attachEvent( 'onBlur', () => {
-            contextMenu.hide();
-        } );
+		this.getView().attachEvent('onBlur', () => {
+			contextMenu.hide();
+		});
 
-        contextMenu.attachEvent( 'onBlur', () => {
-            //            contextMenu.hide();
-        } );
+		contextMenu.attachEvent('onBlur', () => {
+			//            contextMenu.hide();
+		});
 
-        contextMenu.attachEvent( 'onMenuItemClick', ( id ) => {
+		contextMenu.attachEvent('onMenuItemClick', (id) => {
 
-            var frameName = null;
-            var entityName = null;
+			var frameName = null;
+			var entityName = null;
 
-            var context = contextMenu.getContext();
-            var itemMenu = contextMenu.getMenuItem( id );
+			var context = contextMenu.getContext();
+			var itemMenu = contextMenu.getMenuItem(id);
 
-            var action = itemMenu.action;
-            ActionUtils.lookupAction( this.getApplication(), frame, action, ( service: ActionProvider ) => {
-                try {
-                    service.exec( action, [this, frame, this.getView().getValue()] );
-                }
-                catch ( exc ) {
-                    alert( exc );
-                }
-            } );
-        } );
+			var action = itemMenu.action;
+			ActionUtils.lookupAction(this.getApplication(), frame, action, (service: ActionProvider) => {
+				try {
+					service.exec(action, [this, frame, this.getView().getValue()]);
+				}
+				catch (exc) {
+					alert(exc);
+				}
+			});
+		});
 
-        return contextMenu;
-    }
+		return contextMenu;
+	}
 
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetCombo.prototype ), webix.ui.combo );
-    }
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetCombo.prototype), webix.ui.combo);
+	}
 }

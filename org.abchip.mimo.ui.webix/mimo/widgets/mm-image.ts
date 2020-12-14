@@ -7,54 +7,63 @@
  *
  */
 import { JetApp } from "webix-jet";
-import { Widget, WidgetSetup, WidgetConfig } from "core/ui";
+import { Widget, WidgetSetup, WidgetConfig, Entry } from "core/ui";
 
-export interface ImageConfig extends WidgetConfig, webix.ui.layoutConfig {
-    label?: string;
-    name?: string;
+export interface ImageEntry extends Entry {
 }
 
-export class WidgetImage extends Widget<ImageConfig, webix.ui.layout> {
+export interface ImageConfig extends WidgetConfig<ImageEntry>, webix.ui.layoutConfig {
+	label?: string;
+	name?: string;
+}
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-image";
-        setup.$cssName = "icon";
-    }
+export class WidgetImage extends Widget<ImageEntry, ImageConfig, webix.ui.layout> {
 
-    public config( config: ImageConfig ): void {
-        config.cols = [
-            {
-                view: "label",
-                label: config.label
-            },
-            {
-                view: "layout",
-                rows: [
-                    {
-                        view: "text",
-                        name: config.name,
-                        on: {
-                            onChange( newVal, oldVal ) {
-                                const label = this.getParentView().getChildViews()[1];
-                                //                                        label.define( "template", "<img src='" + newVal + "'>" );
-                                label.define( "template", "<img src='/images/Product/default.jpg'>" );
-                                label.refresh();
-                            }
-                        }
-                    },
-                    {
-                        view: "label",
-                        width: 512,
-                        height: 396,
-                        template: "<img src='images/" + "Product" + "/default.jpg'>"
-                    }
-                ]
-            },
-            {}
-        ];
-    }
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-image";
+		setup.$cssName = "icon";
+	}
 
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetImage.prototype ), webix.ui.layout );
-    }
+	public config(config: ImageConfig): void {
+		config.cols = [
+			{
+				view: "label",
+				label: config.label
+			},
+			{
+				view: "layout",
+				rows: [
+					{
+						view: "text",
+						name: config.name,
+						on: {
+							onChange(newVal, oldVal) {
+								const label = this.getParentView().getChildViews()[1];
+								//                                        label.define( "template", "<img src='" + newVal + "'>" );
+								label.define("template", "<img src='/images/Product/default.jpg'>");
+								label.refresh();
+							}
+						}
+					},
+					{
+						view: "label",
+						width: 512,
+						height: 396,
+						template: "<img src='images/" + "Product" + "/default.jpg'>"
+					}
+				]
+			},
+			{}
+		];
+	}
+
+	public init(entry: ImageEntry): void {
+	}
+
+	public ready(entry: ImageEntry): void {
+	}
+
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetImage.prototype), webix.ui.layout);
+	}
 }

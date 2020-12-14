@@ -8,57 +8,57 @@
  */
 import { View } from "core/ui";
 
-export default class Search extends View {
+export default class SearchEntity extends View {
 
-    protected doConfig(): any {
+	protected doConfig(): any {
 
-        return {
-            cols: [
-                {
-                    view: "layout",
-                    rows: [
-                        {
-                            //                            view: "mm-table"
-                        },
-                        {
-                            view: "accordion",
-                            multi: true,
-                            localId: "dashboard",
-                            collapsed: true,
-                            rows: [
-                                {
-                                    header: "Sales",
-                                    body: {
-                                        //                                        view: "mm-dashboard"
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    view: "accordion",
-                    localId: "routes_accordion",
-                    type: "wide",
-                    multi: true,
-                    collapsed: true,
-                    cols: [
-                        {
-                            header: "Routes",
-                            width: 200,
-                            body: {
-                                view: "list",
-                                localId: "routes_list",
-                                select: true,
-                                template: "#text#",
-                                data: []
-                            }
-                        }
-                    ]
-                }
-            ]
-        };
-    }
+		return {
+			cols: [
+				{
+					view: "layout",
+					rows: [
+						{
+							view: "mm-table"
+						},
+						{
+							view: "accordion",
+							multi: true,
+							localId: "dashboard",
+							collapsed: true,
+							rows: [
+								{
+									header: "Sales",
+									body: {
+										//                                        view: "mm-dashboard"
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					view: "accordion",
+					localId: "routes_accordion",
+					type: "wide",
+					multi: true,
+					collapsed: true,
+					cols: [
+						{
+							header: "Routes",
+							width: 200,
+							body: {
+								view: "list",
+								localId: "routes_list",
+								select: true,
+								template: "#text#",
+								data: []
+							}
+						}
+					]
+				}
+			]
+		};
+	}
 
     /*
     public init( view: any, urls: any[] ) {
@@ -97,46 +97,47 @@ export default class Search extends View {
         } );
     }*/
 
-    public urlChange( view: any, url: any ) {
-        super.urlChange( view, url )
-        /*        if ( !this.getFrame() )
-                    return;
-        
-                this.reload();
-        
-                const frame = KBEntities.lookupFrame( this.getParam( "frame", true ), () => {
-                    this.buildRoutes( frame.getValues() );
-                } );
-        
-                var dashboard = this.$$( "dashboard" ) as webix.ui.accordion;
-                if ( this.getParam( "frame", true ) == "Party" || this.getParam( "frame", true ) == "Product" ) {
-                    //            dashboard.reconstruct();
-                    dashboard.show();
-                }
-                else
-                    dashboard.hide();*/
-    }
+	/*	public urlChange(view: any, url: any) {
+			alert("view urlChange: " + view.name);
+			super.urlChange(view, url)
+					if ( !this.getFrame() )
+						return;
+		    
+					this.reload();
+		    
+					const frame = KBEntities.lookupFrame( this.getParam( "frame", true ), () => {
+						this.buildRoutes( frame.getValues() );
+					} );
+		    
+					var dashboard = this.$$( "dashboard" ) as webix.ui.accordion;
+					if ( this.getParam( "frame", true ) == "Party" || this.getParam( "frame", true ) == "Product" ) {
+						//            dashboard.reconstruct();
+						dashboard.show();
+					}
+					else
+						dashboard.hide();
+		}*/
 
-    private buildRoutes( frame: object ) {
+	private buildRoutes(frame: object) {
 
-        var routes = this.$$( "routes_list" ) as webix.ui.list;
-        routes.clearAll();
+		var routes = this.$$("routes_list") as webix.ui.list;
+		routes.clearAll();
 
-        ( this.$$( "routes_accordion" ) as webix.ui.accordion ).hide();
+		(this.$$("routes_accordion") as webix.ui.accordion).hide();
 
-        var slots: any[] = frame["slots"];
-        for ( var slot of slots ) {
+		var slots: any[] = frame["slots"];
+		for (var slot of slots) {
 
-            if ( slot.derived != true )
-                continue;
+			if (slot.derived != true)
+				continue;
 
-            if ( !slot.route )
-                continue;
+			if (!slot.route)
+				continue;
 
-            var item = webix.extend( slot, { id: slot.name } );
-            routes.add( item );
+			var item = webix.extend(slot, { id: slot.name });
+			routes.add(item);
 
-            ( this.$$( "routes_accordion" ) as webix.ui.accordion ).show();
-        }
-    }
+			(this.$$("routes_accordion") as webix.ui.accordion).show();
+		}
+	}
 }

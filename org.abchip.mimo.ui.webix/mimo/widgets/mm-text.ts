@@ -7,26 +7,34 @@
  *
  */
 import { JetApp } from "webix-jet";
-import { Widget, WidgetSetup, WidgetConfig } from "core/ui";
+import { Widget, WidgetSetup, WidgetConfig, Entry } from "core/ui";
 
-export interface TextConfig extends WidgetConfig, webix.ui.textConfig {
+export interface TextEntry extends Entry {
 }
 
-export class WidgetText extends Widget<TextConfig, webix.ui.text> {
+export interface TextConfig extends WidgetConfig<TextEntry>, webix.ui.textConfig {
+}
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-text";
-        setup.$cssName = "text";
-        setup.defaults = {
-            labelWidth: 250
-        };
-    }
+export class WidgetText extends Widget<TextEntry, TextConfig, webix.ui.text> {
 
-    public config( config: TextConfig ): void {
-        
-    }
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-text";
+		setup.$cssName = "text";
+		setup.defaults = {
+			labelWidth: 250
+		};
+	}
 
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetText.prototype ), webix.ui.text );
-    }
+	public config(config: TextConfig): void {
+	}
+
+	public init(entry: TextEntry): void {
+	}
+
+	public ready(entry: TextEntry): void {
+	}
+
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetText.prototype), webix.ui.text);
+	}
 }

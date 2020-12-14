@@ -7,61 +7,68 @@
  *
  */
 import { JetApp } from "webix-jet";
-import { Widget, WidgetSetup, WidgetConfig } from "core/ui";
+import { Widget, WidgetSetup, WidgetConfig, Entry } from "core/ui";
 
-
-export interface TabConfig extends WidgetConfig, webix.ui.tabviewConfig {
+export interface TabEntry extends Entry {
 }
 
-export class WidgetTab extends Widget<TabConfig, webix.ui.tabview> {
+export interface TabConfig extends WidgetConfig<TabEntry>, webix.ui.tabviewConfig {
+}
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-tab";
-        setup.$cssName = "tabview";
-    }
+export class WidgetTab extends Widget<TabEntry, TabConfig, webix.ui.tabview> {
 
-    public config( config: TabConfig ): void {
-        
-    }
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-tab";
+		setup.$cssName = "tabview";
+	}
 
-    private addOption( id: string, value: string, close: boolean, config: webix.ui.baselayoutConfig ) {
+	public config(config: TabConfig): void {
+	}
 
-        var view: webix.ui.layout = this.getView().queryView( { "id": id } );
-        if ( view != null )
-            this.getView().getMultiview().removeView( id );
+	public init(entry: TabEntry): void {
+	}
 
-        this.getView().getTabbar().addOption( { id: id, value: value, close: close } );
+	public ready(entry: TabEntry): void {
+	}
 
-        if ( config != null )
-            this.getView().getMultiview().addView( config );
-        // proxy view
-        else {
-            var viewConfig = {
-                id: id,
-                view: "layout",
-                rows: [
-                    {
-                        gravity: 0.1
-                    }
-                ]
-            };
-            this.getView().getMultiview().addView( viewConfig );
-        }
+	private addOption(id: string, value: string, close: boolean, config: webix.ui.baselayoutConfig) {
 
-    }
+		var view: webix.ui.layout = this.getView().queryView({ "id": id });
+		if (view != null)
+			this.getView().getMultiview().removeView(id);
 
-    private removeOption( id: string | number ): void {
-        try {
-            ( this.getView().getTabbar() as webix.ui.tabbar ).removeOption( id );
-            var view: webix.ui.baseview = this.getView().queryView( { "id": id } );
-            if ( view != null )
-                view.destructor();
-        }
-        catch ( e ) {
-        }
-    }
+		this.getView().getTabbar().addOption({ id: id, value: value, close: close });
 
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetTab.prototype ), webix.ui.tabview );
-    }
+		if (config != null)
+			this.getView().getMultiview().addView(config);
+		// proxy view
+		else {
+			var viewConfig = {
+				id: id,
+				view: "layout",
+				rows: [
+					{
+						gravity: 0.1
+					}
+				]
+			};
+			this.getView().getMultiview().addView(viewConfig);
+		}
+
+	}
+
+	private removeOption(id: string | number): void {
+		try {
+			(this.getView().getTabbar() as webix.ui.tabbar).removeOption(id);
+			var view: webix.ui.baseview = this.getView().queryView({ "id": id });
+			if (view != null)
+				view.destructor();
+		}
+		catch (e) {
+		}
+	}
+
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetTab.prototype), webix.ui.tabview);
+	}
 }

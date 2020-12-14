@@ -8,80 +8,89 @@
  */
 import { JetApp } from "webix-jet";
 
-import { WidgetSetup, WidgetConfig, WidgetContainerConfig, Widget, WidgetContainer, Subscribe, Event, EventType } from "core/ui";
+import { WidgetSetup, WidgetConfig, WidgetContainerConfig, Widget, WidgetContainer, Subscribe, Event, EventType, Entry } from "core/ui";
 
-export interface LayoutConfig extends WidgetContainerConfig, webix.ui.layoutConfig {
-    toolbars?: any;
-    widgets?: any;
-    events?: any;
+export interface LayoutEntry extends Entry {
 }
 
-export class WidgetLayout extends WidgetContainer<LayoutConfig, webix.ui.layout> {
+export interface LayoutConfig extends WidgetContainerConfig<LayoutEntry>, webix.ui.layoutConfig {
+	toolbars?: any;
+	widgets?: any;
+	events?: any;
+}
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-layout";
-        setup.$cssName = "layout";
-        setup.defaults = {
-            rows: []
-        }
-    }
+export class WidgetLayout extends WidgetContainer<LayoutEntry, LayoutConfig, webix.ui.layout> {
 
-    public config( config: LayoutConfig ): void {
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-layout";
+		setup.$cssName = "layout";
+		setup.defaults = {
+			rows: []
+		}
+	}
 
-        if ( !config.widgets )
-            return;
+	public config(config: LayoutConfig): void {
 
-        var rows: any[] = [];
+		if (!config.widgets)
+			return;
 
-        for ( let localId of Object.getOwnPropertyNames( config.widgets ) ) {
+		var rows: any[] = [];
 
-            var widgetConfig: WidgetConfig = config.widgets[localId];
-            widgetConfig.localId = localId;
+		for (let localId of Object.getOwnPropertyNames(config.widgets)) {
 
-            // widget prefix
-            if ( !widgetConfig.view.startsWith( "mm-" ) )
-                widgetConfig.view = "mm-" + widgetConfig.view;
+			var widgetConfig: WidgetConfig<Entry> = config.widgets[localId];
+			widgetConfig.localId = localId;
 
-            rows.push( widgetConfig );
-        }
+			// widget prefix
+			if (!widgetConfig.view.startsWith("mm-"))
+				widgetConfig.view = "mm-" + widgetConfig.view;
 
-        config.rows = rows;
-        config.widgets = null;
-    }
+			rows.push(widgetConfig);
+		}
 
-    public notify( event: Event ): void {
-        WidgetContainer.notifyEvent( event, this.getView(), true );
-    }
+		config.rows = rows;
+		config.widgets = null;
+	}
 
-    @Subscribe( EventType.READY )
-    public ready_(): void {
+	public init(entry: LayoutEntry): void {
+		WidgetContainer.notifyInit(entry, this.getView());
+	}
 
-        var config = this.getConfig();
-        if ( !config.events )
-            return;
+	public ready(entry: LayoutEntry): void {
 
-        for ( let localId of Object.getOwnPropertyNames( config.events ) ) {
+		WidgetContainer.notifyReady(entry, this.getView());
 
-            const source = this.getView().queryView( { localId: localId } );
-            if ( !source )
-                continue;
+		var config = this.getConfig();
+		if (!config.events)
+			return;
 
-            const event = config.events[localId];
+		for (let localId of Object.getOwnPropertyNames(config.events)) {
 
-            // event prefix
-            if ( !event.when.startsWith( "mm-" ) )
-                event.when = "mm-" + event.when;
-            if ( !event.then.startsWith( "mm-" ) )
-                event.then = "mm-" + event.then;
+			const source = this.getView().queryView({ localId: localId });
+			if (!source)
+				continue;
 
-            // attach event
-            source.attachEvent( event.when, ( ev: Event ) => {
-                this.notify( new Event( event.then, source, ev.entry ) );
-            } );
-        }
-    }
+			const event = config.events[localId];
 
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetLayout.prototype ), webix.ui.layout );
-    }
+			// event prefix
+			if (!event.when.startsWith("mm-"))
+				event.when = "mm-" + event.when;
+			if (!event.then.startsWith("mm-"))
+				event.then = "mm-" + event.then;
+
+			// attach event
+			alert("attach " + event.type + " to " + source.name);
+			source.attachEvent(event.when, (ev: Event) => {
+				this.notify(new Event(event.then, source, ev.entry));
+			});
+		}
+	}
+
+	public notify(event: Event): void {
+		WidgetContainer.notifyEvent(event, this.getView(), true);
+	}
+
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetLayout.prototype), webix.ui.layout);
+	}
 }

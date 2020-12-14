@@ -7,13 +7,14 @@
  *
  */
 import * as webix from "@xbs/webix-pro";
-window.webix = webix; // make webix global again
+// make webix global again
+window["webix"] = webix;
 
 import { JetApp, EmptyRouter, HashRouter, UrlRouter, plugins } from "webix-jet";
 
 import session from "core/ctx";
 import { KBEntities } from "core/kb";
-import { View } from "core/ui";
+import { ApplicationCache, ViewType, View, ViewUtils } from "core/ui";
 import "config/styles/app.css";
 
 // actions
@@ -52,15 +53,10 @@ declare var VERSION: string;
 declare var PRODUCTION: boolean;
 declare var BUILD_AS_MODULE: boolean;
 
-class AppCache {
-	public viewTypes: webix.DataCollection = null;
-	public frames: webix.DataCollection = null;
-}
-
 export default class App extends JetApp {
 
 
-	public cache: AppCache;
+	public cache: ApplicationCache;
 
 	constructor() {
 
@@ -80,16 +76,18 @@ export default class App extends JetApp {
 
 		super(defaults);
 
-		this.cache = new AppCache();
+		this.cache = new ApplicationCache();
 
 		this.use(plugins.Locale, null);
 
 		this.use((app: JetApp) => {
-			app.setService("BizEntityNoteActions", new BizEntityNoteActions());
-			app.setService("EntityActions", new EntityActions());
-			app.setService("FrameActions", new FrameActions());
-			app.setService("PartyActions", new PartyActions());
-			app.setService("ProductCategoryActions", new ProductCategoryActions());
+			app.setService(ApplicationCache.name, this.cache);
+			
+			app.setService(BizEntityNoteActions.name, new BizEntityNoteActions());
+			app.setService(EntityActions.name, new EntityActions());
+			app.setService(FrameActions.name, new FrameActions());
+			app.setService(PartyActions.name, new PartyActions());
+			app.setService(ProductCategoryActions.name, new ProductCategoryActions());
 		}, null);
 
 		this.attachEvent("app:error", function(err: any) {
@@ -110,15 +108,18 @@ export default class App extends JetApp {
 		});
 	}
 
-	createFromURL(chunk) {
+	createFromURL(chunk: any) {
+
+//		alert('Create from chunk: ' + KBEntities.stringify(chunk));
 
 		if (this.cache.viewTypes.getIndexById("mm-" + chunk.page) < 0)
 			return super.createFromURL(chunk);
 
+		// force view refresh
 		if (!chunk.isNew) {
 			if (chunk.view instanceof View) {
 				var view: View = chunk.view;
-				//                alert( KBEntities.stringify( chunk.view.constructor.name ) );
+                alert("force new: " + KBEntities.stringify( chunk.view.constructor.name ) );
 				chunk.isNew = true;
 				chunk.view = null;
 			}
@@ -128,10 +129,14 @@ export default class App extends JetApp {
 	}
 
 	_loadViewDynamic(url: any) {
+
 		url = url.replace(/\./g, "/");
 
+//		alert('Load view dynamic: ' + KBEntities.stringify(url));
+
 		if (this.cache.viewTypes.getIndexById("mm-" + url) < 0)
-			return require("jet-views/" + url);
+			return super._loadViewDynamic(url);
+		//			return require("jet-views/" + url);
 
 		for (var chunk of this.getUrl()) {
 			if (chunk.page == url) {
@@ -151,43 +156,7 @@ export default class App extends JetApp {
 			};
 		}
 
-		// frame in role
-		try {
-			return require("jet-views/" + chunk.page + "/" + chunk.params.frame);
-		}
-		catch (e) {
-		}
-
-		// search frame
-		var id = this.cache.frames.getFirstId();
-		var frame = this.cache.frames.getItem(id);
-		while (frame != null) {
-
-			// found
-			if (frame.name == chunk.params.frame)
-				break;
-
-			id = this.cache.frames.getNextId(id, 1);
-			frame = this.cache.frames.getItem(id);
-		}
-
-		if (frame == null) {
-			alert("Frame not found: " + chunk.params.frame);
-			return;
-		}
-
-		// super frames
-		for (let superName of frame.superNames) {
-
-			try {
-				return require("jet-views/" + chunk.page + "/" + superName);
-			}
-			catch (e) {
-				//                    alert( e );
-			}
-		}
-
-		alert("Unexpected condition: ve968ye9rtr8etya8d9");
+		return ViewUtils.findView(this, chunk.page, chunk.params.frame);
 	}
 }
 
@@ -228,7 +197,7 @@ webix.ready(() => {
 			jetApp.cache.frames = frames;
 
 			// views
-			const names: webix.DataCollection = KBEntities.findNames("ViewType", null, () => {
+			const names: webix.DataCollection = KBEntities.findNames(ViewType.name, null, () => {
 				jetApp.cache.viewTypes = names;
 
 				// rendering

@@ -7,26 +7,34 @@
  *
  */
 import { JetApp } from "webix-jet";
-import { Widget, WidgetSetup, WidgetConfig  } from "core/ui";
+import { Widget, WidgetSetup, WidgetConfig, Entry } from "core/ui";
 
-export interface CounterConfig extends WidgetConfig, webix.ui.counterConfig {
+export interface CounterEntry extends Entry {
 }
 
-export class WidgetCounter extends Widget<CounterConfig, webix.ui.counter> {
+export interface CounterConfig extends WidgetConfig<CounterEntry>, webix.ui.counterConfig {
+}
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-counter";
-        setup.$cssName = "counter";
-        setup.defaults = {
-            labelWidth: 250
-        };
-    }
+export class WidgetCounter extends Widget<CounterEntry, CounterConfig, webix.ui.counter> {
 
-    public config( config: CounterConfig ): void {
-        
-    }
-    
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetCounter.prototype ), webix.ui.counter );
-    }
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-counter";
+		setup.$cssName = "counter";
+		setup.defaults = {
+			labelWidth: 250
+		};
+	}
+
+	public config(config: CounterConfig): void {
+	}
+
+	public init(entry: CounterEntry): void {
+	}
+
+	public ready(entry: CounterEntry): void {
+	}
+
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetCounter.prototype), webix.ui.counter);
+	}
 }

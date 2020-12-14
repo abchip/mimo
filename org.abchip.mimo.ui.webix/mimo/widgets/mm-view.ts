@@ -7,29 +7,38 @@
  *
  */
 import { JetApp } from "webix-jet";
-import { WidgetSetup, WidgetContainerConfig, Widget, WidgetContainer, Subscribe, EventType, Event } from "core/ui";
+import { WidgetSetup, WidgetContainerConfig, Widget, WidgetContainer, Subscribe, EventType, Event, EntryFramed } from "core/ui";
 
-export interface ViewConfig extends WidgetContainerConfig, webix.ui.layoutConfig {
-    type: string;
-    frame: string;
+export interface ViewEntry extends EntryFramed {
 }
 
-export class WidgetView extends WidgetContainer<ViewConfig, webix.ui.layout> {
+export interface ViewConfig extends WidgetContainerConfig<ViewEntry>, webix.ui.layoutConfig {
+	type: string;
+}
 
-    public setup( setup: WidgetSetup ): void {
-        setup.name = "mm-view";
-        setup.$cssName = "layout";
-    }
+export class WidgetView extends WidgetContainer<ViewEntry, ViewConfig, webix.ui.layout> {
 
-    public config( config: ViewConfig ): void {
-        
-    }
-    
-    public notify( event: Event ): void {
-        WidgetContainer.notifyEvent( event, this.getView(), true );
-    }
+	public setup(setup: WidgetSetup): void {
+		setup.name = "mm-view";
+		setup.$cssName = "layout";
+	}
 
-    public static import( jetApp: JetApp ) {
-        webix.protoUI( Widget._prototype( jetApp, WidgetView.prototype ), webix.ui.layout );
-    }
+	public config(config: ViewConfig): void {
+	}
+
+	public init(entry: ViewEntry): void {
+		WidgetContainer.notifyInit(entry, this.getView());
+	}
+
+	public ready(entry: ViewEntry): void {
+		WidgetContainer.notifyReady(entry, this.getView());
+	}
+
+	public notify(event: Event): void {
+		WidgetContainer.notifyEvent(event, this.getView(), true);
+	}
+
+	public static import(jetApp: JetApp) {
+		webix.protoUI(Widget._prototype(jetApp, WidgetView.prototype), webix.ui.layout);
+	}
 }

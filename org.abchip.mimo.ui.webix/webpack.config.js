@@ -21,16 +21,16 @@ module.exports = function(env) {
 		},
 		output: {
 			path: path.join(__dirname, "codebase"),
-			publicPath:"/codebase/",
+			publicPath: "/codebase/",
 			filename: "[name].js",
 			chunkFilename: "[name].bundle.js"
 		},
 		module: {
 			rules: [
 				{
-	                test: /\.ts$/,
-	                loader: "ts-loader"
-	            },
+					test: /\.ts$/,
+					loader: "ts-loader"
+				},
 				{
 					test: /\.js$/,
 					use: "babel-loader?" + JSON.stringify(babelSettings)
@@ -41,57 +41,58 @@ module.exports = function(env) {
 				},
 				{
 					test: /\.(less|css)$/,
-					use: [ MiniCssExtractPlugin.loader, "css-loader", "less-loader" ]
+					use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"]
 				}
 			]
 		},
-		stats:"minimal",
+		stats: "minimal",
 		node: {
-		      fs: "empty"
+			fs: "empty"
 		},
 		resolve: {
 			extensions: [".ts", ".js"],
 			modules: ["./mimo", "node_modules"],
-			alias:{
-				"jet-views":path.resolve(__dirname, "mimo/views"),
-				"jet-locales":path.resolve(__dirname, "mimo/locales")
+//			modules: ["node_modules"],
+			alias: {
+				"jet-views": path.resolve(__dirname, "mimo/views"),
+				"jet-locales": path.resolve(__dirname, "mimo/locales")
 			}
 		},
 		plugins: [
 			new MiniCssExtractPlugin({
-				filename:"[name].css"
+				filename: "[name].css"
 			}),
 			new webpack.DefinePlugin({
 				VERSION: `"${pack.version}"`,
 				APPNAME: `"${pack.name}"`,
-				PRODUCTION : production,
-				BUILD_AS_MODULE : (asmodule || standalone)
+				PRODUCTION: production,
+				BUILD_AS_MODULE: (asmodule || standalone)
 			})
 		],
-		devServer:{
-			stats:"errors-only",
-			 historyApiFallback: {
-				 index : "index.html"
-			 }
+		devServer: {
+			stats: "errors-only",
+			historyApiFallback: {
+				index: "index.html"
+			}
 		}
 	};
 
-	if (!production){
+	if (!production) {
 		config.devtool = "inline-source-map";
 	}
 	else {
 		config.devtool = "source-map";
 	}
 
-	if (asmodule){
-		if (!standalone){
+	if (asmodule) {
+		if (!standalone) {
 			config.externals = config.externals || {};
-			config.externals = [ "webix-jet" ];
+			config.externals = ["webix-jet"];
 		}
 
 		const out = config.output;
 		out.library = pack.name.replace(/[^a-z0-9]/gi, "");
-		out.libraryTarget= "umd";
+		out.libraryTarget = "umd";
 	}
 
 	return config;

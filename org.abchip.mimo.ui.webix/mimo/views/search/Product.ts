@@ -8,7 +8,7 @@
  */
 import { View } from "core/ui";
 
-export default class Search extends View {
+export default class SearchProduct extends View {
 
     protected doConfig(): any {
 
