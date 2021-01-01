@@ -80,7 +80,7 @@ public class SPH4AudioManagerImpl implements AudioManager {
 		try {
 
 			VoiceManager voiceManager = VoiceManager.getInstance();
-			Voice voice = voiceManager.getVoice("kevin16");
+			Voice voice = voiceManager.getVoices()[0];
 			// voice.setStyle("casual");
 			voice.allocate();
 
