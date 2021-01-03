@@ -19,9 +19,9 @@ import org.abchip.mimo.authentication.AuthenticationAdminKey;
 import org.abchip.mimo.authentication.AuthenticationAnonymous;
 import org.abchip.mimo.authentication.AuthenticationException;
 import org.abchip.mimo.authentication.AuthenticationFactory;
-import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.authentication.AuthenticationUserToken;
+import org.abchip.mimo.authentication.impl.AuthenticationManagerImpl;
 import org.abchip.mimo.biz.service.security.CheckExternalLoginUser;
 import org.abchip.mimo.biz.service.security.CheckExternalLoginUserResponse;
 import org.abchip.mimo.biz.service.security.UserCredentialFromExternalId;
@@ -44,7 +44,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
 import org.osgi.service.log.Logger;
 
-public class HttpAuthenticationManagerImpl implements AuthenticationManager {
+public class HttpAuthenticationManagerImpl extends AuthenticationManagerImpl {
 
 	private static final Logger LOGGER = Logs.getLogger(HttpAuthenticationManagerImpl.class);
 
@@ -130,32 +130,6 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			context.set(HttpConnector.class, connector);
 
 			LOGGER.audit("Connection success id {} user {} tenant {}", contextDescription.getId(), contextDescription.getUser(), contextDescription.getTenant());
-		} catch (Exception e) {
-			LOGGER.audit("Connection failed {}", e.getMessage());
-			if (contextHandler != null)
-				contextHandler.close();
-
-			throw new AuthenticationException(e);
-		}
-
-		return contextHandler;
-	}
-
-	@SuppressWarnings("resource")
-	@Override
-	public ContextHandler login(String contextId, AuthenticationAdminKey authentication) throws AuthenticationException {
-
-		String adminKey = authentication.getAdminKey();
-		String tenant = authentication.getTenant();
-
-		LOGGER.audit("Connection from adminKey {} tenant {}", adminKey, tenant);
-
-		ContextHandler contextHandler = application.getContext().createChildContext(contextId);
-		try {
-			Context context = contextHandler.getContext();
-			connectAdmin(context, authentication);
-
-			LOGGER.audit("Connection success id {} adminKey {} tenant {}", context.getContextDescription().getId(), adminKey, tenant);
 		} catch (Exception e) {
 			LOGGER.audit("Connection failed {}", e.getMessage());
 			if (contextHandler != null)
@@ -286,12 +260,14 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 	private class HttpAuthenticationLoginChecker implements Runnable {
 
+		int sleep = 1000;
+		
 		@SuppressWarnings("resource")
 		@Override
 		public void run() {
 			while (true) {
 				try {
-					java.lang.Thread.sleep(1000);
+					java.lang.Thread.sleep(sleep);
 
 					Context context = application.getContext();
 
@@ -312,6 +288,8 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 						java.lang.Thread.sleep(5000);
 				} catch (NetworkingException | URISyntaxException e) {
 					LOGGER.warn(e.getMessage());
+					if(sleep < 1000*60)
+						sleep = sleep * 2;
 				} catch (InterruptedException e) {
 					return;
 				}

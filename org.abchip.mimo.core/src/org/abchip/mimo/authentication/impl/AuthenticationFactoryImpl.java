@@ -63,6 +63,7 @@ public class AuthenticationFactoryImpl extends EFactoryImpl implements Authentic
 		switch (eClass.getClassifierID()) {
 			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY: return (EObject)createAuthenticationAdminKey();
 			case AuthenticationPackage.AUTHENTICATION_ANONYMOUS: return (EObject)createAuthenticationAnonymous();
+			case AuthenticationPackage.AUTHENTICATION_MANAGER: return (EObject)createAuthenticationManager();
 			case AuthenticationPackage.AUTHENTICATION_USER_PASSWORD: return (EObject)createAuthenticationUserPassword();
 			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN: return (EObject)createAuthenticationUserToken();
 			default:
@@ -120,6 +121,17 @@ public class AuthenticationFactoryImpl extends EFactoryImpl implements Authentic
 	public AuthenticationAnonymous createAuthenticationAnonymous() {
 		AuthenticationAnonymousImpl authenticationAnonymous = new AuthenticationAnonymousImpl();
 		return authenticationAnonymous;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AuthenticationManager createAuthenticationManager() {
+		AuthenticationManagerImpl authenticationManager = new AuthenticationManagerImpl();
+		return authenticationManager;
 	}
 
 	/**

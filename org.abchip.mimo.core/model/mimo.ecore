@@ -133,8 +133,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AuthenticationAnonymous" eSuperTypes="#//authentication/Authentication"/>
     <eClassifiers xsi:type="ecore:EDataType" name="AuthenticationException" instanceClassName="org.abchip.mimo.authentication.AuthenticationException"/>
-    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationManager" abstract="true"
-        interface="true">
+    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationManager">
       <eOperations name="checkLogin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eParameters name="authentication" lowerBound="1" eType="#//authentication/AuthenticationUserToken"/>
         <eParameters name="create" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

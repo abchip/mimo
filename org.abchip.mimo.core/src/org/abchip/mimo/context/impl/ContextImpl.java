@@ -37,7 +37,6 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ContextImpl() {
@@ -46,7 +45,6 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

@@ -156,10 +156,10 @@ public interface AuthenticationPackage extends EPackage {
 	int AUTHENTICATION_ANONYMOUS_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.authentication.AuthenticationManager <em>Manager</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.authentication.impl.AuthenticationManagerImpl <em>Manager</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.authentication.AuthenticationManager
+	 * @see org.abchip.mimo.authentication.impl.AuthenticationManagerImpl
 	 * @see org.abchip.mimo.authentication.impl.AuthenticationPackageImpl#getAuthenticationManager()
 	 * @generated
 	 */
@@ -700,10 +700,10 @@ public interface AuthenticationPackage extends EPackage {
 		 */
 		EClass AUTHENTICATION_ANONYMOUS = eINSTANCE.getAuthenticationAnonymous();
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.authentication.AuthenticationManager <em>Manager</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.authentication.impl.AuthenticationManagerImpl <em>Manager</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.authentication.AuthenticationManager
+		 * @see org.abchip.mimo.authentication.impl.AuthenticationManagerImpl
 		 * @see org.abchip.mimo.authentication.impl.AuthenticationPackageImpl#getAuthenticationManager()
 		 * @generated
 		 */

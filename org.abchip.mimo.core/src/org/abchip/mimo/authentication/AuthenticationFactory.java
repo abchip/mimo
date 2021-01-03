@@ -45,6 +45,15 @@ public interface AuthenticationFactory extends EFactory {
 	AuthenticationAnonymous createAuthenticationAnonymous();
 
 	/**
+	 * Returns a new object of class '<em>Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Manager</em>'.
+	 * @generated
+	 */
+	AuthenticationManager createAuthenticationManager();
+
+	/**
 	 * Returns a new object of class '<em>User Password</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

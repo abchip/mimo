@@ -16,7 +16,7 @@ import org.abchip.mimo.context.ContextHandler;
  *
  *
  * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationManager()
- * @model interface="true" abstract="true"
+ * @model
  * @generated
  */
 public interface AuthenticationManager {
