@@ -190,133 +190,6 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE_FEATURE_COUNT = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 12;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.edi.message.impl.MessageReceivedImpl <em>Received</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.edi.message.impl.MessageReceivedImpl
-	 * @see org.abchip.mimo.edi.message.impl.MessagePackageImpl#getMessageReceived()
-	 * @generated
-	 */
-	int MESSAGE_RECEIVED = 1;
-
-	/**
-	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_RECEIVED__CREATED_STAMP = MESSAGE__CREATED_STAMP;
-
-	/**
-	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_RECEIVED__CREATED_TX_STAMP = MESSAGE__CREATED_TX_STAMP;
-
-	/**
-	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_RECEIVED__LAST_UPDATED_STAMP = MESSAGE__LAST_UPDATED_STAMP;
-
-	/**
-	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_RECEIVED__LAST_UPDATED_TX_STAMP = MESSAGE__LAST_UPDATED_TX_STAMP;
-
-	/**
-	 * The feature id for the '<em><b>Message Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_RECEIVED__MESSAGE_ID = MESSAGE__MESSAGE_ID;
-
-	/**
-	 * The feature id for the '<em><b>Message Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_RECEIVED__MESSAGE_TYPE = MESSAGE__MESSAGE_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Status</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_RECEIVED__STATUS = MESSAGE__STATUS;
-
-	/**
-	 * The feature id for the '<em><b>Sender</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_RECEIVED__SENDER = MESSAGE__SENDER;
-
-	/**
-	 * The feature id for the '<em><b>Frame</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_RECEIVED__FRAME = MESSAGE__FRAME;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_RECEIVED__ENTITY = MESSAGE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Event</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_RECEIVED__EVENT = MESSAGE__EVENT;
-
-	/**
-	 * The feature id for the '<em><b>Body</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_RECEIVED__BODY = MESSAGE__BODY;
-
-	/**
-	 * The number of structural features of the '<em>Received</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_RECEIVED_FEATURE_COUNT = MESSAGE_FEATURE_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.edi.message.impl.MessageSentImpl <em>Sent</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -324,7 +197,7 @@ public interface MessagePackage extends EPackage {
 	 * @see org.abchip.mimo.edi.message.impl.MessagePackageImpl#getMessageSent()
 	 * @generated
 	 */
-	int MESSAGE_SENT = 2;
+	int MESSAGE_SENT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
@@ -442,6 +315,133 @@ public interface MessagePackage extends EPackage {
 	 * @ordered
 	 */
 	int MESSAGE_SENT_FEATURE_COUNT = MESSAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.edi.message.impl.MessageReceivedImpl <em>Received</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.edi.message.impl.MessageReceivedImpl
+	 * @see org.abchip.mimo.edi.message.impl.MessagePackageImpl#getMessageReceived()
+	 * @generated
+	 */
+	int MESSAGE_RECEIVED = 2;
+
+	/**
+	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_RECEIVED__CREATED_STAMP = MESSAGE__CREATED_STAMP;
+
+	/**
+	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_RECEIVED__CREATED_TX_STAMP = MESSAGE__CREATED_TX_STAMP;
+
+	/**
+	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_RECEIVED__LAST_UPDATED_STAMP = MESSAGE__LAST_UPDATED_STAMP;
+
+	/**
+	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_RECEIVED__LAST_UPDATED_TX_STAMP = MESSAGE__LAST_UPDATED_TX_STAMP;
+
+	/**
+	 * The feature id for the '<em><b>Message Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_RECEIVED__MESSAGE_ID = MESSAGE__MESSAGE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Message Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_RECEIVED__MESSAGE_TYPE = MESSAGE__MESSAGE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_RECEIVED__STATUS = MESSAGE__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Sender</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_RECEIVED__SENDER = MESSAGE__SENDER;
+
+	/**
+	 * The feature id for the '<em><b>Frame</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_RECEIVED__FRAME = MESSAGE__FRAME;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_RECEIVED__ENTITY = MESSAGE__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Event</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_RECEIVED__EVENT = MESSAGE__EVENT;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_RECEIVED__BODY = MESSAGE__BODY;
+
+	/**
+	 * The number of structural features of the '<em>Received</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_RECEIVED_FEATURE_COUNT = MESSAGE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl <em>Type</em>}' class.
@@ -607,6 +607,16 @@ public interface MessagePackage extends EPackage {
 	EAttribute getMessage_Body();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.edi.message.MessageSent <em>Sent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Sent</em>'.
+	 * @see org.abchip.mimo.edi.message.MessageSent
+	 * @generated
+	 */
+	EClass getMessageSent();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.message.Message#getEvent <em>Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -670,16 +680,6 @@ public interface MessagePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMessageReceived();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.edi.message.MessageSent <em>Sent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Sent</em>'.
-	 * @see org.abchip.mimo.edi.message.MessageSent
-	 * @generated
-	 */
-	EClass getMessageSent();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.edi.message.MessageType <em>Type</em>}'.
@@ -813,6 +813,16 @@ public interface MessagePackage extends EPackage {
 		EAttribute MESSAGE__BODY = eINSTANCE.getMessage_Body();
 
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.edi.message.impl.MessageSentImpl <em>Sent</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.edi.message.impl.MessageSentImpl
+		 * @see org.abchip.mimo.edi.message.impl.MessagePackageImpl#getMessageSent()
+		 * @generated
+		 */
+		EClass MESSAGE_SENT = eINSTANCE.getMessageSent();
+
+		/**
 		 * The meta object literal for the '<em><b>Event</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -861,16 +871,6 @@ public interface MessagePackage extends EPackage {
 		 * @generated
 		 */
 		EClass MESSAGE_RECEIVED = eINSTANCE.getMessageReceived();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.edi.message.impl.MessageSentImpl <em>Sent</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.edi.message.impl.MessageSentImpl
-		 * @see org.abchip.mimo.edi.message.impl.MessagePackageImpl#getMessageSent()
-		 * @generated
-		 */
-		EClass MESSAGE_SENT = eINSTANCE.getMessageSent();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl <em>Type</em>}' class.

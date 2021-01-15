@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class MessageSentImpl extends MessageImpl implements MessageSent {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

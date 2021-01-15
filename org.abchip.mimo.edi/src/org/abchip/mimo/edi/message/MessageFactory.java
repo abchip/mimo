@@ -27,15 +27,6 @@ public interface MessageFactory extends EFactory {
 	MessageFactory eINSTANCE = org.abchip.mimo.edi.message.impl.MessageFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Received</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Received</em>'.
-	 * @generated
-	 */
-	MessageReceived createMessageReceived();
-
-	/**
 	 * Returns a new object of class '<em>Sent</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -43,6 +34,15 @@ public interface MessageFactory extends EFactory {
 	 * @generated
 	 */
 	MessageSent createMessageSent();
+
+	/**
+	 * Returns a new object of class '<em>Received</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Received</em>'.
+	 * @generated
+	 */
+	MessageReceived createMessageReceived();
 
 	/**
 	 * Returns a new object of class '<em>Type</em>'.

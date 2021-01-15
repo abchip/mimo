@@ -53,14 +53,14 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass messageReceivedEClass = null;
+	private EClass messageSentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass messageSentEClass = null;
+	private EClass messageReceivedEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,6 +200,16 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getMessageSent() {
+		return messageSentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getMessage_Event() {
 		return (EAttribute)messageEClass.getEStructuralFeatures().get(6);
 	}
@@ -252,16 +262,6 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	@Override
 	public EClass getMessageReceived() {
 		return messageReceivedEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getMessageSent() {
-		return messageSentEClass;
 	}
 
 	/**
@@ -373,9 +373,9 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		createEAttribute(messageEClass, MESSAGE__EVENT);
 		createEAttribute(messageEClass, MESSAGE__BODY);
 
-		messageReceivedEClass = createEClass(MESSAGE_RECEIVED);
-
 		messageSentEClass = createEClass(MESSAGE_SENT);
+
+		messageReceivedEClass = createEClass(MESSAGE_RECEIVED);
 
 		messageTypeEClass = createEClass(MESSAGE_TYPE);
 		createEAttribute(messageTypeEClass, MESSAGE_TYPE__NAME);
@@ -431,8 +431,8 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		messageEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(theEntityPackage_1.getEntityInfo());
 		messageEClass.getEGenericSuperTypes().add(g1);
-		messageReceivedEClass.getESuperTypes().add(this.getMessage());
 		messageSentEClass.getESuperTypes().add(this.getMessage());
+		messageReceivedEClass.getESuperTypes().add(this.getMessage());
 		g1 = createEGenericType(theEntityPackage_1.getEntityType());
 		g2 = createEGenericType(messageTypeEClass_E);
 		g1.getETypeArguments().add(g2);
@@ -451,9 +451,9 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		initEAttribute(getMessage_Event(), theEntityPackage.getEntityEvent(), "event", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessage_Body(), ecorePackage.getEString(), "body", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(messageReceivedEClass, MessageReceived.class, "MessageReceived", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(messageSentEClass, MessageSent.class, "MessageSent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(messageReceivedEClass, MessageReceived.class, "MessageReceived", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessageType_Name(), ecorePackage.getEString(), "name", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -490,13 +490,13 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	protected void createMimoentframeAnnotations() {
 		String source = "mimo-ent-frame";
 		addAnnotation
-		  (messageReceivedEClass,
+		  (messageSentEClass,
 		   source,
 		   new String[] {
 			   "autoIncrement", "true"
 		   });
 		addAnnotation
-		  (messageSentEClass,
+		  (messageReceivedEClass,
 		   source,
 		   new String[] {
 			   "autoIncrement", "true"

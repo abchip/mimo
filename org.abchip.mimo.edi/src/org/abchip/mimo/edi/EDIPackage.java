@@ -49,7 +49,7 @@ public interface EDIPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "mimo-edi";
+	String eNS_PREFIX = "edi";
 
 	/**
 	 * The singleton instance of the package.

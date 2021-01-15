@@ -20,7 +20,6 @@ import org.abchip.mimo.edi.impl.EDIPackageImpl;
 import org.abchip.mimo.edi.message.MessagePackage;
 
 import org.abchip.mimo.edi.message.impl.MessagePackageImpl;
-
 import org.abchip.mimo.edi.transmission.Transmission;
 import org.abchip.mimo.edi.transmission.TransmissionFactory;
 import org.abchip.mimo.edi.transmission.TransmissionPackage;

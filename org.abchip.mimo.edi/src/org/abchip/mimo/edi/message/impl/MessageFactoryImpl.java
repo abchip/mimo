@@ -62,8 +62,8 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case MessagePackage.MESSAGE_RECEIVED: return (EObject)createMessageReceived();
 			case MessagePackage.MESSAGE_SENT: return (EObject)createMessageSent();
+			case MessagePackage.MESSAGE_RECEIVED: return (EObject)createMessageReceived();
 			case MessagePackage.MESSAGE_TYPE: return (EObject)createMessageType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -106,9 +106,9 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 * @generated
 	 */
 	@Override
-	public MessageReceived createMessageReceived() {
-		MessageReceivedImpl messageReceived = new MessageReceivedImpl();
-		return messageReceived;
+	public MessageSent createMessageSent() {
+		MessageSentImpl messageSent = new MessageSentImpl();
+		return messageSent;
 	}
 
 	/**
@@ -117,9 +117,9 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 * @generated
 	 */
 	@Override
-	public MessageSent createMessageSent() {
-		MessageSentImpl messageSent = new MessageSentImpl();
-		return messageSent;
+	public MessageReceived createMessageReceived() {
+		MessageReceivedImpl messageReceived = new MessageReceivedImpl();
+		return messageReceived;
 	}
 
 	/**

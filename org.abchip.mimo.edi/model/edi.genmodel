@@ -58,8 +58,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/event"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/body"/>
       </genClasses>
-      <genClasses ecoreClass="edi.ecore#//message/MessageReceived"/>
       <genClasses ecoreClass="edi.ecore#//message/MessageSent"/>
+      <genClasses ecoreClass="edi.ecore#//message/MessageReceived"/>
       <genClasses ecoreClass="edi.ecore#//message/MessageType">
         <genTypeParameters ecoreTypeParameter="edi.ecore#//message/MessageType/E"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/name"/>
