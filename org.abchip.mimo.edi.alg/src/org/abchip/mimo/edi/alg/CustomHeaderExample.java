@@ -15,15 +15,10 @@ public class CustomHeaderExample {
 
 	public static void main(String[] args) {
 
-        final String ALGOD_API_ADDR = "https://testnet-algorand.api.purestake.io/ps2";
-        final int  ALGOD_PORT = 443;
-        final String ALGOD_API_TOKEN = "";
-
-        String[] headers = {"X-API-Key"};
+		String[] headers = { "X-API-Key" };
 		String[] values = { Keys.X_API_Key };
 
-        AlgodClient client = new AlgodClient(ALGOD_API_ADDR, ALGOD_PORT, ALGOD_API_TOKEN);
-        
+		AlgodClient client = Algorand.connectToNetwork();
         NodeStatusResponse status = null;
         
         try {
