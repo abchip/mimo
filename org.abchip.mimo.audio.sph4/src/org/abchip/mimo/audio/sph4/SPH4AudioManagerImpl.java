@@ -11,7 +11,6 @@ import java.io.File;
 import java.nio.file.Files;
 import java.util.Locale;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.sound.sampled.AudioFileFormat;
 import javax.speech.Central;
@@ -36,9 +35,8 @@ public class SPH4AudioManagerImpl implements AudioManager {
 
 	@Inject
 	private ThreadManager threadManager;
-	
-	@PostConstruct
-	private void init() {
+
+	public SPH4AudioManagerImpl() {
 		String conFile = System.getProperty("java.util.logging.config.file");
 		if (conFile == null) {
 			System.setProperty("java.util.logging.config.file", "ignoreAllSphinx4LoggingOutput");
@@ -71,8 +69,8 @@ public class SPH4AudioManagerImpl implements AudioManager {
 	@Override
 	public AudioPlayer play(Context context, AudioStyle style, String text, boolean start, boolean waitEnd) {
 
-//		play(text);
-		
+		// play(text);
+
 		Audio audio = AudioFactory.eINSTANCE.createAudio();
 		audio.setName("Kevin");
 		audio.setText("Kevin voice");
@@ -93,13 +91,12 @@ public class SPH4AudioManagerImpl implements AudioManager {
 			voice.setVolume(100);
 
 			voice.setRate((float) style.getValue());
-			if(style == AudioStyle.B)
+			if (style == AudioStyle.B)
 				voice.setPitch((float) 185);
 			else
 				voice.setPitch((float) 100);
-					
 
-//			voice.setPitch((float) 100);
+			// voice.setPitch((float) 100);
 
 			voice.speak(text);
 			voice.deallocate();
@@ -114,10 +111,10 @@ public class SPH4AudioManagerImpl implements AudioManager {
 		}
 
 		AudioPlayer audioPlayer = new SPH4AudioPlayerImpl(threadManager, audio);
-		
+
 		if (start)
 			audioPlayer.start();
-		
+
 		if (waitEnd) {
 			while (!audioPlayer.isStopped()) {
 				try {
@@ -127,7 +124,7 @@ public class SPH4AudioManagerImpl implements AudioManager {
 				}
 			}
 		}
-		
+
 		return audioPlayer;
 	}
 

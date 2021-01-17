@@ -11,7 +11,6 @@ package org.abchip.mimo.core.http;
 import java.net.URISyntaxException;
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.abchip.mimo.application.Application;
@@ -31,8 +30,6 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextHandler;
 import org.abchip.mimo.context.ProviderConfig;
 import org.abchip.mimo.context.ProviderUser;
-import org.abchip.mimo.context.Thread;
-import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.core.http.handler.HttpLoginHandler;
 import org.abchip.mimo.networking.HttpClient;
 import org.abchip.mimo.networking.NetworkingException;
@@ -52,13 +49,9 @@ public class HttpAuthenticationManagerImpl extends AuthenticationManagerImpl {
 	private Application application;
 	@Inject
 	private ProviderConfig providerConfig;
-	@Inject
-	private ThreadManager threadManager;
 
-	@PostConstruct
-	private void init() {
-		Thread thread = threadManager.createThread("login-checker", new HttpAuthenticationLoginChecker());
-		threadManager.start(thread);
+	public HttpAuthenticationManagerImpl() {
+		new Thread(new HttpAuthenticationLoginChecker(), "login-checker").start();
 	}
 
 	@Override
@@ -261,7 +254,7 @@ public class HttpAuthenticationManagerImpl extends AuthenticationManagerImpl {
 	private class HttpAuthenticationLoginChecker implements Runnable {
 
 		int sleep = 1000;
-		
+
 		@SuppressWarnings("resource")
 		@Override
 		public void run() {
@@ -288,7 +281,7 @@ public class HttpAuthenticationManagerImpl extends AuthenticationManagerImpl {
 						java.lang.Thread.sleep(5000);
 				} catch (NetworkingException | URISyntaxException e) {
 					LOGGER.warn(e.getMessage());
-					if(sleep < 1000*60)
+					if (sleep < 1000 * 60)
 						sleep = sleep * 2;
 				} catch (InterruptedException e) {
 					return;

@@ -87,7 +87,7 @@ public class E4Activator implements BundleActivator {
 
 	@Override
 	public void start(BundleContext bundleContext) throws Exception {
-
+		
 		// touch LOG4J to force activation
 		LOG4JActivator.class.toString();
 

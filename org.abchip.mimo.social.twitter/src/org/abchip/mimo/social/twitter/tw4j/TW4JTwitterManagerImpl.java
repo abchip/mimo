@@ -3,8 +3,6 @@ package org.abchip.mimo.social.twitter.tw4j;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.social.twitter.Tweet;
@@ -31,9 +29,7 @@ public class TW4JTwitterManagerImpl implements TwitterManager {
 
 	private Twitter twitter = null;
 
-	@PostConstruct
-	private void init() {
-
+	public TW4JTwitterManagerImpl() {
 		/*
 		 * ConfigurationBuilder configuration = new ConfigurationBuilder();
 		 * configuration.setDebugEnabled(true).setOAuthConsumerKey("yourConsumeKey")

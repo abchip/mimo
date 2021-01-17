@@ -13,17 +13,13 @@ import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.net.ssl.SSLContext;
 
-import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextEvent;
 import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.Factory;
-import org.abchip.mimo.context.Thread;
-import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.networking.ConnectionPoolingConfig;
 import org.abchip.mimo.networking.ConnectionPoolingRouteConfig;
 import org.abchip.mimo.networking.HttpClient;
@@ -48,19 +44,12 @@ public class HttpClientFactoryImpl implements Factory<HttpClient> {
 
 	private static final Logger LOGGER = Logs.getLogger(HttpClientFactoryImpl.class);
 
-	@Inject
-	private Application application;
-	@Inject
-	private ConnectionPoolingConfig poolingConfig;
-	@Inject
-	private ThreadManager threadManager;
-
 	private PoolingHttpClientConnectionManager connectionManager = null;
 
 	private CloseableHttpClient HTTP = null;
-	
-	@PostConstruct
-	private void init() {
+
+	@Inject
+	public HttpClientFactoryImpl(ConnectionPoolingConfig poolingConfig) {
 
 		try {
 			TrustStrategy acceptingTrustStrategy = (cert, authType) -> true;
@@ -94,8 +83,7 @@ public class HttpClientFactoryImpl implements Factory<HttpClient> {
 			return;
 		}
 
-		Thread thread = threadManager.createThread(application.getName() + "-http-monitor", new HttpClientMonitor(connectionManager));
-		threadManager.start(thread);
+		new Thread(new HttpClientMonitor(connectionManager), "http-monitor").start();
 	}
 
 	@Override

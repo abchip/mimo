@@ -16,6 +16,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.PostConstruct;
+
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ServiceScope;
 import org.abchip.mimo.context.AdapterFactory;
@@ -43,11 +45,13 @@ public abstract class E4ContextImpl extends ContextImpl {
 	private static final String ADAPTER_FACTORIES_NAME = "org.abchip.mimo.context.adapterFactories";
 	private static final Logger LOGGER = Logs.getLogger(E4ContextImpl.class);
 
+	private static Boolean postConstruct = null;
+	
 	private BundleContext bundleContext;
 	private ContextDescription contextDescription;
 	private Deque<ContextListener> listeners;
 
-	public E4ContextImpl(BundleContext bundleContext, ContextDescription contextDescription) {
+	public E4ContextImpl(BundleContext bundleContext, ContextDescription contextDescription) {	
 		this.bundleContext = bundleContext;
 		this.contextDescription = contextDescription;
 		this.listeners = new LinkedList<ContextListener>();
@@ -278,13 +282,52 @@ public abstract class E4ContextImpl extends ContextImpl {
 	@SuppressWarnings("unchecked")
 	@Override
 	public final <T> T make(Class<T> clazz) {
+		
+		T object = null;
+		
 		if (clazz.isAssignableFrom(EntityIdentifiable.class)) {
 			Frame<EntityIdentifiable> frame = this.getFrame((Class<EntityIdentifiable>) clazz);
-			return (T) this.make(frame);
+			object = (T) this.make(frame);
+		}
+		else {
+			IEclipseContext eclipseContext = getEclipseContext();
+			object = ContextInjectionFactory.make(clazz, eclipseContext);
+		}
+		
+		if (isActivePostConstruct())
+			ContextInjectionFactory.invoke(object, PostConstruct.class, getEclipseContext(), object);
+
+		return object;
+	}
+	
+
+	private boolean isActivePostConstruct() {
+
+		if (postConstruct == null) {
+
+			IEclipseContext eclipseContext = getEclipseContext();
+			Dummy dummy = ContextInjectionFactory.make(Dummy.class, eclipseContext);
+			postConstruct = !dummy.isLoaded();
 		}
 
-		IEclipseContext eclipseContext = getEclipseContext();
-		T object = ContextInjectionFactory.make(clazz, eclipseContext);
-		return object;
+		return postConstruct;
+	}
+	
+	public static class Dummy {
+
+		private boolean loaded = false;
+
+		public Dummy() {
+
+		}
+
+		@PostConstruct
+		public void init() {
+			this.loaded = true;
+		}
+
+		public boolean isLoaded() {
+			return loaded;
+		}
 	}
 }

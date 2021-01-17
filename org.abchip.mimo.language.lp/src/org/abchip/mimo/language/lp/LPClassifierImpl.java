@@ -14,7 +14,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.abchip.mimo.application.Application;
@@ -43,8 +42,7 @@ public class LPClassifierImpl implements Classifier {
 
 	private ScoredClassifier<CharSequence> classifier;
 
-	@PostConstruct
-	private void init() {
+	public LPClassifierImpl() {
 		loadModels();
 	}
 
