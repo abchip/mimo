@@ -8,7 +8,7 @@
 package org.abchip.mimo.edi.alg;
 
 public class Keys {
-	protected static final String X_API_Key = "daiSUl60Lr5T3Tg9maqR81UyxpMvHgpQ6CeTrwbr";
+	protected static final String X_API_Key = "";
 	protected static final String ADDR = "IO52Q36BFXV3ANERBNQGO4SSVJO77TN5APJGJGUPMY4FO7RIULUY4EAL3A";
 	protected static final String SRC_BYTES = "ga78js95nate7sx05ngo3ga52mc0orl2";
 	
