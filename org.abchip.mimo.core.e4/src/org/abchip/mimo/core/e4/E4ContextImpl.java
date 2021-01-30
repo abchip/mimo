@@ -46,12 +46,12 @@ public abstract class E4ContextImpl extends ContextImpl {
 	private static final Logger LOGGER = Logs.getLogger(E4ContextImpl.class);
 
 	private static Boolean postConstruct = null;
-	
+
 	private BundleContext bundleContext;
 	private ContextDescription contextDescription;
 	private Deque<ContextListener> listeners;
 
-	public E4ContextImpl(BundleContext bundleContext, ContextDescription contextDescription) {	
+	public E4ContextImpl(BundleContext bundleContext, ContextDescription contextDescription) {
 		this.bundleContext = bundleContext;
 		this.contextDescription = contextDescription;
 		this.listeners = new LinkedList<ContextListener>();
@@ -282,24 +282,22 @@ public abstract class E4ContextImpl extends ContextImpl {
 	@SuppressWarnings("unchecked")
 	@Override
 	public final <T> T make(Class<T> clazz) {
-		
+
 		T object = null;
-		
+
 		if (clazz.isAssignableFrom(EntityIdentifiable.class)) {
 			Frame<EntityIdentifiable> frame = this.getFrame((Class<EntityIdentifiable>) clazz);
 			object = (T) this.make(frame);
-		}
-		else {
+		} else {
 			IEclipseContext eclipseContext = getEclipseContext();
 			object = ContextInjectionFactory.make(clazz, eclipseContext);
 		}
-		
+
 		if (isActivePostConstruct())
 			ContextInjectionFactory.invoke(object, PostConstruct.class, getEclipseContext(), object);
 
 		return object;
 	}
-	
 
 	private boolean isActivePostConstruct() {
 
@@ -312,7 +310,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 
 		return postConstruct;
 	}
-	
+
 	public static class Dummy {
 
 		private boolean loaded = false;

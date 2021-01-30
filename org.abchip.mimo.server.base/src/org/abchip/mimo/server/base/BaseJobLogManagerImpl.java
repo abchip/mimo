@@ -12,7 +12,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.ThreadManager;
@@ -34,7 +33,7 @@ public class BaseJobLogManagerImpl implements JobLogManager {
 
 	private ExecutorService jobLogExecutor;
 
-	@PostConstruct
+	@SuppressWarnings("unused")
 	private void init() {
 		jobLogExecutor = Executors.newCachedThreadPool(new JobLogThreadFactory(threadManager));
 	}

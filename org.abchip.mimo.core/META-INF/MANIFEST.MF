@@ -40,5 +40,5 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.17.100";visibility:=r
  org.apache.httpcomponents.httpclient;bundle-version="4.5.10",
  org.apache.httpcomponents.httpcore;bundle-version="4.4.12"
 Bundle-ActivationPolicy: lazy
-Import-Package: javax.annotation;version="1.2.0",
+Import-Package: javax.annotation,
  javax.inject

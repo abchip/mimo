@@ -12,6 +12,7 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 
 import org.abchip.mimo.application.Application;
+import org.abchip.mimo.application.ApplicationStarting;
 import org.abchip.mimo.application.ComponentStarting;
 import org.abchip.mimo.networking.HostConfig;
 import org.abchip.mimo.networking.HttpServiceConfig;
@@ -25,7 +26,7 @@ public class JettyActivatorHook {
 
 	private static final Logger LOGGER = Logs.getLogger(JettyActivatorHook.class);
 
-	@ComponentStarting
+	@ApplicationStarting @ComponentStarting
 	public void start(Application application, HttpServiceConfig httpServiceConfig) {
 
 		HostConfig hostConfig = httpServiceConfig.getHost();
@@ -51,7 +52,7 @@ public class JettyActivatorHook {
 				application.getContext().set(HttpService.class, httpService);
 
 				// HttpContext httpContext = httpService.createDefaultHttpContext();
-				httpService.registerFilter("/", new CORSFilter(), null, null);
+//				httpService.registerFilter("/", new CORSFilter(), null, null);
 				// httpService.registerFilter("/", new MultiPartFilter(), null, httpContext);
 
 				// FileService

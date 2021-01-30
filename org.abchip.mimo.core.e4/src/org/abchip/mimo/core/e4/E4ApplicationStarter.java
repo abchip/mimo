@@ -73,6 +73,7 @@ public class E4ApplicationStarter implements Runnable {
 			this.start();
 //			application.getContext().set(Application.class, null);
 		} catch (Exception e) {
+			e.printStackTrace();
 			LOGGER.error(e.getMessage());
 		}
 	}
@@ -307,8 +308,12 @@ public class E4ApplicationStarter implements Runnable {
 
 	private class HttpServiceTracker extends ServiceTracker<HttpService, HttpService> {
 
+		private Logger LOGGER = null;
+		
 		public HttpServiceTracker(BundleContext context) {
 			super(context, HttpService.class, null);
+			
+			LOGGER = Logs.getLogger(HttpServiceTracker.class);
 		}
 
 		public HttpService addingService(ServiceReference<HttpService> reference) {
@@ -325,9 +330,8 @@ public class E4ApplicationStarter implements Runnable {
 					try {
 						Servlet servlet = bundleContext.getService(serviceReference);
 						httpService.registerServlet(servletAlias.toString(), servlet, serviceReference.getProperties(), null);
-					} catch (ServletException | NamespaceException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+					} catch (Exception e) {
+						LOGGER.error(e.getMessage());
 					}
 				}
 			} catch (InvalidSyntaxException e) {

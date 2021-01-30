@@ -32,7 +32,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.abchip.mimo.social.twitter"
+         id="org.abchip.mimo.social.twitter.tw4j"
          download-size="0"
          install-size="0"
          version="0.0.0"

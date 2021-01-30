@@ -8,7 +8,6 @@
  */
 package org.abchip.mimo.server.base;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.abchip.mimo.server.SystemEvent;
@@ -19,9 +18,9 @@ public class BaseSystemListenerImpl implements SystemListener {
 
 	@Inject
 	private SystemManager systemManager;
-	
-	@PostConstruct
-	public void init() {
+
+	@SuppressWarnings("unused")
+	private void init() {
 		systemManager.registerListener(this);
 	}
 

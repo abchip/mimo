@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -37,6 +38,10 @@ public abstract class BaseServlet extends HttpServlet {
 
 	private static final Logger LOGGER = Logs.getLogger(BaseServlet.class);
 
+    public void init(ServletConfig config) throws ServletException {
+    	super.init();
+    }
+	
 	@Override
 	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);

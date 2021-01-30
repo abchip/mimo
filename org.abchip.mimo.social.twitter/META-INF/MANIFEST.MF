@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MIMO Social Twitter
-Bundle-SymbolicName: org.abchip.mimo.social.twitter
+Bundle-SymbolicName: org.abchip.mimo.social.twitter.tw4j
 Bundle-Version: 0.2.0.qualifier
 Bundle-Vendor: ABChip
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
