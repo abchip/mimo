@@ -306,6 +306,10 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 							object = Boolean.FALSE;
 						else if (value.equals("1"))
 							object = Boolean.TRUE;
+						else if (value.equals("false"))
+							object = Boolean.FALSE;
+						else if (value.equals("true"))
+							object = Boolean.TRUE;						
 						break;
 					}					
 				}
