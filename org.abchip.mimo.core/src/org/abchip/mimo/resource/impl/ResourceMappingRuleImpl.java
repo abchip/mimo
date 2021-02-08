@@ -27,12 +27,33 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.resource.impl.ResourceMappingRuleImpl#isActive <em>Active</em>}</li>
  *   <li>{@link org.abchip.mimo.resource.impl.ResourceMappingRuleImpl#getProvider <em>Provider</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class ResourceMappingRuleImpl extends EntityImpl implements ResourceMappingRule {
+
+	/**
+	 * The default value of the '{@link #isActive() <em>Active</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isActive()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ACTIVE_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isActive() <em>Active</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isActive()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean active = ACTIVE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getProvider() <em>Provider</em>}' attribute.
@@ -79,6 +100,29 @@ public abstract class ResourceMappingRuleImpl extends EntityImpl implements Reso
 	 * @generated
 	 */
 	@Override
+	public boolean isActive() {
+		return active;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setActive(boolean newActive) {
+		boolean oldActive = active;
+		active = newActive;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_MAPPING_RULE__ACTIVE, oldActive, active));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getProvider() {
 		return provider;
 	}
@@ -112,6 +156,8 @@ public abstract class ResourceMappingRuleImpl extends EntityImpl implements Reso
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ResourcePackage.RESOURCE_MAPPING_RULE__ACTIVE:
+				return isActive();
 			case ResourcePackage.RESOURCE_MAPPING_RULE__PROVIDER:
 				return getProvider();
 		}
@@ -126,6 +172,9 @@ public abstract class ResourceMappingRuleImpl extends EntityImpl implements Reso
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ResourcePackage.RESOURCE_MAPPING_RULE__ACTIVE:
+				setActive((Boolean)newValue);
+				return;
 			case ResourcePackage.RESOURCE_MAPPING_RULE__PROVIDER:
 				setProvider((String)newValue);
 				return;
@@ -141,6 +190,9 @@ public abstract class ResourceMappingRuleImpl extends EntityImpl implements Reso
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ResourcePackage.RESOURCE_MAPPING_RULE__ACTIVE:
+				setActive(ACTIVE_EDEFAULT);
+				return;
 			case ResourcePackage.RESOURCE_MAPPING_RULE__PROVIDER:
 				setProvider(PROVIDER_EDEFAULT);
 				return;
@@ -156,6 +208,8 @@ public abstract class ResourceMappingRuleImpl extends EntityImpl implements Reso
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ResourcePackage.RESOURCE_MAPPING_RULE__ACTIVE:
+				return active != ACTIVE_EDEFAULT;
 			case ResourcePackage.RESOURCE_MAPPING_RULE__PROVIDER:
 				return PROVIDER_EDEFAULT == null ? provider != null : !PROVIDER_EDEFAULT.equals(provider);
 		}
@@ -172,7 +226,9 @@ public abstract class ResourceMappingRuleImpl extends EntityImpl implements Reso
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (provider: ");
+		result.append(" (active: ");
+		result.append(active);
+		result.append(", provider: ");
 		result.append(provider);
 		result.append(')');
 		return result.toString();

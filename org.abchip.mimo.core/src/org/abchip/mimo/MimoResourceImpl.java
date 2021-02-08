@@ -11,17 +11,14 @@ package org.abchip.mimo;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Map;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIdentifiable;
-import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
+import org.abchip.mimo.util.Entities;
 import org.abchip.mimo.util.Logs;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -30,7 +27,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.osgi.service.log.Logger;
 
 public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl implements ContextProvider {
@@ -80,45 +76,7 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 	@Override
 	public String getURIFragment(EObject eObject) {
-
-		String id = EcoreUtil.getID(eObject);
-		if (id != null)
-			return id;
-
-		if (eObject instanceof EntityIdentifiable) {
-			@SuppressWarnings("unchecked")
-			E entityIdentifiable = (E) eObject;
-
-			StringBuffer name = new StringBuffer();
-
-			Frame<E> frame = entityIdentifiable.isa();
-			for (String key : frame.getKeys()) {
-				if (!name.toString().isEmpty())
-					name.append("/");
-				Object value = entityIdentifiable.eGet(frame.getSlot(key), false, false);
-				if (value == null)
-					break;
-
-				if (value instanceof EntityIdentifiable)
-					name.append(((EntityIdentifiable) value).getID());
-				else {
-					if (value instanceof Date) {
-						Date date = (Date) value;
-						DateFormat dateFormat = new SimpleDateFormat(MimoConstants.TIMESTAMP_FORMAT);
-						value = dateFormat.format(date);
-					}
-
-					name.append(value);
-				}
-			}
-
-			if (name.toString().isEmpty())
-				return null;
-
-			return name.toString();
-		}
-
-		return null;
+		return Entities.getID(eObject);
 	}
 
 	@Override

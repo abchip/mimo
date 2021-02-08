@@ -8,8 +8,6 @@
 package org.abchip.mimo.edi.transmission.impl;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.edi.transmission.Transmission;
 import org.abchip.mimo.edi.transmission.TransmissionPackage;
 import org.abchip.mimo.edi.transmission.TransmissionType;
@@ -38,6 +36,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl#getLastUpdatedStamp <em>Last Updated Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl#getText <em>Text</em>}</li>
  * </ul>
  *
  * @generated
@@ -143,6 +142,26 @@ public class TransmissionTypeImpl extends EntityTypeImpl<Transmission> implement
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEXT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected String text = TEXT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -284,10 +303,21 @@ public class TransmissionTypeImpl extends EntityTypeImpl<Transmission> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> transmissions() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public String getText() {
+		return text;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setText(String newText) {
+		String oldText = text;
+		text = newText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMISSION_TYPE__TEXT, oldText, text));
 	}
 
 	/**
@@ -308,6 +338,8 @@ public class TransmissionTypeImpl extends EntityTypeImpl<Transmission> implement
 				return getLastUpdatedTxStamp();
 			case TransmissionPackage.TRANSMISSION_TYPE__NAME:
 				return getName();
+			case TransmissionPackage.TRANSMISSION_TYPE__TEXT:
+				return getText();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -334,6 +366,9 @@ public class TransmissionTypeImpl extends EntityTypeImpl<Transmission> implement
 				return;
 			case TransmissionPackage.TRANSMISSION_TYPE__NAME:
 				setName((String)newValue);
+				return;
+			case TransmissionPackage.TRANSMISSION_TYPE__TEXT:
+				setText((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -362,6 +397,9 @@ public class TransmissionTypeImpl extends EntityTypeImpl<Transmission> implement
 			case TransmissionPackage.TRANSMISSION_TYPE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case TransmissionPackage.TRANSMISSION_TYPE__TEXT:
+				setText(TEXT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -384,6 +422,8 @@ public class TransmissionTypeImpl extends EntityTypeImpl<Transmission> implement
 				return LAST_UPDATED_TX_STAMP_EDEFAULT == null ? lastUpdatedTxStamp != null : !LAST_UPDATED_TX_STAMP_EDEFAULT.equals(lastUpdatedTxStamp);
 			case TransmissionPackage.TRANSMISSION_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case TransmissionPackage.TRANSMISSION_TYPE__TEXT:
+				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -446,6 +486,8 @@ public class TransmissionTypeImpl extends EntityTypeImpl<Transmission> implement
 		result.append(lastUpdatedTxStamp);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", text: ");
+		result.append(text);
 		result.append(')');
 		return result.toString();
 	}

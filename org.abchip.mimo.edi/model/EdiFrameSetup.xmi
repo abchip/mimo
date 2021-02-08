@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mimo-edi-ent:EdiFrameSetup xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mimo-edi-ent="http://www.abchip.org/mimo/edi/entity" xsi:schemaLocation="http://www.abchip.org/mimo/edi/entity edi.ecore#//entity" frame="Party">
+  <messageType href="MessageType.xmi#LOCAL"/>
+</mimo-edi-ent:EdiFrameSetup>

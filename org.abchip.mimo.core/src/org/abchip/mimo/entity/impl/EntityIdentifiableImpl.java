@@ -25,6 +25,7 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
+import org.abchip.mimo.util.Entities;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -109,6 +110,16 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 		if (id != null)
 			return id;
 
+		switch (this.getState()) {
+		case TRANSIENT:
+			return Entities.getID(this);
+		case CHAINED:
+		case DIRTY:
+		case PROXY:
+		case RESOLVED:
+			break;
+		}
+		
 		String uriFragment = this.getURI().getFragment();
 		if (uriFragment != null)
 			return uriFragment;

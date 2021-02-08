@@ -128,8 +128,8 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 * @generated
 	 */
 	@Override
-	public <E extends Message> MessageType<E> createMessageType() {
-		MessageTypeImpl<E> messageType = new MessageTypeImpl<E>();
+	public MessageType createMessageType() {
+		MessageTypeImpl messageType = new MessageTypeImpl();
 		return messageType;
 	}
 

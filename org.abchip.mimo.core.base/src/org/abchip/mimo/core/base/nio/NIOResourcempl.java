@@ -57,7 +57,8 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	public void create(E entity, boolean update, boolean raw) throws ResourceException {
 
 		synchronized (this.resourceSerializer) {
-			Path file = getClassFolder(getFrame(), true).resolve(entity.getID());
+			String entityId = entity.getID();
+			Path file = getClassFolder(getFrame(), true, entityId).resolve(entityId);
 
 			try {
 				this.resourceSerializer.add(entity);
@@ -65,15 +66,14 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 				this.resourceSerializer.save(output);
 				ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
 
+				if (!Files.exists(file.getParent()))
+					Files.createDirectories(file.getParent());
+
 				if (update)
 					Files.copy(input, file, StandardCopyOption.REPLACE_EXISTING);
-				else {
-
-					if (!Files.exists(file.getParent()))
-						Files.createDirectories(file.getParent());
-
+				else
 					Files.copy(input, file);
-				}
+
 				this.attach(entity);
 			} catch (IOException e) {
 				throw new ResourceException(e);
@@ -87,7 +87,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	public E lookup(String name, String fields, boolean proxy) throws ResourceException {
 
 		synchronized (this.resourceSerializer) {
-			Path folder = getClassFolder(this.getFrame(), false);
+			Path folder = getClassFolder(this.getFrame(), false, name);
 			if (folder == null)
 				return null;
 			Path file = folder.resolve(name);
@@ -118,55 +118,12 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 		synchronized (this.resourceSerializer) {
 			List<E> entries = new ArrayList<E>();
 
-			Path folder = getClassFolder(this.getFrame(), false);
+			Path folder = getClassFolder(this.getFrame(), false, null);
 			if (folder == null)
 				return entries;
 
-			try (DirectoryStream<Path> dirStream = Files.newDirectoryStream(folder)) {
-
-				int i = 0;
-				for (Path path : dirStream) {
-					if (Files.isDirectory(path))
-						continue;
-					if (Files.isHidden(path))
-						continue;
-
-					String name = path.getFileName().toString();
-
-					// filter by name
-					if (filter != null) {
-
-						// starts
-						if (filter.endsWith("*")) {
-
-							if (!name.startsWith(filter.substring(0, filter.length() - 1)))
-								continue;
-
-						}
-						// equals
-						else if (!name.equals(filter))
-							continue;
-
-					}
-
-					if (limit > 0 && i >= limit)
-						break;
-
-					i++;
-
-					if (proxy) {
-						this.resourceSerializer.add(createProxy(name));
-						continue;
-					}
-
-					try (InputStream inputStream = Files.newInputStream(path)) {
-						this.resourceSerializer.load(inputStream, true);
-					} catch (Exception e) {
-						LOGGER.error(e.getMessage());
-						this.resourceSerializer.add(createProxy(name));
-					}
-				}
-
+			try {
+				appendEntries(folder, proxy, limit);
 				entries.addAll(this.resourceSerializer.getAll());
 				for (E entity : entries)
 					this.attach(entity);
@@ -198,9 +155,10 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 				this.resourceSerializer.save(output);
 				ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
 
-				Path file = getClassFolder(getFrame(), true).resolve(entity.getID());
+				String entityId = entity.getID();
+				Path file = getClassFolder(getFrame(), true, entityId).resolve(entityId);
 				if (!Files.exists(file))
-					throw new IOException("Resource not exists: " + entity.getID());
+					throw new ResourceException("Resource not exists: " + entity.getID());
 
 				Files.copy(input, file, StandardCopyOption.REPLACE_EXISTING);
 
@@ -216,11 +174,13 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	public void delete(E entity) throws ResourceException {
 
 		synchronized (this.resourceSerializer) {
-			Path file = getClassFolder(getFrame(), false).resolve(entity.getID());
-			if (!Files.exists(file))
-				return;
 
 			try {
+				String entityId = entity.getID();
+				Path file = getClassFolder(getFrame(), false, entityId).resolve(entityId);
+				if (!Files.exists(file))
+					throw new ResourceException("Resource not exists: " + entity.getID());
+
 				this.pathManager.deletePath(file);
 				this.detach(entity);
 			} catch (IOException e) {
@@ -229,7 +189,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 		}
 	}
 
-	private Path getClassFolder(Frame<E> frame, boolean create) {
+	private Path getClassFolder(Frame<E> frame, boolean create, String name) {
 
 		String tenant = this.getContext().getTenant();
 		if (tenant == null)
@@ -242,20 +202,69 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 		if (!create)
 			return null;
 
-		try {
-			Files.createDirectories(folder);
-		} catch (FileAlreadyExistsException e) {
+		// single key
+		if (frame.getKeys().size() <= 1) {
+			try {
+				Files.createDirectories(folder);
+			} catch (FileAlreadyExistsException e) {
+				return folder;
+			} catch (IOException e) {
+				LOGGER.error(e.getMessage());
+				return null;
+			}
+
 			return folder;
-		} catch (IOException e) {
-			LOGGER.error(e.getMessage());
-			return null;
 		}
 
+		// multiple keys
+		if (name == null)
+			return folder;
+		String[] names = name.split("/");
+		for (int k = 0; k < frame.getKeys().size(); k++) {
+			if (names.length <= k)
+				return folder;
+			folder = folder.resolve(names[k]);
+		}
 		return folder;
+	}
+
+	private void appendEntries(Path folder, boolean proxy, int limit) throws ResourceException {
+
+		int size = 0;
+		try (DirectoryStream<Path> dirStream = Files.newDirectoryStream(folder)) {
+			for (Path path : dirStream) {
+				if (Files.isHidden(path))
+					continue;
+				if (Files.isDirectory(path)) {
+					appendEntries(path, proxy, limit - size);
+					continue;
+				}
+
+				String name = path.getFileName().toString();
+				if (proxy) {
+					this.resourceSerializer.add(createProxy(name));
+					continue;
+				}
+
+				try (InputStream inputStream = Files.newInputStream(path)) {
+					this.resourceSerializer.load(inputStream, true);
+				} catch (Exception e) {
+					LOGGER.error(e.getMessage());
+					this.resourceSerializer.add(createProxy(name));
+				}
+				size++;
+
+				if (limit != 0 && size > limit)
+					break;
+			}
+
+		} catch (Exception e) {
+			throw new ResourceException(e);
+		}
 	}
 
 	@Override
 	public String nextSequence() throws ResourceException {
-		throw new ResourceException(new UnsupportedOperationException());
+		return Long.toString(System.currentTimeMillis());
 	}
 }

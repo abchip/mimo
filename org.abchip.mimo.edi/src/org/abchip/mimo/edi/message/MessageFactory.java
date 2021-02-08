@@ -51,7 +51,7 @@ public interface MessageFactory extends EFactory {
 	 * @return a new object of class '<em>Type</em>'.
 	 * @generated
 	 */
-	<E extends Message> MessageType<E> createMessageType();
+	MessageType createMessageType();
 
 	/**
 	 * Returns the package supported by this factory.

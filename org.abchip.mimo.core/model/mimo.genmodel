@@ -969,6 +969,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//resource/ResourceMapping/rules"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceMappingRule">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/ResourceMappingRule/active"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/ResourceMappingRule/provider"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceMappingRule/getMappingType"/>
       </genClasses>

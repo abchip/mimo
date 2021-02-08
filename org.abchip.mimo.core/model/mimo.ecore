@@ -1567,6 +1567,8 @@
     <eClassifiers xsi:type="ecore:EClass" name="ResourceMappingRule" abstract="true"
         eSuperTypes="#//entity/Entity">
       <eOperations name="getMappingType" lowerBound="1" eType="#//resource/ResourceMappingType"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="provider" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>

@@ -21,20 +21,20 @@ import org.abchip.mimo.entity.EntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.edi.message.Message#getMessageId <em>Message Id</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.Message#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.Message#getStatus <em>Status</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.Message#getSender <em>Sender</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.Message#getFrame <em>Frame</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.Message#getEntity <em>Entity</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.Message#getFrameId <em>Frame Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.Message#getEntityId <em>Entity Id</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.Message#getEvent <em>Event</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.Message#getBody <em>Body</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.Message#getMessageType <em>Message Type</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.edi.message.MessagePackage#getMessage()
  * @model abstract="true"
  * @generated
  */
-public interface Message extends EntityTyped<MessageType<?>>, EntityInfo {
+public interface Message extends EntityTyped<MessageType>, EntityInfo {
 	/**
 	 * Returns the value of the '<em><b>Message Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -63,31 +63,30 @@ public interface Message extends EntityTyped<MessageType<?>>, EntityInfo {
 	void setMessageId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Message Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>Message Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Message Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Message Type</em>' attribute.
-	 * @see #setMessageType(String)
+	 * @return the value of the '<em>Message Type</em>' reference.
+	 * @see #setMessageType(MessageType)
 	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_MessageType()
 	 * @model required="true"
-	 *        annotation="mimo-ent-domain frame='MessageType'"
 	 * @generated
 	 */
-	String getMessageType();
+	MessageType getMessageType();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.edi.message.Message#getMessageType <em>Message Type</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.edi.message.Message#getMessageType <em>Message Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Message Type</em>' attribute.
+	 * @param value the new value of the '<em>Message Type</em>' reference.
 	 * @see #getMessageType()
 	 * @generated
 	 */
-	void setMessageType(String value);
+	void setMessageType(MessageType value);
 
 	/**
 	 * Returns the value of the '<em><b>Body</b></em>' attribute.
@@ -201,56 +200,48 @@ public interface Message extends EntityTyped<MessageType<?>>, EntityInfo {
 	void setSender(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Frame</b></em>' attribute.
+	 * Returns the value of the '<em><b>Frame Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Frame</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Frame</em>' attribute.
-	 * @see #setFrame(String)
-	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_Frame()
+	 * @return the value of the '<em>Frame Id</em>' attribute.
+	 * @see #setFrameId(String)
+	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_FrameId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-domain frame='Frame'"
 	 * @generated
 	 */
-	String getFrame();
+	String getFrameId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.edi.message.Message#getFrame <em>Frame</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.edi.message.Message#getFrameId <em>Frame Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Frame</em>' attribute.
-	 * @see #getFrame()
+	 * @param value the new value of the '<em>Frame Id</em>' attribute.
+	 * @see #getFrameId()
 	 * @generated
 	 */
-	void setFrame(String value);
+	void setFrameId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Entity</b></em>' attribute.
+	 * Returns the value of the '<em><b>Entity Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Entity</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entity</em>' attribute.
-	 * @see #setEntity(String)
-	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_Entity()
+	 * @return the value of the '<em>Entity Id</em>' attribute.
+	 * @see #setEntityId(String)
+	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_EntityId()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getEntity();
+	String getEntityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.edi.message.Message#getEntity <em>Entity</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.edi.message.Message#getEntityId <em>Entity Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Entity</em>' attribute.
-	 * @see #getEntity()
+	 * @param value the new value of the '<em>Entity Id</em>' attribute.
+	 * @see #getEntityId()
 	 * @generated
 	 */
-	void setEntity(String value);
+	void setEntityId(String value);
 
 } // Message

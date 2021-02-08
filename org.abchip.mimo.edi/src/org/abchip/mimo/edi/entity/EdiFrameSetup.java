@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.edi.entity;
 
+import org.abchip.mimo.edi.message.MessageType;
 import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
@@ -18,10 +19,10 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getFrame <em>Frame</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getEntityCondition <em>Entity Condition</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getEntityEvent <em>Entity Event</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getEntityCondition <em>Entity Condition</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.entity.EdiFrameSetup#isEncrypt <em>Encrypt</em>}</li>
  * </ul>
  *
@@ -31,32 +32,31 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  */
 public interface EdiFrameSetup extends EntityIdentifiable {
 	/**
-	 * Returns the value of the '<em><b>Message Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>Message Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Message Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Message Type</em>' attribute.
-	 * @see #setMessageType(String)
+	 * @return the value of the '<em>Message Type</em>' reference.
+	 * @see #setMessageType(MessageType)
 	 * @see org.abchip.mimo.edi.entity.EntityPackage#getEdiFrameSetup_MessageType()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='MessageType'"
 	 * @generated
 	 */
-	String getMessageType();
+	MessageType getMessageType();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getMessageType <em>Message Type</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getMessageType <em>Message Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Message Type</em>' attribute.
+	 * @param value the new value of the '<em>Message Type</em>' reference.
 	 * @see #getMessageType()
 	 * @generated
 	 */
-	void setMessageType(String value);
+	void setMessageType(MessageType value);
 
 	/**
 	 * Returns the value of the '<em><b>Frame</b></em>' attribute.
@@ -129,6 +129,7 @@ public interface EdiFrameSetup extends EntityIdentifiable {
 	 * @see #setEntityEvent(EntityEvent)
 	 * @see org.abchip.mimo.edi.entity.EntityPackage#getEdiFrameSetup_EntityEvent()
 	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	EntityEvent getEntityEvent();

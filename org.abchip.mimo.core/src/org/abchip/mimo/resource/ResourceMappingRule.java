@@ -18,6 +18,7 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.resource.ResourceMappingRule#isActive <em>Active</em>}</li>
  *   <li>{@link org.abchip.mimo.resource.ResourceMappingRule#getProvider <em>Provider</em>}</li>
  * </ul>
  *
@@ -26,6 +27,29 @@ import org.abchip.mimo.entity.Entity;
  * @generated
  */
 public interface ResourceMappingRule extends Entity {
+	/**
+	 * Returns the value of the '<em><b>Active</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Active</em>' attribute.
+	 * @see #setActive(boolean)
+	 * @see org.abchip.mimo.resource.ResourcePackage#getResourceMappingRule_Active()
+	 * @model default="true"
+	 * @generated
+	 */
+	boolean isActive();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.resource.ResourceMappingRule#isActive <em>Active</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Active</em>' attribute.
+	 * @see #isActive()
+	 * @generated
+	 */
+	void setActive(boolean value);
+
 	/**
 	 * Returns the value of the '<em><b>Provider</b></em>' attribute.
 	 * <!-- begin-user-doc -->

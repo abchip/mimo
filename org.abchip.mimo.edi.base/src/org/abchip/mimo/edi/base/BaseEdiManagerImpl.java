@@ -40,6 +40,10 @@ public class BaseEdiManagerImpl implements EdiManager {
 
 			for (EdiFrameSetup setup : setups) {
 
+				// TODO removeme
+				if(!entity.isa().getName().equals(setup.getFrame()))
+					continue;
+				
 				switch (setup.getEntityEvent()) {
 				case ALL:
 					break;
@@ -55,8 +59,8 @@ public class BaseEdiManagerImpl implements EdiManager {
 
 				messageSent.setMessageType(setup.getMessageType());
 				messageSent.setSender(contextDescription.getUser());
-				messageSent.setFrame(entity.isa().getName());
-				messageSent.setEntity(entity.getID());
+				messageSent.setFrameId(entity.isa().getName());
+				messageSent.setEntityId(entity.getID());
 				messageSent.setEvent(event);
 				messageSent.setStatus(MessageStatus.READY);
 				entitySerializer.add(entity);

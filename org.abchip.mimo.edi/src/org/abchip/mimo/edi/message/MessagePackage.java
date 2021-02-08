@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -118,22 +119,13 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE__MESSAGE_ID = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Message Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE__MESSAGE_TYPE = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__STATUS = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 6;
+	int MESSAGE__STATUS = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Sender</b></em>' attribute.
@@ -142,25 +134,25 @@ public interface MessagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__SENDER = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 7;
+	int MESSAGE__SENDER = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Frame</b></em>' attribute.
+	 * The feature id for the '<em><b>Frame Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__FRAME = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 8;
+	int MESSAGE__FRAME_ID = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' attribute.
+	 * The feature id for the '<em><b>Entity Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__ENTITY = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 9;
+	int MESSAGE__ENTITY_ID = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Event</b></em>' attribute.
@@ -169,7 +161,7 @@ public interface MessagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__EVENT = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 10;
+	int MESSAGE__EVENT = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Body</b></em>' attribute.
@@ -178,7 +170,16 @@ public interface MessagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__BODY = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 11;
+	int MESSAGE__BODY = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Message Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__MESSAGE_TYPE = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Message</em>' class.
@@ -245,15 +246,6 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE_SENT__MESSAGE_ID = MESSAGE__MESSAGE_ID;
 
 	/**
-	 * The feature id for the '<em><b>Message Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_SENT__MESSAGE_TYPE = MESSAGE__MESSAGE_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -272,22 +264,22 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE_SENT__SENDER = MESSAGE__SENDER;
 
 	/**
-	 * The feature id for the '<em><b>Frame</b></em>' attribute.
+	 * The feature id for the '<em><b>Frame Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_SENT__FRAME = MESSAGE__FRAME;
+	int MESSAGE_SENT__FRAME_ID = MESSAGE__FRAME_ID;
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' attribute.
+	 * The feature id for the '<em><b>Entity Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_SENT__ENTITY = MESSAGE__ENTITY;
+	int MESSAGE_SENT__ENTITY_ID = MESSAGE__ENTITY_ID;
 
 	/**
 	 * The feature id for the '<em><b>Event</b></em>' attribute.
@@ -306,6 +298,15 @@ public interface MessagePackage extends EPackage {
 	 * @ordered
 	 */
 	int MESSAGE_SENT__BODY = MESSAGE__BODY;
+
+	/**
+	 * The feature id for the '<em><b>Message Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_SENT__MESSAGE_TYPE = MESSAGE__MESSAGE_TYPE;
 
 	/**
 	 * The number of structural features of the '<em>Sent</em>' class.
@@ -372,15 +373,6 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE_RECEIVED__MESSAGE_ID = MESSAGE__MESSAGE_ID;
 
 	/**
-	 * The feature id for the '<em><b>Message Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_RECEIVED__MESSAGE_TYPE = MESSAGE__MESSAGE_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -399,22 +391,22 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE_RECEIVED__SENDER = MESSAGE__SENDER;
 
 	/**
-	 * The feature id for the '<em><b>Frame</b></em>' attribute.
+	 * The feature id for the '<em><b>Frame Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_RECEIVED__FRAME = MESSAGE__FRAME;
+	int MESSAGE_RECEIVED__FRAME_ID = MESSAGE__FRAME_ID;
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' attribute.
+	 * The feature id for the '<em><b>Entity Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_RECEIVED__ENTITY = MESSAGE__ENTITY;
+	int MESSAGE_RECEIVED__ENTITY_ID = MESSAGE__ENTITY_ID;
 
 	/**
 	 * The feature id for the '<em><b>Event</b></em>' attribute.
@@ -433,6 +425,15 @@ public interface MessagePackage extends EPackage {
 	 * @ordered
 	 */
 	int MESSAGE_RECEIVED__BODY = MESSAGE__BODY;
+
+	/**
+	 * The feature id for the '<em><b>Message Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_RECEIVED__MESSAGE_TYPE = MESSAGE__MESSAGE_TYPE;
 
 	/**
 	 * The number of structural features of the '<em>Received</em>' class.
@@ -517,7 +518,7 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE_TYPE__TEXT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Transmission Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Transmission Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -535,22 +536,13 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE_TYPE__ENCRYPT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Edi Frame Setups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_TYPE__EDI_FRAME_SETUPS = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 8;
-
-	/**
 	 * The number of structural features of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 9;
+	int MESSAGE_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.edi.message.MessageStatus <em>Status</em>}' enum.
@@ -585,15 +577,15 @@ public interface MessagePackage extends EPackage {
 	EAttribute getMessage_MessageId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.message.Message#getMessageType <em>Message Type</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.edi.message.Message#getMessageType <em>Message Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Message Type</em>'.
+	 * @return the meta object for the reference '<em>Message Type</em>'.
 	 * @see org.abchip.mimo.edi.message.Message#getMessageType()
 	 * @see #getMessage()
 	 * @generated
 	 */
-	EAttribute getMessage_MessageType();
+	EReference getMessage_MessageType();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.message.Message#getBody <em>Body</em>}'.
@@ -650,26 +642,26 @@ public interface MessagePackage extends EPackage {
 	EAttribute getMessage_Sender();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.message.Message#getFrame <em>Frame</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.message.Message#getFrameId <em>Frame Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Frame</em>'.
-	 * @see org.abchip.mimo.edi.message.Message#getFrame()
+	 * @return the meta object for the attribute '<em>Frame Id</em>'.
+	 * @see org.abchip.mimo.edi.message.Message#getFrameId()
 	 * @see #getMessage()
 	 * @generated
 	 */
-	EAttribute getMessage_Frame();
+	EAttribute getMessage_FrameId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.message.Message#getEntity <em>Entity</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.message.Message#getEntityId <em>Entity Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Entity</em>'.
-	 * @see org.abchip.mimo.edi.message.Message#getEntity()
+	 * @return the meta object for the attribute '<em>Entity Id</em>'.
+	 * @see org.abchip.mimo.edi.message.Message#getEntityId()
 	 * @see #getMessage()
 	 * @generated
 	 */
-	EAttribute getMessage_Entity();
+	EAttribute getMessage_EntityId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.edi.message.MessageReceived <em>Received</em>}'.
@@ -714,15 +706,15 @@ public interface MessagePackage extends EPackage {
 	EAttribute getMessageType_Text();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.message.MessageType#getTransmissionType <em>Transmission Type</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.edi.message.MessageType#getTransmissionType <em>Transmission Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Transmission Type</em>'.
+	 * @return the meta object for the reference '<em>Transmission Type</em>'.
 	 * @see org.abchip.mimo.edi.message.MessageType#getTransmissionType()
 	 * @see #getMessageType()
 	 * @generated
 	 */
-	EAttribute getMessageType_TransmissionType();
+	EReference getMessageType_TransmissionType();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.message.MessageType#isEncrypt <em>Encrypt</em>}'.
@@ -734,17 +726,6 @@ public interface MessagePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMessageType_Encrypt();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.edi.message.MessageType#getEdiFrameSetups <em>Edi Frame Setups</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Edi Frame Setups</em>'.
-	 * @see org.abchip.mimo.edi.message.MessageType#getEdiFrameSetups()
-	 * @see #getMessageType()
-	 * @generated
-	 */
-	EAttribute getMessageType_EdiFrameSetups();
 
 	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.edi.message.MessageStatus <em>Status</em>}'.
@@ -797,12 +778,12 @@ public interface MessagePackage extends EPackage {
 		EAttribute MESSAGE__MESSAGE_ID = eINSTANCE.getMessage_MessageId();
 
 		/**
-		 * The meta object literal for the '<em><b>Message Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Message Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MESSAGE__MESSAGE_TYPE = eINSTANCE.getMessage_MessageType();
+		EReference MESSAGE__MESSAGE_TYPE = eINSTANCE.getMessage_MessageType();
 
 		/**
 		 * The meta object literal for the '<em><b>Body</b></em>' attribute feature.
@@ -847,20 +828,20 @@ public interface MessagePackage extends EPackage {
 		EAttribute MESSAGE__SENDER = eINSTANCE.getMessage_Sender();
 
 		/**
-		 * The meta object literal for the '<em><b>Frame</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Frame Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MESSAGE__FRAME = eINSTANCE.getMessage_Frame();
+		EAttribute MESSAGE__FRAME_ID = eINSTANCE.getMessage_FrameId();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Entity Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MESSAGE__ENTITY = eINSTANCE.getMessage_Entity();
+		EAttribute MESSAGE__ENTITY_ID = eINSTANCE.getMessage_EntityId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.edi.message.impl.MessageReceivedImpl <em>Received</em>}' class.
@@ -899,12 +880,12 @@ public interface MessagePackage extends EPackage {
 		EAttribute MESSAGE_TYPE__TEXT = eINSTANCE.getMessageType_Text();
 
 		/**
-		 * The meta object literal for the '<em><b>Transmission Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Transmission Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MESSAGE_TYPE__TRANSMISSION_TYPE = eINSTANCE.getMessageType_TransmissionType();
+		EReference MESSAGE_TYPE__TRANSMISSION_TYPE = eINSTANCE.getMessageType_TransmissionType();
 
 		/**
 		 * The meta object literal for the '<em><b>Encrypt</b></em>' attribute feature.
@@ -913,14 +894,6 @@ public interface MessagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MESSAGE_TYPE__ENCRYPT = eINSTANCE.getMessageType_Encrypt();
-
-		/**
-		 * The meta object literal for the '<em><b>Edi Frame Setups</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MESSAGE_TYPE__EDI_FRAME_SETUPS = eINSTANCE.getMessageType_EdiFrameSetups();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.edi.message.MessageStatus <em>Status</em>}' enum.

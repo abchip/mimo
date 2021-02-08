@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.edi.transmission;
 
-import java.util.List;
-
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityType;
 
@@ -22,6 +20,7 @@ import org.abchip.mimo.entity.EntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.edi.transmission.TransmissionType#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.TransmissionType#getText <em>Text</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.edi.transmission.TransmissionPackage#getTransmissionType()
@@ -41,6 +40,7 @@ public interface TransmissionType extends EntityType<Transmission>, EntityInfo {
 	 * @see #setName(String)
 	 * @see org.abchip.mimo.edi.transmission.TransmissionPackage#getTransmissionType_Name()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getName();
@@ -56,12 +56,25 @@ public interface TransmissionType extends EntityType<Transmission>, EntityInfo {
 	void setName(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Transmission' route='transmissionType'"
+	 * @return the value of the '<em>Text</em>' attribute.
+	 * @see #setText(String)
+	 * @see org.abchip.mimo.edi.transmission.TransmissionPackage#getTransmissionType_Text()
+	 * @model required="true"
 	 * @generated
 	 */
-	List<String> transmissions();
+	String getText();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.edi.transmission.TransmissionType#getText <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Text</em>' attribute.
+	 * @see #getText()
+	 * @generated
+	 */
+	void setText(String value);
 
 } // TransmissionType

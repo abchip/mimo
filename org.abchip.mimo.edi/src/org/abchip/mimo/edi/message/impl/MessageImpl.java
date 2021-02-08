@@ -20,6 +20,8 @@ import org.abchip.mimo.entity.impl.EntityTypedImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -35,18 +37,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getLastUpdatedStamp <em>Last Updated Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getMessageId <em>Message Id</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getSender <em>Sender</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getFrame <em>Frame</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getEntity <em>Entity</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getFrameId <em>Frame Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getEntityId <em>Entity Id</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getEvent <em>Event</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getBody <em>Body</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getMessageType <em>Message Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implements Message {
+public abstract class MessageImpl extends EntityTypedImpl<MessageType> implements Message {
 	/**
 	 * The default value of the '{@link #getCreatedStamp() <em>Created Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -149,26 +151,6 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	protected String messageId = MESSAGE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMessageType() <em>Message Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMessageType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MESSAGE_TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMessageType() <em>Message Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMessageType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String messageType = MESSAGE_TYPE_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -209,44 +191,44 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	protected String sender = SENDER_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFrame() <em>Frame</em>}' attribute.
+	 * The default value of the '{@link #getFrameId() <em>Frame Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFrame()
+	 * @see #getFrameId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FRAME_EDEFAULT = null;
+	protected static final String FRAME_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getFrame() <em>Frame</em>}' attribute.
+	 * The cached value of the '{@link #getFrameId() <em>Frame Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFrame()
+	 * @see #getFrameId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String frame = FRAME_EDEFAULT;
+	protected String frameId = FRAME_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getEntity() <em>Entity</em>}' attribute.
+	 * The default value of the '{@link #getEntityId() <em>Entity Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEntity()
+	 * @see #getEntityId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ENTITY_EDEFAULT = null;
+	protected static final String ENTITY_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getEntity() <em>Entity</em>}' attribute.
+	 * The cached value of the '{@link #getEntityId() <em>Entity Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEntity()
+	 * @see #getEntityId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String entity = ENTITY_EDEFAULT;
+	protected String entityId = ENTITY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEvent() <em>Event</em>}' attribute.
@@ -287,6 +269,16 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @ordered
 	 */
 	protected String body = BODY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMessageType() <em>Message Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMessageType()
+	 * @generated
+	 * @ordered
+	 */
+	protected MessageType messageType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -428,7 +420,24 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 */
 	@Override
-	public String getMessageType() {
+	public MessageType getMessageType() {
+		if (messageType != null && ((EObject)messageType).eIsProxy()) {
+			InternalEObject oldMessageType = (InternalEObject)messageType;
+			messageType = (MessageType)eResolveProxy(oldMessageType);
+			if (messageType != oldMessageType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MessagePackage.MESSAGE__MESSAGE_TYPE, oldMessageType, messageType));
+			}
+		}
+		return messageType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageType basicGetMessageType() {
 		return messageType;
 	}
 
@@ -438,8 +447,8 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 */
 	@Override
-	public void setMessageType(String newMessageType) {
-		String oldMessageType = messageType;
+	public void setMessageType(MessageType newMessageType) {
+		MessageType oldMessageType = messageType;
 		messageType = newMessageType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__MESSAGE_TYPE, oldMessageType, messageType));
@@ -543,8 +552,8 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 */
 	@Override
-	public String getFrame() {
-		return frame;
+	public String getFrameId() {
+		return frameId;
 	}
 
 	/**
@@ -553,11 +562,11 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 */
 	@Override
-	public void setFrame(String newFrame) {
-		String oldFrame = frame;
-		frame = newFrame;
+	public void setFrameId(String newFrameId) {
+		String oldFrameId = frameId;
+		frameId = newFrameId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__FRAME, oldFrame, frame));
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__FRAME_ID, oldFrameId, frameId));
 	}
 
 	/**
@@ -566,8 +575,8 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 */
 	@Override
-	public String getEntity() {
-		return entity;
+	public String getEntityId() {
+		return entityId;
 	}
 
 	/**
@@ -576,11 +585,11 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 * @generated
 	 */
 	@Override
-	public void setEntity(String newEntity) {
-		String oldEntity = entity;
-		entity = newEntity;
+	public void setEntityId(String newEntityId) {
+		String oldEntityId = entityId;
+		entityId = newEntityId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__ENTITY, oldEntity, entity));
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__ENTITY_ID, oldEntityId, entityId));
 	}
 
 	/**
@@ -601,20 +610,21 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 				return getLastUpdatedTxStamp();
 			case MessagePackage.MESSAGE__MESSAGE_ID:
 				return getMessageId();
-			case MessagePackage.MESSAGE__MESSAGE_TYPE:
-				return getMessageType();
 			case MessagePackage.MESSAGE__STATUS:
 				return getStatus();
 			case MessagePackage.MESSAGE__SENDER:
 				return getSender();
-			case MessagePackage.MESSAGE__FRAME:
-				return getFrame();
-			case MessagePackage.MESSAGE__ENTITY:
-				return getEntity();
+			case MessagePackage.MESSAGE__FRAME_ID:
+				return getFrameId();
+			case MessagePackage.MESSAGE__ENTITY_ID:
+				return getEntityId();
 			case MessagePackage.MESSAGE__EVENT:
 				return getEvent();
 			case MessagePackage.MESSAGE__BODY:
 				return getBody();
+			case MessagePackage.MESSAGE__MESSAGE_TYPE:
+				if (resolve) return getMessageType();
+				return basicGetMessageType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -642,26 +652,26 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 			case MessagePackage.MESSAGE__MESSAGE_ID:
 				setMessageId((String)newValue);
 				return;
-			case MessagePackage.MESSAGE__MESSAGE_TYPE:
-				setMessageType((String)newValue);
-				return;
 			case MessagePackage.MESSAGE__STATUS:
 				setStatus((MessageStatus)newValue);
 				return;
 			case MessagePackage.MESSAGE__SENDER:
 				setSender((String)newValue);
 				return;
-			case MessagePackage.MESSAGE__FRAME:
-				setFrame((String)newValue);
+			case MessagePackage.MESSAGE__FRAME_ID:
+				setFrameId((String)newValue);
 				return;
-			case MessagePackage.MESSAGE__ENTITY:
-				setEntity((String)newValue);
+			case MessagePackage.MESSAGE__ENTITY_ID:
+				setEntityId((String)newValue);
 				return;
 			case MessagePackage.MESSAGE__EVENT:
 				setEvent((EntityEvent)newValue);
 				return;
 			case MessagePackage.MESSAGE__BODY:
 				setBody((String)newValue);
+				return;
+			case MessagePackage.MESSAGE__MESSAGE_TYPE:
+				setMessageType((MessageType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -690,26 +700,26 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 			case MessagePackage.MESSAGE__MESSAGE_ID:
 				setMessageId(MESSAGE_ID_EDEFAULT);
 				return;
-			case MessagePackage.MESSAGE__MESSAGE_TYPE:
-				setMessageType(MESSAGE_TYPE_EDEFAULT);
-				return;
 			case MessagePackage.MESSAGE__STATUS:
 				setStatus(STATUS_EDEFAULT);
 				return;
 			case MessagePackage.MESSAGE__SENDER:
 				setSender(SENDER_EDEFAULT);
 				return;
-			case MessagePackage.MESSAGE__FRAME:
-				setFrame(FRAME_EDEFAULT);
+			case MessagePackage.MESSAGE__FRAME_ID:
+				setFrameId(FRAME_ID_EDEFAULT);
 				return;
-			case MessagePackage.MESSAGE__ENTITY:
-				setEntity(ENTITY_EDEFAULT);
+			case MessagePackage.MESSAGE__ENTITY_ID:
+				setEntityId(ENTITY_ID_EDEFAULT);
 				return;
 			case MessagePackage.MESSAGE__EVENT:
 				setEvent(EVENT_EDEFAULT);
 				return;
 			case MessagePackage.MESSAGE__BODY:
 				setBody(BODY_EDEFAULT);
+				return;
+			case MessagePackage.MESSAGE__MESSAGE_TYPE:
+				setMessageType((MessageType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -733,20 +743,20 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 				return LAST_UPDATED_TX_STAMP_EDEFAULT == null ? lastUpdatedTxStamp != null : !LAST_UPDATED_TX_STAMP_EDEFAULT.equals(lastUpdatedTxStamp);
 			case MessagePackage.MESSAGE__MESSAGE_ID:
 				return MESSAGE_ID_EDEFAULT == null ? messageId != null : !MESSAGE_ID_EDEFAULT.equals(messageId);
-			case MessagePackage.MESSAGE__MESSAGE_TYPE:
-				return MESSAGE_TYPE_EDEFAULT == null ? messageType != null : !MESSAGE_TYPE_EDEFAULT.equals(messageType);
 			case MessagePackage.MESSAGE__STATUS:
 				return status != STATUS_EDEFAULT;
 			case MessagePackage.MESSAGE__SENDER:
 				return SENDER_EDEFAULT == null ? sender != null : !SENDER_EDEFAULT.equals(sender);
-			case MessagePackage.MESSAGE__FRAME:
-				return FRAME_EDEFAULT == null ? frame != null : !FRAME_EDEFAULT.equals(frame);
-			case MessagePackage.MESSAGE__ENTITY:
-				return ENTITY_EDEFAULT == null ? entity != null : !ENTITY_EDEFAULT.equals(entity);
+			case MessagePackage.MESSAGE__FRAME_ID:
+				return FRAME_ID_EDEFAULT == null ? frameId != null : !FRAME_ID_EDEFAULT.equals(frameId);
+			case MessagePackage.MESSAGE__ENTITY_ID:
+				return ENTITY_ID_EDEFAULT == null ? entityId != null : !ENTITY_ID_EDEFAULT.equals(entityId);
 			case MessagePackage.MESSAGE__EVENT:
 				return event != EVENT_EDEFAULT;
 			case MessagePackage.MESSAGE__BODY:
 				return BODY_EDEFAULT == null ? body != null : !BODY_EDEFAULT.equals(body);
+			case MessagePackage.MESSAGE__MESSAGE_TYPE:
+				return messageType != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -809,16 +819,14 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 		result.append(lastUpdatedTxStamp);
 		result.append(", messageId: ");
 		result.append(messageId);
-		result.append(", messageType: ");
-		result.append(messageType);
 		result.append(", status: ");
 		result.append(status);
 		result.append(", sender: ");
 		result.append(sender);
-		result.append(", frame: ");
-		result.append(frame);
-		result.append(", entity: ");
-		result.append(entity);
+		result.append(", frameId: ");
+		result.append(frameId);
+		result.append(", entityId: ");
+		result.append(entityId);
 		result.append(", event: ");
 		result.append(event);
 		result.append(", body: ");

@@ -533,8 +533,18 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getResourceMappingRule_Provider() {
+	public EAttribute getResourceMappingRule_Active() {
 		return (EAttribute)resourceMappingRuleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getResourceMappingRule_Provider() {
+		return (EAttribute)resourceMappingRuleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -762,6 +772,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		createEReference(resourceMappingEClass, RESOURCE_MAPPING__RULES);
 
 		resourceMappingRuleEClass = createEClass(RESOURCE_MAPPING_RULE);
+		createEAttribute(resourceMappingRuleEClass, RESOURCE_MAPPING_RULE__ACTIVE);
 		createEAttribute(resourceMappingRuleEClass, RESOURCE_MAPPING_RULE__PROVIDER);
 
 		resourceMappingRuleByFrameEClass = createEClass(RESOURCE_MAPPING_RULE_BY_FRAME);
@@ -1176,6 +1187,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		initEReference(getResourceMapping_Rules(), this.getResourceMappingRule(), null, "rules", null, 0, -1, ResourceMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceMappingRuleEClass, ResourceMappingRule.class, "ResourceMappingRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getResourceMappingRule_Active(), ecorePackage.getEBoolean(), "active", "true", 0, 1, ResourceMappingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResourceMappingRule_Provider(), ecorePackage.getEString(), "provider", null, 1, 1, ResourceMappingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(resourceMappingRuleEClass, this.getResourceMappingType(), "getMappingType", 1, 1, IS_UNIQUE, IS_ORDERED);

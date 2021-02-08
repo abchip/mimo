@@ -328,13 +328,22 @@ public interface ResourcePackage extends EPackage {
 	int RESOURCE_MAPPING_RULE = 8;
 
 	/**
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MAPPING_RULE__ACTIVE = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Provider</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_MAPPING_RULE__PROVIDER = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+	int RESOURCE_MAPPING_RULE__PROVIDER = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Mapping Rule</em>' class.
@@ -343,7 +352,7 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_MAPPING_RULE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int RESOURCE_MAPPING_RULE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceMappingRuleByFrameImpl <em>Mapping Rule By Frame</em>}' class.
@@ -354,6 +363,15 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 */
 	int RESOURCE_MAPPING_RULE_BY_FRAME = 9;
+
+	/**
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MAPPING_RULE_BY_FRAME__ACTIVE = RESOURCE_MAPPING_RULE__ACTIVE;
 
 	/**
 	 * The feature id for the '<em><b>Provider</b></em>' attribute.
@@ -391,6 +409,15 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 */
 	int RESOURCE_MAPPING_RULE_BY_PACKAGE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MAPPING_RULE_BY_PACKAGE__ACTIVE = RESOURCE_MAPPING_RULE__ACTIVE;
 
 	/**
 	 * The feature id for the '<em><b>Provider</b></em>' attribute.
@@ -811,6 +838,17 @@ public interface ResourcePackage extends EPackage {
 	EClass getResourceMappingRule();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.ResourceMappingRule#isActive <em>Active</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Active</em>'.
+	 * @see org.abchip.mimo.resource.ResourceMappingRule#isActive()
+	 * @see #getResourceMappingRule()
+	 * @generated
+	 */
+	EAttribute getResourceMappingRule_Active();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.ResourceMappingRule#getProvider <em>Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1179,6 +1217,14 @@ public interface ResourcePackage extends EPackage {
 		 * @generated
 		 */
 		EClass RESOURCE_MAPPING_RULE = eINSTANCE.getResourceMappingRule();
+
+		/**
+		 * The meta object literal for the '<em><b>Active</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE_MAPPING_RULE__ACTIVE = eINSTANCE.getResourceMappingRule_Active();
 
 		/**
 		 * The meta object literal for the '<em><b>Provider</b></em>' attribute feature.

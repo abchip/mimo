@@ -7,22 +7,21 @@
  */
 package org.abchip.mimo.edi.message.impl;
 
-import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 import org.abchip.mimo.edi.message.Message;
 import org.abchip.mimo.edi.message.MessagePackage;
 import org.abchip.mimo.edi.message.MessageType;
 
+import org.abchip.mimo.edi.transmission.TransmissionType;
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.impl.EntityTypeImpl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,12 +39,11 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getTransmissionType <em>Transmission Type</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#isEncrypt <em>Encrypt</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getEdiFrameSetups <em>Edi Frame Setups</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implements MessageType<E> {
+public class MessageTypeImpl extends EntityTypeImpl<Message> implements MessageType {
 	/**
 	 * The default value of the '{@link #getCreatedStamp() <em>Created Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -155,23 +153,14 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 */
 	protected String text = TEXT_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getTransmissionType() <em>Transmission Type</em>}' attribute.
+	 * The cached value of the '{@link #getTransmissionType() <em>Transmission Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTransmissionType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TRANSMISSION_TYPE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTransmissionType() <em>Transmission Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransmissionType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String transmissionType = TRANSMISSION_TYPE_EDEFAULT;
+	protected TransmissionType transmissionType;
 	/**
 	 * The default value of the '{@link #isEncrypt() <em>Encrypt</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -190,16 +179,6 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected boolean encrypt = ENCRYPT_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getEdiFrameSetups() <em>Edi Frame Setups</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEdiFrameSetups()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> ediFrameSetups;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -363,7 +342,24 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @generated
 	 */
 	@Override
-	public String getTransmissionType() {
+	public TransmissionType getTransmissionType() {
+		if (transmissionType != null && ((EObject)transmissionType).eIsProxy()) {
+			InternalEObject oldTransmissionType = (InternalEObject)transmissionType;
+			transmissionType = (TransmissionType)eResolveProxy(oldTransmissionType);
+			if (transmissionType != oldTransmissionType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MessagePackage.MESSAGE_TYPE__TRANSMISSION_TYPE, oldTransmissionType, transmissionType));
+			}
+		}
+		return transmissionType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TransmissionType basicGetTransmissionType() {
 		return transmissionType;
 	}
 
@@ -373,8 +369,8 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @generated
 	 */
 	@Override
-	public void setTransmissionType(String newTransmissionType) {
-		String oldTransmissionType = transmissionType;
+	public void setTransmissionType(TransmissionType newTransmissionType) {
+		TransmissionType oldTransmissionType = transmissionType;
 		transmissionType = newTransmissionType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__TRANSMISSION_TYPE, oldTransmissionType, transmissionType));
@@ -409,43 +405,6 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> getEdiFrameSetups() {
-		if (ediFrameSetups == null) {
-			ediFrameSetups = new EDataTypeUniqueEList<String>(String.class, this, MessagePackage.MESSAGE_TYPE__EDI_FRAME_SETUPS);
-		}
-		return ediFrameSetups;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<String> messageReceiveds() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<String> messageSents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case MessagePackage.MESSAGE_TYPE__CREATED_STAMP:
@@ -461,11 +420,10 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 			case MessagePackage.MESSAGE_TYPE__TEXT:
 				return getText();
 			case MessagePackage.MESSAGE_TYPE__TRANSMISSION_TYPE:
-				return getTransmissionType();
+				if (resolve) return getTransmissionType();
+				return basicGetTransmissionType();
 			case MessagePackage.MESSAGE_TYPE__ENCRYPT:
 				return isEncrypt();
-			case MessagePackage.MESSAGE_TYPE__EDI_FRAME_SETUPS:
-				return getEdiFrameSetups();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -475,7 +433,6 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -498,14 +455,10 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 				setText((String)newValue);
 				return;
 			case MessagePackage.MESSAGE_TYPE__TRANSMISSION_TYPE:
-				setTransmissionType((String)newValue);
+				setTransmissionType((TransmissionType)newValue);
 				return;
 			case MessagePackage.MESSAGE_TYPE__ENCRYPT:
 				setEncrypt((Boolean)newValue);
-				return;
-			case MessagePackage.MESSAGE_TYPE__EDI_FRAME_SETUPS:
-				getEdiFrameSetups().clear();
-				getEdiFrameSetups().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -538,13 +491,10 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 				setText(TEXT_EDEFAULT);
 				return;
 			case MessagePackage.MESSAGE_TYPE__TRANSMISSION_TYPE:
-				setTransmissionType(TRANSMISSION_TYPE_EDEFAULT);
+				setTransmissionType((TransmissionType)null);
 				return;
 			case MessagePackage.MESSAGE_TYPE__ENCRYPT:
 				setEncrypt(ENCRYPT_EDEFAULT);
-				return;
-			case MessagePackage.MESSAGE_TYPE__EDI_FRAME_SETUPS:
-				getEdiFrameSetups().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -571,11 +521,9 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 			case MessagePackage.MESSAGE_TYPE__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 			case MessagePackage.MESSAGE_TYPE__TRANSMISSION_TYPE:
-				return TRANSMISSION_TYPE_EDEFAULT == null ? transmissionType != null : !TRANSMISSION_TYPE_EDEFAULT.equals(transmissionType);
+				return transmissionType != null;
 			case MessagePackage.MESSAGE_TYPE__ENCRYPT:
 				return encrypt != ENCRYPT_EDEFAULT;
-			case MessagePackage.MESSAGE_TYPE__EDI_FRAME_SETUPS:
-				return ediFrameSetups != null && !ediFrameSetups.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -640,12 +588,8 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 		result.append(name);
 		result.append(", text: ");
 		result.append(text);
-		result.append(", transmissionType: ");
-		result.append(transmissionType);
 		result.append(", encrypt: ");
 		result.append(encrypt);
-		result.append(", ediFrameSetups: ");
-		result.append(ediFrameSetups);
 		result.append(')');
 		return result.toString();
 	}

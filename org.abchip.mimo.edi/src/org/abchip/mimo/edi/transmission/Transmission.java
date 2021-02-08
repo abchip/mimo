@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.edi.transmission;
 
-import java.util.List;
-
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityTyped;
 
@@ -83,14 +81,5 @@ public interface Transmission extends EntityTyped<TransmissionType>, EntityInfo 
 	 * @generated
 	 */
 	void setTransmissionType(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='MessageType'"
-	 * @generated
-	 */
-	List<String> messageTypes();
 
 } // Transmission

@@ -8,8 +8,6 @@
 package org.abchip.mimo.edi.transmission.impl;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.edi.transmission.Transmission;
 import org.abchip.mimo.edi.transmission.TransmissionPackage;
 import org.abchip.mimo.edi.transmission.TransmissionType;
@@ -320,18 +318,6 @@ public class TransmissionImpl extends EntityTypedImpl<TransmissionType> implemen
 		transmissionType = newTransmissionType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMISSION__TRANSMISSION_TYPE, oldTransmissionType, transmissionType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<String> messageTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

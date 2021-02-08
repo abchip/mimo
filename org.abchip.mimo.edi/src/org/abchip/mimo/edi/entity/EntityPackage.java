@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,31 +72,22 @@ public interface EntityPackage extends EPackage {
 	int EDI_FRAME_SETUP = 0;
 
 	/**
-	 * The feature id for the '<em><b>Message Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDI_FRAME_SETUP__MESSAGE_TYPE = org.abchip.mimo.entity.EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Frame</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDI_FRAME_SETUP__FRAME = org.abchip.mimo.entity.EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
+	int EDI_FRAME_SETUP__FRAME = org.abchip.mimo.entity.EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Entity Condition</b></em>' attribute.
+	 * The feature id for the '<em><b>Message Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDI_FRAME_SETUP__ENTITY_CONDITION = org.abchip.mimo.entity.EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
+	int EDI_FRAME_SETUP__MESSAGE_TYPE = org.abchip.mimo.entity.EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Entity Event</b></em>' attribute.
@@ -104,7 +96,16 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDI_FRAME_SETUP__ENTITY_EVENT = org.abchip.mimo.entity.EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
+	int EDI_FRAME_SETUP__ENTITY_EVENT = org.abchip.mimo.entity.EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Entity Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDI_FRAME_SETUP__ENTITY_CONDITION = org.abchip.mimo.entity.EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Encrypt</b></em>' attribute.
@@ -156,15 +157,15 @@ public interface EntityPackage extends EPackage {
 	EClass getEdiFrameSetup();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getMessageType <em>Message Type</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getMessageType <em>Message Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Message Type</em>'.
+	 * @return the meta object for the reference '<em>Message Type</em>'.
 	 * @see org.abchip.mimo.edi.entity.EdiFrameSetup#getMessageType()
 	 * @see #getEdiFrameSetup()
 	 * @generated
 	 */
-	EAttribute getEdiFrameSetup_MessageType();
+	EReference getEdiFrameSetup_MessageType();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.entity.EdiFrameSetup#getFrame <em>Frame</em>}'.
@@ -263,12 +264,12 @@ public interface EntityPackage extends EPackage {
 		EClass EDI_FRAME_SETUP = eINSTANCE.getEdiFrameSetup();
 
 		/**
-		 * The meta object literal for the '<em><b>Message Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Message Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EDI_FRAME_SETUP__MESSAGE_TYPE = eINSTANCE.getEdiFrameSetup_MessageType();
+		EReference EDI_FRAME_SETUP__MESSAGE_TYPE = eINSTANCE.getEdiFrameSetup_MessageType();
 
 		/**
 		 * The meta object literal for the '<em><b>Frame</b></em>' attribute feature.

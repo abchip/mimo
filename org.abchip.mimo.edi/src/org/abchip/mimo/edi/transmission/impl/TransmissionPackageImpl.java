@@ -189,6 +189,16 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 	 * @generated
 	 */
 	@Override
+	public EAttribute getTransmissionType_Text() {
+		return (EAttribute)transmissionTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public TransmissionFactory getTransmissionFactory() {
 		return (TransmissionFactory)getEFactoryInstance();
 	}
@@ -218,6 +228,7 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 
 		transmissionTypeEClass = createEClass(TRANSMISSION_TYPE);
 		createEAttribute(transmissionTypeEClass, TRANSMISSION_TYPE__NAME);
+		createEAttribute(transmissionTypeEClass, TRANSMISSION_TYPE__TEXT);
 	}
 
 	/**
@@ -269,12 +280,9 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 		initEAttribute(getTransmission_TransmissionId(), ecorePackage.getEString(), "transmissionId", null, 1, 1, Transmission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransmission_TransmissionType(), ecorePackage.getEString(), "transmissionType", null, 1, 1, Transmission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(transmissionEClass, ecorePackage.getEString(), "messageTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(transmissionTypeEClass, TransmissionType.class, "TransmissionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTransmissionType_Name(), ecorePackage.getEString(), "name", null, 1, 1, TransmissionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(transmissionTypeEClass, ecorePackage.getEString(), "transmissions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEAttribute(getTransmissionType_Text(), ecorePackage.getEString(), "text", null, 1, 1, TransmissionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-slot
@@ -292,22 +300,16 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (transmissionEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getTransmission_TransmissionId(),
 		   source,
 		   new String[] {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (transmissionTypeEClass.getEOperations().get(0),
+		  (getTransmissionType_Name(),
 		   source,
 		   new String[] {
-			   "derived", "true"
+			   "key", "true"
 		   });
 	}
 
@@ -320,29 +322,10 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (transmissionEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "MessageType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (getTransmission_TransmissionType(),
 		   source,
 		   new String[] {
 			   "frame", "TransmissionType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (transmissionTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "Transmission",
-			   "route", "transmissionType"
 		   },
 		   new URI[] {
 			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mimo-edi-message:MessageType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mimo-edi-message="http://www.abchip.org/mimo/edi/message" xsi:schemaLocation="http://www.abchip.org/mimo/edi/message edi.ecore#//message" name="LOCAL" text="Local">
+  <transmissionType href="TransmissionType.xmi#ALGO"/>
+</mimo-edi-message:MessageType>

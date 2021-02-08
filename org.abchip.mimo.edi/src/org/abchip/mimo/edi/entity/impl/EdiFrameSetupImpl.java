@@ -11,12 +11,15 @@ import org.abchip.mimo.edi.entity.EdiFrameSetup;
 import org.abchip.mimo.edi.entity.EntityCondition;
 import org.abchip.mimo.edi.entity.EntityEvent;
 import org.abchip.mimo.edi.entity.EntityPackage;
+import org.abchip.mimo.edi.message.MessageType;
 import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,36 +30,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl#getFrame <em>Frame</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl#getEntityCondition <em>Entity Condition</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl#getEntityEvent <em>Entity Event</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl#getEntityCondition <em>Entity Condition</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.entity.impl.EdiFrameSetupImpl#isEncrypt <em>Encrypt</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class EdiFrameSetupImpl extends EntityIdentifiableImpl implements EdiFrameSetup {
-	/**
-	 * The default value of the '{@link #getMessageType() <em>Message Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMessageType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MESSAGE_TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMessageType() <em>Message Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMessageType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String messageType = MESSAGE_TYPE_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFrame() <em>Frame</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -77,26 +60,16 @@ public class EdiFrameSetupImpl extends EntityIdentifiableImpl implements EdiFram
 	 */
 	protected String frame = FRAME_EDEFAULT;
 
-
 	/**
-	 * The default value of the '{@link #getEntityCondition() <em>Entity Condition</em>}' attribute.
+	 * The cached value of the '{@link #getMessageType() <em>Message Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEntityCondition()
+	 * @see #getMessageType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EntityCondition ENTITY_CONDITION_EDEFAULT = EntityCondition.ALL;
+	protected MessageType messageType;
 
-	/**
-	 * The cached value of the '{@link #getEntityCondition() <em>Entity Condition</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntityCondition()
-	 * @generated
-	 * @ordered
-	 */
-	protected EntityCondition entityCondition = ENTITY_CONDITION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEntityEvent() <em>Entity Event</em>}' attribute.
@@ -117,6 +90,26 @@ public class EdiFrameSetupImpl extends EntityIdentifiableImpl implements EdiFram
 	 * @ordered
 	 */
 	protected EntityEvent entityEvent = ENTITY_EVENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEntityCondition() <em>Entity Condition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntityCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EntityCondition ENTITY_CONDITION_EDEFAULT = EntityCondition.ALL;
+
+	/**
+	 * The cached value of the '{@link #getEntityCondition() <em>Entity Condition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntityCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityCondition entityCondition = ENTITY_CONDITION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isEncrypt() <em>Encrypt</em>}' attribute.
@@ -163,7 +156,24 @@ public class EdiFrameSetupImpl extends EntityIdentifiableImpl implements EdiFram
 	 * @generated
 	 */
 	@Override
-	public String getMessageType() {
+	public MessageType getMessageType() {
+		if (messageType != null && ((EObject)messageType).eIsProxy()) {
+			InternalEObject oldMessageType = (InternalEObject)messageType;
+			messageType = (MessageType)eResolveProxy(oldMessageType);
+			if (messageType != oldMessageType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EntityPackage.EDI_FRAME_SETUP__MESSAGE_TYPE, oldMessageType, messageType));
+			}
+		}
+		return messageType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageType basicGetMessageType() {
 		return messageType;
 	}
 
@@ -173,8 +183,8 @@ public class EdiFrameSetupImpl extends EntityIdentifiableImpl implements EdiFram
 	 * @generated
 	 */
 	@Override
-	public void setMessageType(String newMessageType) {
-		String oldMessageType = messageType;
+	public void setMessageType(MessageType newMessageType) {
+		MessageType oldMessageType = messageType;
 		messageType = newMessageType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.EDI_FRAME_SETUP__MESSAGE_TYPE, oldMessageType, messageType));
@@ -280,14 +290,15 @@ public class EdiFrameSetupImpl extends EntityIdentifiableImpl implements EdiFram
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EntityPackage.EDI_FRAME_SETUP__MESSAGE_TYPE:
-				return getMessageType();
 			case EntityPackage.EDI_FRAME_SETUP__FRAME:
 				return getFrame();
-			case EntityPackage.EDI_FRAME_SETUP__ENTITY_CONDITION:
-				return getEntityCondition();
+			case EntityPackage.EDI_FRAME_SETUP__MESSAGE_TYPE:
+				if (resolve) return getMessageType();
+				return basicGetMessageType();
 			case EntityPackage.EDI_FRAME_SETUP__ENTITY_EVENT:
 				return getEntityEvent();
+			case EntityPackage.EDI_FRAME_SETUP__ENTITY_CONDITION:
+				return getEntityCondition();
 			case EntityPackage.EDI_FRAME_SETUP__ENCRYPT:
 				return isEncrypt();
 		}
@@ -302,17 +313,17 @@ public class EdiFrameSetupImpl extends EntityIdentifiableImpl implements EdiFram
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EntityPackage.EDI_FRAME_SETUP__MESSAGE_TYPE:
-				setMessageType((String)newValue);
-				return;
 			case EntityPackage.EDI_FRAME_SETUP__FRAME:
 				setFrame((String)newValue);
 				return;
-			case EntityPackage.EDI_FRAME_SETUP__ENTITY_CONDITION:
-				setEntityCondition((EntityCondition)newValue);
+			case EntityPackage.EDI_FRAME_SETUP__MESSAGE_TYPE:
+				setMessageType((MessageType)newValue);
 				return;
 			case EntityPackage.EDI_FRAME_SETUP__ENTITY_EVENT:
 				setEntityEvent((EntityEvent)newValue);
+				return;
+			case EntityPackage.EDI_FRAME_SETUP__ENTITY_CONDITION:
+				setEntityCondition((EntityCondition)newValue);
 				return;
 			case EntityPackage.EDI_FRAME_SETUP__ENCRYPT:
 				setEncrypt((Boolean)newValue);
@@ -329,17 +340,17 @@ public class EdiFrameSetupImpl extends EntityIdentifiableImpl implements EdiFram
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EntityPackage.EDI_FRAME_SETUP__MESSAGE_TYPE:
-				setMessageType(MESSAGE_TYPE_EDEFAULT);
-				return;
 			case EntityPackage.EDI_FRAME_SETUP__FRAME:
 				setFrame(FRAME_EDEFAULT);
 				return;
-			case EntityPackage.EDI_FRAME_SETUP__ENTITY_CONDITION:
-				setEntityCondition(ENTITY_CONDITION_EDEFAULT);
+			case EntityPackage.EDI_FRAME_SETUP__MESSAGE_TYPE:
+				setMessageType((MessageType)null);
 				return;
 			case EntityPackage.EDI_FRAME_SETUP__ENTITY_EVENT:
 				setEntityEvent(ENTITY_EVENT_EDEFAULT);
+				return;
+			case EntityPackage.EDI_FRAME_SETUP__ENTITY_CONDITION:
+				setEntityCondition(ENTITY_CONDITION_EDEFAULT);
 				return;
 			case EntityPackage.EDI_FRAME_SETUP__ENCRYPT:
 				setEncrypt(ENCRYPT_EDEFAULT);
@@ -356,14 +367,14 @@ public class EdiFrameSetupImpl extends EntityIdentifiableImpl implements EdiFram
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EntityPackage.EDI_FRAME_SETUP__MESSAGE_TYPE:
-				return MESSAGE_TYPE_EDEFAULT == null ? messageType != null : !MESSAGE_TYPE_EDEFAULT.equals(messageType);
 			case EntityPackage.EDI_FRAME_SETUP__FRAME:
 				return FRAME_EDEFAULT == null ? frame != null : !FRAME_EDEFAULT.equals(frame);
-			case EntityPackage.EDI_FRAME_SETUP__ENTITY_CONDITION:
-				return entityCondition != ENTITY_CONDITION_EDEFAULT;
+			case EntityPackage.EDI_FRAME_SETUP__MESSAGE_TYPE:
+				return messageType != null;
 			case EntityPackage.EDI_FRAME_SETUP__ENTITY_EVENT:
 				return entityEvent != ENTITY_EVENT_EDEFAULT;
+			case EntityPackage.EDI_FRAME_SETUP__ENTITY_CONDITION:
+				return entityCondition != ENTITY_CONDITION_EDEFAULT;
 			case EntityPackage.EDI_FRAME_SETUP__ENCRYPT:
 				return encrypt != ENCRYPT_EDEFAULT;
 		}
@@ -380,14 +391,12 @@ public class EdiFrameSetupImpl extends EntityIdentifiableImpl implements EdiFram
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (messageType: ");
-		result.append(messageType);
-		result.append(", frame: ");
+		result.append(" (frame: ");
 		result.append(frame);
-		result.append(", entityCondition: ");
-		result.append(entityCondition);
 		result.append(", entityEvent: ");
 		result.append(entityEvent);
+		result.append(", entityCondition: ");
+		result.append(entityCondition);
 		result.append(", encrypt: ");
 		result.append(encrypt);
 		result.append(')');

@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -154,8 +155,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEdiFrameSetup_MessageType() {
-		return (EAttribute)ediFrameSetupEClass.getEStructuralFeatures().get(0);
+	public EReference getEdiFrameSetup_MessageType() {
+		return (EReference)ediFrameSetupEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -165,7 +166,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 */
 	@Override
 	public EAttribute getEdiFrameSetup_Frame() {
-		return (EAttribute)ediFrameSetupEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)ediFrameSetupEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -175,7 +176,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 */
 	@Override
 	public EAttribute getEdiFrameSetup_EntityCondition() {
-		return (EAttribute)ediFrameSetupEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)ediFrameSetupEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -185,7 +186,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 */
 	@Override
 	public EAttribute getEdiFrameSetup_EntityEvent() {
-		return (EAttribute)ediFrameSetupEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)ediFrameSetupEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -248,10 +249,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		// Create classes and their features
 		ediFrameSetupEClass = createEClass(EDI_FRAME_SETUP);
-		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__MESSAGE_TYPE);
 		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__FRAME);
-		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__ENTITY_CONDITION);
+		createEReference(ediFrameSetupEClass, EDI_FRAME_SETUP__MESSAGE_TYPE);
 		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__ENTITY_EVENT);
+		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__ENTITY_CONDITION);
 		createEAttribute(ediFrameSetupEClass, EDI_FRAME_SETUP__ENCRYPT);
 
 		// Create enums
@@ -284,6 +285,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		// Obtain other dependent packages
 		org.abchip.mimo.entity.EntityPackage theEntityPackage_1 = (org.abchip.mimo.entity.EntityPackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.entity.EntityPackage.eNS_URI);
+		MessagePackage theMessagePackage = (MessagePackage)EPackage.Registry.INSTANCE.getEPackage(MessagePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -294,10 +296,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(ediFrameSetupEClass, EdiFrameSetup.class, "EdiFrameSetup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEdiFrameSetup_MessageType(), ecorePackage.getEString(), "messageType", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEdiFrameSetup_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEdiFrameSetup_EntityCondition(), this.getEntityCondition(), "entityCondition", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEdiFrameSetup_MessageType(), theMessagePackage.getMessageType(), null, "messageType", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEdiFrameSetup_EntityEvent(), this.getEntityEvent(), "entityEvent", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEdiFrameSetup_EntityCondition(), this.getEntityCondition(), "entityCondition", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEdiFrameSetup_Encrypt(), ecorePackage.getEBoolean(), "encrypt", null, 1, 1, EdiFrameSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
@@ -328,13 +330,19 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
+		  (getEdiFrameSetup_Frame(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
 		  (getEdiFrameSetup_MessageType(),
 		   source,
 		   new String[] {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getEdiFrameSetup_Frame(),
+		  (getEdiFrameSetup_EntityEvent(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -349,15 +357,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 */
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
-		addAnnotation
-		  (getEdiFrameSetup_MessageType(),
-		   source,
-		   new String[] {
-			   "frame", "MessageType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
 		addAnnotation
 		  (getEdiFrameSetup_Frame(),
 		   source,

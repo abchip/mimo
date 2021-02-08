@@ -199,13 +199,22 @@ public interface TransmissionPackage extends EPackage {
 	int TRANSMISSION_TYPE__NAME = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSMISSION_TYPE__TEXT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSMISSION_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 5;
+	int TRANSMISSION_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 6;
 
 
 	/**
@@ -260,6 +269,17 @@ public interface TransmissionPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTransmissionType_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.transmission.TransmissionType#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see org.abchip.mimo.edi.transmission.TransmissionType#getText()
+	 * @see #getTransmissionType()
+	 * @generated
+	 */
+	EAttribute getTransmissionType_Text();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -326,6 +346,14 @@ public interface TransmissionPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TRANSMISSION_TYPE__NAME = eINSTANCE.getTransmissionType_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRANSMISSION_TYPE__TEXT = eINSTANCE.getTransmissionType_Text();
 
 	}
 
