@@ -19,6 +19,10 @@
         <genParameters ecoreParameter="edi.ecore#//EdiManager/writeMessage/event"/>
         <genTypeParameters ecoreTypeParameter="edi.ecore#//EdiManager/writeMessage/E"/>
       </genOperations>
+      <genOperations ecoreOperation="edi.ecore#//EdiManager/transmitMessage">
+        <genParameters ecoreParameter="edi.ecore#//EdiManager/transmitMessage/context"/>
+        <genParameters ecoreParameter="edi.ecore#//EdiManager/transmitMessage/message"/>
+      </genOperations>
     </genClasses>
     <nestedGenPackages prefix="Entity" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="edi.ecore#//entity">
@@ -55,8 +59,11 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/frameId"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/entityId"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/event"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edi.ecore#//message/Message/body"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EReference edi.ecore#//message/Message/messageType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edi.ecore#//message/Message/body"/>
+      </genClasses>
+      <genClasses ecoreClass="edi.ecore#//message/MessageBody">
+        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference edi.ecore#//message/MessageBody/contents"/>
       </genClasses>
       <genClasses ecoreClass="edi.ecore#//message/MessageSent"/>
       <genClasses ecoreClass="edi.ecore#//message/MessageReceived"/>
@@ -65,6 +72,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/text"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EReference edi.ecore#//message/MessageType/transmissionType"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/encrypt"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//message/MessageType/transmissionOnWrite"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Transmission" disposableProviderFactory="true" adapterFactory="false"

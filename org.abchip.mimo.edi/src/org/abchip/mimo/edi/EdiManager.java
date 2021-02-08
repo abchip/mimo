@@ -9,6 +9,7 @@ package org.abchip.mimo.edi;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.edi.entity.EntityEvent;
+import org.abchip.mimo.edi.message.Message;
 import org.abchip.mimo.entity.EntityIdentifiable;
 
 
@@ -31,4 +32,12 @@ public interface EdiManager {
 	 * @generated
 	 */
 	<E extends EntityIdentifiable> void writeMessage(Context context, E entity, EntityEvent event) throws DataInterchangeException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model exceptions="org.abchip.mimo.edi.DataInterchangeException" contextRequired="true" messageRequired="true"
+	 * @generated
+	 */
+	void transmitMessage(Context context, Message message) throws DataInterchangeException;
 } // EdiManager

@@ -164,22 +164,22 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE__EVENT = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE__BODY = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 10;
-
-	/**
 	 * The feature id for the '<em><b>Message Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__MESSAGE_TYPE = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 11;
+	int MESSAGE__MESSAGE_TYPE = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__BODY = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Message</em>' class.
@@ -191,6 +191,34 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE_FEATURE_COUNT = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 12;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.edi.message.impl.MessageBodyImpl <em>Body</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.edi.message.impl.MessageBodyImpl
+	 * @see org.abchip.mimo.edi.message.impl.MessagePackageImpl#getMessageBody()
+	 * @generated
+	 */
+	int MESSAGE_BODY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_BODY__CONTENTS = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Body</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_BODY_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.edi.message.impl.MessageSentImpl <em>Sent</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -198,7 +226,7 @@ public interface MessagePackage extends EPackage {
 	 * @see org.abchip.mimo.edi.message.impl.MessagePackageImpl#getMessageSent()
 	 * @generated
 	 */
-	int MESSAGE_SENT = 1;
+	int MESSAGE_SENT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
@@ -291,15 +319,6 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE_SENT__EVENT = MESSAGE__EVENT;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_SENT__BODY = MESSAGE__BODY;
-
-	/**
 	 * The feature id for the '<em><b>Message Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -307,6 +326,15 @@ public interface MessagePackage extends EPackage {
 	 * @ordered
 	 */
 	int MESSAGE_SENT__MESSAGE_TYPE = MESSAGE__MESSAGE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_SENT__BODY = MESSAGE__BODY;
 
 	/**
 	 * The number of structural features of the '<em>Sent</em>' class.
@@ -325,7 +353,7 @@ public interface MessagePackage extends EPackage {
 	 * @see org.abchip.mimo.edi.message.impl.MessagePackageImpl#getMessageReceived()
 	 * @generated
 	 */
-	int MESSAGE_RECEIVED = 2;
+	int MESSAGE_RECEIVED = 3;
 
 	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
@@ -418,15 +446,6 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE_RECEIVED__EVENT = MESSAGE__EVENT;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_RECEIVED__BODY = MESSAGE__BODY;
-
-	/**
 	 * The feature id for the '<em><b>Message Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -434,6 +453,15 @@ public interface MessagePackage extends EPackage {
 	 * @ordered
 	 */
 	int MESSAGE_RECEIVED__MESSAGE_TYPE = MESSAGE__MESSAGE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_RECEIVED__BODY = MESSAGE__BODY;
 
 	/**
 	 * The number of structural features of the '<em>Received</em>' class.
@@ -452,7 +480,7 @@ public interface MessagePackage extends EPackage {
 	 * @see org.abchip.mimo.edi.message.impl.MessagePackageImpl#getMessageType()
 	 * @generated
 	 */
-	int MESSAGE_TYPE = 3;
+	int MESSAGE_TYPE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
@@ -536,13 +564,22 @@ public interface MessagePackage extends EPackage {
 	int MESSAGE_TYPE__ENCRYPT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Transmission On Write</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__TRANSMISSION_ON_WRITE = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 8;
+	int MESSAGE_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.edi.message.MessageStatus <em>Status</em>}' enum.
@@ -552,7 +589,7 @@ public interface MessagePackage extends EPackage {
 	 * @see org.abchip.mimo.edi.message.impl.MessagePackageImpl#getMessageStatus()
 	 * @generated
 	 */
-	int MESSAGE_STATUS = 4;
+	int MESSAGE_STATUS = 5;
 
 
 	/**
@@ -588,15 +625,36 @@ public interface MessagePackage extends EPackage {
 	EReference getMessage_MessageType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.message.Message#getBody <em>Body</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.edi.message.Message#getBody <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Body</em>'.
+	 * @return the meta object for the containment reference '<em>Body</em>'.
 	 * @see org.abchip.mimo.edi.message.Message#getBody()
 	 * @see #getMessage()
 	 * @generated
 	 */
-	EAttribute getMessage_Body();
+	EReference getMessage_Body();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.edi.message.MessageBody <em>Body</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Body</em>'.
+	 * @see org.abchip.mimo.edi.message.MessageBody
+	 * @generated
+	 */
+	EClass getMessageBody();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.edi.message.MessageBody#getContents <em>Contents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Contents</em>'.
+	 * @see org.abchip.mimo.edi.message.MessageBody#getContents()
+	 * @see #getMessageBody()
+	 * @generated
+	 */
+	EReference getMessageBody_Contents();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.edi.message.MessageSent <em>Sent</em>}'.
@@ -728,6 +786,17 @@ public interface MessagePackage extends EPackage {
 	EAttribute getMessageType_Encrypt();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.edi.message.MessageType#isTransmissionOnWrite <em>Transmission On Write</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Transmission On Write</em>'.
+	 * @see org.abchip.mimo.edi.message.MessageType#isTransmissionOnWrite()
+	 * @see #getMessageType()
+	 * @generated
+	 */
+	EAttribute getMessageType_TransmissionOnWrite();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.edi.message.MessageStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -786,12 +855,30 @@ public interface MessagePackage extends EPackage {
 		EReference MESSAGE__MESSAGE_TYPE = eINSTANCE.getMessage_MessageType();
 
 		/**
-		 * The meta object literal for the '<em><b>Body</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MESSAGE__BODY = eINSTANCE.getMessage_Body();
+		EReference MESSAGE__BODY = eINSTANCE.getMessage_Body();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.edi.message.impl.MessageBodyImpl <em>Body</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.edi.message.impl.MessageBodyImpl
+		 * @see org.abchip.mimo.edi.message.impl.MessagePackageImpl#getMessageBody()
+		 * @generated
+		 */
+		EClass MESSAGE_BODY = eINSTANCE.getMessageBody();
+
+		/**
+		 * The meta object literal for the '<em><b>Contents</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_BODY__CONTENTS = eINSTANCE.getMessageBody_Contents();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.edi.message.impl.MessageSentImpl <em>Sent</em>}' class.
@@ -894,6 +981,14 @@ public interface MessagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MESSAGE_TYPE__ENCRYPT = eINSTANCE.getMessageType_Encrypt();
+
+		/**
+		 * The meta object literal for the '<em><b>Transmission On Write</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE_TYPE__TRANSMISSION_ON_WRITE = eINSTANCE.getMessageType_TransmissionOnWrite();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.edi.message.MessageStatus <em>Status</em>}' enum.

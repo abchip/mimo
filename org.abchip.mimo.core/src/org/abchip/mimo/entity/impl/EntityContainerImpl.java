@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.entity.impl;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.entity.EntityContainer;
@@ -144,9 +145,14 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case EntityPackage.ENTITY_CONTAINER__CONTENTS:
+				getContents().clear();
+				getContents().addAll((Collection<? extends EntityIdentifiable>)newValue);
+				return;
 			case EntityPackage.ENTITY_CONTAINER__NAME:
 				setName((String)newValue);
 				return;
@@ -161,6 +167,9 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case EntityPackage.ENTITY_CONTAINER__CONTENTS:
+				getContents().clear();
+				return;
 			case EntityPackage.ENTITY_CONTAINER__NAME:
 				setName(NAME_EDEFAULT);
 				return;

@@ -24,6 +24,7 @@ import org.abchip.mimo.entity.EntityType;
  *   <li>{@link org.abchip.mimo.edi.message.MessageType#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.MessageType#getTransmissionType <em>Transmission Type</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.MessageType#isEncrypt <em>Encrypt</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.MessageType#isTransmissionOnWrite <em>Transmission On Write</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.edi.message.MessagePackage#getMessageType()
@@ -135,4 +136,26 @@ public interface MessageType extends EntityType<Message>, EntityInfo {
 	 * @generated
 	 */
 	void setEncrypt(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Transmission On Write</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Transmission On Write</em>' attribute.
+	 * @see #setTransmissionOnWrite(boolean)
+	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessageType_TransmissionOnWrite()
+	 * @model
+	 * @generated
+	 */
+	boolean isTransmissionOnWrite();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.edi.message.MessageType#isTransmissionOnWrite <em>Transmission On Write</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Transmission On Write</em>' attribute.
+	 * @see #isTransmissionOnWrite()
+	 * @generated
+	 */
+	void setTransmissionOnWrite(boolean value);
 } // MessageType

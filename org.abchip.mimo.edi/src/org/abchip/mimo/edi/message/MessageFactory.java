@@ -27,6 +27,15 @@ public interface MessageFactory extends EFactory {
 	MessageFactory eINSTANCE = org.abchip.mimo.edi.message.impl.MessageFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Body</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Body</em>'.
+	 * @generated
+	 */
+	MessageBody createMessageBody();
+
+	/**
 	 * Returns a new object of class '<em>Sent</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

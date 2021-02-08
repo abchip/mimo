@@ -241,6 +241,11 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		addEParameter(op, theEntityPackage.getEntityEvent(), "event", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getDataInterchangeException());
 
+		op = addEOperation(ediManagerEClass, null, "transmitMessage", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theMessagePackage.getMessage(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getDataInterchangeException());
+
 		// Initialize data types
 		initEDataType(dataInterchangeExceptionEDataType, DataInterchangeException.class, "DataInterchangeException", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 

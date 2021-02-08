@@ -12,6 +12,10 @@
       </eParameters>
       <eParameters name="event" lowerBound="1" eType="#//entity/EntityEvent"/>
     </eOperations>
+    <eOperations name="transmitMessage" eExceptions="#//DataInterchangeException">
+      <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
+      <eParameters name="message" lowerBound="1" eType="#//message/Message"/>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="DataInterchangeException" instanceClassName="org.abchip.mimo.edi.DataInterchangeException"/>
   <eSubpackages name="entity" nsURI="http://www.abchip.org/mimo/edi/entity" nsPrefix="mimo-edi-ent">
@@ -80,14 +84,19 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="entityId" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="event" eType="#//entity/EntityEvent"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
           eType="#//message/MessageType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//message/MessageBody"
+          containment="true"/>
       <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityTyped">
         <eTypeArguments eClassifier="#//message/MessageType"/>
       </eGenericSuperTypes>
       <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityInfo"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageBody" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
+          eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable"
+          containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MessageSent" eSuperTypes="#//message/Message">
       <eAnnotations source="mimo-ent-frame">
@@ -113,6 +122,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="transmissionType" lowerBound="1"
           eType="#//transmission/TransmissionType"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="encrypt" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="transmissionOnWrite"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityType">
         <eTypeArguments eClassifier="#//message/Message"/>

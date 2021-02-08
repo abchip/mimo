@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#getTransmissionType <em>Transmission Type</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#isEncrypt <em>Encrypt</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageTypeImpl#isTransmissionOnWrite <em>Transmission On Write</em>}</li>
  * </ul>
  *
  * @generated
@@ -179,6 +180,24 @@ public class MessageTypeImpl extends EntityTypeImpl<Message> implements MessageT
 	 * @ordered
 	 */
 	protected boolean encrypt = ENCRYPT_EDEFAULT;
+	/**
+	 * The default value of the '{@link #isTransmissionOnWrite() <em>Transmission On Write</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTransmissionOnWrite()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean TRANSMISSION_ON_WRITE_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isTransmissionOnWrite() <em>Transmission On Write</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTransmissionOnWrite()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean transmissionOnWrite = TRANSMISSION_ON_WRITE_EDEFAULT;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -405,6 +424,29 @@ public class MessageTypeImpl extends EntityTypeImpl<Message> implements MessageT
 	 * @generated
 	 */
 	@Override
+	public boolean isTransmissionOnWrite() {
+		return transmissionOnWrite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTransmissionOnWrite(boolean newTransmissionOnWrite) {
+		boolean oldTransmissionOnWrite = transmissionOnWrite;
+		transmissionOnWrite = newTransmissionOnWrite;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE_TYPE__TRANSMISSION_ON_WRITE, oldTransmissionOnWrite, transmissionOnWrite));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case MessagePackage.MESSAGE_TYPE__CREATED_STAMP:
@@ -424,6 +466,8 @@ public class MessageTypeImpl extends EntityTypeImpl<Message> implements MessageT
 				return basicGetTransmissionType();
 			case MessagePackage.MESSAGE_TYPE__ENCRYPT:
 				return isEncrypt();
+			case MessagePackage.MESSAGE_TYPE__TRANSMISSION_ON_WRITE:
+				return isTransmissionOnWrite();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -459,6 +503,9 @@ public class MessageTypeImpl extends EntityTypeImpl<Message> implements MessageT
 				return;
 			case MessagePackage.MESSAGE_TYPE__ENCRYPT:
 				setEncrypt((Boolean)newValue);
+				return;
+			case MessagePackage.MESSAGE_TYPE__TRANSMISSION_ON_WRITE:
+				setTransmissionOnWrite((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -496,6 +543,9 @@ public class MessageTypeImpl extends EntityTypeImpl<Message> implements MessageT
 			case MessagePackage.MESSAGE_TYPE__ENCRYPT:
 				setEncrypt(ENCRYPT_EDEFAULT);
 				return;
+			case MessagePackage.MESSAGE_TYPE__TRANSMISSION_ON_WRITE:
+				setTransmissionOnWrite(TRANSMISSION_ON_WRITE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -524,6 +574,8 @@ public class MessageTypeImpl extends EntityTypeImpl<Message> implements MessageT
 				return transmissionType != null;
 			case MessagePackage.MESSAGE_TYPE__ENCRYPT:
 				return encrypt != ENCRYPT_EDEFAULT;
+			case MessagePackage.MESSAGE_TYPE__TRANSMISSION_ON_WRITE:
+				return transmissionOnWrite != TRANSMISSION_ON_WRITE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -590,6 +642,8 @@ public class MessageTypeImpl extends EntityTypeImpl<Message> implements MessageT
 		result.append(text);
 		result.append(", encrypt: ");
 		result.append(encrypt);
+		result.append(", transmissionOnWrite: ");
+		result.append(transmissionOnWrite);
 		result.append(')');
 		return result.toString();
 	}

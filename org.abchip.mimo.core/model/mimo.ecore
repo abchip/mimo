@@ -936,7 +936,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityContainer" eSuperTypes="#//entity/EntityIdentifiable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
-          eType="#//entity/EntityIdentifiable" changeable="false" containment="true"/>
+          eType="#//entity/EntityIdentifiable" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           iD="true"/>

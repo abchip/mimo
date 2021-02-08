@@ -12,6 +12,7 @@ import org.abchip.mimo.edi.EDIPackage;
 import org.abchip.mimo.edi.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.edi.impl.EDIPackageImpl;
 import org.abchip.mimo.edi.message.Message;
+import org.abchip.mimo.edi.message.MessageBody;
 import org.abchip.mimo.edi.message.MessageFactory;
 import org.abchip.mimo.edi.message.MessagePackage;
 import org.abchip.mimo.edi.message.MessageReceived;
@@ -46,6 +47,13 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * @generated
 	 */
 	private EClass messageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass messageBodyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,6 +188,16 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 */
 	@Override
 	public EReference getMessage_MessageType() {
+		return (EReference)messageEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMessage_Body() {
 		return (EReference)messageEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -189,8 +207,18 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMessage_Body() {
-		return (EAttribute)messageEClass.getEStructuralFeatures().get(6);
+	public EClass getMessageBody() {
+		return messageBodyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMessageBody_Contents() {
+		return (EReference)messageBodyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -319,6 +347,16 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getMessageType_TransmissionOnWrite() {
+		return (EAttribute)messageTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getMessageStatus() {
 		return messageStatusEEnum;
 	}
@@ -359,8 +397,11 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		createEAttribute(messageEClass, MESSAGE__FRAME_ID);
 		createEAttribute(messageEClass, MESSAGE__ENTITY_ID);
 		createEAttribute(messageEClass, MESSAGE__EVENT);
-		createEAttribute(messageEClass, MESSAGE__BODY);
 		createEReference(messageEClass, MESSAGE__MESSAGE_TYPE);
+		createEReference(messageEClass, MESSAGE__BODY);
+
+		messageBodyEClass = createEClass(MESSAGE_BODY);
+		createEReference(messageBodyEClass, MESSAGE_BODY__CONTENTS);
 
 		messageSentEClass = createEClass(MESSAGE_SENT);
 
@@ -371,6 +412,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		createEAttribute(messageTypeEClass, MESSAGE_TYPE__TEXT);
 		createEReference(messageTypeEClass, MESSAGE_TYPE__TRANSMISSION_TYPE);
 		createEAttribute(messageTypeEClass, MESSAGE_TYPE__ENCRYPT);
+		createEAttribute(messageTypeEClass, MESSAGE_TYPE__TRANSMISSION_ON_WRITE);
 
 		// Create enums
 		messageStatusEEnum = createEEnum(MESSAGE_STATUS);
@@ -415,6 +457,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		messageEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(theEntityPackage_1.getEntityInfo());
 		messageEClass.getEGenericSuperTypes().add(g1);
+		messageBodyEClass.getESuperTypes().add(theEntityPackage_1.getEntity());
 		messageSentEClass.getESuperTypes().add(this.getMessage());
 		messageReceivedEClass.getESuperTypes().add(this.getMessage());
 		g1 = createEGenericType(theEntityPackage_1.getEntityType());
@@ -432,8 +475,11 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		initEAttribute(getMessage_FrameId(), ecorePackage.getEString(), "frameId", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessage_EntityId(), ecorePackage.getEString(), "entityId", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessage_Event(), theEntityPackage.getEntityEvent(), "event", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMessage_Body(), ecorePackage.getEString(), "body", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessage_MessageType(), this.getMessageType(), null, "messageType", null, 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessage_Body(), this.getMessageBody(), null, "body", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(messageBodyEClass, MessageBody.class, "MessageBody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMessageBody_Contents(), theEntityPackage_1.getEntityIdentifiable(), null, "contents", null, 0, -1, MessageBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageSentEClass, MessageSent.class, "MessageSent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -444,6 +490,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		initEAttribute(getMessageType_Text(), ecorePackage.getEString(), "text", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageType_TransmissionType(), theTransmissionPackage.getTransmissionType(), null, "transmissionType", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessageType_Encrypt(), ecorePackage.getEBoolean(), "encrypt", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessageType_TransmissionOnWrite(), ecorePackage.getEBoolean(), "transmissionOnWrite", null, 0, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(messageStatusEEnum, MessageStatus.class, "MessageStatus");

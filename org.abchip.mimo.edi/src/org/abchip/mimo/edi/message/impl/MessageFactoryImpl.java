@@ -62,6 +62,7 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case MessagePackage.MESSAGE_BODY: return (EObject)createMessageBody();
 			case MessagePackage.MESSAGE_SENT: return (EObject)createMessageSent();
 			case MessagePackage.MESSAGE_RECEIVED: return (EObject)createMessageReceived();
 			case MessagePackage.MESSAGE_TYPE: return (EObject)createMessageType();
@@ -98,6 +99,17 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MessageBody createMessageBody() {
+		MessageBodyImpl messageBody = new MessageBodyImpl();
+		return messageBody;
 	}
 
 	/**

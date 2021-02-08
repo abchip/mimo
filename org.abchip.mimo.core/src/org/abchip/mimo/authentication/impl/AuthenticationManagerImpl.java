@@ -7,9 +7,6 @@
  */
 package org.abchip.mimo.authentication.impl;
 
-import javax.inject.Inject;
-
-import org.abchip.mimo.application.Application;
 import org.abchip.mimo.authentication.AuthenticationAdminKey;
 import org.abchip.mimo.authentication.AuthenticationAnonymous;
 import org.abchip.mimo.authentication.AuthenticationException;
@@ -17,10 +14,7 @@ import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.authentication.AuthenticationPackage;
 import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.authentication.AuthenticationUserToken;
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextHandler;
-import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.ResourceException;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -31,9 +25,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class AuthenticationManagerImpl extends MinimalEObjectImpl.Container implements AuthenticationManager {
-
-	@Inject
-	private Application application;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -109,23 +100,9 @@ public class AuthenticationManagerImpl extends MinimalEObjectImpl.Container impl
 	 */
 	@Override
 	public ContextHandler login(String contextId, AuthenticationAdminKey authentication) throws AuthenticationException {
-
-		if (application.getAdminKey() != null && !authentication.getAdminKey().equals(application.getAdminKey()))
-			throw new AuthenticationException("Invalid adminKey");
-
-		ContextHandler contextHandler = application.getContext().createChildContext(contextId);
-		Context contextUser = contextHandler.getContext();
-		contextUser.getContextDescription().setUser(application.getContextDescription().getUser());
-		contextUser.getContextDescription().setTenant(authentication.getTenant());
-
-		// TODO
-		try {
-			contextUser.getResourceSet().getResource(Frame.class);
-		} catch (ResourceException e) {
-			throw new AuthenticationException(e);
-		}
-
-		return contextHandler;
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 } // AuthenticationManagerImpl

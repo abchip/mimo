@@ -8,23 +8,21 @@
  */
 package org.abchip.mimo.edi.base;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.edi.DataInterchangeException;
 import org.abchip.mimo.edi.EdiManager;
 import org.abchip.mimo.edi.entity.EdiFrameSetup;
 import org.abchip.mimo.edi.entity.EntityEvent;
+import org.abchip.mimo.edi.message.Message;
+import org.abchip.mimo.edi.message.MessageBody;
+import org.abchip.mimo.edi.message.MessageFactory;
 import org.abchip.mimo.edi.message.MessageSent;
 import org.abchip.mimo.edi.message.MessageStatus;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.ResourceWriter;
-import org.abchip.mimo.resource.SerializationType;
 
 public class BaseEdiManagerImpl implements EdiManager {
 
@@ -33,17 +31,15 @@ public class BaseEdiManagerImpl implements EdiManager {
 
 		ContextDescription contextDescription = context.getContextDescription();
 
-		ResourceSerializer<E> entitySerializer = context.getResourceManager().createResourceSerializer(entity.isa(), SerializationType.MIMO);
-
 		try (EntityIterator<EdiFrameSetup> setups = context.getResourceManager().getResourceReader(EdiFrameSetup.class).find("frame='" + entity.isa().getName() + "'")) {
 			ResourceWriter<MessageSent> messageSentWriter = context.getResourceManager().getResourceWriter(MessageSent.class);
 
 			for (EdiFrameSetup setup : setups) {
 
-				// TODO removeme
-				if(!entity.isa().getName().equals(setup.getFrame()))
+				// TODO remove me
+				if (!entity.isa().getName().equals(setup.getFrame()))
 					continue;
-				
+
 				switch (setup.getEntityEvent()) {
 				case ALL:
 					break;
@@ -63,19 +59,24 @@ public class BaseEdiManagerImpl implements EdiManager {
 				messageSent.setEntityId(entity.getID());
 				messageSent.setEvent(event);
 				messageSent.setStatus(MessageStatus.READY);
-				entitySerializer.add(entity);
-				ByteArrayOutputStream baos = new ByteArrayOutputStream();
-				try {
-					entitySerializer.save(baos);
-				} catch (IOException e) {
-					messageSent.setStatus(MessageStatus.ERROR);
-				}
-				messageSent.setBody(baos.toString());
-				entitySerializer.clear();
+
+				MessageBody body = MessageFactory.eINSTANCE.createMessageBody();
+				body.getContents().add(entity);
+				messageSent.setBody(body);
+
 				messageSentWriter.create(messageSent);
+				
+				if(messageSent.getMessageType().isTransmissionOnWrite())
+					transmitMessage(context, messageSent);
 			}
 		} catch (ResourceException e) {
 			throw new DataInterchangeException(e);
 		}
+	}
+
+	@Override
+	public void transmitMessage(Context context, Message message) throws DataInterchangeException {
+		// TODO Auto-generated method stub
+
 	}
 }

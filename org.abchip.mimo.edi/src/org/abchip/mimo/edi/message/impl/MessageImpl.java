@@ -10,15 +10,16 @@ package org.abchip.mimo.edi.message.impl;
 import java.util.Date;
 import org.abchip.mimo.edi.entity.EntityEvent;
 import org.abchip.mimo.edi.message.Message;
+import org.abchip.mimo.edi.message.MessageBody;
 import org.abchip.mimo.edi.message.MessagePackage;
 import org.abchip.mimo.edi.message.MessageStatus;
 import org.abchip.mimo.edi.message.MessageType;
-
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.impl.EntityTypedImpl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -42,8 +43,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getFrameId <em>Frame Id</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getEntityId <em>Entity Id</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getEvent <em>Event</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getBody <em>Body</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getMessageType <em>Message Type</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.impl.MessageImpl#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @generated
@@ -251,26 +252,6 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType> implement
 	protected EntityEvent event = EVENT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getBody() <em>Body</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBody()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BODY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getBody() <em>Body</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBody()
-	 * @generated
-	 * @ordered
-	 */
-	protected String body = BODY_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getMessageType() <em>Message Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -279,6 +260,16 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType> implement
 	 * @ordered
 	 */
 	protected MessageType messageType;
+
+	/**
+	 * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBody()
+	 * @generated
+	 * @ordered
+	 */
+	protected MessageBody body;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -460,7 +451,21 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType> implement
 	 * @generated
 	 */
 	@Override
-	public String getBody() {
+	public MessageBody getBody() {
+		if (body != null && ((EObject)body).eIsProxy()) {
+			InternalEObject oldBody = (InternalEObject)body;
+			body = (MessageBody)eResolveProxy(oldBody);
+			if (body != oldBody) {
+				InternalEObject newBody = (InternalEObject)body;
+				NotificationChain msgs = oldBody.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MessagePackage.MESSAGE__BODY, null, null);
+				if (newBody.eInternalContainer() == null) {
+					msgs = newBody.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MessagePackage.MESSAGE__BODY, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MessagePackage.MESSAGE__BODY, oldBody, body));
+			}
+		}
 		return body;
 	}
 
@@ -469,12 +474,57 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType> implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setBody(String newBody) {
-		String oldBody = body;
+	public MessageBody basicGetBody() {
+		return body;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBody(MessageBody newBody, NotificationChain msgs) {
+		MessageBody oldBody = body;
 		body = newBody;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__BODY, oldBody, body));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__BODY, oldBody, newBody);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setBody(MessageBody newBody) {
+		if (newBody != body) {
+			NotificationChain msgs = null;
+			if (body != null)
+				msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MessagePackage.MESSAGE__BODY, null, msgs);
+			if (newBody != null)
+				msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MessagePackage.MESSAGE__BODY, null, msgs);
+			msgs = basicSetBody(newBody, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.MESSAGE__BODY, newBody, newBody));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MessagePackage.MESSAGE__BODY:
+				return basicSetBody(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -620,11 +670,12 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType> implement
 				return getEntityId();
 			case MessagePackage.MESSAGE__EVENT:
 				return getEvent();
-			case MessagePackage.MESSAGE__BODY:
-				return getBody();
 			case MessagePackage.MESSAGE__MESSAGE_TYPE:
 				if (resolve) return getMessageType();
 				return basicGetMessageType();
+			case MessagePackage.MESSAGE__BODY:
+				if (resolve) return getBody();
+				return basicGetBody();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -667,11 +718,11 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType> implement
 			case MessagePackage.MESSAGE__EVENT:
 				setEvent((EntityEvent)newValue);
 				return;
-			case MessagePackage.MESSAGE__BODY:
-				setBody((String)newValue);
-				return;
 			case MessagePackage.MESSAGE__MESSAGE_TYPE:
 				setMessageType((MessageType)newValue);
+				return;
+			case MessagePackage.MESSAGE__BODY:
+				setBody((MessageBody)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -715,11 +766,11 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType> implement
 			case MessagePackage.MESSAGE__EVENT:
 				setEvent(EVENT_EDEFAULT);
 				return;
-			case MessagePackage.MESSAGE__BODY:
-				setBody(BODY_EDEFAULT);
-				return;
 			case MessagePackage.MESSAGE__MESSAGE_TYPE:
 				setMessageType((MessageType)null);
+				return;
+			case MessagePackage.MESSAGE__BODY:
+				setBody((MessageBody)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -753,10 +804,10 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType> implement
 				return ENTITY_ID_EDEFAULT == null ? entityId != null : !ENTITY_ID_EDEFAULT.equals(entityId);
 			case MessagePackage.MESSAGE__EVENT:
 				return event != EVENT_EDEFAULT;
-			case MessagePackage.MESSAGE__BODY:
-				return BODY_EDEFAULT == null ? body != null : !BODY_EDEFAULT.equals(body);
 			case MessagePackage.MESSAGE__MESSAGE_TYPE:
 				return messageType != null;
+			case MessagePackage.MESSAGE__BODY:
+				return body != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -829,8 +880,6 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType> implement
 		result.append(entityId);
 		result.append(", event: ");
 		result.append(event);
-		result.append(", body: ");
-		result.append(body);
 		result.append(')');
 		return result.toString();
 	}

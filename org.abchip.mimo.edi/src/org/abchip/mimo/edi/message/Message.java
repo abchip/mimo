@@ -26,8 +26,8 @@ import org.abchip.mimo.entity.EntityTyped;
  *   <li>{@link org.abchip.mimo.edi.message.Message#getFrameId <em>Frame Id</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.Message#getEntityId <em>Entity Id</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.Message#getEvent <em>Event</em>}</li>
- *   <li>{@link org.abchip.mimo.edi.message.Message#getBody <em>Body</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.message.Message#getMessageType <em>Message Type</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.message.Message#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.edi.message.MessagePackage#getMessage()
@@ -89,30 +89,30 @@ public interface Message extends EntityTyped<MessageType>, EntityInfo {
 	void setMessageType(MessageType value);
 
 	/**
-	 * Returns the value of the '<em><b>Body</b></em>' attribute.
+	 * Returns the value of the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Body</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Body</em>' attribute.
-	 * @see #setBody(String)
+	 * @return the value of the '<em>Body</em>' containment reference.
+	 * @see #setBody(MessageBody)
 	 * @see org.abchip.mimo.edi.message.MessagePackage#getMessage_Body()
-	 * @model required="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	String getBody();
+	MessageBody getBody();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.edi.message.Message#getBody <em>Body</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.edi.message.Message#getBody <em>Body</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Body</em>' attribute.
+	 * @param value the new value of the '<em>Body</em>' containment reference.
 	 * @see #getBody()
 	 * @generated
 	 */
-	void setBody(String value);
+	void setBody(MessageBody value);
 
 	/**
 	 * Returns the value of the '<em><b>Event</b></em>' attribute.
