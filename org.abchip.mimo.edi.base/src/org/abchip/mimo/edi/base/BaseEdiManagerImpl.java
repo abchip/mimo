@@ -8,10 +8,14 @@
  */
 package org.abchip.mimo.edi.base;
 
+import javax.inject.Inject;
+
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.edi.DataInterchangeException;
 import org.abchip.mimo.edi.EdiManager;
+import org.abchip.mimo.edi.Transmitter;
+import org.abchip.mimo.edi.TransmitterRegistry;
 import org.abchip.mimo.edi.entity.EdiFrameSetup;
 import org.abchip.mimo.edi.entity.EntityEvent;
 import org.abchip.mimo.edi.message.Message;
@@ -25,6 +29,9 @@ import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceWriter;
 
 public class BaseEdiManagerImpl implements EdiManager {
+
+	@Inject
+	private TransmitterRegistry transmitterRegistry;
 
 	@Override
 	public <E extends EntityIdentifiable> void writeMessage(Context context, E entity, EntityEvent event) throws DataInterchangeException {
@@ -65,8 +72,8 @@ public class BaseEdiManagerImpl implements EdiManager {
 				messageSent.setBody(body);
 
 				messageSentWriter.create(messageSent);
-				
-				if(messageSent.getMessageType().isTransmissionOnWrite())
+
+				if (messageSent.getMessageType().isTransmissionOnWrite())
 					transmitMessage(context, messageSent);
 			}
 		} catch (ResourceException e) {
@@ -76,7 +83,12 @@ public class BaseEdiManagerImpl implements EdiManager {
 
 	@Override
 	public void transmitMessage(Context context, Message message) throws DataInterchangeException {
-		// TODO Auto-generated method stub
 
+		String provider = message.getMessageType().getTransmissionType().getProvider();
+		Transmitter transmitter = transmitterRegistry.lookup(provider);
+		if (transmitter == null)
+			throw new DataInterchangeException("Transmitter " + provider + " not found");
+		
+		transmitter.transmitMessage(context, message);
 	}
 }

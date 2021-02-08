@@ -21,6 +21,7 @@ import org.abchip.mimo.entity.EntityType;
  * <ul>
  *   <li>{@link org.abchip.mimo.edi.transmission.TransmissionType#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.transmission.TransmissionType#getText <em>Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.TransmissionType#getProvider <em>Provider</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.edi.transmission.TransmissionPackage#getTransmissionType()
@@ -76,5 +77,27 @@ public interface TransmissionType extends EntityType<Transmission>, EntityInfo {
 	 * @generated
 	 */
 	void setText(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Provider</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Provider</em>' attribute.
+	 * @see #setProvider(String)
+	 * @see org.abchip.mimo.edi.transmission.TransmissionPackage#getTransmissionType_Provider()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getProvider();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.edi.transmission.TransmissionType#getProvider <em>Provider</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Provider</em>' attribute.
+	 * @see #getProvider()
+	 * @generated
+	 */
+	void setProvider(String value);
 
 } // TransmissionType

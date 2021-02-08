@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl#getText <em>Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.edi.transmission.impl.TransmissionTypeImpl#getProvider <em>Provider</em>}</li>
  * </ul>
  *
  * @generated
@@ -162,6 +163,26 @@ public class TransmissionTypeImpl extends EntityTypeImpl<Transmission> implement
 	 * @ordered
 	 */
 	protected String text = TEXT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getProvider() <em>Provider</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvider()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PROVIDER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getProvider() <em>Provider</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvider()
+	 * @generated
+	 * @ordered
+	 */
+	protected String provider = PROVIDER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -326,6 +347,29 @@ public class TransmissionTypeImpl extends EntityTypeImpl<Transmission> implement
 	 * @generated
 	 */
 	@Override
+	public String getProvider() {
+		return provider;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setProvider(String newProvider) {
+		String oldProvider = provider;
+		provider = newProvider;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TransmissionPackage.TRANSMISSION_TYPE__PROVIDER, oldProvider, provider));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case TransmissionPackage.TRANSMISSION_TYPE__CREATED_STAMP:
@@ -340,6 +384,8 @@ public class TransmissionTypeImpl extends EntityTypeImpl<Transmission> implement
 				return getName();
 			case TransmissionPackage.TRANSMISSION_TYPE__TEXT:
 				return getText();
+			case TransmissionPackage.TRANSMISSION_TYPE__PROVIDER:
+				return getProvider();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -369,6 +415,9 @@ public class TransmissionTypeImpl extends EntityTypeImpl<Transmission> implement
 				return;
 			case TransmissionPackage.TRANSMISSION_TYPE__TEXT:
 				setText((String)newValue);
+				return;
+			case TransmissionPackage.TRANSMISSION_TYPE__PROVIDER:
+				setProvider((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -400,6 +449,9 @@ public class TransmissionTypeImpl extends EntityTypeImpl<Transmission> implement
 			case TransmissionPackage.TRANSMISSION_TYPE__TEXT:
 				setText(TEXT_EDEFAULT);
 				return;
+			case TransmissionPackage.TRANSMISSION_TYPE__PROVIDER:
+				setProvider(PROVIDER_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -424,6 +476,8 @@ public class TransmissionTypeImpl extends EntityTypeImpl<Transmission> implement
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case TransmissionPackage.TRANSMISSION_TYPE__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
+			case TransmissionPackage.TRANSMISSION_TYPE__PROVIDER:
+				return PROVIDER_EDEFAULT == null ? provider != null : !PROVIDER_EDEFAULT.equals(provider);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -488,6 +542,8 @@ public class TransmissionTypeImpl extends EntityTypeImpl<Transmission> implement
 		result.append(name);
 		result.append(", text: ");
 		result.append(text);
+		result.append(", provider: ");
+		result.append(provider);
 		result.append(')');
 		return result.toString();
 	}

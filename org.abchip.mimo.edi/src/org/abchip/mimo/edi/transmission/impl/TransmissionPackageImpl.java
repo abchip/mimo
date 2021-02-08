@@ -199,6 +199,16 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 	 * @generated
 	 */
 	@Override
+	public EAttribute getTransmissionType_Provider() {
+		return (EAttribute)transmissionTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public TransmissionFactory getTransmissionFactory() {
 		return (TransmissionFactory)getEFactoryInstance();
 	}
@@ -229,6 +239,7 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 		transmissionTypeEClass = createEClass(TRANSMISSION_TYPE);
 		createEAttribute(transmissionTypeEClass, TRANSMISSION_TYPE__NAME);
 		createEAttribute(transmissionTypeEClass, TRANSMISSION_TYPE__TEXT);
+		createEAttribute(transmissionTypeEClass, TRANSMISSION_TYPE__PROVIDER);
 	}
 
 	/**
@@ -283,6 +294,7 @@ public class TransmissionPackageImpl extends EPackageImpl implements Transmissio
 		initEClass(transmissionTypeEClass, TransmissionType.class, "TransmissionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTransmissionType_Name(), ecorePackage.getEString(), "name", null, 1, 1, TransmissionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransmissionType_Text(), ecorePackage.getEString(), "text", null, 1, 1, TransmissionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransmissionType_Provider(), ecorePackage.getEString(), "provider", null, 1, 1, TransmissionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-slot

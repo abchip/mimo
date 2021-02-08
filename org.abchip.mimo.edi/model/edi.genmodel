@@ -24,6 +24,13 @@
         <genParameters ecoreParameter="edi.ecore#//EdiManager/transmitMessage/message"/>
       </genOperations>
     </genClasses>
+    <genClasses image="false" ecoreClass="edi.ecore#//Transmitter">
+      <genOperations ecoreOperation="edi.ecore#//Transmitter/transmitMessage">
+        <genParameters ecoreParameter="edi.ecore#//Transmitter/transmitMessage/context"/>
+        <genParameters ecoreParameter="edi.ecore#//Transmitter/transmitMessage/message"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="edi.ecore#//TransmitterRegistry"/>
     <nestedGenPackages prefix="Entity" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="edi.ecore#//entity">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="edi.ecore#//entity/EntityCondition">
@@ -84,6 +91,7 @@
       <genClasses ecoreClass="edi.ecore#//transmission/TransmissionType">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//transmission/TransmissionType/name"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//transmission/TransmissionType/text"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi.ecore#//transmission/TransmissionType/provider"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

@@ -18,6 +18,18 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="DataInterchangeException" instanceClassName="org.abchip.mimo.edi.DataInterchangeException"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Transmitter" abstract="true">
+    <eOperations name="transmitMessage" eExceptions="#//DataInterchangeException">
+      <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
+      <eParameters name="message" lowerBound="1" eType="#//message/Message"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransmitterRegistry" abstract="true"
+      interface="true">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Registry">
+      <eTypeArguments eClassifier="#//Transmitter"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
   <eSubpackages name="entity" nsURI="http://www.abchip.org/mimo/edi/entity" nsPrefix="mimo-edi-ent">
     <eClassifiers xsi:type="ecore:EClass" name="EdiFrameSetup" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1"
@@ -161,6 +173,8 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="provider" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityType">
         <eTypeArguments eClassifier="#//transmission/Transmission"/>

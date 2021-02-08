@@ -15,6 +15,8 @@ import org.abchip.mimo.edi.EDIFactory;
 import org.abchip.mimo.edi.EDIPackage;
 import org.abchip.mimo.edi.EdiManager;
 
+import org.abchip.mimo.edi.Transmitter;
+import org.abchip.mimo.edi.TransmitterRegistry;
 import org.abchip.mimo.edi.entity.EntityPackage;
 
 import org.abchip.mimo.edi.entity.impl.EntityPackageImpl;
@@ -46,6 +48,20 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	 * @generated
 	 */
 	private EClass ediManagerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass transmitterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass transmitterRegistryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,6 +164,26 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getTransmitter() {
+		return transmitterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getTransmitterRegistry() {
+		return transmitterRegistryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EDataType getDataInterchangeException() {
 		return dataInterchangeExceptionEDataType;
 	}
@@ -182,6 +218,10 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 
 		// Create classes and their features
 		ediManagerEClass = createEClass(EDI_MANAGER);
+
+		transmitterEClass = createEClass(TRANSMITTER);
+
+		transmitterRegistryEClass = createEClass(TRANSMITTER_REGISTRY);
 
 		// Create data types
 		dataInterchangeExceptionEDataType = createEDataType(DATA_INTERCHANGE_EXCEPTION);
@@ -227,13 +267,17 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		EGenericType g1 = createEGenericType(theContextPackage.getRegistry());
+		EGenericType g2 = createEGenericType(this.getTransmitter());
+		g1.getETypeArguments().add(g2);
+		transmitterRegistryEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(ediManagerEClass, EdiManager.class, "EdiManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		EOperation op = addEOperation(ediManagerEClass, null, "writeMessage", 0, 1, IS_UNIQUE, IS_ORDERED);
 		ETypeParameter t1 = addETypeParameter(op, "E");
-		EGenericType g1 = createEGenericType(theEntityPackage_1.getEntityIdentifiable());
+		g1 = createEGenericType(theEntityPackage_1.getEntityIdentifiable());
 		t1.getEBounds().add(g1);
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(t1);
@@ -245,6 +289,15 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theMessagePackage.getMessage(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getDataInterchangeException());
+
+		initEClass(transmitterEClass, Transmitter.class, "Transmitter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(transmitterEClass, null, "transmitMessage", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theMessagePackage.getMessage(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getDataInterchangeException());
+
+		initEClass(transmitterRegistryEClass, TransmitterRegistry.class, "TransmitterRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize data types
 		initEDataType(dataInterchangeExceptionEDataType, DataInterchangeException.class, "DataInterchangeException", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

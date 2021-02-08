@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.edi;
 
+import org.abchip.mimo.context.ContextPackage;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
@@ -80,6 +81,44 @@ public interface EDIPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.edi.impl.TransmitterImpl <em>Transmitter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.edi.impl.TransmitterImpl
+	 * @see org.abchip.mimo.edi.impl.EDIPackageImpl#getTransmitter()
+	 * @generated
+	 */
+	int TRANSMITTER = 1;
+
+	/**
+	 * The number of structural features of the '<em>Transmitter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSMITTER_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.edi.TransmitterRegistry <em>Transmitter Registry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.edi.TransmitterRegistry
+	 * @see org.abchip.mimo.edi.impl.EDIPackageImpl#getTransmitterRegistry()
+	 * @generated
+	 */
+	int TRANSMITTER_REGISTRY = 2;
+
+	/**
+	 * The number of structural features of the '<em>Transmitter Registry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSMITTER_REGISTRY_FEATURE_COUNT = ContextPackage.REGISTRY_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '<em>Data Interchange Exception</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -87,7 +126,7 @@ public interface EDIPackage extends EPackage {
 	 * @see org.abchip.mimo.edi.impl.EDIPackageImpl#getDataInterchangeException()
 	 * @generated
 	 */
-	int DATA_INTERCHANGE_EXCEPTION = 1;
+	int DATA_INTERCHANGE_EXCEPTION = 3;
 
 
 	/**
@@ -99,6 +138,26 @@ public interface EDIPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEdiManager();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.edi.Transmitter <em>Transmitter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Transmitter</em>'.
+	 * @see org.abchip.mimo.edi.Transmitter
+	 * @generated
+	 */
+	EClass getTransmitter();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.edi.TransmitterRegistry <em>Transmitter Registry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Transmitter Registry</em>'.
+	 * @see org.abchip.mimo.edi.TransmitterRegistry
+	 * @generated
+	 */
+	EClass getTransmitterRegistry();
 
 	/**
 	 * Returns the meta object for data type '{@link org.abchip.mimo.edi.DataInterchangeException <em>Data Interchange Exception</em>}'.
@@ -142,6 +201,24 @@ public interface EDIPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EDI_MANAGER = eINSTANCE.getEdiManager();
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.edi.impl.TransmitterImpl <em>Transmitter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.edi.impl.TransmitterImpl
+		 * @see org.abchip.mimo.edi.impl.EDIPackageImpl#getTransmitter()
+		 * @generated
+		 */
+		EClass TRANSMITTER = eINSTANCE.getTransmitter();
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.edi.TransmitterRegistry <em>Transmitter Registry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.edi.TransmitterRegistry
+		 * @see org.abchip.mimo.edi.impl.EDIPackageImpl#getTransmitterRegistry()
+		 * @generated
+		 */
+		EClass TRANSMITTER_REGISTRY = eINSTANCE.getTransmitterRegistry();
 		/**
 		 * The meta object literal for the '<em>Data Interchange Exception</em>' data type.
 		 * <!-- begin-user-doc -->
