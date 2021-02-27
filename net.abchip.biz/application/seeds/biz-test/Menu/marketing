@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui-menu:Menu
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui-menu="http://www.abchip.org/mimo/ui/menu"
+    xsi:schemaLocation="http://www.abchip.org/mimo/ui/menu ../../../../../org.abchip.mimo.ui/model/ui.ecore#//menu"
+    icon="mdi mdi-basket"
+    name="Marketing">
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-source-commit"
+      value="DataSources"
+      action="table?frame=DataSource"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-package"
+      value="Campaigns"
+      action="table?frame=MarketingCampaign"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-eight-track"
+      value="Trackings"
+      action="table?frame=TrackingCode"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-account-box"
+      value="Contacts"
+      action="table?frame=ContactList"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-apple"
+      value="Opportunities"
+      action="table?frame=SalesOpportunity"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-chart-pie"
+      value="Segments"
+      action="table?frame=SegmentGroup"/>
+</ui-menu:Menu>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mimo-lang:Language
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mimo-lang="http://www.abchip.org/mimo/language"
+    xsi:schemaLocation="http://www.abchip.org/mimo/language ../../org.abchip.mimo.language/model/language.ecore"
+    iso_639_1="es"
+    name="spa"
+    text="Spanish"/>

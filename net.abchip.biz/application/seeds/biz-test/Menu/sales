@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui-menu:Menu
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui-menu="http://www.abchip.org/mimo/ui/menu"
+    xsi:schemaLocation="http://www.abchip.org/mimo/ui/menu ../../../../../org.abchip.mimo.ui/model/ui.ecore#//menu"
+    icon="mdi mdi-cart-outline"
+    name="Sales">
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-file"
+      value="Quotes"
+      action="table?frame=Quote"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-file"
+      value="Orders"
+      action="table?frame=OrderHeader"
+      filter="orderTypeId=&quot;SALES_ORDER&quot;"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-file"
+      value="PreInvoices"
+      action="table?frame=Invoice"
+      filter="invoiceTypeId=&quot;SALES_INVOICE&quot;"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-file"
+      value="Invoices"
+      action="table?frame=Invoice"
+      filter="invoiceTypeId=&quot;SALES_INVOICE&quot;"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-file"
+      value="Returns"
+      action="table?frame=Invoice"
+      filter="invoiceTypeId=&quot;CUST_RTN_INVOICE&quot;"/>
+</ui-menu:Menu>

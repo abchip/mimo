@@ -1,0 +1,32 @@
+webix.protoUI({
+  name:"autosizableContextmenu",
+  $init: function() {
+   	this.attachEvent('onBeforeShow', function() {this.autosize();});
+  },
+  autosize: function() {
+    var texts = [];
+    this.data.each(function(obj){
+      texts.push(obj.value+obj.key);
+    });
+    var width = webix.html.getTextSize(texts, "webix_list_item").width+30;
+    this.define("width", width);
+    this.resize();
+  }
+}, webix.ui.contextmenu);
+
+
+webix.ui({
+  rows:[
+    { view:"datatable", autoConfig:true, data:grid_data, id:"t1" }
+  ]
+});
+
+webix.ui({
+  view:"autosizableContextmenu",
+  template:"#value# <span class='shortcut'>#key#</span>",
+  data:[
+    {id: 1, value:"Delete the last element", key:"Ctrl+Del"},
+    {id: 2, value:"Info", key:"Ctrl+Enter"},
+    
+  ]
+}).attachTo( $$("t1") );

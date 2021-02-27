@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui-menu:Menu
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui-menu="http://www.abchip.org/mimo/ui/menu"
+    xsi:schemaLocation="http://www.abchip.org/mimo/ui/menu ../../../../../org.abchip.mimo.ui/model/ui.ecore#//menu"
+    icon="mdi mdi-wrench"
+    name="Tools">
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-email"
+      value="Communications"
+      action="table?frame=CommunicationEvent"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-bike"
+      value="Jobs"
+      action="table?frame=JobSandbox"/>
+  <elements
+      xsi:type="ui-menu:MenuGroup"
+      icon="mdi mdi mdi-swap-horizontal"
+      value="Import/Export"/>
+  <elements
+      xsi:type="ui-menu:MenuGroup"
+      icon="mdi mdi-tune"
+      value="Setup">
+    <data xsi:type="ui-menu:MenuAction"
+        icon="mdi mdi-file-tree"
+        value="Frames"
+        action="table?frame=Frame"/>
+    <data xsi:type="ui-menu:MenuAction"
+        icon="mdi mdi-flag"
+        value="Languages"
+        action="table?frame=Language"/>
+    <data xsi:type="ui-menu:MenuAction"
+        icon="mdi mdi-counter"
+        value="Enumerations"
+        action="table?frame=Enumeration"/>
+    <data xsi:type="ui-menu:MenuAction"
+        value="SystemProperties"
+        action="table?frame=SystemProperty"/>
+  </elements>
+  <elements
+      xsi:type="ui-menu:MenuGroup"
+      icon="mdi mdi-webhook"
+      value="API"/>
+  <elements
+      xsi:type="ui-menu:MenuGroup"
+      icon="mdi mdi-information-outline"
+      value="Documentation">
+    <data xsi:type="ui-menu:MenuGroup"
+        icon="mdi mdi-film"
+        value="Blockchain">
+      <data
+          xsi:type="ui-menu:MenuAction"
+          icon="mdi mdi-wikipedia"
+          value="Miners"
+          action="browser?url=en.wikipedia.org/wiki/Miner"/>
+      <data
+          xsi:type="ui-menu:MenuAction"
+          icon="mdi mdi-wikipedia"
+          value="Full Nodes"
+          action="browser?url=en.bitcoin.it/wiki/Full_node"/>
+    </data>
+  </elements>
+</ui-menu:Menu>

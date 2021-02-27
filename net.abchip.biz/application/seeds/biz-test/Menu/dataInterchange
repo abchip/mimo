@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui-menu:Menu
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui-menu="http://www.abchip.org/mimo/ui/menu"
+    xsi:schemaLocation="http://www.abchip.org/mimo/ui/menu ../../../../../org.abchip.mimo.ui/model/ui.ecore#//menu"
+    icon="mdi mdi-wan"
+    name="Data Interchange">
+  <elements
+      xsi:type="ui-menu:MenuGroup"
+      icon="mdi mdi-message-text"
+      value="Messages">
+    <data xsi:type="ui-menu:MenuAction"
+        value="Sent"
+        action="table?frame=MessageSent"/>
+    <data xsi:type="ui-menu:MenuAction"
+        value="Received"
+        action="table?frame=MessageReceived"/>
+  </elements>
+  <elements
+      xsi:type="ui-menu:MenuGroup"
+      icon="mdi mdi-settings"
+      value="Setup">
+    <data xsi:type="ui-menu:MenuAction"
+        value="Messages"
+        action="table?frame=MessageType"/>
+    <data xsi:type="ui-menu:MenuAction"
+        value="Transmissions"
+        action="table?frame=TransmissionType"/>
+  </elements>
+</ui-menu:Menu>

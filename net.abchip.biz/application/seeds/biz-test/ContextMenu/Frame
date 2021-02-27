@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui-menu:ContextMenu
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui-menu="http://www.abchip.org/mimo/ui/menu"
+    xsi:schemaLocation="http://www.abchip.org/mimo/ui/menu ../../../../../org.abchip.mimo.ui/model/ui.ecore#//menu"
+    icon="mdi mdi-file-tree"
+    name="Frame">
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-settings"
+      value="Setup"
+      action="setupFrame"/>
+</ui-menu:ContextMenu>

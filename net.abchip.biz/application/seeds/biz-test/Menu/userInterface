@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui-menu:Menu
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui-menu="http://www.abchip.org/mimo/ui/menu"
+    xsi:schemaLocation="http://www.abchip.org/mimo/ui/menu ../../../../../org.abchip.mimo.ui/model/ui.ecore#//menu"
+    icon="mdi mdi-monitor"
+    name="User Interface">
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-settings"
+      value="Setup"
+      action="table?frame=UiFrameSetup"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-code-braces"
+      value="Snippets"
+      action="browser?url=snippet.webix.com"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-bug-check"
+      value="Test"
+      action="test"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-brush"
+      value="Icons"
+      action="browser?url=materialdesignicons.com"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-menu"
+      value="Menus"
+      action="table?frame=Menu"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-backburger"
+      value="ContextMenus"
+      action="table?frame=ContextMenu"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-toolbox-outline"
+      value="Toolbars"
+      action="table?frame=Toolbar"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-view-grid"
+      value="Schemas"
+      action="table?frame=Schema"/>
+  <elements
+      xsi:type="ui-menu:MenuAction"
+      icon="mdi mdi-circle-edit-outline"
+      value="Forms"
+      action="table?frame=Form"/>
+</ui-menu:Menu>

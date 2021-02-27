@@ -1,0 +1,20 @@
+{
+	"declaration": true, 
+    "compilerOptions": {
+    	"module": "commonjs",
+        "target": "es6",
+        "lib": ["es2016", "dom"],
+        "baseUrl":".",
+        "paths": {
+			"base/*":["mimo/base/*"],
+			"config/*":["mimo-biz/config/*"],
+            "services/*":["mimo-biz/services/*", "mimo/services/*"],	
+            "views/*":["mimo-biz/views/*", "mimo/views/*"]
+        },
+        "sourceMap": true
+    },
+    "include":["mimo-biz/**/*.ts","mimo/**/*.ts"],
+    "files":[
+        "node_modules/@xbs/webix-pro/types/webix.global.d.ts"
+    ]
+}
