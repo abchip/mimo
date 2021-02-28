@@ -22,7 +22,7 @@ export enum UIViewMode {
 
 export class UIViewModeUtils {
     public static getValues(): string[] {
-        return webix.toArray( [UIViewMode.DISPLAY, UIViewMode.SAVE, UIViewMode.DELETE, UIViewMode.SELECT] );
+        return [UIViewMode.DISPLAY, UIViewMode.SAVE, UIViewMode.DELETE, UIViewMode.SELECT] ;
     }
 }
 
@@ -77,7 +77,7 @@ export abstract class UIView extends JetView {
     public config(): any {
 
 
-        var rows: any[] = webix.toArray( [] );
+        var rows: any[] =  [] ;
 
         if ( this.isToolbarEnabled() && !this.isWindow() )
             rows.push( this.getToolbarView() );
@@ -213,7 +213,7 @@ export class UIToolbarView extends JetView {
 
     config() {
 
-        var elements: any[] = webix.toArray( [] );
+        var elements: any[] =  [] ;
 
         // label
         var toolbarLabelConfig: webix.ui.labelConfig = {
@@ -414,9 +414,9 @@ export class UIToolbarView extends JetView {
 
             for ( let actionConfig of contextMenuConfig.getValues().elements ) {
 
-                if ( actionConfig.eClass == "http://www.abchip.org/mimo/ui#//menu/MenuAction" )
+                if ( actionConfig.isa == "MenuAction" )
                     actionConfig["view"] = "icon";
-                else if ( actionConfig.eClass == "http://www.abchip.org/mimo/ui#//menu/MenuGroup" )
+                else if ( actionConfig.isa == "MenuGroup" )
                     continue;
 
                 var viewId = toolbar.addView( actionConfig );
@@ -596,7 +596,7 @@ export abstract class UITableView extends UIView {
             else
                 entityName = entityName + "/" + entity[datatable.columnId( i )];
         }
-
+        
         return entityName;
     }
 
@@ -632,7 +632,7 @@ export abstract class UITableView extends UIView {
                     if ( columnConfig.icon != null ) {
                         columnConfig.header = columnConfig.header + " <span class='webix_icon " + columnConfig.icon + "'></span> ";
                     }
-                    switch ( columnConfig.view ) {
+                    switch ( columnConfig.widget ) {
                         case "checkbox":
                             columnConfig.template = "{common.checkbox()}";
                             break;
@@ -705,7 +705,7 @@ export abstract class UITableView extends UIView {
 
             var entity = datatable.getItem( context.id );
 
-            frameName = entity["eClass"];
+            frameName = entity["isa"];
             var index = frameName.lastIndexOf( "/" );
             frameName = frameName.substring( index + 1 );
 
@@ -791,14 +791,14 @@ export abstract class UIFormView extends UIView {
         for ( let fieldConfig of formConfig.getValues().fields ) {
 
             //            fieldConfig.height = 50;
-            fieldConfig.labelWidth = 250;
+            fieldConfig.widget.labelWidth = 250;
 
             // key management
             if ( fieldConfig.topSplit ) {
 
                 if ( keysToken && keysToken.length > keysSplitted ) {
                     keysValue[fieldConfig.name] = keysToken[keysSplitted];
-                    fieldConfig.view = "text";
+                    fieldConfig.widget.view = "text";
                     fieldConfig.disabled = "true";
                 }
                 keysSplitted++;
@@ -807,33 +807,36 @@ export abstract class UIFormView extends UIView {
             if ( fieldConfig.icon != null )
                 fieldConfig.label = fieldConfig.label + " <span class='webix_icon " + fieldConfig.icon + "'></span> ";
 
-            switch ( fieldConfig.view ) {
+            if(fieldConfig.widget.view.startsWith("mm-"))
+                fieldConfig.widget.view = fieldConfig.widget.view.substring(3);
+
+//            alert(KBEntities.stringify( fieldConfig.widget ));
+            
+            switch ( fieldConfig.widget.view ) {
                 case "combo":
                     if ( fieldConfig.icon != null )
                         fieldConfig.icon = "mdi mdi-menu-down";
 
-                    //                    alert( KBEntities.stringify( fieldConfig ) );
-
-                    var viewId = form.addView( webix.extend( { options: [] }, fieldConfig, false ) );
+                    var viewId = form.addView( webix.extend( { options: [] }, fieldConfig.widget, false ) );
                     const fieldCombo = form.queryView( { "id": viewId } ) as webix.ui.combo;
-                    const contextMenu = this.attachContextMenu( fieldConfig.domain.frame, fieldCombo );
+                    const contextMenu = this.attachContextMenu( fieldConfig.widget.entry.frame, fieldCombo );
 
                     //                    fieldCombo.attachEvent( "onFocus", () => {
-                    UIMenuUtils.reloadContextMenu( contextMenu, fieldConfig.domain.frame );
+                    UIMenuUtils.reloadContextMenu( contextMenu, fieldConfig.widget.entry.frame );
                     var list = fieldCombo.getList() as webix.ui.list;
-                    list.parse( KBEntities.findNames( fieldConfig.domain.frame, null ), null );
+                    list.parse( KBEntities.findNames( fieldConfig.widget.entry.frame, null ), null );
                     //                    } );
 
                     break;
                 case "form":
 
-                    var viewId = form.addView( webix.extend( { elements: [] }, fieldConfig, false ) );
+                    var viewId = form.addView( webix.extend( { elements: [] }, fieldConfig.widget, false ) );
                     var fieldForm = form.queryView( { "id": viewId } ) as webix.ui.form;
 
                     if ( keysToken.length == 2 )
-                        this.buildForm( fieldForm, fieldConfig.domain.frame, keysToken[1] );
+                        this.buildForm( fieldForm, fieldConfig.widget.entry.frame, keysToken[1] );
                     else
-                        this.buildForm( fieldForm, fieldConfig.domain.frame, null );
+                        this.buildForm( fieldForm, fieldConfig.widget.entry.frame, null );
                     break;
                 case "note":
                     /*                        const fieldNote = new EntityNote( this.app, {
@@ -845,27 +848,28 @@ export abstract class UIFormView extends UIView {
                                             form.addView( fieldNote );*/
                     break;
                 case "switch":
-                    form.addView( fieldConfig );
+                    form.addView( fieldConfig.widget );
                     break;
                 case "datepicker":
                     fieldConfig.timepicker = true;
                     fieldConfig.format = "%d %M %Y at %H:%i";
-                    form.addView( fieldConfig );
+                    form.addView( fieldConfig.widget );
                     break;
                 case "checkbox":
-                    form.addView( fieldConfig );
+                    form.addView( fieldConfig.widget );
                     break;
                 case "counter":
-                    form.addView( fieldConfig );
+                    form.addView( fieldConfig.widget );
                     break;
                 case "photo":
+                case "image":                    
                     //                    form.addView( fieldConfig );
-                    fieldConfig.view = "label";
+                    fieldConfig.widget.view = "label";
                     form.addView(
                         {
                             view: "layout",
                             cols: [
-                                fieldConfig,
+                                fieldConfig.widget,
                                 {
                                     view: "label",
                                     width: 512,
@@ -877,13 +881,15 @@ export abstract class UIFormView extends UIView {
                     );
 
                     break;
+                case "number":
+                    fieldConfig.widget.view = "text";
                 case "text":
 
                     if ( fieldConfig.name == "icon" ) {
                         var viewId = form.addView( {
                             view: "layout",
                             cols: [
-                                fieldConfig,
+                                fieldConfig.widget,
                                 {
                                     view: "icon",
                                     align: "left"
@@ -905,11 +911,11 @@ export abstract class UIFormView extends UIView {
                         } );
                     }
                     else
-                        form.addView( fieldConfig );
+                        form.addView( fieldConfig.widget );
 
                     break;
                 default:
-                    alert( fieldConfig.view );
+                    alert(KBEntities.stringify( fieldConfig ));
             }
         }
 
@@ -1097,7 +1103,7 @@ export abstract class UIMenuView extends JetView {
 
             this.eventSelect = sidebar.attachEvent( "onItemClick", ( id ) => {
                 var item = sidebar.getItem( id );
-                if ( item.eClass == "http://www.abchip.org/mimo/ui#//menu/MenuAction" ) {
+                if ( item.isa == "MenuAction" ) {
                     if ( item.filter != null ) {
                         this.show( item.action + "&filter=" + item.filter );
                     }
@@ -1143,7 +1149,10 @@ export abstract class UIMenuView extends JetView {
         var elementId = sidebar.getFirstChildId( menu.id );
         while ( elementId != null ) {
             var dataNode = sidebar.getItem( elementId );
-            if ( dataNode.eClass == "http://www.abchip.org/mimo/ui#//menu/MenuAction" ) {
+            
+//            alert(KBEntities.stringify(dataNode));
+            
+            if ( dataNode.isa == "MenuAction" ) {
                 var menuAction = dataNode;
 
                 // TODO                + "&filter=" + item.filter
@@ -1165,12 +1174,13 @@ export abstract class UIMenuView extends JetView {
                     found = true;
                 }
             }
-            else if ( dataNode.eClass == "http://www.abchip.org/mimo/ui#//menu/MenuGroup" ) {
+            else if ( dataNode.isa == "MenuGroup" ) {
                 var menuGroup = dataNode;
                 found = this.selectItemMenuSidebar( menuGroup, url );
             }
-            else
+            else  {
                 alert( "Unexpected condition: wiertyfbaswei8dfdsfa" );
+            }
 
             if ( found )
                 break;

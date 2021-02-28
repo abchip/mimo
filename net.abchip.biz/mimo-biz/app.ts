@@ -13,7 +13,7 @@ import session from "base/ctx";
 import "config/styles/app.css";
 
 import { EntityServices } from "services/Entity";
-import { EntityNameableServices } from "services/EntityNameable";
+import { EntityIdentifiableServices } from "services/EntityIdentifiable";
 import { PartyServices } from "services/Party";
 import { FrameServices } from "services/Frame";
 import { ProductCategoryServices } from "services/ProductCategory";
@@ -51,7 +51,7 @@ export default class App extends JetApp {
 
         this.use(( app: JetApp ) => {
             app.setService( "EntityServices", new EntityServices() );
-            app.setService( "EntityNameableServices", new EntityNameableServices() );
+            app.setService( "EntityIdentifiableServices", new EntityIdentifiableServices() );
             app.setService( "FrameServices", new FrameServices() );
             app.setService( "PartyServices", new PartyServices() );
             app.setService( "ProductCategoryServices", new ProductCategoryServices() );

@@ -105,7 +105,7 @@ export class KBEntities {
         if ( callback != null )
             data.attachEvent( "onAfterLoad", callback );
 
-        data.parse( KBEntities.sendBizRequest( "lookup", { frame: "Frame", name: name } ), null );
+        data.parse( KBEntities.sendBizRequest( "lookup", { frame: "Frame", id: name } ), null );
 
         return data;
     }
@@ -155,7 +155,7 @@ export class KBEntities {
             return data;
         }
 
-        data.parse( KBEntities.sendBizRequest( "lookup", { frame: frame, name: name } ), null );
+        data.parse( KBEntities.sendBizRequest( "lookup", { frame: frame, id: name } ), null );
 
         return data;
     }
@@ -177,9 +177,10 @@ export class KBServices {
 
         var serviceName: string = frameName + "Services";
         var service: KBService = KBServices.getServiceByName( app, serviceName );
+    
         if ( service == null || !service.checkAction( action ) ) {
             const frame = KBEntities.lookupFrame( frameName, () => {
-
+                
                 var superNames: string[] = frame.getValues().superNames;
                 if ( superNames != null ) {
                     for ( var superName of superNames ) {

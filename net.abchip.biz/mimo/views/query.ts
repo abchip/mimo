@@ -7,7 +7,6 @@
  *
  */
 import * as webix from "@xbs/webix-pro";
-import { JetView } from "webix-jet";
 import { UIWindowView, UIQueryView, UIQueryUtils } from "base/ui";
 
 export class QueryBuilder extends UIQueryView {
@@ -69,7 +68,7 @@ export class QueryBuilder extends UIQueryView {
             }
 
             // load fields
-            var fields = webix.toArray( [] );
+            var fields =  [] ;
             for ( let fieldConfig of queryConfig.getValues().fields ) {
                 fields.push( fieldConfig );
             }

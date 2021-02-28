@@ -217,7 +217,6 @@ export class EntityEditor extends UITabView {
 
         var slots: any[] = frame["slots"];
         for ( var slot of slots ) {
-
             if ( slot.derived != true )
                 continue;
 
@@ -225,7 +224,7 @@ export class EntityEditor extends UITabView {
                 continue;
             }
 
-            if ( slot.cardinality.multiple != true )
+            if ( slot.cardinality.max != -1 )
                 continue;
 
             if ( !slot.domain.frame )

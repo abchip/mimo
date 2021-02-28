@@ -37,8 +37,8 @@ public class SaveServlet extends BaseServlet {
 			ResourceSerializer<E> entitySerializer = context.getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
 
 			String json = request.getParameter("json");
-			if (!json.contains("\"eClass\""))
-				json = json.replaceFirst("\\{", "{\"eClass\":\"" + entitySerializer.getFrame().getURI() + "\",");
+//			if (!json.contains("\"eClass\""))
+//				json = json.replaceFirst("\\{", "{\"eClass\":\"" + entitySerializer.getFrame().getURI() + "\",");
 
 			entitySerializer.load(json, false);
 			E entity = entitySerializer.get();

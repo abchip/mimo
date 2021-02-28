@@ -12,7 +12,7 @@ import { UIViewMode, UIView, UITableView } from "base/ui";
 import { EntityFormWindow } from "views/form";
 import { EntityEditorWindow } from "views/editor";
 
-export class EntityNameableServices extends KBService {
+export class EntityIdentifiableServices extends KBService {
 
     add( view: UIView ) {
 
