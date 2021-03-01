@@ -16,8 +16,19 @@ export class ApplicationToolbar extends JetView {
     config() {
 
         var srcPicture = "images/account-circle.png";
-        if ( KBEntities.getContext().picture ) {
-            srcPicture = KBEntities.getContext().picture;
+        var context = KBEntities.getContext();
+        var tenant = "";
+        var user = "";
+        var contextId = "";
+        var anonymous = "";
+        
+        if (context != null) {
+            if(context.picture != null)
+                srcPicture = context.picture;
+            tenant = context.tenant;
+            user = context.user;
+            contextId = context.id;
+            anonymous = context.anonymous;
         }
 
         return {
@@ -77,19 +88,19 @@ export class ApplicationToolbar extends JetView {
                                             rows: [
                                                 {
                                                     view: "label",
-                                                    label: "Tenant: " + KBEntities.getContext().tenant,
+                                                    label: "Tenant: " + tenant,
                                                 },
                                                 {
                                                     view: "label",
-                                                    label: "User: " + KBEntities.getContext().user,
+                                                    label: "User: " + user,
                                                 },
                                                 {
                                                     view: "label",
-                                                    label: "ContextId: " + KBEntities.getContext().id,
+                                                    label: "ContextId: " + contextId,
                                                 },
                                                 {
                                                     view: "label",
-                                                    label: "Anonymous: " + KBEntities.getContext().anonymous,
+                                                    label: "Anonymous: " + anonymous,
                                                 },
                                                 {
                                                     view: "label",

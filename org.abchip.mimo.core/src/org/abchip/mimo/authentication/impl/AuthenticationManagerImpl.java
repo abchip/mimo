@@ -7,14 +7,19 @@
  */
 package org.abchip.mimo.authentication.impl;
 
+import javax.inject.Inject;
+
 import org.abchip.mimo.authentication.AuthenticationAdminKey;
 import org.abchip.mimo.authentication.AuthenticationAnonymous;
 import org.abchip.mimo.authentication.AuthenticationException;
+import org.abchip.mimo.authentication.AuthenticationFactory;
 import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.authentication.AuthenticationPackage;
 import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.authentication.AuthenticationUserToken;
 import org.abchip.mimo.context.ContextHandler;
+import org.abchip.mimo.context.ProviderConfig;
+import org.abchip.mimo.context.ProviderUser;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -26,6 +31,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class AuthenticationManagerImpl extends MinimalEObjectImpl.Container implements AuthenticationManager {
 
+	@Inject
+	private ProviderConfig providerConfig;
+	
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -60,13 +68,25 @@ public class AuthenticationManagerImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public ContextHandler login(String contextId, AuthenticationAnonymous authentication) throws AuthenticationException {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+
+		ProviderUser user = this.providerConfig.getPublicUser();
+		if (user == null)
+			throw new AuthenticationException("Invalid anonymous access");
+
+		AuthenticationUserPassword authenticationUserPassword = AuthenticationFactory.eINSTANCE.createAuthenticationUserPassword();
+		authenticationUserPassword.setTenant(authentication.getTenant());
+		authenticationUserPassword.setUser(user.getUser());
+		authenticationUserPassword.setPassword(user.getPassword());
+
+		ContextHandler context = this.login(contextId, authenticationUserPassword);
+		if (context != null)
+			context.getContext().getContextDescription().setAnonymous(true);
+
+		return context;
 	}
 
 	/**

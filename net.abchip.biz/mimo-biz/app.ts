@@ -70,6 +70,7 @@ export default class App extends JetApp {
         this.use( plugins.User, {
             model: session,
             ping: 60000,
+            afterLogin: "biz",
             public: path => {
                 return ( path.indexOf( "out-of-service" ) > -1 || path.indexOf( "loginTenant" ) > -1 );
             }

@@ -15,7 +15,6 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.authentication.AuthenticationAdminKey;
-import org.abchip.mimo.authentication.AuthenticationAnonymous;
 import org.abchip.mimo.authentication.AuthenticationException;
 import org.abchip.mimo.authentication.AuthenticationFactory;
 import org.abchip.mimo.authentication.AuthenticationUserPassword;
@@ -29,7 +28,6 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextHandler;
 import org.abchip.mimo.context.ProviderConfig;
-import org.abchip.mimo.context.ProviderUser;
 import org.abchip.mimo.core.http.handler.HttpLoginHandler;
 import org.abchip.mimo.networking.HttpClient;
 import org.abchip.mimo.networking.NetworkingException;
@@ -52,25 +50,6 @@ public class HttpAuthenticationManagerImpl extends AuthenticationManagerImpl {
 
 	public HttpAuthenticationManagerImpl() {
 		new Thread(new HttpAuthenticationLoginChecker(), "login-checker").start();
-	}
-
-	@Override
-	public ContextHandler login(String contextId, AuthenticationAnonymous authentication) throws AuthenticationException {
-
-		ProviderUser user = this.providerConfig.getPublicUser();
-		if (user == null)
-			return null;
-
-		AuthenticationUserPassword authenticationUserPassword = AuthenticationFactory.eINSTANCE.createAuthenticationUserPassword();
-		authenticationUserPassword.setTenant(authentication.getTenant());
-		authenticationUserPassword.setUser(user.getUser());
-		authenticationUserPassword.setPassword(user.getPassword());
-
-		ContextHandler context = this.login(contextId, authenticationUserPassword);
-		if (context != null)
-			context.getContext().getContextDescription().setAnonymous(true);
-
-		return context;
 	}
 
 	@Override

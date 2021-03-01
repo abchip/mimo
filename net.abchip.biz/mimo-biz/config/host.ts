@@ -8,5 +8,5 @@
  */
 export function getBizServicePath(): string {
     return "http://localhost:8080/mimo/service";
-    // return "/biz/service";
+    //return "http://www.abchip.net/mimo/service";
 }
