@@ -42,28 +42,10 @@ public class LookupMenuServlet extends BaseServlet {
 		Menu menu = null;
 
 		try {
-			Application application = context.get(Application.class);
-
-			ResourceReader<Menu> menuReader = application.getContext().getResourceManager().getResourceReader(Menu.class);
-			if (name == null || name.isEmpty()) {
-				menu = MenuFactory.eINSTANCE.createMenu();
-				menu.setName("List Menu");
-
-				try (EntityIterator<Menu> menus = menuReader.find()) {
-					for (Menu elem : menus) {
-						// build upper level group from menu
-						MenuGroup group = MenuFactory.eINSTANCE.createMenuGroup();
-						group.setId(UUID.randomUUID().toString());
-						group.setValue(elem.getName());
-						group.setIcon(elem.getIcon());
-						group.getData().addAll(elem.getElements());
-
-						// append to root
-						menu.getElements().add(group);
-					}
-				}
-			} else {
-				menu = menuReader.lookup(name);
+			menu = findMenu(context, name);
+			if(menu == null) {
+				Application application = context.get(Application.class);
+				menu = findMenu(application.getContext(), name);
 			}
 
 			if (menu != null) {
@@ -99,5 +81,38 @@ public class LookupMenuServlet extends BaseServlet {
 		if (menu != null)
 			entitySerializer.add(menu);
 		entitySerializer.save(response.getOutputStream());
+	}
+
+	private Menu findMenu(Context context, String name) throws ResourceException {
+		
+		Menu menu = null;
+
+		ResourceReader<Menu> menuReader = context.getResourceManager().getResourceReader(Menu.class);
+		
+		if (name == null || name.isEmpty()) {
+
+			try (EntityIterator<Menu> menus = menuReader.find()) {
+				if (menus.hasNext()) {
+					menu = MenuFactory.eINSTANCE.createMenu();
+					menu.setName("List Menu");
+				}
+
+				for (Menu elem : menus) {
+					// build upper level group from menu
+					MenuGroup group = MenuFactory.eINSTANCE.createMenuGroup();
+					group.setId(UUID.randomUUID().toString());
+					group.setValue(elem.getName());
+					group.setIcon(elem.getIcon());
+					group.getData().addAll(elem.getElements());
+
+					// append to root
+					menu.getElements().add(group);
+				}
+			}
+		} else {
+			menu = menuReader.lookup(name);
+		}
+
+		return menu;
 	}
 }

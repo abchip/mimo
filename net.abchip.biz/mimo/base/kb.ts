@@ -68,13 +68,13 @@ export class KBEntities {
                             }
                         );*/
 
-            //            alert( "ecchilo!! " + path );
             KBEntities.ajax = webix.ajax() as webix.Ajax;
         }
 
         //return webix.ajax( url, params ) as Promise<any>;
         //return KBEntities.ajax.post( url, params );
         //return (webix.ajax() as webix.Ajax).post( url, params, callback );
+        
         return KBEntities.ajax.post( url, params, callback );
     }
 

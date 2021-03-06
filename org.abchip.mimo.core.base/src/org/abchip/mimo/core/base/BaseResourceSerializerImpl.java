@@ -95,5 +95,4 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 	public void save(OutputStream outputStream) throws IOException {
 		this.resource.save(outputStream);
 	}
-
 }

@@ -96,7 +96,11 @@ public class FindServlet extends BaseServlet {
 				for (E entity : entities)
 					entitySerializer.add(entity);
 			}
-			entitySerializer.save(response.getOutputStream());
+			
+			if(!entitySerializer.isEmpty())			
+				entitySerializer.save(response.getOutputStream());
+			else 
+				response.getWriter().write("[]");
 			entitySerializer.clear();
 
 		} catch (ResourceException e) {

@@ -18,7 +18,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -133,14 +132,6 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 				this.resourceSerializer.clear();
 			}
 
-			Collections.sort(entries, new Comparator<E>() {
-
-				@Override
-				public int compare(E o1, E o2) {
-					return o1.getID().compareTo(o2.getID());
-				}
-			});
-
 			return entries;
 		}
 	}
@@ -232,7 +223,11 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 
 		int size = 0;
 		try (DirectoryStream<Path> dirStream = Files.newDirectoryStream(folder)) {
-			for (Path path : dirStream) {
+			List<Path> list = new ArrayList<>();
+			dirStream.forEach(list::add);
+			list.sort(Comparator.comparing(Path::toString));
+			
+			for (Path path : list) {
 				if (Files.isHidden(path))
 					continue;
 				if (Files.isDirectory(path)) {
