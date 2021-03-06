@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#isContextMenu <em>Context Menu</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#isKey <em>Key</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#isTopSplit <em>Top Split</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getWidget <em>Widget</em>}</li>
  * </ul>
  *
@@ -92,6 +93,26 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	 * @ordered
 	 */
 	protected boolean key = KEY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isTopSplit() <em>Top Split</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTopSplit()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean TOP_SPLIT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isTopSplit() <em>Top Split</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTopSplit()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean topSplit = TOP_SPLIT_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getWidget() <em>Widget</em>}' containment reference.
@@ -197,6 +218,29 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	 * @generated
 	 */
 	@Override
+	public boolean isTopSplit() {
+		return topSplit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTopSplit(boolean newTopSplit) {
+		boolean oldTopSplit = topSplit;
+		topSplit = newTopSplit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__TOP_SPLIT, oldTopSplit, topSplit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Widget getWidget() {
 		if (widget != null && ((EObject)widget).eIsProxy()) {
 			InternalEObject oldWidget = (InternalEObject)widget;
@@ -287,6 +331,8 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 				return getGroup();
 			case FormPackage.FORM_FIELD__KEY:
 				return isKey();
+			case FormPackage.FORM_FIELD__TOP_SPLIT:
+				return isTopSplit();
 			case FormPackage.FORM_FIELD__WIDGET:
 				if (resolve) return getWidget();
 				return basicGetWidget();
@@ -310,6 +356,9 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 				return;
 			case FormPackage.FORM_FIELD__KEY:
 				setKey((Boolean)newValue);
+				return;
+			case FormPackage.FORM_FIELD__TOP_SPLIT:
+				setTopSplit((Boolean)newValue);
 				return;
 			case FormPackage.FORM_FIELD__WIDGET:
 				setWidget((Widget)newValue);
@@ -335,6 +384,9 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 			case FormPackage.FORM_FIELD__KEY:
 				setKey(KEY_EDEFAULT);
 				return;
+			case FormPackage.FORM_FIELD__TOP_SPLIT:
+				setTopSplit(TOP_SPLIT_EDEFAULT);
+				return;
 			case FormPackage.FORM_FIELD__WIDGET:
 				setWidget((Widget)null);
 				return;
@@ -356,6 +408,8 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 				return GROUP_EDEFAULT == null ? group != null : !GROUP_EDEFAULT.equals(group);
 			case FormPackage.FORM_FIELD__KEY:
 				return key != KEY_EDEFAULT;
+			case FormPackage.FORM_FIELD__TOP_SPLIT:
+				return topSplit != TOP_SPLIT_EDEFAULT;
 			case FormPackage.FORM_FIELD__WIDGET:
 				return widget != null;
 		}
@@ -378,6 +432,8 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 		result.append(group);
 		result.append(", key: ");
 		result.append(key);
+		result.append(", topSplit: ");
+		result.append(topSplit);
 		result.append(')');
 		return result.toString();
 	}

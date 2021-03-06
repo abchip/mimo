@@ -46,6 +46,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/contextMenu"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/group"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/key"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/topSplit"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//form/FormField/widget"/>
       </genClasses>
     </nestedGenPackages>
@@ -124,6 +125,7 @@
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//view/ViewType/Dashbard"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//view/ViewType/Editor"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//view/ViewType/Import"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//view/ViewType/Report"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//view/ViewType/Search"/>
       </genEnums>
       <genClasses image="false" ecoreClass="ui.ecore#//view/View">

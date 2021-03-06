@@ -48,7 +48,7 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean ADJUST_EDEFAULT = false;
+	protected static final boolean ADJUST_EDEFAULT = true;
 
 	/**
 	 * The cached value of the '{@link #isAdjust() <em>Adjust</em>}' attribute.

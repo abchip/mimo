@@ -28,14 +28,14 @@ public enum ActionType implements Enumerator {
 	 * @ordered
 	 */
 	USER_INTERFACE(10, "UserInterface", "UI"), /**
-	 * The '<em><b>ServiceScope</b></em>' literal object.
+	 * The '<em><b>Service</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #SERVICE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SERVICE(20, "ServiceScope", "SRV"), /**
+	SERVICE(20, "Service", "SRV"), /**
 	 * The '<em><b>Event</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -61,7 +61,7 @@ public enum ActionType implements Enumerator {
 	public static final int USER_INTERFACE_VALUE = 10;
 
 	/**
-	 * The '<em><b>ServiceScope</b></em>' literal value.
+	 * The '<em><b>Service</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>ServiceScope</b></em>' literal object isn't clear,
@@ -69,7 +69,7 @@ public enum ActionType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SERVICE
-	 * @model name="ServiceScope" literal="SRV"
+	 * @model name="Service" literal="SRV"
 	 * @generated
 	 * @ordered
 	 */

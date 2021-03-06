@@ -133,13 +133,22 @@ public interface FormPackage extends EPackage {
 	int FORM_FIELD__KEY = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Top Split</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_FIELD__TOP_SPLIT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Widget</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD__WIDGET = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int FORM_FIELD__WIDGET = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Field</em>' class.
@@ -148,7 +157,7 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+	int FORM_FIELD_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 5;
 
 
 	/**
@@ -225,6 +234,17 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFormField_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.form.FormField#isTopSplit <em>Top Split</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Top Split</em>'.
+	 * @see org.abchip.mimo.ui.form.FormField#isTopSplit()
+	 * @see #getFormField()
+	 * @generated
+	 */
+	EAttribute getFormField_TopSplit();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.form.FormField#getWidget <em>Widget</em>}'.
@@ -318,6 +338,14 @@ public interface FormPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FORM_FIELD__KEY = eINSTANCE.getFormField_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Top Split</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORM_FIELD__TOP_SPLIT = eINSTANCE.getFormField_TopSplit();
 
 		/**
 		 * The meta object literal for the '<em><b>Widget</b></em>' containment reference feature.

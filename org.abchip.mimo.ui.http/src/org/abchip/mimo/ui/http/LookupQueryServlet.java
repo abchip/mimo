@@ -48,7 +48,6 @@ public class LookupQueryServlet extends BaseServlet {
 			Application application = context.get(Application.class);
 
 			Query query = application.getContext().getResourceManager().getResourceReader(Query.class).lookup(name);
-
 			if (query == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 				query = QueryFactory.eINSTANCE.createQuery();
 				query.setName("prototype");

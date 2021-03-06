@@ -239,8 +239,18 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getFormField_TopSplit() {
+		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getFormField_Widget() {
-		return (EReference)formFieldEClass.getEStructuralFeatures().get(3);
+		return (EReference)formFieldEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -280,6 +290,7 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		createEAttribute(formFieldEClass, FORM_FIELD__CONTEXT_MENU);
 		createEAttribute(formFieldEClass, FORM_FIELD__GROUP);
 		createEAttribute(formFieldEClass, FORM_FIELD__KEY);
+		createEAttribute(formFieldEClass, FORM_FIELD__TOP_SPLIT);
 		createEReference(formFieldEClass, FORM_FIELD__WIDGET);
 	}
 
@@ -327,6 +338,7 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		initEAttribute(getFormField_ContextMenu(), ecorePackage.getEBoolean(), "contextMenu", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormField_Group(), ecorePackage.getEString(), "group", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormField_Key(), ecorePackage.getEBoolean(), "key", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFormField_TopSplit(), ecorePackage.getEBoolean(), "topSplit", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFormField_Widget(), theWidgetPackage.getWidget(), null, "widget", null, 1, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations

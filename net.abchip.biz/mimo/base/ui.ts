@@ -590,6 +590,8 @@ export abstract class UITableView extends UIView {
         var datatable = this.getDatatable();
         var entityName = null;
 
+//        alert(KBEntities.stringify(datatable.config.leftSplit));
+        
         for ( var i = 0; i < datatable.config.leftSplit; i++ ) {
             if ( entityName == null )
                 entityName = entity[datatable.columnId( i )];
@@ -791,52 +793,54 @@ export abstract class UIFormView extends UIView {
         for ( let fieldConfig of formConfig.getValues().fields ) {
 
             //            fieldConfig.height = 50;
-            fieldConfig.widget.labelWidth = 250;
+            let widget = fieldConfig.widget;
+            widget.labelWidth = 250;
+
+            // TODO
+            if(widget.view.startsWith("mm-"))
+                widget.view = widget.view.substring(3);
 
             // key management
             if ( fieldConfig.topSplit ) {
 
                 if ( keysToken && keysToken.length > keysSplitted ) {
-                    keysValue[fieldConfig.name] = keysToken[keysSplitted];
-                    fieldConfig.widget.view = "text";
-                    fieldConfig.disabled = "true";
+                    keysValue[widget.name] = keysToken[keysSplitted];
+                    widget.view = "text";
+                    widget.disabled = "true";
                 }
                 keysSplitted++;
             }
 
-            if ( fieldConfig.icon != null )
-                fieldConfig.label = fieldConfig.label + " <span class='webix_icon " + fieldConfig.icon + "'></span> ";
-
-            if(fieldConfig.widget.view.startsWith("mm-"))
-                fieldConfig.widget.view = fieldConfig.widget.view.substring(3);
+            if ( widget.icon != null )
+                widget.label = widget + " <span class='webix_icon " + widget.icon + "'></span> ";
 
 //            alert(KBEntities.stringify( fieldConfig.widget ));
             
-            switch ( fieldConfig.widget.view ) {
+            switch ( widget.view ) {
                 case "combo":
-                    if ( fieldConfig.icon != null )
-                        fieldConfig.icon = "mdi mdi-menu-down";
+                    if ( widget.icon != null )
+                        widget.icon = "mdi mdi-menu-down";
 
-                    var viewId = form.addView( webix.extend( { options: [] }, fieldConfig.widget, false ) );
+                    var viewId = form.addView( webix.extend( { options: [] }, widget, false ) );
                     const fieldCombo = form.queryView( { "id": viewId } ) as webix.ui.combo;
-                    const contextMenu = this.attachContextMenu( fieldConfig.widget.entry.frame, fieldCombo );
+                    const contextMenu = this.attachContextMenu( widget.entry.frame, fieldCombo );
 
                     //                    fieldCombo.attachEvent( "onFocus", () => {
-                    UIMenuUtils.reloadContextMenu( contextMenu, fieldConfig.widget.entry.frame );
+                    UIMenuUtils.reloadContextMenu( contextMenu, widget.entry.frame );
                     var list = fieldCombo.getList() as webix.ui.list;
-                    list.parse( KBEntities.findNames( fieldConfig.widget.entry.frame, null ), null );
+                    list.parse( KBEntities.findNames( widget.entry.frame, null ), null );
                     //                    } );
 
                     break;
                 case "form":
 
-                    var viewId = form.addView( webix.extend( { elements: [] }, fieldConfig.widget, false ) );
+                    var viewId = form.addView( webix.extend( { elements: [] }, widget, false ) );
                     var fieldForm = form.queryView( { "id": viewId } ) as webix.ui.form;
 
                     if ( keysToken.length == 2 )
-                        this.buildForm( fieldForm, fieldConfig.widget.entry.frame, keysToken[1] );
+                        this.buildForm( fieldForm, widget.entry.frame, keysToken[1] );
                     else
-                        this.buildForm( fieldForm, fieldConfig.widget.entry.frame, null );
+                        this.buildForm( fieldForm, widget.entry.frame, null );
                     break;
                 case "note":
                     /*                        const fieldNote = new EntityNote( this.app, {
@@ -848,28 +852,28 @@ export abstract class UIFormView extends UIView {
                                             form.addView( fieldNote );*/
                     break;
                 case "switch":
-                    form.addView( fieldConfig.widget );
+                    form.addView( widget );
                     break;
                 case "datepicker":
-                    fieldConfig.timepicker = true;
-                    fieldConfig.format = "%d %M %Y at %H:%i";
-                    form.addView( fieldConfig.widget );
+                    widget.timepicker = true;
+                    widget.format = "%d %M %Y at %H:%i";
+                    form.addView( widget );
                     break;
                 case "checkbox":
-                    form.addView( fieldConfig.widget );
+                    form.addView( widget );
                     break;
                 case "counter":
-                    form.addView( fieldConfig.widget );
+                    form.addView( widget );
                     break;
                 case "photo":
                 case "image":                    
                     //                    form.addView( fieldConfig );
-                    fieldConfig.widget.view = "label";
+                    widget.view = "label";
                     form.addView(
                         {
                             view: "layout",
                             cols: [
-                                fieldConfig.widget,
+                                widget,
                                 {
                                     view: "label",
                                     width: 512,
@@ -882,14 +886,14 @@ export abstract class UIFormView extends UIView {
 
                     break;
                 case "number":
-                    fieldConfig.widget.view = "text";
+                    widget.view = "text";
                 case "text":
 
-                    if ( fieldConfig.name == "icon" ) {
+                    if ( widget.name == "icon" ) {
                         var viewId = form.addView( {
                             view: "layout",
                             cols: [
-                                fieldConfig.widget,
+                                widget,
                                 {
                                     view: "icon",
                                     align: "left"
@@ -911,7 +915,7 @@ export abstract class UIFormView extends UIView {
                         } );
                     }
                     else
-                        form.addView( fieldConfig.widget );
+                        form.addView( widget );
 
                     break;
                 default:

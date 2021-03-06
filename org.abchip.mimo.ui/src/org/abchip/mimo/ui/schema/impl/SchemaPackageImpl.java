@@ -383,7 +383,7 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		initEAttribute(getSchema_Name(), ecorePackage.getEString(), "name", null, 1, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(schemaColumnEClass, SchemaColumn.class, "SchemaColumn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSchemaColumn_Adjust(), ecorePackage.getEBoolean(), "adjust", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSchemaColumn_Adjust(), ecorePackage.getEBoolean(), "adjust", "true", 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_ContextMenu(), ecorePackage.getEBoolean(), "contextMenu", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSchemaColumn_Domain(), theEntityPackage.getDomain(), null, "domain", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_Group(), ecorePackage.getEString(), "group", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

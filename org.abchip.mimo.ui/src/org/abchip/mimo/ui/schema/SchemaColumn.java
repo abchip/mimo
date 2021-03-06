@@ -243,6 +243,7 @@ public interface SchemaColumn extends Entity {
 
 	/**
 	 * Returns the value of the '<em><b>Adjust</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Adjust</em>' attribute isn't clear,
@@ -252,7 +253,7 @@ public interface SchemaColumn extends Entity {
 	 * @return the value of the '<em>Adjust</em>' attribute.
 	 * @see #setAdjust(boolean)
 	 * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn_Adjust()
-	 * @model
+	 * @model default="true"
 	 * @generated
 	 */
 	boolean isAdjust();

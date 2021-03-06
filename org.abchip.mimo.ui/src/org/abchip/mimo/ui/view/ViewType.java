@@ -58,6 +58,14 @@ public enum ViewType implements Enumerator {
 	 * @ordered
 	 */
 	IMPORT(0, "Import", "mm-import"), /**
+	 * The '<em><b>Report</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #REPORT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	REPORT(0, "Report", "mm-report"), /**
 	 * The '<em><b>Search</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,6 +136,17 @@ public enum ViewType implements Enumerator {
 	public static final int IMPORT_VALUE = 0;
 
 	/**
+	 * The '<em><b>Report</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #REPORT
+	 * @model name="Report" literal="mm-report"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int REPORT_VALUE = 0;
+
+	/**
 	 * The '<em><b>Search</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -154,6 +173,7 @@ public enum ViewType implements Enumerator {
 			DASHBARD,
 			EDITOR,
 			IMPORT,
+			REPORT,
 			SEARCH,
 		};
 

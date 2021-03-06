@@ -46,6 +46,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="group" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="topSplit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="widget" lowerBound="1"
           eType="#//widget/Widget" containment="true"/>
     </eClassifiers>
@@ -101,7 +102,8 @@
           iD="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SchemaColumn" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="adjust" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="adjust" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextMenu" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="mimo-ent" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
           <details key="frame" value="frame"/>

@@ -121,6 +121,7 @@ public class LookupFormServlet extends BaseServlet {
 		FormField field = FormFactory.eINSTANCE.createFormField();
 		field.setGroup(slot.getGroup());
 		field.setKey(slot.isKey());
+		field.setTopSplit(slot.isKey());
 
 		// view
 		Widget widget = null;

@@ -503,6 +503,7 @@ public class ViewPackageImpl extends EPackageImpl implements ViewPackage {
 		addEEnumLiteral(viewTypeEEnum, ViewType.DASHBARD);
 		addEEnumLiteral(viewTypeEEnum, ViewType.EDITOR);
 		addEEnumLiteral(viewTypeEEnum, ViewType.IMPORT);
+		addEEnumLiteral(viewTypeEEnum, ViewType.REPORT);
 		addEEnumLiteral(viewTypeEEnum, ViewType.SEARCH);
 	}
 

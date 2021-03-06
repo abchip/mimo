@@ -18,6 +18,7 @@ import org.abchip.mimo.ui.widget.Widget;
  *   <li>{@link org.abchip.mimo.ui.form.FormField#isContextMenu <em>Context Menu</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#isKey <em>Key</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#isTopSplit <em>Top Split</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getWidget <em>Widget</em>}</li>
  * </ul>
  *
@@ -103,6 +104,28 @@ public interface FormField extends Entity {
 	 * @generated
 	 */
 	void setKey(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Top Split</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Top Split</em>' attribute.
+	 * @see #setTopSplit(boolean)
+	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_TopSplit()
+	 * @model
+	 * @generated
+	 */
+	boolean isTopSplit();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#isTopSplit <em>Top Split</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Top Split</em>' attribute.
+	 * @see #isTopSplit()
+	 * @generated
+	 */
+	void setTopSplit(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Widget</b></em>' containment reference.

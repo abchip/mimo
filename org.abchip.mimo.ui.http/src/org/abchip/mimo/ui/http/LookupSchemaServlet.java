@@ -55,7 +55,9 @@ public class LookupSchemaServlet extends BaseServlet {
 		try {
 			Application application = context.get(Application.class);
 
-			Schema schema = application.getContext().getResourceManager().getResourceReader(Schema.class).lookup(name);
+			Schema schema = context.getResourceManager().getResourceReader(Schema.class).lookup(name);
+			if(schema == null)
+				schema = application.getContext().getResourceManager().getResourceReader(Schema.class).lookup(name);
 
 			if (schema == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 				schema = SchemaFactory.eINSTANCE.createSchema();
@@ -114,7 +116,6 @@ public class LookupSchemaServlet extends BaseServlet {
 		SchemaColumn column = SchemaFactory.eINSTANCE.createSchemaColumn();
 		column.setId(slot.getName());
 		column.setHeader(slot.getText());
-		column.setAdjust(true);
 		column.setLeftSplit(slot.isKey());
 		column.setGroup(slot.getGroup());
 		if (slot.getDomain() != null)
