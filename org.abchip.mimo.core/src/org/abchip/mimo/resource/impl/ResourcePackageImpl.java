@@ -948,7 +948,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		initEOperation(op, g1);
 
 		op = addEOperation(resourceEClass, null, "lookup", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "id", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "fields", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "proxy", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getResourceException());

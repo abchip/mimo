@@ -1067,6 +1067,9 @@
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/Entity"/>
       </eTypeParameters>
+      <eOperations name="getAllKeys" lowerBound="1" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="getAllKeySlots" lowerBound="1" upperBound="-1" eType="#//entity/Slot"/>
+      <eOperations name="getAllSlots" lowerBound="1" upperBound="-1" eType="#//entity/Slot"/>
       <eOperations name="getEClassifier" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
       <eOperations name="getPackageName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="getSlot" lowerBound="1" eType="#//entity/Slot">
@@ -1110,6 +1113,11 @@
     <eClassifiers xsi:type="ecore:EClass" name="Slot" abstract="true" eSuperTypes="#//entity/EntityIdentifiable">
       <eOperations name="getDataType" lowerBound="1" eType="#//data/DataType"/>
       <eOperations name="getEStructuralFeature" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+      <eOperations name="getFrame" lowerBound="1">
+        <eGenericType eClassifier="#//entity/Frame">
+          <eTypeArguments/>
+        </eGenericType>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" eType="#//entity/Cardinality"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="containment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -1322,7 +1330,7 @@
       </eOperations>
       <eOperations name="lookup" lowerBound="1" eExceptions="#//resource/ResourceException">
         <eGenericType eTypeParameter="#//resource/Resource/E"/>
-        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>

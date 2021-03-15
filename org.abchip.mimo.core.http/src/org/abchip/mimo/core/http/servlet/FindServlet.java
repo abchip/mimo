@@ -9,6 +9,7 @@
 package org.abchip.mimo.core.http.servlet;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -54,10 +55,10 @@ public class FindServlet extends BaseServlet {
 			return;
 		}
 
-		if (keys != null) {
+		if (keys != null && keys.length > 0) {
 			StringBuffer sb = new StringBuffer();
 			int i = 0;
-			for (String slotKey : frame.getKeys()) {
+			for (String slotKey : frame.getAllKeys()) {
 				if (keys.length == i)
 					break;
 
@@ -75,6 +76,8 @@ public class FindServlet extends BaseServlet {
 					break;
 				case BINARY:
 				case ENTITY:
+					sb.append(slotKey + " = \"" + keys[i] + "\"");
+					break;
 				case OBJECT:
 					break;
 				}
@@ -89,6 +92,10 @@ public class FindServlet extends BaseServlet {
 		}
 
 		try {
+			// TODO remove me
+			if (frame.getName().equalsIgnoreCase(Frame.class.getSimpleName()))
+				TimeUnit.MILLISECONDS.sleep(10);
+
 			ResourceReader<E> entityReader = context.getResourceManager().getResourceReader(frame);
 			ResourceSerializer<E> entitySerializer = context.getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
 			try (EntityIterator<E> entities = entityReader.find(filter, fields, order, Integer.parseInt(limit), Boolean.parseBoolean(proxy))) {
@@ -96,14 +103,14 @@ public class FindServlet extends BaseServlet {
 				for (E entity : entities)
 					entitySerializer.add(entity);
 			}
-			
-			if(!entitySerializer.isEmpty())			
+
+			if (!entitySerializer.isEmpty())
 				entitySerializer.save(response.getOutputStream());
-			else 
+			else
 				response.getWriter().write("[]");
 			entitySerializer.clear();
 
-		} catch (ResourceException e) {
+		} catch (ResourceException | InterruptedException e) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
 			return;
 		}

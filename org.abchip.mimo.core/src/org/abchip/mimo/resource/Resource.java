@@ -77,7 +77,7 @@ public interface Resource<E extends EntityIdentifiable> extends Entity, ContextP
 	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException"
 	 * @generated
 	 */
-	E lookup(String name, String fields, boolean proxy) throws ResourceException;
+	E lookup(String id, String fields, boolean proxy) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->

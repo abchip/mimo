@@ -36,7 +36,6 @@ public class AuthenticationManagerImpl extends MinimalEObjectImpl.Container impl
 	
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected AuthenticationManagerImpl() {
@@ -45,7 +44,6 @@ public class AuthenticationManagerImpl extends MinimalEObjectImpl.Container impl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -55,7 +53,6 @@ public class AuthenticationManagerImpl extends MinimalEObjectImpl.Container impl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -91,7 +88,6 @@ public class AuthenticationManagerImpl extends MinimalEObjectImpl.Container impl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -103,7 +99,6 @@ public class AuthenticationManagerImpl extends MinimalEObjectImpl.Container impl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -115,7 +110,6 @@ public class AuthenticationManagerImpl extends MinimalEObjectImpl.Container impl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

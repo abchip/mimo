@@ -1,5 +1,5 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
+ *  Copyright (c) 2017, 2021 ABChip and others.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -549,12 +549,14 @@ export abstract class UIWindowView extends JetView {
  * UITable 
  ***********************************************************************************/
 export class UITableConfig extends UIViewConfig {
+    public fields?: string;
     public keys?: string;
     public filter?: string;
 }
 
 export abstract class UITableView extends UIView {
 
+    private fields: string = null;
     private keys: string = null;
     private filter: string = null;
 
@@ -562,11 +564,19 @@ export abstract class UITableView extends UIView {
         super( app, name, config );
 
         if ( config ) {
+            this.fields = config.fields;
             this.keys = config.keys;
             this.filter = config.filter;
         }
     }
-
+    
+    public getFields(): string {
+        if ( this.fields )
+            return this.fields;
+        else
+            return this.getParam( "keys", false );
+    }
+    
     public getKeys(): string {
         if ( this.keys )
             return this.keys;
@@ -611,7 +621,7 @@ export abstract class UITableView extends UIView {
         return this.getEntityName( entity );
     }
 
-    protected reloadTableColumns( clear: boolean ) {
+    protected reloadTableColumns( clear: boolean, callback ) {
 
         var datatable = this.getDatatable();
 
@@ -653,16 +663,18 @@ export abstract class UITableView extends UIView {
                 datatable.config.leftSplit = keysLength;
 
                 // append info icon
-                datatable.config.columns[indexColumn] = {
+/*                datatable.config.columns[indexColumn] = {
                     id: "info",
                     header: "Info",
                     template: data => {
                         return "<span class='webix_icon mdi mdi-information-outline'></span>";
                     }
-                };
+                };*/
             }
 
             datatable.refreshColumns( null, true );
+            
+            callback();
         } );
     }
 

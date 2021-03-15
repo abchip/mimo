@@ -13,6 +13,7 @@ import { ActionProvider, ActionUtils } from "core/ui";
 import { MenuUtils } from "widgets/mm-menu";
 
 export interface TableEntry extends EntryFramed {
+    fields?: string;    
 	filter?: string;
 	keys?: string;
 }
@@ -125,13 +126,14 @@ export class WidgetTable extends Widget<TableEntry, TableConfig, webix.ui.layout
 
 	private reloadData(entry: TableEntry) {
 
+	    var fields = entry.fields;
 		var keys = entry.keys;
 		var filter = entry.filter;
 
 		const datatable = this.getDatatable();
 		datatable.clearAll();
 
-		datatable.parse(KBEntities.findEntities(entry.frame, keys, filter, WidgetTable.LIMIT), null);
+		datatable.parse(KBEntities.findEntities(entry.frame, fields, keys, filter, WidgetTable.LIMIT), null);
 	}
 
 	private reloadTableColumns(entry: TableEntry) {

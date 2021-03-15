@@ -700,6 +700,9 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/superNames"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/text"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/textFormula"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getAllKeys"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getAllKeySlots"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getAllSlots"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getEClassifier"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getPackageName"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSlot">
@@ -722,6 +725,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/toString"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getDataType"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getEStructuralFeature"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getFrame"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Java" basePackage="org.abchip.mimo" disposableProviderFactory="true"
@@ -866,7 +870,7 @@
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/getFrame"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/lookup">
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/lookup/name"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/lookup/id"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/Resource/lookup/fields"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/Resource/lookup/proxy"/>
         </genOperations>

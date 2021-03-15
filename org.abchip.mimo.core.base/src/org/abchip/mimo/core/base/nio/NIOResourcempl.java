@@ -194,7 +194,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 			return null;
 
 		// single key
-		if (frame.getKeys().size() <= 1) {
+		if (frame.getAllKeys().size() <= 1) {
 			try {
 				Files.createDirectories(folder);
 			} catch (FileAlreadyExistsException e) {
@@ -211,7 +211,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 		if (name == null)
 			return folder;
 		String[] names = name.split("/");
-		for (int k = 0; k < frame.getKeys().size(); k++) {
+		for (int k = 0; k < frame.getAllKeys().size(); k++) {
 			if (names.length <= k)
 				return folder;
 			folder = folder.resolve(names[k]);

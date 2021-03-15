@@ -33,7 +33,7 @@ public class Entities {
 		StringBuffer name = new StringBuffer();
 
 		Frame<EntityIdentifiable> frame = entityIdentifiable.isa();
-		for (String key : frame.getKeys()) {
+		for (String key : frame.getAllKeys()) {
 			if (!name.toString().isEmpty())
 				name.append("/");
 			Object value = entityIdentifiable.eGet(frame.getSlot(key), false, false);

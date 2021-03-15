@@ -72,7 +72,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			result.append('(');
 
 			boolean first = true;
-			for (Slot slot : isa.getSlots()) {
+			for (Slot slot : isa.getAllSlots()) {
 				if (slot.isDerived())
 					continue;
 				if ("info".equals(slot.getGroup()))

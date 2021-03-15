@@ -1,5 +1,5 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
+ *  Copyright (c) 2017, 2021 ABChip and others.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -177,8 +177,9 @@ export class EntitiesTable extends UITableView {
 
     public reload() {
 
-        this.reloadTableColumns( true );
-        this.reloadData();
+        this.reloadTableColumns( true, () => {
+            this.reloadData();    
+        });
 
         // contextMenu
         UIMenuUtils.reloadContextMenu( this.contextMenu, this.getFrame() );
@@ -218,13 +219,25 @@ export class EntitiesTable extends UITableView {
 
     private reloadData() {
 
+        var fields = this.getFields();
         var keys = this.getKeys();
         var filter = this.getFilter();
 
         const datatable = this.getDatatable();
         datatable.clearAll();
 
-        datatable.parse( KBEntities.findEntities( this.getFrame(), keys, filter, EntitiesTable.DATATABLE_NRELEM ), null );
+        datatable.eachColumn(
+            function( columnId ) {
+
+                var columnConfig: any = datatable.getColumnConfig( columnId );
+                if ( fields )
+                    fields = fields + "," + columnConfig.id;
+                else
+                    fields = columnConfig.id;
+            }
+        )
+
+        datatable.parse( KBEntities.findEntities( this.getFrame(), fields, keys, filter, EntitiesTable.DATATABLE_NRELEM ), null );
     }
 
     private download() {

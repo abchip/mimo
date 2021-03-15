@@ -56,7 +56,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	@Override
 	public String nextSequence() throws ResourceException {
 
-		if (getFrame().getKeys().size() > 1)
+		if (getFrame().getAllKeys().size() > 1)
 			return null;
 
 		String nextSequence = null;

@@ -84,7 +84,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 		// routes
 		MenuGroup groupRoutes = MenuFactory.eINSTANCE.createMenuGroup();
 		groupRoutes.setValue("Routes");
-		for (Slot slot : frame.getSlots()) {
+		for (Slot slot : frame.getAllSlots()) {
 			// if (!slot.isRoute())
 			// continue;
 

@@ -1227,6 +1227,12 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getFrame_Text(), ecorePackage.getEString(), "text", null, 1, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_TextFormula(), ecorePackage.getEString(), "textFormula", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		addEOperation(frameEClass, ecorePackage.getEString(), "getAllKeys", 1, -1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(frameEClass, this.getSlot(), "getAllKeySlots", 1, -1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(frameEClass, this.getSlot(), "getAllSlots", 1, -1, IS_UNIQUE, IS_ORDERED);
+
 		addEOperation(frameEClass, ecorePackage.getEClassifier(), "getEClassifier", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(frameEClass, ecorePackage.getEString(), "getPackageName", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1262,6 +1268,12 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEOperation(slotEClass, theDataPackage.getDataType(), "getDataType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(slotEClass, ecorePackage.getEStructuralFeature(), "getEStructuralFeature", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(slotEClass, null, "getFrame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getFrame());
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
 
 		// Initialize enums and add enum literals
 		initEEnum(entityStateEEnum, EntityState.class, "EntityState");

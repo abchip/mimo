@@ -1,5 +1,5 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
+ *  Copyright (c) 2017, 2021 ABChip and others.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -71,25 +71,26 @@ class SlotsTable extends UITableView {
     public urlChange() {
         super.urlChange();
 
-        this.reloadTableColumns( true );
+        this.reloadTableColumns( true, () => {
+            const datatable = this.getDatatable();
+            datatable.clearAll();
 
-        const datatable = this.getDatatable();
-        datatable.clearAll();
+            const frame = KBEntities.lookupFrame( this.getKeys(), () => {
 
-        const frame = KBEntities.lookupFrame( this.getKeys(), () => {
+                var slots: any[] = frame.getValues().slots;
+                for ( var slot of slots ) {
 
-            var slots: any[] = frame.getValues().slots;
-            for ( var slot of slots ) {
+                    var item = webix.extend( slot, { id: slot.name } );
+                    if ( slot.cardinality )
+                        item.cardinality = slot.cardinality.multiple;
 
-                var item = webix.extend( slot, { id: slot.name } );
-                if ( slot.cardinality )
-                    item.cardinality = slot.cardinality.multiple;
-                
-                if ( slot.domain )
-                    item.domain = slot.domain.frame;
-                
-                datatable.add( item );
-            }
+                    if ( slot.domain )
+                        item.domain = slot.domain.frame;
+
+                    datatable.add( item );
+                }
+            } );
+
         } );
     }
 }

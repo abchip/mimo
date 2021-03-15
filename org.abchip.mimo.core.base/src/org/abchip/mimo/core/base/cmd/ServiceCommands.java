@@ -155,7 +155,7 @@ public class ServiceCommands extends BaseCommands {
 		interpreter.println("Service: " + request.getServiceName());
 
 		interpreter.println("Input parameters");
-		for (Slot slot : request.isa().getSlots()) {
+		for (Slot slot : request.isa().getAllSlots()) {
 			interpreter.print("\tName: " + slot.getName() + " ");
 			interpreter.print("\tText: " + slot.getText() + " ");
 			interpreter.print("\tOptional: " + !slot.getCardinality().isMandatory() + " ");
@@ -166,7 +166,7 @@ public class ServiceCommands extends BaseCommands {
 		}
 
 		interpreter.println("Output parameters");
-		for (Slot slot : context.getFrame(request.getResponse()).getSlots()) {
+		for (Slot slot : context.getFrame(request.getResponse()).getAllSlots()) {
 			interpreter.print("\tName: " + slot.getName() + " ");
 			interpreter.print("\tText: " + slot.getText() + " ");
 			interpreter.print("\tOptional: " + !slot.getCardinality().isMandatory() + " ");

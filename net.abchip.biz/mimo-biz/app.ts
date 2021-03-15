@@ -1,5 +1,5 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
+ *  Copyright (c) 2017, 2021 ABChip and others.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ export default class App extends JetApp {
         super( {
             id: APPNAME,
             version: VERSION,
-            start: "/home",
+            start: "/biz",
             //            router: BUILD_AS_MODULE ? EmptyRouter : UrlRouter,
             //            routerPrefix: "mimo",
             router: HashRouter,

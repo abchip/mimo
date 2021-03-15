@@ -45,7 +45,7 @@ public class E4FrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 	@Override
 	public Slot getSlot(String name) {
 
-		for (Slot slot : getSlots())
+		for (Slot slot : getAllSlots())
 			if (slot.getName().equals(name))
 				return slot;
 

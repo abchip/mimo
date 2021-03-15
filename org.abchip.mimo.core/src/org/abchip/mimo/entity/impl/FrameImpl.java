@@ -305,6 +305,21 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public List<Slot> getAllKeySlots() {
+		List<Slot> slots = new ArrayList<Slot>();
+		for (String key : this.getAllKeys()) {
+			Slot slot = this.getSlot(key);
+			slots.add(slot);
+		}
+		return slots;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -367,6 +382,45 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 		textFormula = newTextFormula;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__TEXT_FORMULA, oldTextFormula, textFormula));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public List<String> getAllKeys() {
+
+		List<String> allKeys = new ArrayList<String>();
+		if (this.isKeysEmptyEntity(this))
+			return allKeys;
+
+		Frame<?> ako = this.getAko();
+		if (ako != null && !this.isKeysEmptyEntity(ako))
+			allKeys.addAll(ako.getAllKeys());
+		allKeys.addAll(this.getKeys());
+		return allKeys;
+	}
+
+	private boolean isKeysEmptyEntity(Frame<?> frame) {
+		EClassifier eClassifier = frame.getEClassifier();
+		return (eClassifier == EntityPackage.eINSTANCE.getEntityTyped() || eClassifier == EntityPackage.eINSTANCE.getEntityType()
+				|| eClassifier == EntityPackage.eINSTANCE.getEntityIdentifiable() || eClassifier == EntityPackage.eINSTANCE.getEntity());
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public List<Slot> getAllSlots() {
+		List<Slot> slots = new ArrayList<Slot>();
+		if (getAko() != null)
+			slots.addAll(getAko().getAllSlots());
+		slots.addAll(getSlots());
+		return slots;
 	}
 
 	/**

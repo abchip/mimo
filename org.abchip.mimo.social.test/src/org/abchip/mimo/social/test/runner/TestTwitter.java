@@ -75,7 +75,7 @@ public class TestTwitter {
 					audioPlayer.start();
 				}
 				StringBuffer sb = new StringBuffer();
-				for (Slot slot : frame.getSlots()) {
+				for (Slot slot : frame.getAllSlots()) {
 					sb.append(slot.getName() + ". ");
 				}
 				try (AudioPlayer audioPlayer = audioManager.play(testRunner.getContext(), AudioStyle.B, sb.toString(), true, true)) {

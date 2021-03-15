@@ -35,7 +35,7 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 	private static final Logger LOGGER = Logs.getLogger(E4FrameClassAdapter.class);
 
 	private EClass eClass;
-	private Map<String, Slot> slots = null;
+	private Map<String, Slot> slotsMap = null;
 	protected Notifier target = null;
 
 	public E4FrameClassAdapter(Frame<? super E> ako, EClass eClass) {
@@ -67,9 +67,9 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 
 		List<String> keys = new ArrayList<String>();
 
-		// load features
+		// load features	
 		boolean hasToString = false;
-		for (EStructuralFeature structuralFeature : eClass.getEAllStructuralFeatures()) {
+		for (EStructuralFeature structuralFeature : eClass.getEStructuralFeatures()) {
 
 			Slot slot = new E4SlotAdapter(this, structuralFeature);
 
@@ -106,9 +106,9 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 
 		this.getKeys().addAll(keys);
 
-		this.slots = new HashMap<String, Slot>();
-		for (Slot slot : getSlots())
-			this.slots.put(slot.getName(), slot);
+		this.slotsMap = new HashMap<String, Slot>();
+		for (Slot slot : getAllSlots())
+			this.slotsMap.put(slot.getName(), slot);
 	}
 
 	@Override
@@ -124,10 +124,10 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 	@Override
 	public Slot getSlot(String name) {
 
-		if (this.slots != null)
-			return this.slots.get(name);
+		if (this.slotsMap != null)
+			return this.slotsMap.get(name);
 
-		for (Slot slot : getSlots())
+		for (Slot slot : getAllSlots())
 			if (slot.getName().equals(name))
 				return slot;
 

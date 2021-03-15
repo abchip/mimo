@@ -173,7 +173,7 @@ public class MimoJSONResourceImpl extends ResourceImpl implements ReusableResour
 
 		object.put("isa", frame.getName());
 
-		for (Slot slot : frame.getSlots()) {
+		for (Slot slot : frame.getAllSlots()) {
 			if (slot.isTransient())
 				continue;
 

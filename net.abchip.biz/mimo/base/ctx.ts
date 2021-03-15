@@ -5,6 +5,7 @@ import { KBEntities } from "base/kb";
 function status() {
 
     return KBEntities.sendBizRequest( "status", null, {
+        
         error: function( text, data, xhr ) {
 //            alert( "error: " + xhr.getAllResponseHeaders() );
         },

@@ -186,7 +186,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 
 		if (id != null) {
 			Frame<E> domainFrame = entity.isa();
-			List<String> keys = domainFrame.getKeys();
+			List<String> keys = domainFrame.getAllKeys();
 			if (keys.size() != 1) {
 				String[] ids = id.split("/");
 				for (int i = 0; i < ids.length; i++) {

@@ -54,6 +54,7 @@ public class StatusServlet extends HttpServlet {
 				context = authenticationManager.login(session.getId(), authentication).getContext();
 			} catch (AuthenticationException e) {
 				response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
+				response.flushBuffer();
 				return;
 			}
 

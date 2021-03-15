@@ -200,6 +200,30 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
+	List<String> getAllKeys();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	List<Slot> getAllKeySlots();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	List<Slot> getAllSlots();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
 	EClassifier getEClassifier();
 
 	/**

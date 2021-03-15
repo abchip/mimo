@@ -12,6 +12,7 @@ import org.abchip.mimo.data.DataType;
 import org.abchip.mimo.entity.Cardinality;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -191,8 +192,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	protected String text = TEXT_EDEFAULT;
 	/**
 	 * The default value of the '{@link #isTransient() <em>Transient</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isTransient()
 	 * @generated
 	 * @ordered
@@ -200,8 +200,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	protected static final boolean TRANSIENT_EDEFAULT = false;
 	/**
 	 * The cached value of the '{@link #isTransient() <em>Transient</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isTransient()
 	 * @generated
 	 * @ordered
@@ -284,8 +283,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -294,8 +292,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -328,17 +325,25 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public DataType getDataType() {
-		if(getDataDef() == null)
+		if (getDataDef() == null)
 			return null;
-		
+
 		return getDataDef().getDataType();
 	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract EStructuralFeature getEStructuralFeature();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -346,7 +351,13 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	 * @generated NOT
 	 */
 	@Override
-	public abstract EStructuralFeature getEStructuralFeature();
+	public Frame<?> getFrame() {
+		EObject eObject = this.eContainer();
+		if(eObject instanceof Frame<?>)
+			return (Frame<?>)eObject;
+		
+		return null;
+	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -644,7 +655,6 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__KEY, oldKey, key));
 	}
-
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

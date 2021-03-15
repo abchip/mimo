@@ -1,5 +1,5 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
+ *  Copyright (c) 2017, 2021 ABChip and others.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -9,14 +9,14 @@
 import * as webix from "@xbs/webix-pro";
 import { getBizServicePath } from "config/host";
 
-
+ 
 export class KBService {
 
     public checkAction( name: string ): boolean {
 
         if ( this[name] != null )
             return true;
-
+ 
         return false;
     }
 
@@ -110,13 +110,15 @@ export class KBEntities {
         return data;
     }
 
-    public static findEntities( frame: string, keys: string | string[], filter: string, nrElem?: number, callback?): webix.DataCollection {
+    public static findEntities( frame: string, fields:string | string[], keys: string | string[], filter: string, nrElem?: number, callback?): webix.DataCollection {
 
         var data = new webix.DataCollection( {} );
         if ( callback != null )
             data.attachEvent( "onAfterLoad", callback );
 
         var params = { frame: frame };
+        if ( fields)
+            params = webix.extend( params, { fields: fields } );        
         if ( keys )
             params = webix.extend( params, { keys: keys } );
         if ( filter )

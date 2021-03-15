@@ -69,7 +69,7 @@ public class LookupFormServlet extends BaseServlet {
 
 				FormField currentField = null;
 				FormField currentKey = null;
-				for (Slot slot : frame.getSlots()) {
+				for (Slot slot : frame.getAllSlots()) {
 
 					// derived exclusion
 					if (slot.isDerived())

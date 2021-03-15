@@ -161,6 +161,14 @@ public interface Slot extends EntityIdentifiable {
 	EStructuralFeature getEStructuralFeature();
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	Frame<?> getFrame();
+
+	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>

@@ -319,6 +319,7 @@ expr
  | ( ( database_name '.' )? table_name '.' )? column_name
  | unary_operator expr
  | expr '||' expr
+ | expr '->' expr
  | expr ( '*' | '/' | '%' ) expr
  | expr ( '+' | '-' ) expr
  | expr ( '<<' | '>>' | '&' | '|' ) expr
@@ -710,6 +711,7 @@ GT_EQ : '>=';
 EQ : '==';
 NOT_EQ1 : '!=';
 NOT_EQ2 : '<>';
+ARROW : '->';
 
 // http://www.sqlite.org/lang_keywords.html
 K_ABORT : A B O R T;

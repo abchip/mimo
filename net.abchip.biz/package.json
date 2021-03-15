@@ -30,16 +30,16 @@
     "mini-css-extract-plugin": "^0.4.5",
     "ts-loader": "^4.4.2",
     "tslint": "^5.20.1",
-    "typescript": "^3.9.7",
+    "typescript": "^3.9.9",
     "url-loader": "^0.5.9",
-    "webpack": "^4.44.2",
+    "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "@types/mini-css-extract-plugin": "^1.2.1",
-    "@types/node": "^11.15.39",
-    "@xbs/webix-pro": "^8.1.0",
+    "@types/mini-css-extract-plugin": "^1.2.2",
+    "@types/node": "^11.15.48",
+    "@xbs/webix-pro": "file:./webix-pro_8.1",
     "acorn": "^6.4.2",
     "fs": "0.0.1-security",
     "webix-jet": "^2.1.3"

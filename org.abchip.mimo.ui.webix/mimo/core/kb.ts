@@ -99,13 +99,15 @@ export class KBEntities {
         return data;
     }
     
-    public static findEntities( frame: string, keys: string | string[], filter: string, limit?: number, callback?): webix.DataCollection {
+    public static findEntities( frame: string, fields:string | string[], keys: string | string[], filter: string, limit?: number, callback?): webix.DataCollection {
 
         var data = new webix.DataCollection( {} );
         if ( callback != null )
             data.attachEvent( "onAfterLoad", callback );
 
         var params = { frame: frame };
+        if ( fields)
+            params = webix.extend( params, { fields: fields, keys: keys } );                
         if ( keys )
             params = webix.extend( params, { keys: keys } );
         if ( filter )
