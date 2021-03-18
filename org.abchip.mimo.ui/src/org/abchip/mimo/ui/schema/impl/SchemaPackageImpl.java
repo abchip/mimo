@@ -32,6 +32,7 @@ import org.abchip.mimo.ui.widget.impl.WidgetPackageImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -203,16 +204,6 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 	 */
 	@Override
 	public EAttribute getSchemaColumn_Id() {
-		return (EAttribute)schemaColumnEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSchemaColumn_LeftSplit() {
 		return (EAttribute)schemaColumnEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -222,7 +213,7 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSchemaColumn_Sort() {
+	public EAttribute getSchemaColumn_LeftSplit() {
 		return (EAttribute)schemaColumnEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -232,8 +223,18 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getSchemaColumn_Sort() {
+		return (EAttribute)schemaColumnEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getSchemaColumn_Widget() {
-		return (EReference)schemaColumnEClass.getEStructuralFeatures().get(9);
+		return (EReference)schemaColumnEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -272,8 +273,18 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSchemaColumn_Icon() {
+	public EAttribute getSchemaColumn_Hidden() {
 		return (EAttribute)schemaColumnEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSchemaColumn_Icon() {
+		return (EAttribute)schemaColumnEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -335,6 +346,7 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		createEReference(schemaColumnEClass, SCHEMA_COLUMN__DOMAIN);
 		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__GROUP);
 		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__HEADER);
+		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__HIDDEN);
 		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__ICON);
 		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__ID);
 		createEAttribute(schemaColumnEClass, SCHEMA_COLUMN__LEFT_SPLIT);
@@ -382,12 +394,16 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		initEReference(getSchema_Columns(), this.getSchemaColumn(), null, "columns", null, 0, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchema_Name(), ecorePackage.getEString(), "name", null, 1, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		EOperation op = addEOperation(schemaEClass, this.getSchemaColumn(), "getColumn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(schemaColumnEClass, SchemaColumn.class, "SchemaColumn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSchemaColumn_Adjust(), ecorePackage.getEBoolean(), "adjust", "true", 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSchemaColumn_Adjust(), ecorePackage.getEBoolean(), "adjust", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_ContextMenu(), ecorePackage.getEBoolean(), "contextMenu", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSchemaColumn_Domain(), theEntityPackage.getDomain(), null, "domain", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_Group(), ecorePackage.getEString(), "group", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_Header(), ecorePackage.getEString(), "header", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSchemaColumn_Hidden(), ecorePackage.getEBoolean(), "hidden", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_Id(), ecorePackage.getEString(), "id", null, 1, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_LeftSplit(), ecorePackage.getEBoolean(), "leftSplit", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

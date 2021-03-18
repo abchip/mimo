@@ -8,7 +8,6 @@
 package org.abchip.mimo.context.impl;
 
 import java.lang.annotation.Annotation;
-import java.util.List;
 
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
@@ -37,6 +36,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ContextImpl() {
@@ -45,6 +45,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -148,56 +149,11 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 	 * 
 	 * @generated NOT
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public final <E extends Entity> E make(Frame<E> frame) {
-		return make(frame, null);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final <E extends Entity> E make(Class<E> klass, String id) {
-		return make(this.getFrame(klass.getSimpleName()), id);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final <E extends Entity> E make(String frame, String id) {
-		return make(this.getFrame(frame), id);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final <E extends Entity> E make(Frame<E> frame, String id) {
-
-		@SuppressWarnings("unchecked")
 		E entity = (E) EcoreUtil.create((EClass) frame.getEClassifier());
-
-		if (id != null) {
-			Frame<E> domainFrame = entity.isa();
-			List<String> keys = domainFrame.getAllKeys();
-			if (keys.size() != 1) {
-				String[] ids = id.split("/");
-				for (int i = 0; i < ids.length; i++) {
-					String key = keys.get(i);
-					entity.eSet(domainFrame.getSlot(key), ids[i]);
-				}
-			} else
-				entity.eSet(domainFrame.getSlot(keys.get(0)), id);
-		}
-
-		if (EntityIdentifiable.class.isInstance(entity))
+		if (entity instanceof EntityIdentifiable)
 			((EntityIdentifiable) entity).init(this);
 
 		return entity;
@@ -210,6 +166,44 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 	 */
 	@Override
 	public abstract <T> T make(Class<T> klass);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public final <E extends EntityIdentifiable> E make(Class<E> klass, String id) {
+		return make(this.getFrame(klass.getSimpleName()), id);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public final <E extends EntityIdentifiable> E make(String frame, String id) {
+		return make(this.getFrame(frame), id);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public final <E extends EntityIdentifiable> E make(Frame<E> frame, String id) {
+
+		@SuppressWarnings("unchecked")
+		E entity = (E) EcoreUtil.create((EClass) frame.getEClassifier());
+		if (id != null)
+			entity.eSetID(id);
+
+		entity.init(this);
+
+		return entity;
+	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

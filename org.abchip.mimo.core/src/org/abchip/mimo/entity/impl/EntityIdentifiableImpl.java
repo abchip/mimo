@@ -46,6 +46,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EntityIdentifiableImpl() {
@@ -54,11 +55,37 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass() {
 		return EntityPackage.Literals.ENTITY_IDENTIFIABLE;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public void eSetID(String value) {
+		if (value == null)
+			return;
+
+		List<Slot> keys = this.isa().getAllKeySlots();
+		switch (keys.size()) {
+		case 0:
+			break;
+		case 1:
+			this.eSet(keys.get(0), value);
+			break;
+		default:
+			String[] ids = value.split("/");
+			for (int i = 0; i < keys.size() && i < ids.length; i++)
+				this.eSet(keys.get(i), ids[i]);
+			break;
+		}			
 	}
 
 	/**
@@ -119,7 +146,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 		case RESOLVED:
 			break;
 		}
-		
+
 		String uriFragment = this.getURI().getFragment();
 		if (uriFragment != null)
 			return uriFragment;
@@ -311,21 +338,21 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 			}
 		} else {
 			switch (eFeature.getEType().getClassifierID()) {
-				case EcorePackage.EBOOLEAN: {
-					if (String.class.isInstance(value)) {
-						if (value.equals("0"))
-							object = Boolean.FALSE;
-						else if (value.equals("1"))
-							object = Boolean.TRUE;
-						else if (value.equals("false"))
-							object = Boolean.FALSE;
-						else if (value.equals("true"))
-							object = Boolean.TRUE;						
-						break;
-					}					
+			case EcorePackage.EBOOLEAN: {
+				if (String.class.isInstance(value)) {
+					if (value.equals("0"))
+						object = Boolean.FALSE;
+					else if (value.equals("1"))
+						object = Boolean.TRUE;
+					else if (value.equals("false"))
+						object = Boolean.FALSE;
+					else if (value.equals("true"))
+						object = Boolean.TRUE;
+					break;
 				}
-				default:
-					object = value;
+			}
+			default:
+				object = value;
 			}
 		}
 

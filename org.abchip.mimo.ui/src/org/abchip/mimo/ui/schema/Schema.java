@@ -67,4 +67,12 @@ public interface Schema extends EntityIdentifiable {
 	 */
 	void setName(String value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model idRequired="true"
+	 * @generated
+	 */
+	SchemaColumn getColumn(String id);
+
 } // Schema

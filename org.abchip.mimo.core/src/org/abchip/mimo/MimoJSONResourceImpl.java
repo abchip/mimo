@@ -99,7 +99,7 @@ public class MimoJSONResourceImpl extends ResourceImpl implements ReusableResour
 	}
 
 	private Entity jsonObject2Entity(List<EObject> container, Frame<?> frame, JSONObject jsonObject) throws ResourceException {
-		
+
 		if (jsonObject.has("isa")) {
 			String isa = jsonObject.getString("isa");
 			frame = context.getResourceManager().getFrame(isa);
@@ -177,17 +177,17 @@ public class MimoJSONResourceImpl extends ResourceImpl implements ReusableResour
 			if (slot.isTransient())
 				continue;
 
-			Object value = entity.eGet(slot, default_, false);
-			if (isEmpty(value))
+			if (!entity.eIsSet(slot))
 				continue;
 
-			object.put(slot.getName(), value2Object(slot, value));
+			Object value = entity.eGet(slot, default_, false);
+			object.put(slot.getName(), value2Object(slot, value, default_));
 		}
 
 		return object;
 	}
 
-	private Object value2Object(Slot slot, Object value) {
+	private Object value2Object(Slot slot, Object value, boolean default_) {
 
 		Object object = null;
 
@@ -196,7 +196,7 @@ public class MimoJSONResourceImpl extends ResourceImpl implements ReusableResour
 
 			JSONArray array = new JSONArray();
 			for (Object element : list) {
-				array.put(value2Object(slot, element));
+				array.put(value2Object(slot, element, default_));
 			}
 
 			object = array;
@@ -210,8 +210,10 @@ public class MimoJSONResourceImpl extends ResourceImpl implements ReusableResour
 				case PROXY:
 					object = value2Raw(slot, entityIdentifiable.getID());
 					break;
-				case TRANSIENT:
 				case RESOLVED:
+				case TRANSIENT:
+					object = entity2JSON(entity, default_);
+					break;
 				case CHAINED:
 					break;
 				}
@@ -219,7 +221,7 @@ public class MimoJSONResourceImpl extends ResourceImpl implements ReusableResour
 
 			if (object == null) {
 				if (slot.isContainment()) {
-					object = entity2JSON(entity, false);
+					object = entity2JSON(entity, default_);
 				} else
 					object = value2Raw(slot, value);
 			}
@@ -280,6 +282,7 @@ public class MimoJSONResourceImpl extends ResourceImpl implements ReusableResour
 		return slot;
 	}
 
+	@SuppressWarnings("unused")
 	private boolean isEmpty(Object value) {
 
 		if (value == null)

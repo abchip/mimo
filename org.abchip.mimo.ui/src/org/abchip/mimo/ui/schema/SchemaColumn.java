@@ -21,6 +21,7 @@ import org.abchip.mimo.ui.widget.Widget;
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#isHidden <em>Hidden</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getId <em>Id</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#isLeftSplit <em>Left Split</em>}</li>
@@ -216,6 +217,28 @@ public interface SchemaColumn extends Entity {
 	void setHeader(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hidden</em>' attribute.
+	 * @see #setHidden(boolean)
+	 * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn_Hidden()
+	 * @model
+	 * @generated
+	 */
+	boolean isHidden();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.schema.SchemaColumn#isHidden <em>Hidden</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Hidden</em>' attribute.
+	 * @see #isHidden()
+	 * @generated
+	 */
+	void setHidden(boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -243,7 +266,6 @@ public interface SchemaColumn extends Entity {
 
 	/**
 	 * Returns the value of the '<em><b>Adjust</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Adjust</em>' attribute isn't clear,
@@ -253,7 +275,7 @@ public interface SchemaColumn extends Entity {
 	 * @return the value of the '<em>Adjust</em>' attribute.
 	 * @see #setAdjust(boolean)
 	 * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn_Adjust()
-	 * @model default="true"
+	 * @model
 	 * @generated
 	 */
 	boolean isAdjust();

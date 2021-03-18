@@ -56,7 +56,7 @@ public class LookupSchemaServlet extends BaseServlet {
 			Application application = context.get(Application.class);
 
 			Schema schema = context.getResourceManager().getResourceReader(Schema.class).lookup(name);
-			if(schema == null)
+			if (schema == null)
 				schema = application.getContext().getResourceManager().getResourceReader(Schema.class).lookup(name);
 
 			if (schema == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
@@ -101,7 +101,7 @@ public class LookupSchemaServlet extends BaseServlet {
 			response.setStatus(HttpServletResponse.SC_OK);
 			ResourceSerializer<Schema> entitySerializer = context.getResourceManager().createResourceSerializer(Schema.class, SerializationType.MIMO);
 			if (schema != null) {
-				completeSchema(application.getContext(), schema);
+				completeSchema(application.getContext(), frame, schema);
 				entitySerializer.add(schema);
 			}
 			entitySerializer.save(response.getOutputStream());
@@ -118,6 +118,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		column.setHeader(slot.getText());
 		column.setLeftSplit(slot.isKey());
 		column.setGroup(slot.getGroup());
+		column.setAdjust(true);
 		if (slot.getDomain() != null)
 			column.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
 
@@ -160,15 +161,76 @@ public class LookupSchemaServlet extends BaseServlet {
 		return column;
 	}
 
-	private void completeSchema(Context context, Schema schema) throws ResourceException {
+	private void completeSchema(Context context, Frame<?> frame, Schema schema) throws ResourceException {
+
+
+		List<SchemaColumn> columns = new ArrayList<SchemaColumn>();
+
+		for (SchemaColumn column : schema.getColumns()) {
+
+			Frame<?> frameInRole = frame;
+			Slot slotInRole = null;
+
+			String[] tokens = column.getId().split("->");
+			switch (tokens.length) {
+			case 0:
+			case 1:
+				columns.add(column);
+				break;
+			default:
+				StringBuffer slotInRoleName = new StringBuffer();
+				int i = 0;
+				for (String token : tokens) {
+					if(i>0)
+						slotInRoleName.append("_");
+					slotInRoleName.append(token);
+					i++;
+
+					slotInRole = frameInRole.getSlot(token);
+					if (slotInRole == null)
+						break;
+
+					// shift entity
+					if (tokens.length > i) {
+						if (schema.getColumn(slotInRoleName.toString()) == null) {
+							SchemaColumn hiddenColumn = SchemaFactory.eINSTANCE.createSchemaColumn();
+							hiddenColumn.setId(slotInRoleName.toString());
+							hiddenColumn.setHeader(slotInRole.getText());
+							hiddenColumn.setHidden(true);
+							columns.add(hiddenColumn);
+						}
+
+						Domain domain = slotInRole.getDomain();
+						if (domain == null) {
+							slotInRole = null;
+							break;
+						}
+						frameInRole = context.getFrame(domain.getFrame());
+						if (frameInRole == null) {
+							slotInRole = null;
+							break;
+						}
+					} else {
+						column.setId(slotInRoleName.toString());
+						columns.add(column);
+					}
+				}
+				break;
+			}
+		}
+
+		schema.getColumns().clear();
+		schema.getColumns().addAll(columns);
+		
 		for (SchemaColumn column : schema.getColumns())
 			completeSchemaColumn(context, column);
 	}
 
 	private void completeSchemaColumn(Context context, SchemaColumn column) throws ResourceException {
 
+		column.setAdjust(true);
+		
 		Domain domain = column.getDomain();
-
 		if (domain == null)
 			return;
 

@@ -91,6 +91,9 @@
       <genClasses ecoreClass="ui.ecore#//schema/Schema">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//schema/Schema/columns"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/Schema/name"/>
+        <genOperations ecoreOperation="ui.ecore#//schema/Schema/getColumn">
+          <genParameters ecoreParameter="ui.ecore#//schema/Schema/getColumn/id"/>
+        </genOperations>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//schema/SchemaColumn">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/adjust"/>
@@ -98,6 +101,7 @@
         <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference ui.ecore#//schema/SchemaColumn/domain"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/group"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/header"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/hidden"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/icon"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/id"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/leftSplit"/>

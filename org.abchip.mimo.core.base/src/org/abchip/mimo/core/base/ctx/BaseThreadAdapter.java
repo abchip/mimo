@@ -113,4 +113,10 @@ public class BaseThreadAdapter implements org.abchip.mimo.context.Thread {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public void eUnset(Slot slot) {
+		// TODO Auto-generated method stub
+		
+	}
 }

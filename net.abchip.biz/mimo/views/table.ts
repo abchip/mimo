@@ -178,8 +178,8 @@ export class EntitiesTable extends UITableView {
     public reload() {
 
         this.reloadTableColumns( true, () => {
-            this.reloadData();    
-        });
+            this.reloadData();
+        } );
 
         // contextMenu
         UIMenuUtils.reloadContextMenu( this.contextMenu, this.getFrame() );
@@ -226,18 +226,42 @@ export class EntitiesTable extends UITableView {
         const datatable = this.getDatatable();
         datatable.clearAll();
 
+        //        const columnsToShift: any = new Array();
+
         datatable.eachColumn(
             function( columnId ) {
 
                 var columnConfig: any = datatable.getColumnConfig( columnId );
+
+                // columns t shift
+                //                if ( columnConfig.id.indexOf( "\." ) > 0 )
+                //                    columnsToShift.push( columnConfig );
+
                 if ( fields )
-                    fields = fields + "," + columnConfig.id;
+                    fields = fields + "," + columnConfig.id.split('_').join('->');
                 else
-                    fields = columnConfig.id;
+                    fields = columnConfig.id.split('_').join('->');
             }
         )
 
-        datatable.parse( KBEntities.findEntities( this.getFrame(), fields, keys, filter, EntitiesTable.DATATABLE_NRELEM ), null );
+        const rows: webix.DataCollection = KBEntities.findEntities( this.getFrame(), fields, keys, filter, EntitiesTable.DATATABLE_NRELEM, () => {
+
+            /*
+            if ( columnsToShift.length > 0 ) {
+                var data: webix.DataStore = rows.data;
+
+                for ( let i = 0; i < data.count(); i++ ) {
+                    var id = data.getIdByIndex( i ) ;
+                    var item = data.getItem( id);
+                    columnsToShift.forEach( function( columnConfig ) {
+                        alert( KBEntities.stringify( columnConfig ) );
+                        alert( KBEntities.stringify( item) );
+                    } );
+                    break;
+                }
+            }*/
+            datatable.parse( rows, null );
+        } );
     }
 
     private download() {

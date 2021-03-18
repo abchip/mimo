@@ -358,7 +358,7 @@
       <eOperations name="make" lowerBound="1">
         <eGenericType eTypeParameter="#//context/Context/make.3/E"/>
         <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/Entity"/>
+          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
         </eTypeParameters>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
@@ -370,7 +370,7 @@
       <eOperations name="make" lowerBound="1">
         <eGenericType eTypeParameter="#//context/Context/make.4/E"/>
         <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/Entity"/>
+          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
         </eTypeParameters>
         <eParameters name="frame" lowerBound="1">
           <eGenericType eClassifier="#//entity/Frame">
@@ -382,7 +382,7 @@
       <eOperations name="make" lowerBound="1">
         <eGenericType eTypeParameter="#//context/Context/make.5/E"/>
         <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/Entity"/>
+          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
         </eTypeParameters>
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -449,7 +449,8 @@
     <eClassifiers xsi:type="ecore:EClass" name="ContextProvider" abstract="true" interface="true">
       <eOperations name="getContext" lowerBound="1" eType="#//context/Context"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ContextRoot" abstract="true" eSuperTypes="#//context/Context">
+    <eClassifiers xsi:type="ecore:EClass" name="ContextRoot" abstract="true" interface="true"
+        eSuperTypes="#//context/Context">
       <eOperations name="createChildContext" lowerBound="1" eType="#//context/ContextHandler">
         <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
@@ -921,16 +922,19 @@
           <eBounds eClassifier="#//entity/Entity"/>
         </eTypeParameters>
       </eOperations>
-      <eOperations name="eSet">
-        <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
-        <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-      </eOperations>
       <eOperations name="eGet" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
         <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
         <eParameters name="default" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eParameters name="resolve" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
       <eOperations name="eIsSet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
+      </eOperations>
+      <eOperations name="eSet">
+        <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
+        <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eOperations>
+      <eOperations name="eUnset" lowerBound="1">
         <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
       </eOperations>
     </eClassifiers>
@@ -972,6 +976,9 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityIdentifiable" abstract="true"
         eSuperTypes="#//entity/Entity">
+      <eOperations name="eSetID">
+        <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
       <eOperations name="getContext" lowerBound="1" eType="#//context/Context"/>
       <eOperations name="getID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="getResource">

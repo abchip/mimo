@@ -9,14 +9,14 @@
 import * as webix from "@xbs/webix-pro";
 import { getBizServicePath } from "config/host";
 
- 
+
 export class KBService {
 
     public checkAction( name: string ): boolean {
 
         if ( this[name] != null )
             return true;
- 
+
         return false;
     }
 
@@ -74,7 +74,7 @@ export class KBEntities {
         //return webix.ajax( url, params ) as Promise<any>;
         //return KBEntities.ajax.post( url, params );
         //return (webix.ajax() as webix.Ajax).post( url, params, callback );
-        
+
         return KBEntities.ajax.post( url, params, callback );
     }
 
@@ -110,15 +110,15 @@ export class KBEntities {
         return data;
     }
 
-    public static findEntities( frame: string, fields:string | string[], keys: string | string[], filter: string, nrElem?: number, callback?): webix.DataCollection {
+    public static findEntities( frame: string, fields: string | string[], keys: string | string[], filter: string, nrElem?: number, callback?): webix.DataCollection {
 
         var data = new webix.DataCollection( {} );
         if ( callback != null )
             data.attachEvent( "onAfterLoad", callback );
 
         var params = { frame: frame };
-        if ( fields)
-            params = webix.extend( params, { fields: fields } );        
+        if ( fields )
+            params = webix.extend( params, { fields: fields } );
         if ( keys )
             params = webix.extend( params, { keys: keys } );
         if ( filter )
@@ -179,10 +179,10 @@ export class KBServices {
 
         var serviceName: string = frameName + "Services";
         var service: KBService = KBServices.getServiceByName( app, serviceName );
-    
+
         if ( service == null || !service.checkAction( action ) ) {
             const frame = KBEntities.lookupFrame( frameName, () => {
-                
+
                 var superNames: string[] = frame.getValues().superNames;
                 if ( superNames != null ) {
                     for ( var superName of superNames ) {

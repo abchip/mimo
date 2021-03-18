@@ -120,4 +120,10 @@ public class BaseThreadImpl extends Thread implements org.abchip.mimo.context.Th
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public void eUnset(Slot slot) {
+		// TODO Auto-generated method stub
+		
+	}
 }

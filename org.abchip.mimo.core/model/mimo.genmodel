@@ -618,10 +618,6 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/Entity/isa">
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/Entity/isa/E"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Entity/eSet">
-          <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eSet/slot"/>
-          <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eSet/value"/>
-        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/Entity/eGet">
           <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eGet/slot"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eGet/default"/>
@@ -629,6 +625,13 @@
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/Entity/eIsSet">
           <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eIsSet/slot"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Entity/eSet">
+          <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eSet/slot"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eSet/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Entity/eUnset">
+          <genParameters ecoreParameter="mimo.ecore#//entity/Entity/eUnset/slot"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/EntityContainer">
@@ -646,6 +649,9 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityInfo/lastUpdatedTxStamp"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityIdentifiable">
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/eSetID">
+          <genParameters ecoreParameter="mimo.ecore#//entity/EntityIdentifiable/eSetID/value"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getContext"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getID"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getResource">

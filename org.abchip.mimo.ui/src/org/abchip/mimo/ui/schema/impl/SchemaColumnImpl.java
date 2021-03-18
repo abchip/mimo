@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#isHidden <em>Hidden</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#isLeftSplit <em>Left Split</em>}</li>
@@ -48,7 +49,7 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean ADJUST_EDEFAULT = true;
+	protected static final boolean ADJUST_EDEFAULT = false;
 
 	/**
 	 * The cached value of the '{@link #isAdjust() <em>Adjust</em>}' attribute.
@@ -129,6 +130,26 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	 * @ordered
 	 */
 	protected String header = HEADER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isHidden() <em>Hidden</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isHidden()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean HIDDEN_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isHidden() <em>Hidden</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isHidden()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean hidden = HIDDEN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
@@ -496,6 +517,29 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	 * @generated
 	 */
 	@Override
+	public boolean isHidden() {
+		return hidden;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setHidden(boolean newHidden) {
+		boolean oldHidden = hidden;
+		hidden = newHidden;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__HIDDEN, oldHidden, hidden));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getIcon() {
 		return icon;
 	}
@@ -594,6 +638,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 				return getGroup();
 			case SchemaPackage.SCHEMA_COLUMN__HEADER:
 				return getHeader();
+			case SchemaPackage.SCHEMA_COLUMN__HIDDEN:
+				return isHidden();
 			case SchemaPackage.SCHEMA_COLUMN__ICON:
 				return getIcon();
 			case SchemaPackage.SCHEMA_COLUMN__ID:
@@ -631,6 +677,9 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 				return;
 			case SchemaPackage.SCHEMA_COLUMN__HEADER:
 				setHeader((String)newValue);
+				return;
+			case SchemaPackage.SCHEMA_COLUMN__HIDDEN:
+				setHidden((Boolean)newValue);
 				return;
 			case SchemaPackage.SCHEMA_COLUMN__ICON:
 				setIcon((String)newValue);
@@ -674,6 +723,9 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 			case SchemaPackage.SCHEMA_COLUMN__HEADER:
 				setHeader(HEADER_EDEFAULT);
 				return;
+			case SchemaPackage.SCHEMA_COLUMN__HIDDEN:
+				setHidden(HIDDEN_EDEFAULT);
+				return;
 			case SchemaPackage.SCHEMA_COLUMN__ICON:
 				setIcon(ICON_EDEFAULT);
 				return;
@@ -711,6 +763,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 				return GROUP_EDEFAULT == null ? group != null : !GROUP_EDEFAULT.equals(group);
 			case SchemaPackage.SCHEMA_COLUMN__HEADER:
 				return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
+			case SchemaPackage.SCHEMA_COLUMN__HIDDEN:
+				return hidden != HIDDEN_EDEFAULT;
 			case SchemaPackage.SCHEMA_COLUMN__ICON:
 				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
 			case SchemaPackage.SCHEMA_COLUMN__ID:
@@ -743,6 +797,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 		result.append(group);
 		result.append(", header: ");
 		result.append(header);
+		result.append(", hidden: ");
+		result.append(hidden);
 		result.append(", icon: ");
 		result.append(icon);
 		result.append(", id: ");

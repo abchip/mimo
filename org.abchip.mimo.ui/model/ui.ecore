@@ -95,6 +95,9 @@
   </eSubpackages>
   <eSubpackages name="schema" nsURI="http://www.abchip.org/mimo/ui/schema" nsPrefix="ui-schema">
     <eClassifiers xsi:type="ecore:EClass" name="Schema" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable">
+      <eOperations name="getColumn" eType="#//schema/SchemaColumn">
+        <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="columns" upperBound="-1"
           eType="#//schema/SchemaColumn" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
@@ -102,8 +105,7 @@
           iD="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SchemaColumn" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="adjust" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          defaultValueLiteral="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="adjust" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextMenu" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="mimo-ent" references="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain">
           <details key="frame" value="frame"/>
@@ -113,6 +115,7 @@
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="group" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="hidden" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="leftSplit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

@@ -35,6 +35,14 @@ public interface Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model slotRequired="true"
+	 * @generated
+	 */
+	void eUnset(Slot slot);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model required="true" slotRequired="true" defaultRequired="true" resolveRequired="true"
 	 * @generated
 	 */

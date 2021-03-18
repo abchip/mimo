@@ -1128,16 +1128,19 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
-		op = addEOperation(entityEClass, null, "eSet", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getSlot(), "slot", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaObject(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(entityEClass, ecorePackage.getEJavaObject(), "eGet", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getSlot(), "slot", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "default_", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "resolve", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(entityEClass, ecorePackage.getEBoolean(), "eIsSet", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSlot(), "slot", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(entityEClass, null, "eSet", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSlot(), "slot", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(entityEClass, null, "eUnset", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getSlot(), "slot", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(entityContainerEClass, EntityContainer.class, "EntityContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1155,6 +1158,9 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getEntityInfo_LastUpdatedTxStamp(), ecorePackage.getEDate(), "lastUpdatedTxStamp", null, 0, 1, EntityInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityIdentifiableEClass, EntityIdentifiable.class, "EntityIdentifiable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(entityIdentifiableEClass, null, "eSetID", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(entityIdentifiableEClass, theContextPackage.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
 

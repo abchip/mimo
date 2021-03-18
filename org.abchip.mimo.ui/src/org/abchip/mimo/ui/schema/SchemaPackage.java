@@ -151,13 +151,22 @@ public interface SchemaPackage extends EPackage {
 	int SCHEMA_COLUMN__HEADER = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEMA_COLUMN__HIDDEN = EntityPackage.ENTITY_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN__ICON = EntityPackage.ENTITY_FEATURE_COUNT + 5;
+	int SCHEMA_COLUMN__ICON = EntityPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -166,7 +175,7 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN__ID = EntityPackage.ENTITY_FEATURE_COUNT + 6;
+	int SCHEMA_COLUMN__ID = EntityPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Left Split</b></em>' attribute.
@@ -175,7 +184,7 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN__LEFT_SPLIT = EntityPackage.ENTITY_FEATURE_COUNT + 7;
+	int SCHEMA_COLUMN__LEFT_SPLIT = EntityPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Sort</b></em>' attribute.
@@ -184,7 +193,7 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN__SORT = EntityPackage.ENTITY_FEATURE_COUNT + 8;
+	int SCHEMA_COLUMN__SORT = EntityPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Widget</b></em>' containment reference.
@@ -193,7 +202,7 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN__WIDGET = EntityPackage.ENTITY_FEATURE_COUNT + 9;
+	int SCHEMA_COLUMN__WIDGET = EntityPackage.ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Column</em>' class.
@@ -202,7 +211,7 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 10;
+	int SCHEMA_COLUMN_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 11;
 
 
 	/**
@@ -323,6 +332,17 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSchemaColumn_Header();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.schema.SchemaColumn#isHidden <em>Hidden</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Hidden</em>'.
+	 * @see org.abchip.mimo.ui.schema.SchemaColumn#isHidden()
+	 * @see #getSchemaColumn()
+	 * @generated
+	 */
+	EAttribute getSchemaColumn_Hidden();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.schema.SchemaColumn#getIcon <em>Icon</em>}'.
@@ -470,6 +490,14 @@ public interface SchemaPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SCHEMA_COLUMN__HEADER = eINSTANCE.getSchemaColumn_Header();
+
+		/**
+		 * The meta object literal for the '<em><b>Hidden</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCHEMA_COLUMN__HIDDEN = eINSTANCE.getSchemaColumn_Hidden();
 
 		/**
 		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.

@@ -7,15 +7,12 @@ import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
-
 import org.abchip.mimo.ui.schema.Schema;
 import org.abchip.mimo.ui.schema.SchemaColumn;
 import org.abchip.mimo.ui.schema.SchemaPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -23,9 +20,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Schema</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Schema</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -40,8 +36,7 @@ public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 
 	/**
 	 * The cached value of the '{@link #getColumns() <em>Columns</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getColumns()
 	 * @generated
 	 * @ordered
@@ -49,9 +44,9 @@ public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 	protected EList<SchemaColumn> columns;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -59,9 +54,9 @@ public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -69,8 +64,7 @@ public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected SchemaImpl() {
@@ -78,8 +72,7 @@ public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -88,8 +81,7 @@ public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -101,8 +93,7 @@ public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -111,8 +102,7 @@ public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -124,8 +114,21 @@ public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public SchemaColumn getColumn(String id) {
+		for (SchemaColumn column : this.getColumns()) {
+			if (id.equals(column.getId()))
+				return column;
+		}
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -138,8 +141,7 @@ public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -154,8 +156,7 @@ public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -174,8 +175,7 @@ public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -192,8 +192,7 @@ public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -208,8 +207,7 @@ public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -223,4 +221,4 @@ public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 		return result.toString();
 	}
 
-} //SchemaImpl
+} // SchemaImpl
