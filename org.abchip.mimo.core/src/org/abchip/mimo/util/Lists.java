@@ -44,7 +44,14 @@ public class Lists {
 			for (int i = index; i < end; i++) {
 				result.add(list.get(i));
 			}
-		}
+		} 
 		return result;
+	}
+
+	public static <E> E last(List<E> list) {
+		if(list.isEmpty())
+			return null;
+		
+		return list.get(list.size()-1);
 	}
 }

@@ -22,7 +22,7 @@ export enum UIViewMode {
 
 export class UIViewModeUtils {
     public static getValues(): string[] {
-        return [UIViewMode.DISPLAY, UIViewMode.SAVE, UIViewMode.DELETE, UIViewMode.SELECT] ;
+        return [UIViewMode.DISPLAY, UIViewMode.SAVE, UIViewMode.DELETE, UIViewMode.SELECT];
     }
 }
 
@@ -77,7 +77,7 @@ export abstract class UIView extends JetView {
     public config(): any {
 
 
-        var rows: any[] =  [] ;
+        var rows: any[] = [];
 
         if ( this.isToolbarEnabled() && !this.isWindow() )
             rows.push( this.getToolbarView() );
@@ -213,7 +213,7 @@ export class UIToolbarView extends JetView {
 
     config() {
 
-        var elements: any[] =  [] ;
+        var elements: any[] = [];
 
         // label
         var toolbarLabelConfig: webix.ui.labelConfig = {
@@ -462,14 +462,22 @@ export class UIToolbarUtils {
 export abstract class UIWindowView extends JetView {
 
     private body: UIView = null;
+    private modal: boolean = true;
 
-    constructor( app: any, name: any, body: UIView ) {
+    constructor( app: any, name: any, body: UIView, modal?: boolean ) {
         super( app, name );
         this.body = body;
+
+        if ( modal != null )
+            this.modal = modal;
     }
 
     public getBodyView(): UIView {
         return this.body;
+    }
+
+    public isModal(): boolean {
+        return this.modal;
     }
 
     public getComponentConfig(): webix.ui.toolbarConfig {
@@ -501,7 +509,7 @@ export abstract class UIWindowView extends JetView {
             view: "window",
             move: true,
             position: "center",
-            modal: true,
+            modal: this.isModal(),
             head: {
                 view: "layout",
                 type: "head",
@@ -569,14 +577,14 @@ export abstract class UITableView extends UIView {
             this.filter = config.filter;
         }
     }
-    
+
     public getFields(): string {
         if ( this.fields )
             return this.fields;
         else
             return this.getParam( "keys", false );
     }
-    
+
     public getKeys(): string {
         if ( this.keys )
             return this.keys;
@@ -600,15 +608,15 @@ export abstract class UITableView extends UIView {
         var datatable = this.getDatatable();
         var entityName = null;
 
-//        alert(KBEntities.stringify(datatable.config.leftSplit));
-        
+        //        alert(KBEntities.stringify(datatable.config.leftSplit));
+
         for ( var i = 0; i < datatable.config.leftSplit; i++ ) {
             if ( entityName == null )
                 entityName = entity[datatable.columnId( i )];
             else
                 entityName = entityName + "/" + entity[datatable.columnId( i )];
         }
-        
+
         return entityName;
     }
 
@@ -663,17 +671,17 @@ export abstract class UITableView extends UIView {
                 datatable.config.leftSplit = keysLength;
 
                 // append info icon
-/*                datatable.config.columns[indexColumn] = {
-                    id: "info",
-                    header: "Info",
-                    template: data => {
-                        return "<span class='webix_icon mdi mdi-information-outline'></span>";
-                    }
-                };*/
+                /*                datatable.config.columns[indexColumn] = {
+                                    id: "info",
+                                    header: "Info",
+                                    template: data => {
+                                        return "<span class='webix_icon mdi mdi-information-outline'></span>";
+                                    }
+                                };*/
             }
 
             datatable.refreshColumns( null, true );
-            
+
             callback();
         } );
     }
@@ -802,6 +810,8 @@ export abstract class UIFormView extends UIView {
         var keysValue = new Object();
         var keysSplitted: number = 0;
 
+
+
         for ( let fieldConfig of formConfig.getValues().fields ) {
 
             //            fieldConfig.height = 50;
@@ -809,8 +819,8 @@ export abstract class UIFormView extends UIView {
             widget.labelWidth = 250;
 
             // TODO
-            if(widget.view.startsWith("mm-"))
-                widget.view = widget.view.substring(3);
+            if ( widget.view.startsWith( "mm-" ) )
+                widget.view = widget.view.substring( 3 );
 
             // key management
             if ( fieldConfig.topSplit ) {
@@ -823,11 +833,13 @@ export abstract class UIFormView extends UIView {
                 keysSplitted++;
             }
 
+
+
             if ( widget.icon != null )
                 widget.label = widget + " <span class='webix_icon " + widget.icon + "'></span> ";
 
-//            alert(KBEntities.stringify( fieldConfig.widget ));
-            
+            //            alert(KBEntities.stringify( fieldConfig.widget ));
+
             switch ( widget.view ) {
                 case "combo":
                     if ( widget.icon != null )
@@ -878,7 +890,7 @@ export abstract class UIFormView extends UIView {
                     form.addView( widget );
                     break;
                 case "photo":
-                case "image":                    
+                case "image":
                     //                    form.addView( fieldConfig );
                     widget.view = "label";
                     form.addView(
@@ -931,7 +943,7 @@ export abstract class UIFormView extends UIView {
 
                     break;
                 default:
-                    alert(KBEntities.stringify( fieldConfig ));
+                    alert( KBEntities.stringify( fieldConfig ) );
             }
         }
 
@@ -1165,9 +1177,9 @@ export abstract class UIMenuView extends JetView {
         var elementId = sidebar.getFirstChildId( menu.id );
         while ( elementId != null ) {
             var dataNode = sidebar.getItem( elementId );
-            
-//            alert(KBEntities.stringify(dataNode));
-            
+
+            //            alert(KBEntities.stringify(dataNode));
+
             if ( dataNode.isa == "MenuAction" ) {
                 var menuAction = dataNode;
 
@@ -1194,7 +1206,7 @@ export abstract class UIMenuView extends JetView {
                 var menuGroup = dataNode;
                 found = this.selectItemMenuSidebar( menuGroup, url );
             }
-            else  {
+            else {
                 alert( "Unexpected condition: wiertyfbaswei8dfdsfa" );
             }
 

@@ -90,7 +90,7 @@ export class QueryBuilder extends UIQueryView {
 export class QueryBuilderWindow extends UIWindowView {
 
     constructor( app: any, name: any ) {
-        super( app, name, new QueryBuilder( app, name, null ) );
+        super( app, name, new QueryBuilder( app, name, null ), false );
     }
 }
 

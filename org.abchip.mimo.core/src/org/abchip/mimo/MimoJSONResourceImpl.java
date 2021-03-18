@@ -127,7 +127,8 @@ public class MimoJSONResourceImpl extends ResourceImpl implements ReusableResour
 					continue;
 				}
 			}
-			entity.eSet(slot, slotValue);
+			if(!isEmpty(slotValue))
+				entity.eSet(slot, slotValue);
 		}
 
 		return entity;
@@ -177,11 +178,12 @@ public class MimoJSONResourceImpl extends ResourceImpl implements ReusableResour
 			if (slot.isTransient())
 				continue;
 
-			if (!entity.eIsSet(slot))
+			if (!entity.eIsSet(slot) && !default_)
 				continue;
 
 			Object value = entity.eGet(slot, default_, false);
-			object.put(slot.getName(), value2Object(slot, value, default_));
+			if(!isEmpty(value))
+				object.put(slot.getName(), value2Object(slot, value, default_));
 		}
 
 		return object;
@@ -282,7 +284,6 @@ public class MimoJSONResourceImpl extends ResourceImpl implements ReusableResour
 		return slot;
 	}
 
-	@SuppressWarnings("unused")
 	private boolean isEmpty(Object value) {
 
 		if (value == null)

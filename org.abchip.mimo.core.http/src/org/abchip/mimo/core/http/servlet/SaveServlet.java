@@ -37,8 +37,8 @@ public class SaveServlet extends BaseServlet {
 			ResourceSerializer<E> entitySerializer = context.getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
 
 			String json = request.getParameter("json");
-//			if (!json.contains("\"eClass\""))
-//				json = json.replaceFirst("\\{", "{\"eClass\":\"" + entitySerializer.getFrame().getURI() + "\",");
+			if (!json.contains("\"isa\""))
+				json = json.replaceFirst("\\{", "{\"isa\":\"" + entitySerializer.getFrame().getName() + "\",");
 
 			entitySerializer.load(json, false);
 			E entity = entitySerializer.get();
@@ -49,7 +49,7 @@ public class SaveServlet extends BaseServlet {
 
 			String raw = request.getParameter("raw");
 			if (raw == null || raw.trim().isEmpty())
-				raw = "false";
+				raw = "true";
 
 			ResourceWriter<E> entityWriter = context.getResourceManager().getResourceWriter(frame);
 			entityWriter.create(entity, Boolean.parseBoolean(replace), Boolean.parseBoolean(raw));

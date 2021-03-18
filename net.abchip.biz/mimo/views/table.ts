@@ -126,7 +126,8 @@ export class EntitiesTable extends UITableView {
         super.init( view, urls );
 
         this.app.attachEvent( "entities:filter", ( filter ) => {
-            this.setParam( "filter", filter, true );
+            //            this.setParam( "filter", filter, true );
+            this.setParam( "queryFilter", filter, true );
         } );
 
 
@@ -222,6 +223,13 @@ export class EntitiesTable extends UITableView {
         var fields = this.getFields();
         var keys = this.getKeys();
         var filter = this.getFilter();
+        var queryFilter = this.getParam( "queryFilter", false );
+        if ( queryFilter ) {
+            if ( filter )
+                filter = filter + 'AND ' + queryFilter;
+            else
+                filter = queryFilter;
+        }
 
         const datatable = this.getDatatable();
         datatable.clearAll();
@@ -238,9 +246,9 @@ export class EntitiesTable extends UITableView {
                 //                    columnsToShift.push( columnConfig );
 
                 if ( fields )
-                    fields = fields + "," + columnConfig.id.split('_').join('->');
+                    fields = fields + "," + columnConfig.id.split( '_' ).join( '->' );
                 else
-                    fields = columnConfig.id.split('_').join('->');
+                    fields = columnConfig.id.split( '_' ).join( '->' );
             }
         )
 

@@ -165,11 +165,11 @@ export class KBEntities {
     public static saveEntity( frame: string, values: any ) {
         var jsonValues = KBEntities.stringify( values );
 
-        KBEntities.sendBizRequest( "save", { frame: frame, json: values } );
+        KBEntities.sendBizRequest( "save", { frame: frame, json: values , replace: true} );
     }
 
     public static deleteEntity( frame: string, name: string ) {
-        KBEntities.sendBizRequest( "delete", { frame: frame, name: name } );
+        KBEntities.sendBizRequest( "delete", { frame: frame, id: name } );
     }
 }
 
